@@ -1,0 +1,54 @@
+<include file="Public:Faqheader" />
+<!-- 背景图 -->
+<div class='public_font_Himg'></div>
+<!-- 问答板块 start -->
+<div class="FAQALL">
+	<div class="container">
+		<div class=" headtitle col-lg-12 col-md-12 col-xs-12">
+			<svg class="icon register-icon" aria-hidden="true"><use xlink:href="#icon-icon_faq"></use></svg>
+			<h1 class="title">{$Think.lang._CJWT_}</h1>
+		</div>
+	</div>
+	<div class="faq-list" style="display: block">
+		<div class="container faq-list-content">
+			<h4 class="row  sub-title"><a href="{:U('Question/index')}">FAQ</a> > {$title['title']}</h4>
+			<div class="col-lg-12 col-md-12 col-xs-12">
+				<ul class="article-list">
+					<foreach name="list" item="bo" key="k">
+						<li><a class="newsPage" href="{:U('Question/showFaqContent',array('id'=>$bo['id']))}"  newsID="">{$bo.title}</a></li>
+					</foreach>
+				</ul>
+			</div>
+			<div class="clear"></div>
+			<!-- page分页 -->
+			<div class="text-right sm-text-center" id="dataPage">
+				{$page}
+				<!--<ul class="faq-pagation">-->
+				<!--<li class="prev_page">
+					<a href="" >
+					<svg class="icon icon_norepeat" aria-hidden="true">
+						<use xlink:href="#icon-ic_prevpage"></use>
+					</svg>
+					</a>
+				</li>-->
+				<!--<li class="pagation-active"><a href="" >1</a></li>-->
+				<!--<li><a href="">2</a></li>-->
+				<!--<li class="next_page">
+				<a href="" >
+					<svg class="icon icon_norepeat" aria-hidden="true">
+						<use xlink:href="#icon-ic_nextpage"></use>
+					</svg>
+				</a>
+				</li>-->
+				<!--<li>共页</li>-->
+				<!--</ul>-->
+			</div>
+		</div>
+	</div>
+
+</div>
+<!-- 问答板块 end -->
+
+<include file="Public:footer1" />
+<!-- FAQ函数js -->
+<script src="__HOME_JS__/Question/question.js"></script>

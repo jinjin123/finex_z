@@ -1,0 +1,175 @@
+<include file="Public:PersonalCenterHeader" />
+<link id="Problem" href="__HOME_CSS__/Problem_purple.css" rel="stylesheet" type="text/css" data-depStyle="depStyle">
+
+<!--右边打竖第一块-->
+<div class="col-lg-12 col-md-12 col-sm-12 clearfix">
+    <div class="panel-heading large-heading clearfix">
+        <div class="panel-action pull-left">
+            <!-- 左边币种tab切换 -->
+            <ul class="nav nav-tabs solid-tabs nav-stacked  underline-tabs personalCenter_nav">
+                <li>
+                    <a href="{:U('PersonalCenter/index')}">{$Think.lang._ZHANGHU_}</a>
+                </li>
+                <li>
+                    <a href="{:U('PersonalCenter/showBankCardBind')}">{$Think.lang._YHKBD_}</a>
+                </li>
+                <li>
+                    <a href="{:U('PersonalCenter/integrityScore')}">{$Think.lang._XYPJ_}</a>
+                </li>
+                <li>
+                    <a href="{:U('PersonalCenter/historyLoad')}">{$Think.lang._LSJL_}</a>
+                </li>
+                <li class="active">
+                    <a href="{:U('Problem/showProblem')}">{$Think.lang._WTFK_}</a>
+                </li>
+            </ul>
+
+            <!-- 手机端时的tab切换 -->
+            <div class="smshow smshow-account visible-xs-block">
+                <div class="btn-group bootstrap-select">
+                    <select class="selectpicker" tabindex="-98">
+                        <option value="0">&nbsp;&nbsp;{$Think.lang._ZHANGHU_}</option>
+                        <option value="1">&nbsp;&nbsp;{$Think.lang._YHKBD_}</option>
+                        <option value="2">&nbsp;&nbsp;{$Think.lang._XYPJ_}</option>
+                        <option value="3">&nbsp;&nbsp;{$Think.lang._LSJL_}</option>
+                        <option value="4" selected>&nbsp;&nbsp;{$Think.lang._WTFK_}</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 主体内容 -->
+<div class="col-lg-12 col-md-12 col-sm-12">
+    <div class='panel panel-default'>
+        <!-- 切换 -->
+        <div class="panel-heading clearfix">
+            <div class="pull-left target_panel_title question_title ">
+                <span>{$Think.lang._WTLB_}</span>
+                <a class='feedback_title_list' href="{:U('Problem/showProblem')}">{$Think.lang._WTFK_}</a>
+                <span class="integral-title-right">{$Think.lang._JBLZJSGYLSJL_}</span>
+            </div>
+        </div>
+        <div class='panel-title clearfix'>
+            <ul class="nav nav-tabs underline-tabs info-tabs clearfix pull-left feedback_control">
+                <li class="target_order_buse pull-right">
+                    <a href="javascript:void(0)" class='feedback_lg_buse target_tab_control <if condition="$Think.get.type eq 2" > active </if>' aria-expanded="true" feedback_control='2'>{$Think.lang._YJJ_}</a>
+                </li>
+                <li class="target_order_buse pull-right">
+                    <a href="javascript:void(0)" class='feedback_lg_buse target_tab_control <if condition="$Think.get.type neq 2" > active </if> ' aria-expanded="false" feedback_control='1'>{$Think.lang._WJJ_}</a>
+                </li>
+                <li class="my_order_target"></li>
+            </ul>
+        </div>
+
+        <div class='panel-body problem-wrap'>
+            <if condition="$Think.get.type eq 2">
+                <!--已解决-->
+                <div id="resolved">
+                    <empty name="list">
+                        <div class="mkl clearfix">
+                            <div class="resolved_img">
+                                <img src="__HOME_IMG__/icon_qs_emp.png" alt="" />
+                                <p>{$Think.lang._NDQMYYJJDWT_}</p>
+                            </div>
+                        </div>
+                        <else />
+                        <div class="mkl clearfix">
+                            <foreach name="list" item="vo">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bank_card List_problems m-left-30 p-left-0">
+                                    <div class="bank_city text-left feedback_Inquiries p-left-20">
+                                        <!-- 問題編號 -->
+                                        <p class='feedback_resolved_p'>{$Think.lang._WTBH_}: <span class='m-left-10'>{$vo.id}</span>
+                                            <a class='feedback_resolved_span' href="{:U('Problem/showResponse',array('id'=>$vo['id']))}">{$Think.lang._LOOK_}</a>
+                                        </p>
+                                        <!-- 問題類型 -->
+                                        <p class='feedback_resolved_p'>
+                                            {$Think.lang._WENTLX_}: <span class='m-left-10 feedback_resolved_span'>{$vo.first_title}--{$vo.last_title}</span>
+                                            <span>{$Think.lang._DDHM_}: 201905061439292694998984850</span>
+                                            <span>{$Think.lang._TJSJ_}：{$vo.add_time}</span></p>
+                                        <!-- 問題描述 -->
+                                        <p class='feedback_resolved_p p-top-10 m-bottom-0'>{$vo.describe}</p>
+                                    </div>
+                                </div>
+                            </foreach>
+                        </div>
+                    </empty>
+                    <div class="text-right sm-text-center clearfix dataPage">
+                        {$page}
+                    </div>
+                </div>
+                <else />
+                <!-- 未解决 -->
+                <div id='Unsolved' class="col-xs-12">
+                    <empty name="list">
+                        <div class="mkl clearfix">
+                            <div class="Unsolved_img">
+                                <img src="__HOME_IMG__/icon_qs_emp.png" alt="" />
+                                <p>{$Think.lang._NDQMYWJJDWT_}</p>
+                            </div>
+                        </div>
+
+                        <else />
+                        <div class="mkl clearfix">
+                            <foreach name="list" item="vo">
+                                <div class='col-lg-12 col-md-12 col-sm-12 List_problems clearfix m-left-30 p-left-0'>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bank_card feedback_Inquiries p-left-20 m-bottom-20">
+                                        <div class="bank_city text-left">
+                                            <!-- 問題編號 -->
+                                            <p class='feedback_resolved_p'>{$Think.lang._WTBH_}: <span class='m-left-10 fproblem_id'>{$vo.id}</span>
+                                                <span class='problem_progress'></span>
+                                                <a class='feedback_resolved_span' href="{:U('Problem/showUnResponse',array('id'=>$vo['id']))}">{$Think.lang._LOOK_}</a>
+                                            </p>
+                                            <!-- 問題類型 -->
+                                            <p class='feedback_resolved_p'>
+                                                {$Think.lang._WENTLX_}: <span class='m-left-10 feedback_resolved_span'>{$vo.first_title}-{$vo.last_title}</span>
+                                                <if condition="($vo.order_num neq null)">
+                                                <span>{$Think.lang._DDHM_}: {$vo.order_num}</span>
+                                                </if>
+                                                <span class="time-on-submit">{$Think.lang._TJSJ_}：{$vo.add_time}</span>
+                                            </p>
+                                            <!-- 問題描述 -->
+                                            <p class='feedback_resolved_p p-top-10 m-bottom-0 the-qest-desrcibe'>{$vo.describe}</p>
+                                        </div>
+
+                                    </div>
+                                    <div class="showbink_select col-lg-5 col-md-5 col-sm-12 col-xs-12 Inquiries_text" type='0' style='display: none;'>
+                                        <textarea name="" rows="7" cols="62" maxlength="200" class="feedback_content p-10" placeholder="{$Think.lang._QSR_}"></textarea>
+                                        <button type="button" vid="{$vo.id}" class="btn gradual_change_blue Inquiries_button">{$Think.lang._TIJIAO_}</button>
+                                    </div>
+                                </div>
+                            </foreach>
+                        </div>
+                    </empty>
+                    <div class="text-right sm-text-center clearfix dataPage">
+                        {$page}
+                    </div>
+                </div>
+            </if>
+        </div>
+    </div>
+</div>
+<!-- /.col-sm-9 -->
+
+
+<include file="Public:PersonalCenterFooter" />
+<script>
+    var reTalkWithme = "{:U('Problem/reTalkWithme')}";
+    var tip_huifu = "{$Think.lang._XTHF_}";
+    var type = "{$Think.get.type}";
+    var ProblemList = "{:U('Problem/ProblemList')}";
+    var homeImg = "__HOME_IMG__";
+    var resolved = "{$Think.lang._NDQMYYJJDWT_}";
+    var unsolved = "{$Think.lang._NDQMYWJJDWT_}";
+    var look = "{:U('/Problem/showResponse')}";
+    var unlook = "{:U('/Problem/showUnResponse')}";
+    var see = "{$Think.lang._LOOK_}";
+    var wentibianhao = "{$Think.lang._WTBH_}";
+    var wentileixing = "{$Think.lang._WENTLX_}";
+    var sendTime = "{$Think.lang._TJSJ_}";
+    var problem_WHF = "{$Think.lang._WHF_}";
+    var problem_YHF = "{$Think.lang._YHF_}";
+    var problem_YD = "{$Think.lang._YD_}";
+    var ddhm = "{$Think.lang._DDHM_}";
+</script>
+<script src="__HOME_JS__/Problem/problemlist.js"></script>

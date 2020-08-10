@@ -1,0 +1,521 @@
+<include file="Public:PersonalCenterHeader" />
+<link id="integrityScore" href="__HOME_CSS__/integrityScore_purple.css" rel="stylesheet" type="text/css" data-depStyle="depStyle">
+
+<div class="col-lg-12 col-md-12 col-sm-12 clearfix">
+    <div class="panel-heading large-heading clearfix">
+        <div class="panel-action pull-left">
+            <!-- 左边币种tab切换 -->
+            <ul class="nav nav-tabs solid-tabs nav-stacked underline-tabs personalCenter_nav">
+                <li>
+                    <a href="{:U('PersonalCenter/index')}">{$Think.lang._ZHANGHU_}</a>
+                </li>
+                <li>
+                    <a href="{:U('PersonalCenter/showBankCardBind')}">{$Think.lang._YHKBD_}</a>
+                </li>
+                <li class="active">
+                    <a href="{:U('PersonalCenter/integrityScore')}">{$Think.lang._XYPJ_}</a>
+                </li>
+                <li>
+                    <a href="{:U('PersonalCenter/historyLoad')}">{$Think.lang._LSJL_}</a>
+                </li>
+                <li>
+                    <a href="{:U('Problem/showProblem')}">{$Think.lang._WTFK_}</a>
+                </li>
+            </ul>
+
+            <!-- 手机端时的tab切换 -->
+            <div class="smshow smshow-account visible-xs-block">
+                <div class="btn-group bootstrap-select">
+                    <select class="selectpicker" tabindex="-98">
+                        <option value="0">&nbsp;&nbsp;{$Think.lang._ZHANGHU_}</option>
+                        <option value="1">&nbsp;&nbsp;{$Think.lang._YHKBD_}</option>
+                        <option value="2" selected>&nbsp;&nbsp;{$Think.lang._XYPJ_}</option>
+                        <option value="3">&nbsp;&nbsp;{$Think.lang._LSJL_}</option>
+                        <option value="4">&nbsp;&nbsp;{$Think.lang._WTFK_}</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 主体盒子 -->
+<div class="col-lg-12 col-md-12 col-sm-12 personal-info isRealName_personal text-left">
+    <div class='target_panel_title'><span>{$Think.lang._WDCXPJ_}</span></div>
+    <div class="integral vip-img integrityScore_paddingleft">
+        <ul class="m-bottom-10 integrityScore_paddingleft ">
+            <!-- 等级 -->
+            <li class='pull-left'>{$Think.lang._NDDQDJW_}：
+                <if condition="$userInfo['level'] eq 0">{$Think.lang._PTYH_}
+                    <else /><img src="__HOME_IMG__/VIP_{$userInfo['level']}.svg" alt="">
+                </if>
+            </li>
+            <!-- 积分 -->
+            <li class="integral_num pull-left">{$Think.lang._JFW_}：<span> {$userInfo['credit_level']}  </span>&nbsp;&nbsp;</li>
+            <div class="clearfix"></div>
+        </ul>
+        <!-- 进度条盒子 -->
+        <div class="progress_box col-lg-11 col-md-12">
+            <!-- 进度条 -->
+            <div class="pro_con">
+                <div class="progress">
+                    <span class='progress-left'>{$Think.lang._PTYH_}： </span>
+                    <span class="progress-right"><span><if condition="$userInfo['level'] eq 0">{$Think.lang._PTYH_}<else />VIP{$userInfo['level']}</if></span> ≥ {$needIntegral['need']}</span>
+                    <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: {$needIntegralProportion}%;max-width: 100%;">
+                        <span>{$userInfo['credit_level']}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <!-- 提示 -->
+    <div class="alert alert-info alert_info_leftafter">
+        <p> {$Think.lang._ZYSXIANG_}：</p>
+        <ol>
+            <li>
+                <p>　{$Think.lang._VIPDJYJYX_}</p>
+            </li>
+            <li>
+                <p>　{$Think.lang._PTYHJFLJDDXYJF_}</p>
+            </li>
+            <li>
+                <p>　{$Think.lang._GJYYXQXGZCXG_}</p>
+            </li>
+        </ol>
+    </div>
+</div>
+<div class='col-lg-12 col-md-12 col-sm-12'>
+    <!-- 积分详情 -->
+    <div class="panel panel-default integral-details honest_panel">
+        <!-- title -->
+        <div class="panel-heading large-heading clearfix">
+            <div class="pull-left target_panel_title">
+                <span class="title">{$Think.lang._JFXQ_}</span>
+                <span class='integral-title-right CreditDetail'>{$Think.lang._JBLZJYGYLSJL_}</span>
+            </div>
+            <!-- /.panel-action -->
+            <div class="panel-tools panel-action pull-right">
+                <div class="panel-action have-dropdown pull-right">
+                    <button class="btn rippler btn-min"></button>
+                </div>
+                <ul class="nav nav-tabs underline-tabs info-tabs pull-right Integral_details">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle " data-toggle="dropdown" aria-expanded="false">
+							{$Think.lang._SHIJIAN_} <i class="fa fa-angle-down"></i>
+						</a>
+                        <ul class="dropdown-menu dropdown_menu_p">
+                            <li>
+                                <a onclick="getIntegrityScoreData(1,2)">{$Think.lang._YZYN_}</a>
+                            </li>
+                            <li>
+                                <a onclick="getIntegrityScoreData(1,3)">{$Think.lang._EZYN_}</a>
+                            </li>
+                            <li>
+                                <a onclick="getIntegrityScoreData(1,4)">{$Think.lang._SZYN_}</a>
+                            </li>
+                            <li>
+                                <a onclick="getIntegrityScoreData(1,5)">{$Think.lang._BENYUE_}</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <!-- 表格 -->
+        <div class="panel-body">
+            <div class="table-responsive">
+                <table class="table table-bordered order sortable-theme-bootstrap vip-img" data-sortable="" data-sortable-initialized="true">
+                    <tbody>
+                        <tr>
+                            <th>{$Think.lang._SHIJIAN_}</th>
+                            <th>{$Think.lang._LEIXING_}</th>
+                            <th>{$Think.lang._JFQK_}</th>
+                        </tr>
+                    </tbody>
+                    <tbody id="dataTable">
+                        <volist name="data" id="vo">
+                            <tr>
+                                <td>{$vo.add_time|date='Y-m-d',###}</td>
+                                <td>{$vo.status|formatJifenLog=###}</td>
+                                <td><span class="pointadd">{$vo.integral}</span></td>
+                            </tr>
+                        </volist>
+                    </tbody>
+                </table>
+                <!-- page分页 -->
+                <div class="text-right sm-text-center clearfix dataPage" id="dataPage">
+                    {$page}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 平台交易收费 -->
+    <div class="panel panel-default honest_panel" id="platCharge">
+        <!-- title -->
+        <div class="panel-heading large-heading Plat-large clearfix">
+            <div class="pull-left target_panel_title">
+                <span>{$Think.lang._PTJYSF_}</span>
+            </div>
+            <div class="panel-tools panel-action pull-right">
+                <div class="panel-action have-dropdown pull-right">
+                    <button class="btn btn-min rippler"></button>
+                </div>
+                <ul class="nav nav-tabs underline-tabs info-tabs pull-right">
+                    <li class="dropdown Plat-charg">
+                        <a href="#" class="dropdown-toggle dropdown-curson" data-toggle="dropdown" aria-expanded="false" style="cursor: pointer;">
+							{$Think.lang._XZBZCK_} <i class="fa fa-angle-down"></i>
+						</a>
+                        <ul class="dropdown-menu dropdown_menu_p2">
+                            <foreach name="currencyData" item="vo">
+                                <li>
+                                    <a href="#{$vo.currency_name}" data-toggle="tab" aria-expanded="true">{$vo.currency_name}</a>
+                                </li>
+                            </foreach>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- 表格 -->
+        <div class="panel-body">
+            <div class="tab-content">
+                <!--btc-->
+                <foreach name="currencyData" item="vo">
+                    <div <if condition="$key eq 0">class="tab-pane fade active in"
+                        <else />class="tab-pane fade" </if> id="{$vo.currency_name}">
+                        <div class="table-responsive m-bottom-20">
+                            <table class="table table-bordered order sortable-theme-bootstrap" data-sortable="" data-sortable-initialized="true">
+                                <thead>
+                                    <tr>
+                                        <th>{$Think.lang._JYGYBTCJYL_}{$vo.currency_name}{$Think.lang._JYL_}</th>
+                                        <th>{$Think.lang._MDCJFL_}</th>
+                                        <th>{$Think.lang._GDCJFL_}</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr>
+                                        <td>0{$vo.currency_name}</td>
+                                        <td rowspan="6">{$vo.buy_off_line_fee}</td>
+                                        <td rowspan="6">{$vo.sell_off_line_fee}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5,000{$vo.currency_name}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>50,000{$vo.currency_name}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>150,000{$vo.currency_name}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>300,000{$vo.currency_name}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>500,000{$vo.currency_name}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </foreach>
+            </div>
+        </div>
+    </div>
+
+    <!-- 升级VIP的好处 -->
+    <div class="panel panel-default honest_panel benefits">
+        <!-- title -->
+        <div class="panel-heading large-heading clearfix">
+            <div class="pull-left target_panel_title">
+                <span>{$Think.lang._SJVIPDHC_}</span>
+            </div>
+            <div class="panel-tools panel-action pull-right">
+                <div class="panel-action have-dropdown pull-right">
+                    <button class="btn rippler btn-min"></button>
+                </div>
+                <ul class="nav nav-tabs underline-tabs info-tabs pull-right upVipprofit">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle dropdown-curson" data-toggle="dropdown" aria-expanded="false" style="cursor: pointer;">
+							{$Think.lang._GYRX_} <i class="fa fa-angle-down"></i>
+						</a>
+                        <ul class="dropdown-menu dropdown_menu_p">
+                            <li>
+                                <a href="#aboutChange" data-toggle="tab" aria-expanded="true">{$Think.lang._GYRX_}</a>
+                            </li>
+                            <li>
+                                <a href="#aboutTrade" data-toggle="tab" aria-expanded="true">{$Think.lang._GYJY_}</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- 表格 -->
+        <div class="panel-body">
+            <div class="tab-content">
+                <!-- 关于提现 -->
+                <div class="tab-pane fade active in" id="aboutChange">
+                    <div class="table-responsive m-bottom-20">
+                        <table class="table table-bordered order sortable-theme-bootstrap" data-sortable="" data-sortable-initialized="true">
+                            <tbody>
+                                <tr>
+                                    <th>{$Think.lang._YHDJ_}</th>
+                                    <th>{$Think.lang._BTCKSTX_}</th>
+                                    <th>{$Think.lang._LTCKSTX_}</th>
+                                    <th>{$Think.lang._MJTX_}</th>
+                                </tr>
+
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td>{$Think.lang._PTYH_}</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0.50%</td>
+                                </tr>
+                                <tr>
+                                    <td>VIP1</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0.50%</td>
+                                </tr>
+                                <tr>
+                                    <td>VIP2</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0.50%</td>
+                                </tr>
+                                <tr>
+                                    <td>VIP3</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0.50%</td>
+                                </tr>
+                                <tr>
+                                    <td>VIP4</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0.50%</td>
+                                </tr>
+                                <tr>
+                                    <td>VIP5</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0.50%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- 关于交易 -->
+                <div class="tab-pane fade" id="aboutTrade">
+                    <div class="table-responsive m-bottom-20">
+                        <table class="table table-bordered order sortable-theme-bootstrap" data-sortable="" data-sortable-initialized="true">
+                            <tbody>
+                                <tr>
+                                    <th>{$Think.lang._YHDJ_}</th>
+                                    <th>{$Think.lang._TSGDBZ_}</th>
+                                    <th>{$Think.lang._TSMMDSL_}</th>
+                                </tr>
+
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td>{$Think.lang._PTYH_}</td>
+                                    <td>X</td>
+                                    <td>X</td>
+                                </tr>
+                                <tr>
+                                    <td>VIP1</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>VIP2{$Think.lang._YISHANG_}</td>
+                                    <td>2</td>
+                                    <td>2</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 如何增长积分 -->
+    <div class="panel panel-default honest_panel integral">
+        <!-- title -->
+        <div class="panel-heading large-heading clearfix">
+            <div class="pull-left target_panel_title">
+                <span>{$Think.lang._RHZZJF_}</span>
+            </div>
+            <div class="panel-tools panel-action text-right pull-right">
+                <button class="btn rippler btn-min"></button>
+            </div>
+        </div>
+        <!-- 表格 -->
+        <div class="panel-body">
+            <!-- 第1个table -->
+            <div class="table-responsive m-bottom-20">
+                <table class="table table-bordered order sortable-theme-bootstrap" data-sortable="" data-sortable-initialized="true">
+                    <tbody>
+                        <tr>
+                            <th>{$Think.lang._CAOZUO_}</th>
+                            <th>{$Think.lang._JIFEN_}</th>
+                            <th>{$Think.lang._SHUOMING_}</th>
+                        </tr>
+
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <td>{$Think.lang._DENGLU_}</td>
+                            <td>2.0</td>
+                            <td>{$Think.lang._MTLJ_}</td>
+                        </tr>
+                        <tr>
+                            <td>{$Think.lang._CHONGZHI_}</td>
+                            <td>2.0</td>
+                            <td>{$Think.lang._QZS_}</td>
+                        </tr>
+                        <tr>
+                            <td>{$Think.lang._CHONGBI_}</td>
+                            <td>{$Think.lang._CZE_}</td>
+                            <td>{$Think.lang._QZS_}</td>
+                        </tr>
+                        <tr>
+                            <td>{$Think.lang._ZCE_}</td>
+                            <td>{$Think.lang._ZHUSD_}</td>
+                            <td>{$Think.lang._MTZHZDYDSUSDZC_}</td>
+                        </tr>
+                        <!----去掉了现贷资金密码---->
+                        <tr>
+                            <td>{$Think.lang._JYCG_}</td>
+                            <td>1.0-2.0</td>
+                            <td>{$Think.lang._ZCWCHQJDJJJJF_}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- 第2个table -->
+            <div class="table-responsive m-bottom-20">
+                <table class="table table-bordered order sortable-theme-bootstrap" data-sortable="" data-sortable-initialized="true">
+                    <tbody>
+                        <tr>
+                            <th>{$Think.lang._CAOZUO_}</th>
+                            <th>{$Think.lang._JIFEN_}</th>
+                            <th>{$Think.lang._SHUOMING_}</th>
+                        </tr>
+
+                    </tbody>
+                    <tbody id="bangding">
+                        <tr>
+                            <td>{$Think.lang._TGSMRZ_}</td>
+                            <td>10.0</td>
+                            <td>
+
+                                <if condition="$userRealStatus eq 1 ">
+                                    <i class="iconfont Name_status1"><svg class="icon icon_norepeat" aria-hidden="true" style="font-size: 17px;"><use xlink:href="#icon-ic_passed"></use></svg></i>
+                                    <else />
+                                    <i class="iconfont  Name_status2"><svg class="icon icon_norepeat" aria-hidden="true" style="font-size: 17px;"><use xlink:href="#icon-ic_warn1"></use></svg></i>
+                                    <a href="{:U('PersonalCenter/index',array('real_status'=>200))}#smrz" class="Name_status2-hover">{$Think.lang._JRRZ_}</a>
+                                </if>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>{$Think.lang._BDSJHM_}</td>
+                            <td>10.0</td>
+                            <td>
+                                <empty name="userInfo.phone">
+                                    <i class="iconfont Name_status2"><svg class="icon icon_norepeat" aria-hidden="true" style="font-size: 17px;"><use xlink:href="#icon-ic_warn1"></use></svg></i>
+                                    <else />
+                                    <i class="iconfont Name_status1"><svg class="icon icon_norepeat" aria-hidden="true" style="font-size: 17px;"><use xlink:href="#icon-ic_passed"></use></svg></i>
+                                </empty>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>{$Think.lang._BDEMAIL_}</td>
+                            <td>10.0</td>
+                            <td>
+                                <empty name="userInfo.email">
+                                    <i class="iconfont Name_status2"><svg class="icon icon_norepeat" aria-hidden="true" style="font-size: 17px;"><use xlink:href="#icon-ic_warn1"></use></svg></i>
+                                    <a href="{:U('PersonalCenter/index')}?bindEmail">{$Think.lang._JRBD_}</a>
+                                    <else />
+                                    <i class="iconfont Name_status1"><svg class="icon icon_norepeat" aria-hidden="true" style="font-size: 17px;"><use xlink:href="#icon-ic_passed"></use></svg></i>
+                                </empty>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>{$Think.lang._APPLP_}</td>
+                            <td>10.0</td>
+                            <td>
+                                <if condition="$tokenStatus eq 1 ">
+                                    <i class="iconfont Name_status1"><svg class="icon icon_norepeat" aria-hidden="true" style="font-size: 17px;"><use xlink:href="#icon-ic_passed"></use></svg></i>
+                                    <else />
+                                    <i class="iconfont Name_status2"><svg class="icon icon_norepeat" aria-hidden="true" style="font-size: 17px;"><use xlink:href="#icon-ic_warn1"></use></svg></i>
+                                </if>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>{$Think.lang._BDJYMM_}</td>
+                            <td>10.0</td>
+                            <td>
+                                <empty name="userInfo.trade_pwd">
+                                    <i class="iconfont Name_status2"><svg class="icon icon_norepeat" aria-hidden="true" style="font-size: 17px;"><use xlink:href="#icon-ic_warn1"></use></svg></i>
+                                    <a href="{:U('PersonalCenter/index')}?costpwd">{$Think.lang._JRBD_}</a>
+                                    <else />
+                                    <i class="iconfont Name_status1"><svg class="icon icon_norepeat" aria-hidden="true" style="font-size: 17px;"><use xlink:href="#icon-ic_passed"></use></svg></i>
+                                </empty>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>{$Think.lang._BDYHK_}</td>
+                            <td>10.0</td>
+                            <td>
+                                <if condition="$bankStatus eq 1 ">
+                                    <i class="iconfont Name_status1"><svg class="icon icon_norepeat" aria-hidden="true" style="font-size: 17px;"><use xlink:href="#icon-ic_passed"></use></svg></i>
+                                    <else />
+                                    <i class="iconfont Name_status2"><svg class="icon icon_norepeat" aria-hidden="true" style="font-size: 17px;"><use xlink:href="#icon-ic_warn1"></use></svg></i>
+                                    <a href="{:U('PersonalCenter/showBankCardBind')}">{$Think.lang._JRBD_}</a>
+                                </if>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>{$Think.lang._BDCZDZ_}</td>
+                            <td>10.0</td>
+                            <td>
+                                <if condition="$rechargeStatus eq 1 ">
+                                    <i class="iconfont Name_status1"><svg class="icon icon_norepeat" aria-hidden="true" style="font-size: 17px;"><use xlink:href="#icon-ic_passed"></use></svg></i>
+                                    <else />
+                                    <i class="iconfont Name_status2"><svg class="icon icon_norepeat" aria-hidden="true" style="font-size: 17px;"><use xlink:href="#icon-ic_warn1"></use></svg></i>
+                                    <a href="{:U('Wallent/index')}?chongbi">{$Think.lang._JRBD_}</a>
+                                </if>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>{$Think.lang._BDTBDZ_}</td>
+                            <td>10.0</td>
+                            <td>
+                                <if condition="$extractStatus eq 1 ">
+                                    <i class="iconfont Name_status1"><svg class="icon icon_norepeat" aria-hidden="true" style="font-size: 17px;"><use xlink:href="#icon-ic_passed"></use></svg></i>
+                                    <else />
+                                    <i class="iconfont Name_status2"><svg class="icon icon_norepeat" aria-hidden="true" style="font-size: 17px;"><use xlink:href="#icon-ic_warn1"></use></svg></i>
+                                    <a href="{:U('Wallent/index')}?tibi">{$Think.lang._JRBD_}</a>
+                                </if>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<include file="Public:PersonalCenterFooter" />
+<script>
+    var getIntegrityScoreDataUrl = "{:U('PersonalCenter/getIntegrityScoreData')}";
+</script>
+<script src="__HOME_JS__/personalcenter/integrityScore.js?t=<?=time()?>"></script>

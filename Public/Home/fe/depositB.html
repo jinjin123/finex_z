@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="zxx">
+<include file="./Public/Home/fe/base/head.html"/>
+    <!-- Custom Font
+    ================================================== -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600,700%7COpen+Sans:300,400,600,700&display=swap"
+        rel="stylesheet">
+    <!-- CSS
+    ================================================== -->
+
+
+<body>
+<include file="./Public/Home/fe/base/loader.html"/>
+
+    <div class="site-content">
+        <include file="./Public/Home/fe/base/nav.html"/>
+        <div id="sticky-header"></div>
+        <div class="page-title-area bg-primary" style="background-image: url('/Public/Home/fe/static/images/shape-dot1.png')">
+            <div class="shape-group">
+                <div class="shape"></div>
+                <div class="shape"></div>
+                <div class="shape"></div>
+                <div class="shape"></div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="page-header-content text-center">
+                            <div class="page-header-caption">
+                                <h2 class="page-title">{$currencyName}</h2>
+                            </div>
+                            <div class="breadcrumb-area">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="{:U('UserCenter/index')}">Home</a></li>
+                                    <li class="breadcrumb-item"><a href="{:U('UserCenter/myChain')}">Chain</a></li>
+                                    <li class="breadcrumb-item active">Deposit</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="testimonial-block pd-t-120 pd-b-200 bg-gradient">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-12">
+                        <div class="section-title text-center">
+                            <div class="subtitle" data-animate="hg-fadeInUp">if you want to deposit</div>
+                            <h2 class="title-main" data-animate="hg-fadeInUp">{$currencyName}</h2><!-- /.title-main -->
+                            <div class="title-text" data-animate="hg-fadeInUp">you must copy this wallet address and
+                                send {$currencyName} to this wallet address.</div><!-- /.title-text -->
+                        </div>
+                        <div class="text-center">
+                            <img style="" src='/Public/Uploads/{$iconAddress}.png'>
+                            <p style="text-align:center;word-wrap:break-word;font-weight:bold;">
+                                {$iconAddress}</p>
+                            <button onclick="toClipboard('{$iconAddress}')"
+                                class="btn btn-lg btn-warning"><i class="fa fa-clipboard"></i> copy to
+                                clipboard</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <include file="./Public/Home/fe/base/footer.html"/>
+    </div>
+</body>
+
+</html>

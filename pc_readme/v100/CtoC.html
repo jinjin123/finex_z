@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>CTC交易模式</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../bt/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../bt/dist/css/yangshi.css" rel="stylesheet" type="text/css">
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]>
+    <script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="../bt/assets/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+<div class="container">
+    <div class="row" style="margin-top: 50px;">
+        <div class="col-md-12">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h4>通用 登录注册接口目录</h4>
+                </div>
+                <div class="panel-body">
+                    <p><a href="index.html">0、目录页</a></p>
+                    <p><a href="#api1">1、总需求说明</a></p>
+                    <p><a href="#api2">2、用户交易中的挂单列表</a></p>
+                    <p><a href="#api2.1">2.1、用户历史交易历订单</a></p>
+                    <p><a href="#api2.2">2.2、用户子订单列表</a></p>
+                    <p><a href="#api2.3">2.3、用户确认打款/收款</a></p>
+                    <p><a href="#api2.5">2.5、卖家未收到款项（进入待处理状态）</a></p>
+                    <p><a href="#api3">4、买入卖出订单列表</a></p>
+                    <p><a href="#api5">5、撤销订单</a></p>
+                    <p><a href="#api6">6、获取买入订单信息</a></p>
+                    <p><a href="#api7">7、点击确认买入</a></p>
+					<p><a href="#api8">8、用户挂单</a></p>
+                </div>
+            </div>
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <h4><a name="001" id="001">1、总需求说明</a></h4>
+                </div>
+                <div class="panel-body">
+                    <p>说明：</p>
+                    <ul>
+                        <li>1、xxx</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <h4><a name="api2" id="api2">2、获取用户交易中的挂单列表</a></h4>
+                </div>
+                <div class="panel-body">
+                    <p>说明：用户撤销或者完成的挂单，只要挂单有子订单在交易，都属于交易中的订单</p>
+                    <p>个人买卖单：展示的是子订单的信息，不要显示剩余数量和操作按钮</p>
+                    <ul>
+                    </ul>
+                    <div class="row">
+                        <div class="col-md-9">接口负责人：刘富国</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-9">请求方式：POST</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-9">接口地址：nat1.target.com/CtoCTransaction/getUserMainOrderList</div>
+                    </div>
+                    请求示例：直接调，不需要参数
+                    <pre>
+{}
+
+</pre>
+                    成功：
+                    <pre>
+{
+	"code": 200,
+	"msg": "",
+	"data": [{
+             "type": 1  //订单类型：1买单 2卖单
+            "type_name": "需求买单"    //类型
+            "pid": "161",  //挂单订单ID
+            "order_id": "4",  //个人买/卖单,订单ID（如果是需求挂单，则为0）
+            "currency_type": "1",  //货币类型ID
+            "currency_name": "BTC", //货币类型名称
+            "price": "5000.0000", //单价
+            "num": "100.00000000", //总数量
+            "leave_num": "3.00000000",//剩余数量
+            "money": "500000.0000", //总金额
+            "penging": 1,  //需要处理的子订单  1要处理  0不用处理
+            "self_trade_order": 0, //  0：需求挂单； 1：个人买/卖单
+            "opt_str": "撤销",  //撤销按钮，如果为空，不要显示按钮
+            "opt_status_str": "待撤销", //状态名：进行中；待撤销；
+            "add_time": "1520564066"
+            "cancel_enable": "0",   // 是否允许撤销 1：允许撤销 0：不允许撤销
+            "reference_price": "703880.58"	 // 参考价格
+            "currency_symbol": CNY // 汇率符号 人民币 港币 台币 对应符号用于组装价格
+	}
+  ]
+}
+
+    或者：
+        {
+        "code": 200,
+        "msg": "",
+        "data": []
+        }
+</pre>
+                    失败返回：（有多种情况）
+                    <pre>
+{
+	"code": 301,
+	"msg": "xxxx",
+	"data": []
+}
+</pre>
+                </div>
+                <div class="panel-footer">
+                    <p>补充:</p>
+                </div>
+            </div>
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <h4><a name="api2.1" id="api2.1">2.1、用户历史交易历史订单</a></h4>
+                </div>
+                <div class="panel-body">
+                    <p>说明：</p>
+                    <ul>
+                    </ul>
+                    <div class="row">
+                        <div class="col-md-9">接口负责人：刘富国</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-9">请求方式：POST</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-9">接口地址：nat1.target.com/CtoCTransaction/getUserHistoryTradeOrderList</div>
+                    </div>
+                    请求示例：
+                    <pre>
+{
+"type"："1", //1：完成订单，2：已撤销订单
+"ajax_func":"xxx"  //前台页面函数名
+"limit":"20"  //每页数量：可以为空，系统默认20行
+"page":"1"  //页数
+}
+
+</pre>
+                    成功：
+                    <pre>
+{
+	"code": 200,
+	"msg": "",
+	"data": [{
+		"order_num": "C201803025610148565",//子订单ID
+		"trade_num": "1.00000000",      //交易数量
+		"trade_price": "50.0000",       //单价
+		"trade_money": "50.0000",       //总额
+		"currency_name": "BTC",         //货币类型
+		"trade_time": "1519960280",     //成交时间
+		"shoukuan_time": "0",           //买家确认打款的时间
+		"end_time": "0",                //卖家确认收款时间
+		"update_time": "1519974981",    //数据更新时间
+		"type_name": "卖单",              //订单类型
+		"status_name": "管理员完成订单"    //状态名称
+	}],
+   "show": "xxxx",//分页HTML
+}
+
+    或者：
+        {
+        "code": 200,
+        "msg": "",
+        "data": []
+        }
+</pre>
+                    失败返回：（有多种情况）
+                    <pre>
+{
+	"code": 301,
+	"msg": "xxxx",
+	"data": []
+}
+</pre>
+                </div>
+                <div class="panel-footer">
+                    <p>补充:</p>
+                </div>
+            </div>
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <h4><a name="api2.2" id="api2.2">2.2、用户子订单列表</a></h4>
+                </div>
+                <div class="panel-body">
+                    <p>说明： opt_str_xxxx等按钮名，如果为空，就不要显示</p>
+                    <ul>
+                    </ul>
+                    <div class="row">
+                        <div class="col-md-9">接口负责人：刘富国</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-9">请求方式：POST</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-9">接口地址：nat1.target.com/CtoCTransaction/getUserTradeOrderList</div>
+                    </div>
+                    请求示例：直接调，不需要参数
+                    <pre>
+{
+"pid"："191", //用户子订单的主单ID（挂单订单ID）
+"orderId"："xxxx", //用户子订单ID(可以为空)
+}
+
+</pre>
+                    成功：
+                    <pre>
+{
+	"code": 200,
+	"msg": "",
+	"data": [{
+            "order_id": "1",  //子订单ID
+            "order_num": "xxxx",  //子订单编号
+            "bank_num": "123456789987564321",  //银行账号
+            "bank_real_name": "lirunqing", // 卖家/买家 的开户行姓名
+            "bank_name": "农业银行",  //银行名称（汇款方式）
+            "bank_address": "农业银行",  //银行地址
+            "om_name": "中国(香港)",  //交易区
+            "trade_num": "10.00000000", //成交数量
+            "trade_price": "100.0000",   //成交的单价
+            "trade_money": "1000.0000",  //成交金额
+            "reference_price": "6200.0000",  //交易区参考价格
+            "om_of_currency_symbol": "RMB",  //交易区的货币符号
+            "currency_name": "BTC",      //货币名称
+            "status": "1",   //状态值
+            "status_name": "等待买家付款", //状态名称
+            "opt_str_confirm": "",  //确认打款/收款按钮
+            "opt_str_unreceipt": "",  //未收到款项按钮
+            "time_limit": 0  //剩余操作时间(秒)
+            "type": 1  //订单类型：1买单 2卖单
+            "penging":"1"  //需处理的订单
+            "remark":"xxxx"  // 备注
+            "status_logo":"1"  //图标：1 等待付款，1，等待收款，2，收款超时，3，收款异常
+            "pay_type_name":"银行汇款"  //付款方式
+            "sell_username":"刘富国"  //卖家名
+            "buy_username":"李江"  //买家名
+	}]
+}
+
+    或者：
+        {
+        "code": 200,
+        "msg": "",
+        "data": []
+        }
+</pre>
+                    失败返回：（有多种情况）
+                    <pre>
+{
+	"code": 301,
+	"msg": "xxxx",
+	"data": []
+}
+</pre>
+                </div>
+                <div class="panel-footer">
+                    <p>补充:</p>
+                </div>
+            </div>
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <h4><a name="api2.3" id="api2.3">2.3、用户确认打款/收款</a></h4>
+                </div>
+                <div class="panel-body">
+                    <p>说明：</p>
+                    <ul>
+                    </ul>
+                    <div class="row">
+                        <div class="col-md-9">接口负责人：刘富国</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-9">请求方式：POST</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-9">接口地址：nat1.target.com/CtoCTransaction/confirmOrderAcceptOrPaid</div>
+                    </div>
+                    请求示例：
+                    <pre>
+{
+"orderId"："5647", //用户子订单ID
+"type"："1", //订单类型：1 买家确认打款 2 卖家确认收款
+}
+
+</pre>
+                    成功：
+                    <pre>
+{
+	"code": 200,
+	"msg": "",
+	"data": []
+}
+</pre>
+                    失败返回：（有多种情况）
+                    <pre>
+{
+	"code": 301,
+	"msg": "xxxx",
+	"data": []
+}
+</pre>
+                </div>
+                <div class="panel-footer">
+                    <p>补充:</p>
+                </div>
+            </div>
+
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <h4><a name="api2.5" id="api2.5">2.5、卖家未收到款项</a></h4>
+                </div>
+                <div class="panel-body">
+                    <p>说明：成功后，子订单进入待处理状态</p>
+                    <ul>
+                    </ul>
+                    <div class="row">
+                        <div class="col-md-9">接口负责人：刘富国</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-9">请求方式：POST</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-9">接口地址：nat1.target.com/CtoCTransaction/unReceiptTradeOrderPaid</div>
+                    </div>
+                    请求示例：
+                    <pre>
+{
+"orderId"："5647", //子订单ID
+}
+
+</pre>
+                    成功：
+                    <pre>
+{
+	"code": 200,
+	"msg": "成功",
+	"data": []
+}
+</pre>
+                    失败返回：（有多种情况）
+                    <pre>
+{
+	"code": 301,
+	"msg": "xxxx",
+	"data": []
+}
+</pre>
+                </div>
+                <div class="panel-footer">
+                    <p>补充:</p>
+                </div>
+            </div>
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <h4><a name="api3" id="api3">3、买入卖出订单列表</a></h4>
+                </div>
+                <div class="panel-body">
+                    <p>说明：买入卖出订单列表</p>
+
+                    <ul>
+                    </ul>
+                    <div class="row">
+                        <div class="col-md-9">接口负责人：张锡文</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-9">请求方式：POST/GET</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-9">接口地址：nat1.target.com/CtoCTransaction/getTrade</div>
+                    </div>
+                    请求示例：
+                    <pre>
+{
+    "om": "1", // 86  中国  852 香港 886 台湾
+	"currency_type" // 1  比特币  2  莱特币 3ETC 4 ETH 5 BCH 
+}  
+</pre>
+                    <pre>
+{
+    "country": "86", 
+    "code": 200,
+    "buy": [
+        {
+            "id": "4",  // 自增id
+            "leave_num": "50.00000000",    // 订单剩余量
+            "success_num": "50.00000000",  // 订单成交量
+            "price": "5000.0000",          // 订单单价  
+            "num": "100.00000000",         // 下单总数
+            "money": "500000.0000",        // 订单总价
+            "complete_rate": "95.0000%",   // 完成度
+            "completion": 50%		   // 订单成交百分比
+        }, 
+    ], 
+    "sell": [
+        {
+            "id": "2", 
+            "leave_num": "100.00000000", 
+            "success_num": "100.00000000", 
+            "price": "20.0000", 
+            "num": "200.00000000", 
+            "money": "2000.0000", 
+            "complete_rate": "95.0000%", 
+            "completion": 50%
+        }
+    ], 
+}
+</pre>
+                </div>
+                <div class="panel-footer">
+                    <p>补充:</p>
+                </div>
+            </div>
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <h4><a name="api5" id="api5">5、撤销订单</a></h4>
+                </div>
+                <div class="panel-body">
+                    <p>说明：撤销订单</p>
+
+                    <ul>
+                    </ul>
+                    <div class="row">
+                        <div class="col-md-9">接口负责人：李江</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-9">请求方式：POST/GET</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-9">接口地址：nat1.target.com/CtoCTransaction/revokeBigOrder</div>
+                    </div>
+                    请求示例：
+                    <pre>
+{
+	"orderNum" // 订单号
+}
+					</pre>
+                    成功：
+                    <pre>
+{
+"code":200,
+"msg":"撤销成功"
+}
+					</pre>
+                    失败返回：（未传订单号）
+                    <pre>
+{
+	"code": 403,
+	"msg": "参数错误"
+}
+</pre>
+                    撤销失败返回：
+                    <pre>
+{
+	"code": 401,
+	"msg": "撤销失败"
+}
+</pre>
+
+                </div>
+                <div class="panel-footer">
+                    <p>补充:</p>
+                </div>
+            </div>
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <h4><a name="api6" id="api6">6、获取买入订单信息</a></h4>
+                </div>
+                <div class="panel-body">
+                    <p>说明：xxxx</p>
+
+                    <ul>
+                    </ul>
+                    <div class="row">
+                        <div class="col-md-9">接口负责人：宋建强</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-9">请求方式：POST</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-9">接口地址：nat1.target.com/CtoCTransaction/getOrderInfoByIdApi</div>
+                    </div>
+                    请求示例：
+                    <div style="margin-bottom:15px"></div>
+                    <pre>
+请求参数 
+{    
+    "id"  :  100   // 订单id号    
+    "type":  1,    // 订单类型     1 买   2卖   
+    "om"   86    // 订单交易区   86大陆
+}
+
+</pre>
+                    <pre>
+{
+	"code": 200,        
+	"msg": "",
+	"data": {
+		"orederInfo": {
+			"id": "155",                    //订单id
+			"order_num": "",                //订单随机数
+			"currency_type": "1",           //币种id
+			"price": "11100.0000",          //价格
+			"uid": "185",                   //发布订单的用户
+			"om": "86",                     //交易区  香港 大陆 台湾
+			"username": "key123",           //卖家或者是买家用户名
+			"level": "0",                   //买家或者是卖家等级
+			"currency_name": "BTC",         //币种对应的缩写名称
+			"areaName": "中国大陆"            //交易区的名称
+			user_om: "+86"                  //用户手机号注册地区
+		},
+		"bankInfo": [{                      //bankInfo 数组对应用户银行卡信息
+			"user_bank_id": "186",        //用户绑定银行卡对应id
+			"bank_num": "***2222",        //银行卡id
+			"bank_address": "中国工商银行" //银行卡地址 
+		}],
+		"huilv": {
+			"86": "6.3280",    //美金兑人民币的汇率
+			"886": "29.997",   //美金对台币的汇率
+			"852": "7.8112"    //美金对港币的汇率
+		}
+	}
+}
+</pre>
+                    失败返回：（有多种情况）
+                    <pre>
+{
+	"code": 601,
+	"msg": "xxxx",
+	"data": []
+}
+</pre>
+                </div>
+                <div class="panel-footer">
+                    <p style="color:red">
+                    <pre>补充: 状态码code 只有200的时候为成功
+其他状态一律是失败  并且会返回对应的错误信息
+        </pre>
+                    </p>
+                </div>
+            </div>
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <h4><a name="api7" id="api7">7、点击确认买入</a></h4>
+                </div>
+                <div class="panel-body">
+                    <p style="color:red">说明：接口文档更新时间 2018年7月18日11:53:38</p>
+                    <p style="color:red">更新内容 接口地址   OrderBusiness/BuyingOrderApi </p>
+
+                    <ul>
+                    </ul>
+                    <div class="row">
+                        <div class="col-md-9">接口负责人：宋建强</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-9">请求方式：POST</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-9" style="color:red"> 接口地址：nat1.target.com/OrderBusiness/BuyingOrderApi</div>
+                    </div>
+                    请求示例：
+                    <div style="margin-bottom:15px"></div>
+                    <pre>
+请求参数 
+{    
+        "money":11100.00000000      //购买订单的金额
+	"num":1                     //购买订单的数量
+	"trade_pass":1234567        //交易密码
+	"user_bank_id":186          //选择的付款银行
+	"id":155                    //订单id
+	"type":1                    //2是卖出 1是买入
+	"currency_type":  1         //买入的币种类型id值      
+}
+
+</pre>
+                    <pre>
+{
+ code: 200,
+ msg: "买入成功",
+ data: {
+           order_id: "54"   //返回购买订单的主键id
+       }
+}
+</pre>
+                    失败返回：（有多种情况）
+                    <pre>
+{
+	"code": 601,
+	"msg": "xxxx",
+	"data": []
+}
+</pre>
+                </div>
+                <div class="panel-footer">
+                    <p style="color:red">
+                    <pre>补充: 状态码code 只有200的时候为成功
+其他状态一律是失败  并且会返回对应的错误信息
+        </pre>
+                    </p>
+                </div>
+            </div>
+			            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <h4><a name="api8" id="api8">8、挂单</a></h4>
+                </div>
+                <div class="panel-body">
+                    <p>说明：挂单</p>
+
+                    <ul>
+                    </ul>
+                    <div class="row">
+                        <div class="col-md-9">接口负责人：李润清</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-9">请求方式：POST/GET</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-9">接口地址：nat1.target.com/CtoCTransaction/subTrade</div>
+                    </div>
+                    请求示例：
+                    <pre>
+{
+	"type" // 1：买单 2：卖单
+	"currency_type" // 币种
+	"om" // 地区 1：中国大陆 2：中国香港 3：中国台湾
+	"price" // 价格
+	"num" // 数量
+	"tradepwd" // 交易密码
+}  
+					</pre>
+                    成功： 
+                    <pre>
+{
+"code":200,
+"msg":"成功"
+"data"{
+	"order_id":XXX // 订单id
+}
+}
+					</pre>
+                    失败返回：（未传type）
+                    <pre>
+{
+	"code": 201,
+	"msg": "请选择正确的交易方式"
+}
+</pre>
+                    失败返回：（未传currency_type）
+                    <pre>
+{
+	"code": 201,
+	"msg": "请选择交易区"
+}
+</pre>
+                    失败返回：（未传om）
+                    <pre>
+{
+	"code": 201,
+	"msg": "请选择交易区"
+}
+</pre>
+                    失败返回：（未传price）
+                    <pre>
+{
+	"code": 201,
+	"msg": "請輸入要賣出的單價"
+}
+</pre>
+                    失败返回：（未传num）
+                    <pre>
+{
+	"code": 201,
+	"msg": "請輸入要賣出的數量"
+}
+</pre>
+                    失败返回：（未传tradepwd）
+                    <pre>
+{
+	"code": 201,
+	"msg": "資金密碼不能為空"
+}
+</pre>
+
+                </div>
+                <div class="panel-footer">
+                    <p>补充:</p>
+                </div>
+            </div>
+			
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="../bt/dist/js/jquery.min.1.11.3.js"></script>
+<script src="../bt/dist/js/bootstrap.min.js"></script>
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="../bt/assets/js/ie10-viewport-bug-workaround.js"></script>
+<script src="../bt/dist/js/yangshi.js"></script>
+</body>
+</html>

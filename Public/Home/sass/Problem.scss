@@ -1,0 +1,454 @@
+@charset "utf-8";
+@import "Platpurple";
+
+/*问题反馈页面*/
+
+#feedback_form {
+    padding-left: 25px;
+}
+
+.feedback_title {
+    font-family: PingFangSC-Regular;
+    color: $panel-title-font;
+    font-size: 13px;
+    line-height: 38px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.feedback_title>label {
+    font-family: PingFangSC-Regular;
+    font-size: 13px;
+    color: $font-color;
+    letter-spacing: 0;
+}
+
+.feedback_title>label:nth-child(2) {
+    margin-right: 65px;
+}
+
+.feedback_title_two {
+    font-family: PingFangSC-Regular;
+    color: $panel-title-font;
+    font-size: 13px;
+    line-height: 158px;
+    font-weight: 600;
+}
+
+.feedback_control {
+    margin-bottom: 35px;
+    margin-left: 30px;
+    margin-top: 14px;
+}
+
+.feedback_wrap {
+    margin-right: 25px;
+}
+
+.feedback_stars {
+    margin-left: 3px;
+    color: #ff4566;
+}
+
+.feedback_content {
+    width: 90%;
+    height: 145px;
+    resize: none;
+    outline: none;
+    border-color: #3C6BF0;
+    background: $feedback_content_bg;
+}
+
+.feedback_upload {
+    margin-top: 40px;
+    margin-bottom: 0;
+}
+
+.feedback_title_list {
+    font-family: PingFangSC-Regular;
+    font-size: 16px;
+    color: $font-hover;
+    letter-spacing: 0;
+    text-decoration: underline;
+}
+
+.feedback_Inquiries .bank_city:after,
+.feedback_Inquiries.bank_city:after {
+    border-radius: 0;
+    width: 5px;
+}
+
+.feedback_resolved_p {
+    font-size: 13px;
+    letter-spacing: 0;
+    color: $dropdown-color;
+}
+
+.feedback_resolved_p:nth-child(1) {
+    margin-bottom: 8px;
+}
+
+.feedback_resolved_p>span {
+    margin-right: 55px;
+}
+
+// 待删除 --s
+.Inquiries_p {
+    padding-top: 12px;
+    margin-bottom: 0;
+}
+
+// 待删除 --e
+.feedback_resolved_span {
+    width: 65px;
+    font-size: 13px;
+    color: $font-hover;
+    letter-spacing: 0;
+}
+
+.feedback_tips,
+.feedback_tips>span {
+    font-size: 12px;
+}
+
+.feedback_tips .font-Arial {
+    font-family: Arial;
+}
+
+.col-lg-12.List_problems {
+    margin-bottom: 60px;
+    word-break: break-word;
+}
+
+.feedback_Inquiries {
+    width: 83%;
+}
+
+.Inquiries_text>button {
+    width: 85%;
+    margin-top: 12px;
+    color: #FFF;
+}
+
+.problem-wrap {
+    min-height: 500px;
+}
+
+.problem-wrap .resolved_img>p,
+.problem-wrap .Unsolved_img>p {
+    margin-top: 50px;
+}
+
+.Unsolved_img,
+.resolved_img {
+    width: 182px;
+    height: 268px;
+    position: absolute;
+    top: -20%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto auto;
+}
+
+.showbink_select span.filter-option,
+.showbink_select p.dropdown-toggle {
+    display: block;
+    font-weight: 600;
+    font-family: "PingFangSC-Regular";
+    font-size: 13px;
+    color: $dropdown-color;
+    cursor: pointer;
+}
+
+.showbink_select p.dropdown-toggle span {
+    display: inline-block;
+    width: 90%;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.showbink_select p.dropdown-toggle i {
+    font-weight: 600
+}
+
+.Question_content {
+    width: 100%;
+    margin-top: 2.5%;
+}
+
+.Question_content li span {
+    padding: 10px;
+    text-align: center;
+    color: $dropdown-color;
+    font-size: 13px;
+    display: block;
+}
+
+.Customer_progress {
+    font-family: PingFangSC-Regular;
+    margin-right: 7%;
+    font-size: 13px;
+    color: $Customer_progress;
+}
+
+.Customer_progress span {
+    color: $font-hover;
+}
+
+.Customer_progress:nth-child(1)>span {
+    color: $font-hover;
+}
+
+.Customer_service {
+    width: 83%;
+    padding-right: 20px;
+}
+
+.Customer_service p:last-child {
+    margin-bottom: 0!important;
+}
+
+.Customer_service.bank_city:after {
+    right: 0;
+    left: auto;
+    border-radius: 0;
+    width: 5px;
+}
+
+.Customer_service_portrait {
+    width: 7%;
+}
+
+.Customer_service_data {
+    color: $placeholder;
+    font-size: 12px;
+}
+
+.Customer_service_Reply {
+    margin-bottom: 70px;
+}
+
+.Inquiries_a {
+    cursor: pointer;
+}
+
+.issues_back {
+    background: $feedback_url no-repeat 0 3px;
+    padding-left: 15px;
+    text-decoration: none;
+}
+
+.issues_back span {
+    display: inline-block;
+    margin-left: 7px;
+    text-decoration: underline;
+    color: $font-hover;
+}
+
+.issues_back:hover {
+    text-decoration: none;
+    color: $Customer_progress;
+}
+
+.issues_back:hover span {
+    text-decoration: underline;
+}
+
+//追问留言
+.leave_messages {
+    margin: auto;
+    padding: 40px 0;
+    line-height: 15px;
+    font-size: 13px;
+}
+
+.leave_text {
+    color: $font-hover;
+    cursor: pointer;
+}
+
+.leave_messages p:nth-child(2) {
+    color: #adadc0;
+}
+
+.Questioning_wrap {
+    padding: 4% 0;
+}
+
+.Questioning_after:after {
+    content: '';
+    position: absolute;
+    left: 25px;
+    top: 0px;
+    width: 100%;
+    height: 2px;
+    opacity: 1;
+    background: -webkit-linear-gradient(left, rgba(72, 135, 239, 0.7), rgba(72, 135, 239, 0));
+    background: -o-linear-gradient(left, rgba(72, 135, 239, 0.7), rgba(72, 135, 239, 0));
+    background: -moz-linear-gradient(left, rgba(72, 135, 239, 0.7), rgba(72, 135, 239, 0));
+    background: -ms-linear-gradient(left, rgba(72, 135, 239, 0.7), rgba(72, 135, 239, 0));
+}
+
+.image_mess {
+    padding-top: 5px;
+}
+
+p+.image_mess {
+    padding-top: 15px;
+}
+
+.image_mess a {
+    color: $font-hover;
+}
+
+.image_mess a:hover {
+    text-decoration: none;
+}
+
+.problem_progress {
+    position: relative;
+    font-family: PingFangSC-Medium;
+    color: $problem_problem_progress;
+}
+
+.pro_pro_after::after {
+    content: '';
+    position: absolute;
+    left: -12px;
+    top: 4px;
+    width: 9px;
+    height: 9px;
+    background: #ff3b53;
+    border-radius: 50%;
+}
+
+@media screen and (max-width: 1470px) {
+    .Customer_service_portrait {
+        width: 11%;
+    }
+}
+
+
+/*1280px分辨率*/
+
+@media screen and (max-width: 1280px) {
+    .Customer_service_portrait {
+        width: 17%;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    //问题反馈
+    .feedback_title_two {
+        line-height: 58px;
+        padding-top: 8px;
+    }
+    // 问题反馈
+    .provided_data {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 1048px) {
+    .feedback_title_list {
+        font-size: 12px;
+    }
+    //问题反馈
+    .feedback_upload {
+        margin-top: 48px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .provided_data {
+        width: 90%;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    #feedback_form .fileinput .form-control {
+        width: 68%;
+    }
+}
+
+// media 特定 641px--767px
+@media screen and (min-width: 641px) and (max-width:767px) {
+    #feedback_form .fileinput .form-control {
+        width: 68%;
+    }
+}
+
+@media screen and (min-width: 476px) and (max-width: 640px) {
+    #feedback_form .fileinput .form-control {
+        width: 57%;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .Customer_service_portrait {
+        margin-bottom: 20px;
+        width: auto;
+    }
+    //问题反馈
+    .question_title .feedback_title_list {
+        white-space: nowrap;
+    }
+    .feedback_upload {
+        margin-top: 50px;
+    }
+    .feedback_Inquiries {
+        width: 100%;
+    }
+    .col-lg-12.List_problems {
+        margin-left: 10px !important;
+        margin-bottom: 40px;
+    }
+    .Customer_progress {
+        word-wrap: break-word;
+        word-break: normal;
+    }
+    .Customer_progress:nth-child(1)>span {
+        white-space: nowrap;
+    }
+    .Customer_service_portrait p {
+        display: inline-block;
+    }
+    .Customer_service_Reply .pull-right.Customer_service_portrait p {
+        float: left;
+        line-height: 28px;
+        margin-right: 7px;
+    }
+    .Customer_service {
+        width: 100%;
+    }
+    .Customer_service_portrait>.Customer_service_data {
+        display: none;
+    }
+    .Unsolved_img,
+    .resolved_img {
+        top: -17%;
+    }
+}
+
+@media screen and (max-width: 475px) {
+    #feedback_form .fileinput .form-control {
+        width: 30%;
+    }
+}
+
+@media screen and (max-width: 414px) {
+    .feedback_title_two {
+        line-height: 30px;
+    }
+    //问题反馈
+    #feedback_form {
+        padding-left: 15px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .question_title .feedback_title_list {
+        width: 110px;
+    }
+}

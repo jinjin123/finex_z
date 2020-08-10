@@ -1,0 +1,75 @@
+.introjs-tooltip {
+  background-color: rgba(66, 66, 66, 0.95);
+  color: #fff;
+}
+
+.introjs-button,
+.introjs-button:hover, .introjs-button:focus, .introjs-button:active,
+.introjs-disabled, .introjs-disabled:focus, .introjs-disabled:hover {
+  outline: none;
+  background-image: none;
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid transparent;
+  border-radius: 50px;
+  box-shadow: none;
+  border-shadow: none;
+  text-shadow: none;
+}
+
+.introjs-button:hover, .introjs-button:focus, .introjs-button:active {
+  border: 1px solid #fff
+}
+.introjs-disabled, .introjs-disabled:focus, .introjs-disabled:hover {
+  color: #ccc;
+  border: 1px solid transparent;
+}
+
+.introjs-arrow {
+  border: 10px solid #fff;
+}
+.introjs-arrow.top, .introjs-arrow.top-middle, .introjs-arrow.top-right {
+  border-color: transparent transparent rgba(66, 66, 66, 0.5);
+  top: -20px;
+  left: 20px;
+}
+.introjs-arrow.bottom, .introjs-arrow.bottom-middle, .introjs-arrow.bottom-right {
+  border-color: rgba(66, 66, 66, 0.5) transparent transparent;
+  bottom: -20px;
+  left: 20px;
+}
+.introjs-arrow.left, .introjs-arrow.right {
+    top: 20px;
+}
+.introjs-arrow.left-bottom, .introjs-arrow.right-bottom {
+    bottom: 20px;
+}
+
+.introjs-arrow.left, .introjs-arrow.left-bottom {
+  left: -20px;
+}
+.introjs-arrow.right, .introjs-arrow.right-bottom {
+  right: -20px;
+  border-color: transparent transparent transparent rgba(66, 66, 66, 0.5);
+}
+.introjs-arrow.left{
+  border-color: transparent rgb(255, 255, 255) transparent transparent;
+}
+.introjs-arrow.right{
+  border-color: transparent transparent transparent rgb(255, 255, 255);
+}
+.introjs-arrow.top{
+  border-color: transparent transparent  rgb(255, 255, 255) transparent;
+}
+.introjs-arrow.bottom{
+  border-color:  rgb(255, 255, 255) transparent transparent transparent;
+}
+.introjs-helperNumberLayer{
+  background:#3AF9B0;
+  background:-webkit-linear-gradient(top,#3AF9B0 0,#1BCFF2 100%);
+  background:-webkit-gradient(linear,left top,left bottom,color-stop(0%,#3AF9B0),color-stop(100%,#1BCFF2));
+  background:-moz-linear-gradient(top,#3AF9B0 0,#1BCFF2 100%);background:-ms-linear-gradient(top,#3AF9B0 0,#1BCFF2 100%);
+  background:-o-linear-gradient(top,#3AF9B0 0,#1BCFF2 100%);background: linear-gradient(to bottom,#3AF9B0 0,#1BCFF2 100%);
+  filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr='#3AF9B0', endColorstr='#1BCFF2', GradientType=0)";
+  filter:"progid:DXImageTransform.Microsoft.Shadow(direction=135, strength=2, color=ff0000)";
+}

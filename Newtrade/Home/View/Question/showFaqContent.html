@@ -1,0 +1,108 @@
+<include file="Public:Faqheader" />
+<!-- 背景图 -->
+<div class='public_font_Himg'></div>
+<!-- 问答板块 start -->
+<div class="FAQALL">
+	<div class="container">
+		<div class=" headtitle col-lg-12 col-md-12 col-xs-12">
+			<svg class="icon register-icon" aria-hidden="true"><use xlink:href="#icon-icon_faq"></use></svg>
+			<h1 class="title">{$Think.lang._CJWT_}</h1>
+		</div>
+	</div>
+	<div class="faq-list">
+		<div class="container ">
+			<div class="row">
+				<div class="faq_con col-lg-12 ">
+					<div class="nav_title">
+						<a href="{:U('Question/index')}">FAQ</a> <i>></i>
+						<a href="{:U('Question/getFaqWholeTitle',array('id'=>$id))}">{$p_title}</a>
+					</div>
+
+					<div class="section">
+						<h4 class="sub-title">{$list['title']}</h4>
+
+					</div>
+					<div class="clearfix"></div>
+					<p class="date">{$Think.lang._FBRQ_}:{$list['data']['add_time']|date='Y-m-d H:i:s',###}</p>
+					<div class="content">
+						<p>{$list.data.title_content|formathtml=###}</p>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+				<div class="bot">
+
+
+					<div class="col-lg-6 col-md-6 col-sm-6 recent text-left pull-left">
+						<!--最近查看文章-->
+						<h4>{$Think.lang._ZJCKDWD_}</h4>
+						<ul class="recent-list">
+						</ul>
+					</div>
+					<div class="col-lg-6 col-md-6 col-sm-6 recent text-left float_right">
+						<!--相关文章-->
+						<h4>{$Think.lang._XGWZ_}</h4>
+						<ul class="recent-list">
+							<volist name="list_title" id="vo">
+								<li>
+									<a class="newsPage" href="{:U('Question/showFaqContent',array('id'=>$vo['id']))}" newsID="{$vo['id']}">{$vo['title']}</a>
+								</li>
+							</volist>
+						</ul>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+
+
+</div>
+
+<!-- 问答板块 end -->
+
+<!-- 返回头部 -->
+<div class="backTop" id="backtop"></div>
+
+<include file="Public:footer1" />
+<script src="__HOME_JS__/front/front.js"></script>
+<!-- FAQ函数js -->
+<script src="__HOME_JS__/Question/question.js"></script>
+<script>
+	$(document).ready(function() {
+		//	localStorage.clear();
+		getStorage()
+	});
+
+	function getStorage() {
+		var newshtml = "";
+
+		if(localStorage.newsArr == null) {
+			return false;
+		} else {
+			var viewNews = JSON.parse(localStorage.newsArr);
+			$.ajax({
+				url: '/Question/getContentByIds',
+				data: {
+					'ids': viewNews
+				},
+				jsonType: 'json',
+				type: 'post',
+				success: function(res) {
+					console.log(res);
+					$.each(res,function(i,val){
+						if(res[i]){
+							newshtml += '<li>';
+							newshtml += "<a href='/Question/showFaqContent/id/" + res[i]['id'] + ".html' " +
+								" onclick='getLocalStorage(this)' class='newsPage' newsID='" + res[i]['id'] + "' >" + res[i]['title'] + "</a>"
+							newshtml += '</li>';
+						}
+					});
+					$(".recent-list:first").html(newshtml);
+				}
+			})
+		}
+	}
+</script>
+</script>

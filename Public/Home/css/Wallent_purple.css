@@ -1,0 +1,105 @@
+@charset "UTF-8";
+/*币币交易*/
+/* c2c交易 */
+/*问题反馈*/
+/*护照有效时间实名*/
+.coin_money_address .two-content .input-group {
+  width: 100%;
+  margin-bottom: 1rem; }
+
+.coin_money_address .two-content {
+  margin: 1rem 0; }
+
+.coin_money_address .two-content .address-group {
+  padding-left: 20px; }
+
+.coin_money_address .input-group-btn {
+  width: 11%; }
+
+.coin_money_address .two-content .input-group-btn2 {
+  padding: 25px 0 25px 3rem; }
+
+.coin_money_address .two-content .input-group input.wallen-tibi {
+  width: 65%; }
+
+.bch_left {
+  font-size: 15px;
+  font-weight: bold;
+  font-family: Avenir-Heavy;
+  color: #002257;
+  padding-left: 25px;
+  line-height: 30px;
+  text-align: left;
+  position: relative; }
+
+.bch_left svg {
+  font-size: 15px;
+  color: #3c6bf0;
+  margin-left: 5px; }
+
+@media screen and (max-width: 768px) {
+  .coin_money_address .two-content .input-group input.wallen-tibi {
+    width: 65%; } }
+@media screen and (max-width: 768px) {
+  .coin_money_address .two-content .address-group,
+  .coin_money_address .bch_left {
+    padding-left: 0;
+    padding-right: 0; }
+
+  .coin_money_address .bch_left {
+    font-size: 14px;
+    line-height: 36px; }
+
+  .coin_money_address .two-content {
+    padding-left: 32px; }
+
+  .coin_money_address .two-content .address-group {
+    width: 70%;
+    padding-left: 5px; }
+
+  .coin_money_address .two-content .input-group {
+    width: 100%;
+    display: block; }
+
+  .coin_money_address .two-content .input-group input.wallen-tibi {
+    width: 60%;
+    max-width: 220px !important; }
+
+  .coin_money_address .two-content .input-group-btn2 {
+    padding-left: 0;
+    padding-bottom: 0; }
+
+  .coin_money_address > .input-group > input {
+    width: 56%; }
+
+  #EOS-address .two-content .input-group input.wallen-tibi {
+    min-width: unset; } }
+@media screen and (max-width: 640px) {
+  .coin_money_address > .input-group > input {
+    width: 70%; }
+
+  .coin_money_address .two-content .address-group {
+    width: 100%; }
+
+  .form-control.text-center.CoinNoConfirm.disUrl.wallen-tibi {
+    max-width: unset; }
+
+  .coin_money_address .two-content .input-group input.wallen-tibi {
+    width: unset; }
+
+  #EOS-address .two-content .input-group input.wallen-tibi {
+    width: 55%; }
+
+  #EOS-address .two-content .input-group:first-of-type input {
+    width: 50%; }
+
+  .en .form-control.text-center.CoinNoConfirm.NoUrl.wallen-tibi {
+    max-width: 275px; } }
+@media screen and (max-width: 414px) {
+  .coin_money_address .two-content {
+    padding-left: 5px; } }
+@media screen and (max-width: 375px) {
+  .coin_money_address .two-content .input-group input.wallen-tibi {
+    max-width: 150px !important; } }
+
+/*# sourceMappingURL=Wallent_purple.css.map */

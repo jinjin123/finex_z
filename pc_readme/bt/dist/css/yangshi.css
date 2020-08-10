@@ -1,0 +1,18 @@
+.wraper{
+    width:960px;
+    margin:0 auto
+}
+.top_arrow {
+    border: 0 none;
+    bottom: 150px;
+    cursor: pointer;
+    display: none;
+    height: auto;
+    margin: 0;
+    opacity: 0.5;
+    padding: 0;
+    position: fixed;
+    right: 40px;
+    width: 35px;
+    z-index: 2147483647;
+}

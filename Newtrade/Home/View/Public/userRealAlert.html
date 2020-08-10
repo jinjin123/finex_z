@@ -1,0 +1,80 @@
+<!-- 实名认证信息notify -->
+	<!-- 9 ：未进行实名认证 1：实名认证通过 -1：实名认证失败-->
+	<if condition="$tips neq 2">
+	<switch name="yy_realStatus">
+		<case value="9">
+			<div class="alert alert-warning border-warning has-icon alert-dismissible fade in NameAlert">
+				<div class="alert-icon" style="background: none;padding-right: 5px;">
+					<!--<svg class="icon icon_norepeat " aria-hidden="true">
+						<use xlink:href="#icon-gth"></use>
+					</svg>-->
+					<i class="iconfont icon-ic_warn1 Name_status2"></i>
+				</div>
+				<div class="alert-body">
+					<button type="button" class="close" data-dismiss="alert">
+						<span  class="cliNone">&times;</span>
+					</button> {$Think.lang._ZYZWTGSMQBNJXJYQJX_}
+					<a href="{:U('PersonalCenter/index')}">{$Think.lang._SMRZ_}</a>{$Think.lang._PUNCTUATION_}
+				</div>
+			</div>
+		</case>
+
+		<case value="1">
+			<div class="alert alert-warning border-warning has-icon alert-dismissible fade in NameAlert">
+				<!--<div class="alert-icon" style="background: none;">-->
+					<!--<svg class="icon icon_norepeat" aria-hidden="true"><use xlink:href="#icon-ic_warn1"></use></svg>-->
+				<!--</div>-->
+				<div class="alert-body">
+					<button type="button" class="close" data-dismiss="alert" >
+						<span  class="cliNone" >&times;</span>
+					</button> {$Think.lang._NDSMRZYTGHYJR_}{$Think.lang._PUNCTUATION_}
+				</div>
+			</div>
+		</case>
+		<case value="-1">
+			<div class="alert alert-warning border-warning has-icon alert-dismissible fade in NameAlert">
+				<div class="alert-icon" style="background: none;">
+					<svg class="icon icon_norepeat" aria-hidden="true" style="color: #FF5A5A;margin-top: 2px"><use xlink:href="#icon-ic_warn1"></use></svg>
+				</div>
+				<div class="alert-body">
+					<button type="button" class="close" data-dismiss="alert">
+						<span  class="cliNone" >&times;</span>
+					</button> {$Think.lang._BQNDSMRZWTGYY_}({$userReal.system_reply|formatUserRealReply=###})，{$Think.lang._QJX_}
+					<a href="{:U('PersonalCenter/index')}">{$Think.lang._SMRZ_}</a>{$Think.lang._PUNCTUATION_}
+				</div>
+			</div>
+		</case>
+		<default />
+	</switch>
+	</if>
+	<switch name="yy_realStatus">
+	<case value="8">
+			<div class="alert alert-warning border-warning has-icon alert-dismissible fade in NameAlert">
+				<div class="alert-icon" style="background: none;padding-right: 5px;">
+					<i class="iconfont icon-ic_warn1 Name_status2"></i>
+				</div>
+				<div class="alert-body">
+					<button type="button" class="close" data-dismiss="alert">
+						<span  class="cliNone">&times;</span>
+					</button> {$Think.lang.__FZJJGQ__}
+					<a href="{:U('PersonalCenter/index')}">{$Think.lang._SMRZ_}</a>{$Think.lang._PUNCTUATION_}
+				</div>
+			</div>
+		</case>
+
+		<case value="7">
+			<div class="alert alert-warning border-warning has-icon alert-dismissible fade in NameAlert">
+				<div class="alert-icon" style="background: none;padding-right: 5px;">
+					<i class="iconfont icon-ic_warn1 Name_status2"></i>
+				</div>
+				<div class="alert-body">
+					<button type="button" class="close" data-dismiss="alert">
+						<span  class="cliNone">&times;</span>
+					</button> {$Think.lang.__FZYJGQ__}
+					<a href="{:U('PersonalCenter/index')}">{$Think.lang._SMRZ_}</a>{$Think.lang._PUNCTUATION_}
+				</div>
+			</div>
+		</case>
+	<default />
+	</switch>
+<!-- /.alert -->

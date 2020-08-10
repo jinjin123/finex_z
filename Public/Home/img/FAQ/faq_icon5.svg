@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="26px" height="26px" viewBox="0 0 26 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.1 (67048) - http://www.bohemiancoding.com/sketch -->
+    <title>faq_icon5</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="112.765962%" y1="109.414964%" x2="5.30583658%" y2="26.5245521%" id="linearGradient-1">
+            <stop stop-color="#509AEF" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#3C6AF0" stop-opacity="0.8" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="100%" y1="0%" x2="0%" y2="100%" id="linearGradient-2">
+            <stop stop-color="#509AEF" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#3C6AF0" stop-opacity="0.6" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="100%" y1="0%" x2="26.20438%" y2="77.2968434%" id="linearGradient-3">
+            <stop stop-color="#4277F3" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#4277F3" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="FAQ" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="B.0.FAQ主页-新" transform="translate(-740.000000, -834.000000)" fill-rule="nonzero">
+            <g id="安全问题-copy" transform="translate(710.000000, 813.000000)">
+                <g id="登錄问题" transform="translate(30.000000, 20.000000)">
+                    <g id="faq_icon5" transform="translate(0.000000, 1.000000)">
+                        <path d="M13,26 C20.1797017,26 26,20.1797017 26,13 C26,5.82029825 20.1797017,1.0658141e-14 13,1.0658141e-14 C13,5.04405801 13,20.7744877 13,26 Z" id="椭圆形" fill="url(#linearGradient-1)"></path>
+                        <rect id="矩形" fill="url(#linearGradient-2)" x="0" y="13" width="13" height="13"></rect>
+                        <circle id="椭圆形" fill="url(#linearGradient-3)" cx="6.5" cy="6.5" r="6.5"></circle>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

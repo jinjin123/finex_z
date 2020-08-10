@@ -1,0 +1,301 @@
+<include file="Public:header1" />
+<!-- my css -->
+<link rel="stylesheet" href="__HOME_CSS__/front/register.css">
+<!-- ============== input style ============== -->
+<link href="__HOME_PLUG__/icheck/css/skins/all.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="__HOME_CSS__/front/input-strength.css">
+
+<!-- 临时关闭注册css -->
+<style>
+    /*.register-wrap{*/
+    /*background: url("../../../../Public/Home/img/front/not_open.png") no-repeat right bottom #ffffff;*/
+    /*background-size: contain;*/
+    /*}*/
+    /*.register-warp-right{*/
+    /*text-align: center;*/
+    /*}*/
+    /*.not_open{*/
+    /*margin-top: 40%;*/
+    /*}*/
+    /*.not_open h2{*/
+    /*color: #3C6BF0;*/
+    /*font-size: 24px;*/
+    /*font-family: "Avenir";*/
+    /*font-weight: bold;*/
+    /*padding-bottom: 10%;*/
+    /*}*/
+    /*.not_open h1{*/
+    /*color: #0F1E40;*/
+    /*font-size: 25px;*/
+    /*padding-bottom: 35%;*/
+    /*}*/
+    /*#register .not_open a{*/
+    /*color: #3C6BF0;*/
+    /*text-decoration: underline;*/
+    /*font-size: 16px;*/
+    /*}*/
+    /*#register .not_open a:hover{*/
+    /*text-decoration: underline !important;*/
+    /*}*/
+    /*@media screen and (max-width:640px) {*/
+    /*.register-wrap{*/
+    /*background-size: 95%;*/
+    /*}*/
+    /*.not_open{*/
+    /*margin-top: 30%;*/
+    /*}*/
+    /*.not_open h1{*/
+    /*font-size: 18px;*/
+    /*line-height: 2.5rem;*/
+    /*padding-left: 20px;*/
+    /*padding-bottom: 30%;*/
+    /*!*padding-right: 10%;*!*/
+    /*}*/
+    /*.register-warp-right{*/
+    /*padding-right: 20px;*/
+    /*}*/
+    /*}*/
+</style>
+
+<div id='register' class="registerFlex">
+    <div class='container registerCon'>
+        <div class="row">
+            <div class="well col-sm-6 col-lg-12">
+                <div class="register-wrap clearfix">
+                    <div class="row" style='margin:0'>
+                        <div class='register-warp-left col-lg-6 col-md-12 col-sm-12 col-xs-12'>
+                            <div class='register-left-title'>
+                                <!-- 动画 -->
+                                <div class="Login_animationBody"></div>
+                                <!-- logo -->
+                                <p class='register-lt-top-logo'><img src='__HOME_IMG__/register-logo.svg' /> </p>
+                                <!-- 三角形 -->
+                                <div class='register-Triangle'></div>
+                            </div>
+                        </div>
+                        <div class='register-warp-right registration_form_div pull-right col-lg-6 col-md-12 col-sm-12  col-xs-12' id='register_form1'>
+                            <!--<div class="not_open">-->
+                            <!--<h2>COMING SOON</h2>-->
+                            <!--<h1>{$Think.lang._ZCGNZWKF_}</h1>-->
+                            <!--<a href="{:U('Login/showLogin')}">{$Think.lang._YYZH_}</a>-->
+                            <!--</div>-->
+                            <form id="registration_form1" name="registration_form" action="index.html">
+                                <!--您的用户名错误-->
+                                <div class="warmingBox">
+                                    <div class="warming" style="display: none;">
+                                        <span class="registerTips"></span>
+                                    </div>
+                                </div>
+                                <br/>
+                                <div class="reg-error error"></div>
+                                <!--上边-->
+                                <div class="register-right col-md-12 col-sm-12">
+                                    <!-- 用户名 -->
+                                    <div class="mar5">
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-md-12 col-sm-12 col-xs-12 nopad">
+                                                    <img src="__HOME_IMG__/front/su_icon_account.svg" class="register-icon" alt="">
+                                                    <input type="text" id="username" name="username" class="form-control" placeholder="{$Think.lang._YHM_}" maxlength="18" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="clear"></div>
+                                    <!-- 手机号码 -->
+                                    <div class="mar5">
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-md-12 col-sm-12 col-xs-12 nopad">
+                                                    <img src="__HOME_IMG__/front/su_icon_tel.svg" class="register-icon register_phone_icon" alt="" style='top: 5px;'>
+                                                    <input type="hidden" name="telCode" value="" class="telCode" />
+                                                    <input id="mobile-number" class="form-control" type="tel" placeholder="{$Think.lang._mobile_}" maxlength="11" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- 手机验证码 -->
+                                    <div class="mar5">
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-md-12 col-sm-12 col-xs-12 nopad">
+                                                    <img src="__HOME_IMG__/front/su_icon_msg.svg" class="register-icon" alt="">
+                                                    <input class="form-control" id="phoneCode" type="text" name="phoneCode" placeholder="{$Think.lang._SJYZM_}" maxlength="6" />
+                                                    <button class='send-but register-phone ' id="sendPhoneCode" type="button">{$Think.lang._HUOQU_}</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- 密码 -->
+                                    <div class="mar5">
+                                        <div class="form-group form-group-strength">
+                                            <div class="row">
+                                                <div class="col-md-12 col-sm-12 col-xs-12 nopad">
+                                                    <img src="__HOME_IMG__/front/su_icon_pw.svg" class="register-icon" alt="">
+                                                    <input type="password" gid="password_group" autocomplete="off" id="password" maxlength="18" name="password" class="form-control" placeholder="{$Think.lang._MIMA_}" value="" data-strength="focusout" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- 确认密码 -->
+                                    <div class="mar5">
+                                        <div class="form-group form-group-strength">
+                                            <div class="row">
+                                                <div class="col-md-12 col-sm-12 col-xs-12 nopad">
+                                                    <img src="__HOME_IMG__/front/su_icon_pw.svg" class="register-icon" alt="">
+                                                    <input type="password" gid="password_group" autocomplete="off" id="pass_confirm" name="pass_confirm" class="form-control" placeholder="{$Think.lang._QRMM_}" value="" maxlength="18" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="clear"></div>
+
+                                    <!-- 图形验证码 -->
+                                    <div class="mar5">
+                                        <div class="form-group form-group-strength verCode">
+                                            <div class='row'>
+                                                <div class="col-md-12 col-sm-12 col-xs-12 nopad">
+                                                    <img src="__HOME_IMG__/front/su_icon_ver.svg" class="register-icon" alt="">
+                                                    <input class="form-control" id="vercode" type="text" name="VerCode" placeholder="{$Think.lang._TXTXYZM_}" maxlength="4" />
+                                                    <span class='vercodeImg register-graphic'><img src="{:U('CheckVerify/getVerify')}" id="verifyImg" class="col6_2" /></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="clearfix"></div>
+                                <!--下边-->
+                                <div class="register-left col-md-12 col-sm-12">
+                                    <!--查看不支持国家-->
+                                    <div class="checkbox service-terms">
+                                        <label>
+                                            <input type="checkbox" class="icheck-minimal-grey" value="1" id="terms1" name="terms1"><!--复选框-->
+                                            <span class="checkService" id="checkService">{$Think.lang._DJCKWMBZCDGJ_}</span>
+                                        </label>
+                                    </div>
+                                    <!--服务条款-->
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" class="icheck-minimal-grey" value="2" id="terms2" name="terms1">
+                                            <span>{$Think.lang._YYDBTY_}</span>
+                                            <!--复选框-->
+                                        </label>
+                                        <p>
+                                            <a href="{:U('Index/policy')}" target="_blank">{$Think.lang._FWTK_}</a>
+                                            <a href="{:U('Index/terms-of-service')}" target="_blank">{$Think.lang._MZSM_} </a>
+                                            <a href="{:U('Index/privacy')}" target="_blank">{$Think.lang._YSBH_}</a>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                                <!-- 提交 -->
+                                <div class="reg_foot">
+                                    <div class="mar5 text-center">
+                                        <div class="form-group">
+                                            <button name="register" type="button" id="regBtn" class="btn btn-primary smfullBtn">{$Think.lang._ZHUCE_}</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clear"></div>
+                            </form>
+                            <div class='register-Success'>
+                                <div class='register-Success-top'>
+                                    <h3 class='register-Success-top-title'>{$Think.lang._ZCCG_}</h3>
+                                </div>
+                                <div class='register-Success-middle'>
+                                    <p class='register-Success-middle-con'>{$Think.lang._ZCCGHYNJR_}BTCS.</p>
+                                    <p class='register-Success-middle-con'>{$Think.lang._QXZDTAPPBDZH_} {$Think.lang._XQQDJCKJC_}</p>
+                                </div>
+                                <div class='register-Success-bottom'>
+                                    <a href="{:U('DownloadApp/index')}">{$Think.lang._JRXZYM_}</a>
+                                    <a href="{:U('Course/index')}">{$Think.lang._LJXQ_}</a>
+                                </div>
+                            </div>
+                            <div class='register-Support'>
+                                <h3 class="register-Support-title">{$Think.lang._BZCGJLB_}</h3>
+                                <ul class='register-Support-content'>
+                                    <li>{$Think.lang._YILANG_}</li>
+                                    <li>{$Think.lang._CX_}</li>
+                                    <li>{$Think.lang._SLY_}</li>
+                                    <li>{$Think.lang._SD_}</li>
+                                    <li>{$Think.lang._MJLG_}</li>
+                                    <li>{$Think.lang._BLWY_}</li>
+                                    <li>{$Think.lang._EGDE_}</li>
+                                    <li>{$Think.lang._JEJSST_}</li>
+                                    <li>{$Think.lang._USA_}</li>
+                                    <li>{$Think.lang._BDLGZZB_}</li>
+                                    <li>{$Think.lang._MSSMY_}</li>
+                                    <li>{$Think.lang._GD_}</li>
+                                    <li>{$Think.lang._BMLYNQDB_}</li>
+                                    <li>{$Think.lang._MSWEJQD_}</li>
+                                    <li>{$Think.lang._SKLYD_}</li>
+                                    <li>{$Think.lang._SYHD_}</li>
+                                    <li>{$Think.lang._STMSD_}</li>
+                                    <li>{$Think.lang._Japan_}</li>
+                                    <li>{$Think.lang._Cuba_}</li>
+                                </ul>
+                                <p class='register-Support-prev' id='backbut'><img src="__HOME_IMG__/register-prev.svg" width="15" style="vertical-align: middle;" /><span class='' style="font-size: 14px;">{$Think.lang._CSFH_}</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--注册成功后的弹窗 结束end-->
+
+<include file="Public:footer1" />
+<!-- icheck -->
+<script src="__HOME_PLUG__/icheck/js/icheck.min.js"></script>
+<script type="text/javascript">
+    var registerUrl = "{:U('register/subRegister')}";
+    var verifyUrl = "{:U('CheckVerify/getVerify')}";
+    var sendPhoneCodeUrl = "{:U('register/sendPhoneCode')}";
+    var checkRegisterParamUrl = "{:U('register/checkRegisterParam')}";
+    var pwdTips2 = "{$Think.lang._QRDLMMBNK_}";
+    var pwdTips3 = "{$Think.lang._QRDLYDLMMBYZ_}";
+    var phoneCodeTips = "{$Think.lang._SJYZMBNWK_}";
+    var vercodeTips = "{$Think.lang._TPYZMBNWK_}";
+    var checkBoxTips = '{$Think.lang._QQRYDBQRTK_}';
+    var strengthTitle1 = "{$Think.lang._NDMMBXBH_}";
+    var strengthTips1 = "{$Think.lang._ZSLW_}";
+    var strengthTips2 = "{$Think.lang._SZMDX_}";
+    var strengthTips3 = "{$Think.lang._ZSTZFLZYSZH_}";
+    var strengthTitle2 = "{$Think.lang._MMQD_}";
+    var strengthWarming = "{$Think.lang._BMSYQTWZMMBAQ_}";
+    var czcg = "{$Think.lang._CZCG_}";
+    var CheckObj = {
+        "1": {
+            "tips": "{$Think.lang._YHMBNWK_}",
+            "name": "username"
+        },
+        "2": {
+            "tips": "{$Think.lang._SJHMBNWK_}",
+            "name": "mobile-number"
+        },
+        "3": {
+            "tips": "{$Think.lang._DLMMBNK_}",
+            "name": "password"
+        }
+    }
+</script>
+<!-- register_ajax -->
+<script src="__HOME_JS__/register/index.js" type="text/javascript" charset="utf-8"></script>
+<!-- phone -->
+<script src="__HOME_JS__/intlTelInput.min.js"></script>
+<!-- register_effect -->
+<script src="__HOME_JS__/register/register.js" type="text/javascript" charset="utf-8"></script>
+<!-- 左边动画 -->
+<script type="text/javascript">
+    var loginAnimate = bodymovin.loadAnimation({
+        path: "__HOME_JS__/bodymovin/login.json", //json文件路径
+        loop: false,
+        autoplay: false,
+        renderer: 'svg', //渲染方式，有"html"、"canvas"和"svg"三种
+        container: document.querySelector('.Login_animationBody'),
+    });
+    loginAnimate.setSpeed(3);
+</script>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>登录注册</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../bt/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="../bt/assets/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+<div class="container">
+    <div class="row" style="margin-top: 50px;">
+        <div class="col-md-12">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h4>通用 登录注册接口目录</h4>
+                </div>
+                <div class="panel-body">
+                    <p><a href="index.html">0、目录页</a></p>
+                    <p><a href="#api1">1、appK线图</a></p>
+                </div>
+            </div>
+            <div class="panel panel-success">
+                <div class="panel-body">
+                    <p>appK线图  </p>
+                </div>
+            </div>
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <h4><a name="api1" id="api1">1、appK线图</a></h4>
+                </div>
+                <div class="panel-body">
+                    <p>说明：</p>
+                    <ul>
+                    </ul>
+                    <div class="row"><div class="col-md-9">接口负责人：宋建强</div></div>
+                    <div class="row"><div class="col-md-9">请求方式：GET</div></div>
+                    <div class="row"><div class="col-md-9" style="：20px;color:red">最新版本 ：2018年7月4日10:37:49 </div></div>
+
+                    请求示例：
+                    <pre>
+                      App加载 k线图  使用 webViewUI (ios)  webView(android)加载链接
+
+                      接口地址 ： http://192.168.2.228:1338/AppView/web   (内网IP)   (注 项目上线前会改为线上域名)
+                      请求方式 ： GET
+                      请求参数 ： symbol={btc_usd}&time={15}&lang={zh-cn}&area={1}&mobile={ios/android}
+
+                      参数说明 ： symbol  币种名称
+                                 time    渲染时间周期线      （ 分时 ：1  5分钟 ：5   1小时 ：60  1天 ：1440  ）
+                                 lang    语言
+                                 area    币种交易类型（交易区类型） 
+                                 mobile  设备ios 或者安卓
+                                 theme   主题皮肤      (1 白天  2 晚上)
+                                 
+                                 
+                      请求demo样例 ：<a style='color:red' href='http://192.168.2.228:1338/AppView/web?symbol=eth_usd&time=30&lang=en-us&area=1&mobile=ios&theme=2'>http://192.168.2.228:1338/AppView/web?symbol=eth_usd&time=30&lang=en-us&area=1&mobile=ios&theme=2</a>
+                      
+                    注 :           "1"=>['btc_usd','ltc_usd','eth_usd','etc_usd' ,'bch_usd'],   //1  p2p交易区的
+	  	  		   "2"=>['ltc_btc','eth_btc','etc_btc','bch_btc'],              //2  btc交易区   
+	  	  		   "3"=>['btc_vp','ltc_vp','etc_vp','eth_vp','bch_vp'],         //3  vp交易区 
+	  	  		   
+	  	  		   C2C交易区跟p2p交易区k线图一样 传参一样
+                </div> 
+                <div class="panel-footer">
+                      <p style='color:blue;font-size:16px'><span style="color:red">补充：</span>  内网服务器IP: 192.168.2.228     api接口带端口可能会变  ！ 对外顶级域名 btcsale.com 各种测试环境可能有二级域名的接口api对应    打包应用请注意</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
+
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="../bt/dist/js/jquery.min.1.11.3.js"></script>
+<script src="../bt/dist/js/bootstrap.min.js"></script>
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="../bt/assets/js/ie10-viewport-bug-workaround.js"></script>
+</body>
+</html>

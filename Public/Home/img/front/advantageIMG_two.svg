@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="96px" height="109px" viewBox="0 0 96 109" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50 (54983) - http://www.bohemiancoding.com/sketch -->
+    <title>homeic_ad_two</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="-58.3206838%" y1="-28.2906928%" x2="72.3014543%" y2="93.9492583%" id="linearGradient-1">
+            <stop stop-color="#4694FD" offset="0%"></stop>
+            <stop stop-color="#3C6AF0" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="139.565245%" y1="109.433051%" x2="14.9290392%" y2="27.4311867%" id="linearGradient-2">
+            <stop stop-color="#3CD0FF" stop-opacity="0.620923913" offset="0%"></stop>
+            <stop stop-color="#3665ED" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="81.4272344%" y1="80.8235754%" x2="81.4272331%" y2="24.4617049%" id="linearGradient-3">
+            <stop stop-color="#509AEF" offset="0%"></stop>
+            <stop stop-color="#3C6AF0" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="BTCsale首页-2" transform="translate(-181.000000, -4309.000000)">
+            <g id="3" transform="translate(120.000000, 3796.000000)">
+                <g id="Group-11" transform="translate(30.000000, 239.000000)">
+                    <g id="2" transform="translate(0.000000, 250.000000)">
+                        <g id="Group-9">
+                            <g id="homeic_ad_two" transform="translate(31.000000, 24.000000)">
+                                <polygon id="Stroke-8" stroke="url(#linearGradient-1)" points="91.7078125 82.3073958 91.7078125 31.6230208 47.8130208 6.28135417 3.9203125 31.6230208 3.9203125 82.3073958 47.8130208 107.650104"></polygon>
+                                <path d="M47.8133333,6.28104167 L47.8133333,107.649792" id="Stroke-10" stroke="url(#linearGradient-1)"></path>
+                                <path d="M3.9840625,31.5114583 L91.6423958,82.4197917" id="Stroke-12" stroke="url(#linearGradient-1)"></path>
+                                <path d="M4.075625,82.5755208 L91.5527083,31.3557292" id="Stroke-14" stroke="url(#linearGradient-1)"></path>
+                                <g id="Group-12">
+                                    <path d="M47.8732165,0.0003 L20.340233,16.00015 L48.0537835,32 L75.586767,16.00015 L47.8732165,0.0003 Z M36.7151066,16.0047799 L47.9334055,9.48469347 L59.2188383,16.00015 L48.0005394,22.519079 L36.7151066,16.0047799 Z" id="Fill-1" fill="url(#linearGradient-2)"></path>
+                                    <path d="M0,85.0519847 L26.1529728,100.1517 L26.2381176,70.0997153 L0.0851448671,55 L0,85.0519847 Z M7.3889131,80.8414672 L7.42629377,67.7156591 L18.8492045,74.3102328 L18.8118239,87.4360409 L7.3889131,80.8414672 Z" id="Fill-2" fill="url(#linearGradient-2)"></path>
+                                    <path d="M69.5307824,70.0997153 L69.6159272,100.1517 L95.7689,85.0519847 L95.6837551,55 L69.5307824,70.0997153 Z M76.9196955,74.3102328 L88.3426062,67.7156591 L88.3799869,80.8414672 L76.9570761,87.4360409 L76.9196955,74.3102328 Z" id="Fill-3" fill="url(#linearGradient-2)"></path>
+                                    <path d="M32.5331086,31.1973373 L17.6173617,39.5562451 L10.0782169,35.3589078 L24.9950547,27 L32.5331086,31.1973373 Z M10,54.8002588 L10.0785441,35.3610117 L17.6220525,39.5604529 L17.5435084,58.9997 L10,54.8002588 Z" id="Combined-Shape" fill="url(#linearGradient-3)"></path>
+                                    <path d="M63,31.1973373 L70.5391448,27 L85.4548918,35.3589078 L77.9157469,39.5562451 L63,31.1973373 Z M85.5336541,54.8002588 L77.9901457,58.9997 L77.9116016,39.5604529 L85.4551099,35.3610117 L85.5336541,54.8002588 Z" id="Combined-Shape" fill="url(#linearGradient-3)"></path>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

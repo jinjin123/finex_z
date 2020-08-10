@@ -1,0 +1,2303 @@
+@charset "utf-8";
+
+/*
+	引入皮肤变量
+
+	@import "registerStyle"; 引入皮肤文件
+
+*/
+
+@import "registerStyle";
+
+/*页面背景*/
+
+#register a,
+span {
+    margin-left: 15px;
+    font-size: 13px;
+}
+
+.form-control {
+    font-size: 13px;
+}
+
+
+/* 国家列表 */
+
+.well .intl-tel-input .flag {
+    width: 16px;
+    height: 11px;
+    background: url("../../img/front/flags.png");
+}
+
+.well .intl-tel-input .zw {
+    background-position: 0px 0px;
+}
+
+.well .intl-tel-input .zm {
+    background-position: -16px 0px;
+}
+
+.well .intl-tel-input .za {
+    background-position: 0px -11px;
+}
+
+.well .intl-tel-input .yt {
+    background-position: -16px -11px;
+}
+
+.well .intl-tel-input .ye {
+    background-position: -32px 0px;
+}
+
+.well .intl-tel-input .ws {
+    background-position: -32px -11px;
+}
+
+.well .intl-tel-input .wf {
+    background-position: 0px -22px;
+}
+
+.well .intl-tel-input .vu {
+    background-position: -32px -22px;
+}
+
+.well .intl-tel-input .vn {
+    background-position: 0px -33px;
+}
+
+.well .intl-tel-input .vi {
+    background-position: -16px -33px;
+}
+
+.well .intl-tel-input .vg {
+    background-position: -32px -33px;
+}
+
+.well .intl-tel-input .ve {
+    background-position: -48px 0px;
+}
+
+.well .intl-tel-input .vc {
+    background-position: -48px -11px;
+}
+
+.well .intl-tel-input .va {
+    background-position: -48px -22px;
+}
+
+.well .intl-tel-input .uz {
+    background-position: -48px -33px;
+}
+
+.well .intl-tel-input .uy {
+    background-position: 0px -44px;
+}
+
+.well .intl-tel-input .us {
+    background-position: -16px -44px;
+}
+
+.well .intl-tel-input .um {
+    background-position: -16px -44px;
+}
+
+.well .intl-tel-input .ug {
+    background-position: -32px -44px;
+}
+
+.well .intl-tel-input .ua {
+    background-position: -48px -44px;
+}
+
+.well .intl-tel-input .tz {
+    background-position: -64px 0px;
+}
+
+.well .intl-tel-input .tw {
+    background-position: -64px -11px;
+}
+
+.well .intl-tel-input .tv {
+    background-position: -64px -22px;
+}
+
+.well .intl-tel-input .tt {
+    background-position: -64px -33px;
+}
+
+.well .intl-tel-input .tr {
+    background-position: -64px -44px;
+}
+
+.well .intl-tel-input .to {
+    background-position: 0px -55px;
+}
+
+.well .intl-tel-input .tn {
+    background-position: -16px -55px;
+}
+
+.well .intl-tel-input .tm {
+    background-position: -32px -55px;
+}
+
+.well .intl-tel-input .tl {
+    background-position: -48px -55px;
+}
+
+.well .intl-tel-input .tk {
+    background-position: -64px -55px;
+}
+
+.well .intl-tel-input .tj {
+    background-position: 0px -66px;
+}
+
+.well .intl-tel-input .th {
+    background-position: -16px -66px;
+}
+
+.well .intl-tel-input .tg {
+    background-position: -32px -66px;
+}
+
+.well .intl-tel-input .tf {
+    background-position: -48px -66px;
+}
+
+.well .intl-tel-input .td {
+    background-position: -64px -66px;
+}
+
+.well .intl-tel-input .tc {
+    background-position: -80px 0px;
+}
+
+.well .intl-tel-input .sz {
+    background-position: -80px -11px;
+}
+
+.well .intl-tel-input .sy {
+    background-position: -80px -22px;
+}
+
+.well .intl-tel-input .sx {
+    background-position: -80px -33px;
+}
+
+.well .intl-tel-input .sv {
+    background-position: -80px -44px;
+}
+
+.well .intl-tel-input .st {
+    background-position: -80px -55px;
+}
+
+.well .intl-tel-input .ss {
+    background-position: -80px -66px;
+}
+
+.well .intl-tel-input .sr {
+    background-position: 0px -77px;
+}
+
+.well .intl-tel-input .so {
+    background-position: -16px -77px;
+}
+
+.well .intl-tel-input .sn {
+    background-position: -32px -77px;
+}
+
+.well .intl-tel-input .sm {
+    background-position: -48px -77px;
+}
+
+.well .intl-tel-input .sl {
+    background-position: -64px -77px;
+}
+
+.well .intl-tel-input .sk {
+    background-position: -80px -77px;
+}
+
+.well .intl-tel-input .si {
+    background-position: -96px 0px;
+}
+
+.well .intl-tel-input .sh {
+    background-position: -96px -11px;
+}
+
+.well .intl-tel-input .sg {
+    background-position: -96px -22px;
+}
+
+.well .intl-tel-input .se {
+    background-position: -96px -33px;
+}
+
+.well .intl-tel-input .sd {
+    background-position: -96px -44px;
+}
+
+.well .intl-tel-input .sc {
+    background-position: -96px -66px;
+}
+
+.well .intl-tel-input .sb {
+    background-position: -96px -77px;
+}
+
+.well .intl-tel-input .sa {
+    background-position: 0px -88px;
+}
+
+.well .intl-tel-input .rw {
+    background-position: -16px -88px;
+}
+
+.well .intl-tel-input .ru {
+    background-position: -32px -88px;
+}
+
+.well .intl-tel-input .rs {
+    background-position: -48px -88px;
+}
+
+.well .intl-tel-input .ro {
+    background-position: -64px -88px;
+}
+
+.well .intl-tel-input .qa {
+    background-position: -80px -88px;
+}
+
+.well .intl-tel-input .py {
+    background-position: -96px -88px;
+}
+
+.well .intl-tel-input .pw {
+    background-position: 0px -99px;
+}
+
+.well .intl-tel-input .pt {
+    background-position: -16px -99px;
+}
+
+.well .intl-tel-input .ps {
+    background-position: -32px -99px;
+}
+
+.well .intl-tel-input .pr {
+    background-position: -48px -99px;
+}
+
+.well .intl-tel-input .pn {
+    background-position: -64px -99px;
+}
+
+.well .intl-tel-input .pm {
+    background-position: -80px -99px;
+}
+
+.well .intl-tel-input .pl {
+    background-position: -96px -99px;
+}
+
+.well .intl-tel-input .pk {
+    background-position: -112px 0px;
+}
+
+.well .intl-tel-input .ph {
+    background-position: -112px -11px;
+}
+
+.well .intl-tel-input .pg {
+    background-position: -112px -22px;
+}
+
+.well .intl-tel-input .pf {
+    background-position: -112px -33px;
+}
+
+.well .intl-tel-input .pe {
+    background-position: -112px -44px;
+}
+
+.well .intl-tel-input .pa {
+    background-position: -112px -55px;
+}
+
+.well .intl-tel-input .om {
+    background-position: -112px -66px;
+}
+
+.well .intl-tel-input .nz {
+    background-position: -112px -77px;
+}
+
+.well .intl-tel-input .nu {
+    background-position: -112px -88px;
+}
+
+.well .intl-tel-input .nr {
+    background-position: -112px -99px;
+}
+
+.well .intl-tel-input .no {
+    background-position: 0px -110px;
+}
+
+.well .intl-tel-input .bv {
+    background-position: 0px -110px;
+}
+
+.well .intl-tel-input .sj {
+    background-position: 0px -110px;
+}
+
+.well .intl-tel-input .nl {
+    background-position: -16px -110px;
+}
+
+.well .intl-tel-input .ni {
+    background-position: -32px -110px;
+}
+
+.well .intl-tel-input .ng {
+    background-position: -48px -110px;
+}
+
+.well .intl-tel-input .nf {
+    background-position: -64px -110px;
+}
+
+.well .intl-tel-input .ne {
+    background-position: -80px -110px;
+}
+
+.well .intl-tel-input .nc {
+    background-position: -96px -110px;
+}
+
+.well .intl-tel-input .na {
+    background-position: -112px -110px;
+}
+
+.well .intl-tel-input .mz {
+    background-position: -128px 0px;
+}
+
+.well .intl-tel-input .my {
+    background-position: -128px -11px;
+}
+
+.well .intl-tel-input .mx {
+    background-position: -128px -22px;
+}
+
+.well .intl-tel-input .mw {
+    background-position: -128px -33px;
+}
+
+.well .intl-tel-input .mv {
+    background-position: -128px -44px;
+}
+
+.well .intl-tel-input .mu {
+    background-position: -128px -55px;
+}
+
+.well .intl-tel-input .mt {
+    background-position: -128px -66px;
+}
+
+.well .intl-tel-input .ms {
+    background-position: -128px -77px;
+}
+
+.well .intl-tel-input .mr {
+    background-position: -128px -88px;
+}
+
+.well .intl-tel-input .mq {
+    background-position: -128px -99px;
+}
+
+.well .intl-tel-input .mp {
+    background-position: -128px -110px;
+}
+
+.well .intl-tel-input .mo {
+    background-position: 0px -121px;
+}
+
+.well .intl-tel-input .mn {
+    background-position: -16px -121px;
+}
+
+.well .intl-tel-input .mm {
+    background-position: -32px -121px;
+}
+
+.well .intl-tel-input .ml {
+    background-position: -48px -121px;
+}
+
+.well .intl-tel-input .mk {
+    background-position: -64px -121px;
+}
+
+.well .intl-tel-input .mh {
+    background-position: -80px -121px;
+}
+
+.well .intl-tel-input .mg {
+    background-position: -96px -121px;
+}
+
+.well .intl-tel-input .me {
+    background-position: 0px -132px;
+    height: 12px;
+}
+
+.well .intl-tel-input .md {
+    background-position: -112px -121px;
+}
+
+.well .intl-tel-input .mc {
+    background-position: -128px -121px;
+}
+
+.well .intl-tel-input .ma {
+    background-position: -16px -132px;
+}
+
+.well .intl-tel-input .ly {
+    background-position: -32px -132px;
+}
+
+.well .intl-tel-input .lv {
+    background-position: -48px -132px;
+}
+
+.well .intl-tel-input .lu {
+    background-position: -64px -132px;
+}
+
+.well .intl-tel-input .lt {
+    background-position: -80px -132px;
+}
+
+.well .intl-tel-input .ls {
+    background-position: -96px -132px;
+}
+
+.well .intl-tel-input .lr {
+    background-position: -112px -132px;
+}
+
+.well .intl-tel-input .lk {
+    background-position: -128px -132px;
+}
+
+.well .intl-tel-input .li {
+    background-position: -144px 0px;
+}
+
+.well .intl-tel-input .lc {
+    background-position: -144px -11px;
+}
+
+.well .intl-tel-input .lb {
+    background-position: -144px -22px;
+}
+
+.well .intl-tel-input .la {
+    background-position: -144px -33px;
+}
+
+.well .intl-tel-input .kz {
+    background-position: -144px -44px;
+}
+
+.well .intl-tel-input .ky {
+    background-position: -144px -55px;
+}
+
+.well .intl-tel-input .kw {
+    background-position: -144px -66px;
+}
+
+.well .intl-tel-input .kr {
+    background-position: -144px -77px;
+}
+
+.well .intl-tel-input .kp {
+    background-position: -144px -88px;
+}
+
+.well .intl-tel-input .kn {
+    background-position: -144px -99px;
+}
+
+.well .intl-tel-input .km {
+    background-position: -144px -110px;
+}
+
+.well .intl-tel-input .ki {
+    background-position: -144px -121px;
+}
+
+.well .intl-tel-input .kh {
+    background-position: -144px -132px;
+}
+
+.well .intl-tel-input .kg {
+    background-position: 0px -144px;
+}
+
+.well .intl-tel-input .ke {
+    background-position: -16px -144px;
+}
+
+.well .intl-tel-input .jp {
+    background-position: -32px -144px;
+}
+
+.well .intl-tel-input .jo {
+    background-position: -48px -144px;
+}
+
+.well .intl-tel-input .jm {
+    background-position: -64px -144px;
+}
+
+.well .intl-tel-input .je {
+    background-position: -80px -144px;
+}
+
+.well .intl-tel-input .it {
+    background-position: -96px -144px;
+}
+
+.well .intl-tel-input .is {
+    background-position: -112px -144px;
+}
+
+.well .intl-tel-input .ir {
+    background-position: -128px -144px;
+}
+
+.well .intl-tel-input .iq {
+    background-position: -144px -144px;
+}
+
+.well .intl-tel-input .io {
+    background-position: -160px 0px;
+}
+
+.well .intl-tel-input .in {
+    background-position: -160px -11px;
+}
+
+.well .intl-tel-input .im {
+    background-position: -160px -22px;
+    height: 9px;
+}
+
+.well .intl-tel-input .il {
+    background-position: -160px -31px;
+}
+
+.well .intl-tel-input .ie {
+    background-position: -160px -42px;
+}
+
+.well .intl-tel-input .id {
+    background-position: -160px -53px;
+}
+
+.well .intl-tel-input .hu {
+    background-position: -160px -64px;
+}
+
+.well .intl-tel-input .ht {
+    background-position: -160px -75px;
+}
+
+.well .intl-tel-input .hr {
+    background-position: -160px -86px;
+}
+
+.well .intl-tel-input .hn {
+    background-position: -160px -97px;
+}
+
+.well .intl-tel-input .hk {
+    background-position: -160px -108px;
+}
+
+.well .intl-tel-input .gy {
+    background-position: -160px -119px;
+}
+
+.well .intl-tel-input .gw {
+    background-position: -160px -130px;
+}
+
+.well .intl-tel-input .gu {
+    background-position: -160px -141px;
+}
+
+.well .intl-tel-input .gt {
+    background-position: 0px -155px;
+}
+
+.well .intl-tel-input .gs {
+    background-position: -16px -155px;
+}
+
+.well .intl-tel-input .gr {
+    background-position: -32px -155px;
+}
+
+.well .intl-tel-input .gq {
+    background-position: -48px -155px;
+}
+
+.well .intl-tel-input .gp {
+    background-position: -64px -155px;
+}
+
+.well .intl-tel-input .gn {
+    background-position: -80px -155px;
+}
+
+.well .intl-tel-input .gm {
+    background-position: -96px -155px;
+}
+
+.well .intl-tel-input .gl {
+    background-position: -112px -155px;
+}
+
+.well .intl-tel-input .gi {
+    background-position: -128px -155px;
+}
+
+.well .intl-tel-input .gh {
+    background-position: -144px -155px;
+}
+
+.well .intl-tel-input .gg {
+    background-position: -160px -155px;
+}
+
+.well .intl-tel-input .ge {
+    background-position: -176px 0px;
+}
+
+.well .intl-tel-input .gd {
+    background-position: -176px -11px;
+}
+
+.well .intl-tel-input .gb {
+    background-position: -176px -22px;
+}
+
+.well .intl-tel-input .ga {
+    background-position: -176px -33px;
+}
+
+.well .intl-tel-input .fr {
+    background-position: -176px -44px;
+}
+
+.well .intl-tel-input .gf {
+    background-position: -176px -44px;
+}
+
+.well .intl-tel-input .re {
+    background-position: -176px -44px;
+}
+
+.well .intl-tel-input .mf {
+    background-position: -176px -44px;
+}
+
+.well .intl-tel-input .bl {
+    background-position: -176px -44px;
+}
+
+.well .intl-tel-input .fo {
+    background-position: -176px -55px;
+}
+
+.well .intl-tel-input .fm {
+    background-position: -176px -66px;
+}
+
+.well .intl-tel-input .fk {
+    background-position: -176px -77px;
+}
+
+.well .intl-tel-input .fj {
+    background-position: -176px -88px;
+}
+
+.well .intl-tel-input .fi {
+    background-position: -176px -99px;
+}
+
+.well .intl-tel-input .eu {
+    background-position: -176px -121px;
+}
+
+.well .intl-tel-input .et {
+    background-position: -176px -132px;
+}
+
+.well .intl-tel-input .es {
+    background-position: -176px -143px;
+}
+
+.well .intl-tel-input .er {
+    background-position: -176px -154px;
+}
+
+.well .intl-tel-input .eh {
+    background-position: -16px -166px;
+}
+
+.well .intl-tel-input .eg {
+    background-position: -32px -166px;
+}
+
+.well .intl-tel-input .ee {
+    background-position: -48px -166px;
+}
+
+.well .intl-tel-input .ec {
+    background-position: -64px -166px;
+}
+
+.well .intl-tel-input .dz {
+    background-position: -80px -166px;
+}
+
+.well .intl-tel-input .do {
+    background-position: -96px -166px;
+}
+
+.well .intl-tel-input .dm {
+    background-position: -112px -166px;
+}
+
+.well .intl-tel-input .dk {
+    background-position: -128px -166px;
+}
+
+.well .intl-tel-input .dj {
+    background-position: -144px -166px;
+}
+
+.well .intl-tel-input .de {
+    background-position: -160px -166px;
+}
+
+.well .intl-tel-input .cz {
+    background-position: -176px -166px;
+}
+
+.well .intl-tel-input .cy {
+    background-position: 0px -177px;
+}
+
+.well .intl-tel-input .cx {
+    background-position: -16px -177px;
+}
+
+.well .intl-tel-input .cw {
+    background-position: -32px -177px;
+}
+
+.well .intl-tel-input .cv {
+    background-position: -48px -177px;
+}
+
+.well .intl-tel-input .cu {
+    background-position: -64px -177px;
+}
+
+.well .intl-tel-input .cs {
+    background-position: -80px -177px;
+}
+
+.well .intl-tel-input .cr {
+    background-position: -96px -177px;
+}
+
+.well .intl-tel-input .co {
+    background-position: -112px -177px;
+}
+
+.well .intl-tel-input .cn {
+    background-position: -128px -177px;
+}
+
+.well .intl-tel-input .cm {
+    background-position: -144px -177px;
+}
+
+.well .intl-tel-input .cl {
+    background-position: -160px -177px;
+}
+
+.well .intl-tel-input .ck {
+    background-position: -176px -177px;
+}
+
+.well .intl-tel-input .ci {
+    background-position: -192px 0px;
+}
+
+.well .intl-tel-input .cg {
+    background-position: -192px -11px;
+}
+
+.well .intl-tel-input .cf {
+    background-position: -192px -22px;
+}
+
+.well .intl-tel-input .cd {
+    background-position: -192px -33px;
+}
+
+.well .intl-tel-input .cc {
+    background-position: -192px -44px;
+}
+
+.well .intl-tel-input .ca {
+    background-position: -192px -66px;
+}
+
+.well .intl-tel-input .bz {
+    background-position: -192px -77px;
+}
+
+.well .intl-tel-input .by {
+    background-position: -192px -88px;
+}
+
+.well .intl-tel-input .bw {
+    background-position: -192px -99px;
+}
+
+.well .intl-tel-input .bt {
+    background-position: -192px -110px;
+}
+
+.well .intl-tel-input .bs {
+    background-position: -192px -121px;
+}
+
+.well .intl-tel-input .br {
+    background-position: -192px -132px;
+}
+
+.well .intl-tel-input .bq {
+    background-position: -192px -143px;
+}
+
+.well .intl-tel-input .bo {
+    background-position: -192px -154px;
+}
+
+.well .intl-tel-input .bn {
+    background-position: -192px -165px;
+}
+
+.well .intl-tel-input .bm {
+    background-position: -192px -176px;
+}
+
+.well .intl-tel-input .bj {
+    background-position: 0px -188px;
+}
+
+.well .intl-tel-input .bi {
+    background-position: -16px -188px;
+}
+
+.well .intl-tel-input .bh {
+    background-position: -32px -188px;
+}
+
+.well .intl-tel-input .bg {
+    background-position: -48px -188px;
+}
+
+.well .intl-tel-input .bf {
+    background-position: -64px -188px;
+}
+
+.well .intl-tel-input .be {
+    background-position: -80px -188px;
+}
+
+.well .intl-tel-input .bd {
+    background-position: -96px -188px;
+}
+
+.well .intl-tel-input .bb {
+    background-position: -112px -188px;
+}
+
+.well .intl-tel-input .ba {
+    background-position: -128px -188px;
+}
+
+.well .intl-tel-input .az {
+    background-position: -144px -188px;
+}
+
+.well .intl-tel-input .ax {
+    background-position: -160px -188px;
+}
+
+.well .intl-tel-input .aw {
+    background-position: -176px -188px;
+}
+
+.well .intl-tel-input .au {
+    background-position: -192px -188px;
+}
+
+.well .intl-tel-input .hm {
+    background-position: -192px -188px;
+}
+
+.well .intl-tel-input .at {
+    background-position: -208px 0px;
+}
+
+.well .intl-tel-input .as {
+    background-position: -208px -11px;
+}
+
+.well .intl-tel-input .ar {
+    background-position: -208px -22px;
+}
+
+.well .intl-tel-input .ao {
+    background-position: -208px -33px;
+}
+
+.well .intl-tel-input .an {
+    background-position: -208px -44px;
+}
+
+.well .intl-tel-input .am {
+    background-position: -208px -55px;
+}
+
+.well .intl-tel-input .al {
+    background-position: -208px -66px;
+}
+
+.well .intl-tel-input .ai {
+    background-position: -208px -77px;
+}
+
+.well .intl-tel-input .ag {
+    background-position: -208px -88px;
+}
+
+.well .intl-tel-input .af {
+    background-position: -208px -99px;
+}
+
+.well .intl-tel-input .ae {
+    background-position: -208px -110px;
+}
+
+.well .intl-tel-input .ad {
+    background-position: -208px -121px;
+}
+
+.well .intl-tel-input .np {
+    background-position: -208px -132px;
+}
+
+.well .intl-tel-input .ch {
+    background-position: -208px -143px;
+}
+
+.well .intl-tel-input {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.well .intl-tel-input * {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+.well .intl-tel-input .hide {
+    display: none;
+}
+
+.well .intl-tel-input .v-hide {
+    visibility: hidden;
+}
+
+.well .intl-tel-input input {
+    position: relative;
+    z-index: 0;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+.well .intl-tel-input .flag-dropdown {
+    position: absolute;
+    top: 1px;
+    bottom: 0;
+}
+
+.well .intl-tel-input .flag-dropdown:hover {
+    cursor: pointer;
+}
+
+.well .intl-tel-input .flag-dropdown:hover .selected-flag {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.well .intl-tel-input input[disabled]+.flag-dropdown:hover {
+    cursor: default;
+}
+
+.well .intl-tel-input input[disabled]+.flag-dropdown:hover .selected-flag {
+    background-color: transparent;
+}
+
+.well .intl-tel-input .selected-flag {
+    z-index: 1;
+    position: relative;
+    width: 35px;
+    height: 45%;
+    padding: 0 0 0 15px;
+}
+
+.well .intl-tel-input .selected-flag .flag {
+    position: absolute;
+    top: 50%;
+    margin-top: -5px;
+}
+
+.well .intl-tel-input .selected-flag .arrow {
+    position: relative;
+    top: 50%;
+    margin-top: -2px;
+    left: 20px;
+    width: 0;
+    height: 0;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    border-top: 4px solid $selected-flag-border;
+}
+
+.well .intl-tel-input .selected-flag .arrow.up {
+    border-top: none;
+    border-bottom: 4px solid $selected-flag-border;
+}
+
+.well .intl-tel-input .country-list {
+    list-style: none;
+    position: absolute;
+    z-index: 2;
+    padding: 0;
+    margin: 0 0 0 -1px;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+    background-color: $country-list-Bg;
+    border: 2px solid $country-list-Bg;
+    width: 430px;
+    max-height: 200px;
+    overflow-y: scroll;
+    color: $country-list-Color;
+    border-radius: 4px;
+}
+
+.well .intl-tel-input .country-list .flag {
+    display: inline-block;
+}
+
+.well .intl-tel-input .country-list .divider {
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid $country-list-Color;
+}
+
+.well .intl-tel-input .country-list .country {
+    line-height: 11px;
+    padding: 7px 10px;
+}
+
+.well .intl-tel-input .country-list .country .dial-code {
+    color: $dial-code-Color;
+}
+
+.well .intl-tel-input .country-list .country.highlight {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.well .intl-tel-input .country-list .flag,
+.well .intl-tel-input .country-list .country-name {
+    margin-right: 6px;
+    color: $country-name-Color;
+}
+
+.well .intl-tel-input.inside .flag-dropdown {
+    padding: 1px;
+}
+
+.well .intl-tel-input.inside input[type="text"],
+.well .intl-tel-input.inside input[type="tel"] {
+    padding-left: 44px;
+    margin-left: 0;
+}
+
+.well .intl-tel-input.outside input[type="text"],
+.well .intl-tel-input.outside input[type="tel"] {
+    border: none;
+    margin-left: 38px;
+}
+
+
+/*注册成功弹窗*/
+
+.regsuccess {
+    width: 28%;
+    min-width: 300px;
+    max-width: 500px;
+    background: $regsuccess-Bg;
+    height: 275px;
+    border-radius: 10px;
+    display: none;
+    z-index: 1002;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: 10% auto;
+}
+
+.intro {
+    font-size: 13px;
+    margin-bottom: 3%;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-weight: bold;
+    font-family: "微软雅黑";
+}
+
+.regP {
+    font-size: 14px;
+    margin-bottom: 3%;
+}
+
+.regsuccess .close {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    color: $White;
+    font-size: 16px;
+    font-weight: normal;
+    box-shadow: none;
+}
+
+.regsuccess .foot {
+    font-size: 12px;
+    background: $regsuccess-foot-Bg;
+    height: 50px;
+    border-radius: 5px;
+    position: absolute;
+    line-height: 50px;
+    bottom: 0;
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.regsuccess .foot a {
+    color: $regsuccess-foot-Color;
+}
+
+.regsuccess a {
+    text-decoration: underline;
+    font-style: italic;
+    font-family: "Microsoft YaHei UI";
+    font-size: 12px;
+    line-height: 50px;
+}
+
+.regsuccess h2 {
+    margin-top: 5%;
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.mask {
+    width: 100%;
+    height: 100%;
+    background: rgba(13, 13, 13, 0.81);
+    display: none;
+    z-index: 1000;
+    position: absolute;
+}
+
+.regsuccess btn {
+    margin-bottom: 0;
+}
+
+
+/*特效*/
+
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+@keyframes rotatePlaceholder {
+    0% {
+        transform: rotate(-45deg);
+    }
+    5% {
+        transform: rotate(-45deg);
+    }
+    12% {
+        transform: rotate(-405deg);
+    }
+    100% {
+        transform: rotate(-405deg);
+    }
+}
+
+@keyframes animateSuccessTip {
+    0% {
+        width: 0;
+        left: 1px;
+        top: 19px;
+    }
+    54% {
+        width: 0;
+        left: 1px;
+        top: 19px;
+    }
+    70% {
+        width: 50px;
+        left: -8px;
+        top: 37px;
+    }
+    84% {
+        width: 17px;
+        left: 21px;
+        top: 48px;
+    }
+    100% {
+        width: 25px;
+        left: 14px;
+        top: 45px;
+    }
+}
+
+@keyframes animateSuccessLong {
+    0% {
+        width: 0;
+        right: 46px;
+        top: 54px;
+    }
+    65% {
+        width: 0;
+        right: 46px;
+        top: 54px;
+    }
+    84% {
+        width: 55px;
+        right: 0px;
+        top: 35px;
+    }
+    100% {
+        width: 47px;
+        right: 8px;
+        top: 38px;
+    }
+}
+
+.sweet-alert .sa-icon.sa-success .sa-line.sa-long {
+    width: 47px;
+    right: 8px;
+    top: 38px;
+    transform: rotate(-45deg);
+}
+
+.animateSuccessLong {
+    animation: animateSuccessLong 0.75s;
+}
+
+.sweet-alert {
+    text-align: center;
+    overflow: hidden;
+    height: 90px;
+}
+
+.sa-icon.sa-success.animate::after {
+    animation: rotatePlaceholder 4.25s ease-in;
+}
+
+.sweet-alert .sa-icon.sa-success::after {
+    border-radius: 0 120px 120px 0;
+    top: -11px;
+    left: 30px;
+    /*transform: rotate(-45deg);*/
+    transform-origin: 0px 60px;
+}
+
+.sweet-alert .sa-icon.sa-success::before {
+    border-radius: 120px 0 0 120px;
+    top: -7px;
+    left: -33px;
+    transform: rotate(-45deg);
+    transform-origin: 60px 60px;
+}
+
+.sweet-alert .sa-icon {
+    width: 80px;
+    height: 80px;
+    border: 4px solid gray;
+    border-radius: 50%;
+    margin: 20px auto;
+    position: relative;
+    box-sizing: content-box;
+}
+
+.sweet-alert .sa-icon.sa-success {
+    border-color: $sa-success-Border;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.sweet-alert .sa-icon.sa-success::before,
+.sweet-alert .sa-icon.sa-success::after {
+    content: '';
+    border-radius: 50%;
+    position: absolute;
+    width: 60px;
+    height: 120px;
+    background: $sa-success-Bg;
+    /*transform: rotate(45deg);*/
+}
+
+.sweet-alert .sa-icon.sa-success .sa-line.sa-tip {
+    width: 25px;
+    left: 14px;
+    top: 46px;
+    transform: rotate(45deg);
+}
+
+.sweet-alert .sa-icon.sa-success .sa-line {
+    height: 5px;
+    background-color: $sa-line-Bg;
+    display: block;
+    border-radius: 2px;
+    position: absolute;
+    z-index: 2;
+}
+
+.animateSuccessTip {
+    animation: animateSuccessTip 0.75s;
+}
+
+.sweet-alert .sa-icon.sa-success .sa-placeholder {
+    width: 80px;
+    height: 80px;
+    border: 4px solid rgba(80, 153, 239, .2);
+    border-radius: 50%;
+    box-sizing: content-box;
+    position: absolute;
+    left: -4px;
+    top: -4px;
+    z-index: 2;
+}
+
+.sweet-alert .sa-icon.sa-success .sa-fix {
+    width: 5px;
+    height: 90px;
+    background-color: $sa-fix-Bg;
+    position: absolute;
+    left: 28px;
+    top: 8px;
+    z-index: 1;
+    transform: rotate(50deg);
+}
+
+
+/*注册窗口*/
+
+#register {
+    /*margin-top: 100px;*/
+    z-index: 2;
+    -webkit-box-flex: 1
+    /* OLD - iOS 6-, Safari 3.1-6 */
+    -moz-box-flex: 1;
+    /* OLD - Firefox 19- */
+    -webkit-flex: 1;
+    /* Chrome */
+    -ms-flex: 1/*IE 10 */
+    flex: 1;
+    /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+
+.registerCon {
+    padding-top: 100px;
+}
+
+#register .well {
+    padding: 0;
+    -webkit-box-shadow: 0 0 5px 1px $regsuccess-well-Shadow;
+    -moz-box-shadow: 0 0 5px 1px $regsuccess-well-Shadow;
+    box-shadow: 0 0 5px 1px $regsuccess-well-Shadow;
+    margin-bottom: 60px;
+    float: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background: none;
+}
+
+
+/*标题*/
+
+.well .widgettitle {
+    margin-bottom: 0;
+    margin-top: 25px;
+    padding-left: 12px;
+    font-family: "Microsoft YaHei UI";
+    color: $White;
+}
+
+.well .widgettitle:before,
+.well .widgettitle:after {
+    display: none;
+}
+
+
+/*服务条款的a标签*/
+
+.register-left .checkbox a {
+    color: $checkService-Color;
+    font-size: 13px;
+    margin-left: 0!important;
+}
+
+.register-left .checkbox a:hover {
+    text-decoration: underline !important;
+}
+
+
+/*输入框*/
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+.well .form-control {
+    font-size: 14px;
+    padding-bottom: 24px;
+    border: none;
+    border-bottom: 1px solid $form-control-Border;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    color: $form-control-Color;
+    text-indent: 30px;
+}
+
+input.form-control::-webkit-input-placeholder {
+    color: $form-controlWebkit-Color!important;
+}
+
+.mar5 input {
+    background-color: transparent;
+}
+
+.mar input {
+    text-align: left;
+}
+
+
+/*用户名*/
+
+.mar5 {
+    position: relative;
+}
+
+#username,
+#password,
+#pass_confirm {
+    padding-left: 15px;
+    text-align: left;
+}
+
+.mar5 i {
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    bottom: 10px;
+    width: 18px;
+    height: 18px;
+}
+
+.mar5 i img {
+    width: 18px;
+    height: 18px;
+}
+
+
+/*手机号码*/
+
+.well .intl-tel-input.inside input[type="tel"] {
+    text-indent: 10px;
+    padding-left: 40px;
+}
+
+
+/*手机验证码*/
+
+.mar .form-control {
+    border: 1px solid $mar-formControl-Border;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background-color: transparent;
+}
+
+.mar .form-group .row>div:first-child {
+    padding-right: 0;
+}
+
+
+/*手机验证码*/
+
+.mar .form-control {
+    border: 1px solid $mar-formControl-Border;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background-color: transparent;
+}
+
+.mar .form-group .row>div:first-child {
+    padding-right: 0;
+}
+
+
+/*您的用户名错误提示框*/
+
+.warmingBox {
+    height: 37px;
+    margin: 10px 0;
+    padding-top: 15px;
+}
+
+.warming {
+    border: solid 1px $warming-Border;
+    text-align: center;
+    padding: 4px 4px 4px 0px;
+    box-sizing: border-box;
+    margin-bottom: -15px;
+    font-size: 12px;
+    font-family: 'PingFang-SC-Light';
+    color: $White;
+    background-color: $warming-Bg;
+    position: relative;
+}
+
+.warming .attention {
+    width: 13px;
+    height: 12px;
+    display: inline-block;
+    margin-left: -15px;
+    background: url(../../img/front/attention.png) center center no-repeat;
+}
+
+.warming #registerTips span {
+    color: $registerTips-Color !important;
+}
+
+
+/*按钮*/
+
+.send-but,
+#regBtn,
+.send-but:hover,
+.send-but:focus {
+    /*color: $White;*/
+    font-weight: 400;
+    /*-webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  border-color: #1F93DD !important;*/
+    transition: none;
+}
+
+
+/*获取按钮*/
+
+.well input.send-but {
+    font-size: 13px;
+    color: $White;
+}
+
+.en .well input.send-but {
+    padding: 6px 0;
+}
+
+
+/*注册按钮*/
+
+#regBtn {
+    width: 45%;
+    font-size: 18px;
+    font-weight: 400;
+    margin-top: 60px;
+    margin-bottom: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background: -moz-linear-gradient(126.61deg, $Blue 0%, $Blue2 100%) !important;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, $Blue), color-stop(100%, $Blue2)) !important;
+    background: -webkit-linear-gradient(126.61deg, $Blue 0%, $Blue2 100%) !important;
+    background: -o-linear-gradient(126.61deg, $Blue 0%, $Blue2 100%) !important;
+    background: -ms-linear-gradient(126.61deg, $Blue 0%, $Blue2 100%) !important;
+    background: linear-gradient(126.61deg, $Blue 0%, $Blue2 100%) !important;
+    background-image: linear-gradient(126.61deg, $Blue 0%, $Blue2 100%) !important;
+    border: 0;
+    border-radius: 5px;
+}
+
+#regBtn:hover,
+#regBtn:focus {
+    background: -moz-linear-gradient(top, $Blue2 0%, $Blue 100%) !important;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, $Blue2), color-stop(100%, $Blue)) !important;
+    background: -webkit-linear-gradient(top, $Blue2 0%, $Blue 100%) !important;
+    background: -o-linear-gradient(top, $Blue2 0%, $Blue 100%) !important;
+    background: -ms-linear-gradient(top, $Blue2 0%, $Blue 100%) !important;
+    background: linear-gradient(to bottom, $Blue2 0%, $Blue 100%) !important;
+    background-image: linear-gradient(top, $Blue2 0%, $Blue 100%) !important;
+    border-color: #1F93DD !important;
+}
+
+
+/*底部通栏*/
+
+.bottomdiv {
+    width: 100%;
+    height: 85px;
+    border-top: 1px solid $bottomdiv-Border;
+    /*background: linear-gradient($White,#ebebeb) repeat scroll 0 0 transparent;*/
+    /*background:-webkit-gradient(linear,left top,left bottom,from(white),to(#ececec));*/
+    /*background: -moz-linear-gradient($White,#ebebeb) repeat scroll 0 0 transparent;*/
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 0 18px;
+    line-height: 85px;
+}
+
+.bottomdiv a {
+    float: right;
+    text-decoration: underline !important;
+    font-size: 16px;
+    color: $bottomdiv-Color;
+}
+
+.bottomdiv a:hover {
+    text-decoration: underline !important;
+}
+
+
+/*底部logo*/
+
+.logo {
+    float: left;
+    margin-top: 15px;
+}
+
+
+/*----不支持国家列表页----*/
+
+.well #register_form2 {
+    position: relative;
+    min-height: 537px;
+    margin-bottom: 3px;
+}
+
+.well #register_form2 {
+    width: 100%;
+}
+
+.well #register_form2 h4 {
+    font-size: 20px;
+    font-weight: lighter;
+    color: $White;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 35px;
+}
+
+.well #register_form2 li {
+    width: 33.3%;
+    font-size: 14px;
+    line-height: 18px;
+    margin-bottom: 30px;
+    float: left;
+    text-align: center;
+}
+
+.well #register_form2 li:nth-of-type(3n+1) {
+    clear: both;
+}
+
+
+/*服务条款*/
+
+.register-left .checkService {
+    color: $checkService-Color;
+    text-decoration: underline;
+}
+
+.register-left .checkbox {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.register-left .checkbox p {
+    display: inline-block;
+}
+
+
+/*服务条款的复选框*/
+
+
+/*@media (-o-min-device-pixel-ratio: 5/4), (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {*/
+
+
+/*.icheckbox_minimal-grey,*/
+
+
+/*.iradio_minimal-grey {*/
+
+
+/*background-image: url(../../plugins/icheck/css/skins/minimal/grey.png);*/
+
+
+/*}*/
+
+
+/*}*/
+
+
+/*图形码*/
+
+.vercodeImg {
+    padding-left: 15px;
+}
+
+#verifyImg {
+    width: 100%;
+}
+
+.register-wrap {
+    background: $White;
+    box-shadow: 0 0 10px 3px $register-wrap-Shadow;
+}
+
+.register-warp-left {
+    height: 730px;
+    background: -moz-linear-gradient(126.61deg, $Blue 0%, $Blue2 100%) !important;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, $Blue), color-stop(100%, $Blue2)) !important;
+    background: -webkit-linear-gradient(126.61deg, $Blue 0%, $Blue2 100%) !important;
+    background: -o-linear-gradient(126.61deg, $Blue 0%, $Blue2 100%) !important;
+    background: -ms-linear-gradient(126.61deg, $Blue 0%, $Blue2 100%) !important;
+    background: linear-gradient(126.61deg, $Blue 0%, $Blue2 100%) !important;
+    /*box-shadow: 0 0 10px 2px #223b4e;*/
+}
+
+.register-warp-right {
+    padding-left: 40px;
+    padding-top: 10px;
+    padding-right: 200px;
+    background: $White;
+}
+
+.register-lt-top {
+    color: $White;
+    width: 290px;
+    padding-top: 60px;
+    margin-left: 60px;
+    line-height: 64px;
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.register-Triangle {
+    width: 283px;
+    height: 0;
+    position: absolute;
+    top: 0;
+    right: -98px;
+    border-right: none;
+    border-top: none;
+    border-bottom: 730px $White solid;
+    border-left: transparent 185px solid;
+}
+
+.register-phone {
+    font-size: 14px;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: -4px;
+    color: $register-phone-Color;
+    background: $White!important;
+    border: 0;
+}
+
+.register-phone:hover {
+    color: rgba(80, 154, 239, .8);
+    -webkit-transition: .5s;
+    -o-transition: .5s;
+    -moz-transition: .5s;
+    transition: .5s;
+}
+
+.register-graphic {
+    position: absolute;
+    right: 0px;
+    top: -10px;
+}
+
+.nopad {
+    padding: 0;
+    margin-bottom: 25px;
+}
+
+.register-icon {
+    position: absolute;
+    top: 1px;
+    height: auto !important;
+    /*left: -20px;*/
+}
+
+.register-lt-top-logo {
+    position: absolute;
+    bottom: 115px;
+    left: 75px;
+}
+
+.register-Success {
+    display: none;
+    width: 560px;
+}
+
+.register-Success-top {
+    padding-top: 75px;
+    padding-bottom: 100px;
+}
+
+.register-Success-top-title {
+    color: $register-Success-top-title;
+}
+
+.register-Success-top-title>img {
+    vertical-align: middle;
+    margin-right: 15px;
+}
+
+.register-Success-middle-con {
+    color: $register-Success-middle-con;
+    padding-bottom: 30px;
+    font-size: 14px;
+}
+
+.register-Success-middle-con:nth-child(1) {
+    font-size: 17px;
+}
+
+.register-Success-bottom {
+    padding-top: 165px;
+}
+
+.register-Success-bottom>a {
+    font-family: PingFangSC Semibold;
+    font-weight: 500;
+    color: $register-Success-middle-con;
+    margin-right: 110px;
+    font-size: 15px!important;
+    text-decoration: underline;
+    margin-left: 0!important;
+}
+
+.register-Support {
+    display: none;
+    text-align: center;
+    margin-left: 100px;
+}
+
+.register-Success-bottom>a:hover,
+.register-Success-bottom>a:focus {
+    text-decoration: underline!important;
+}
+
+.register-Support-title {
+    font-size: 21px;
+    color: $register-Support-title;
+    padding-top: 40px;
+}
+
+.register-Support-content>li {
+    color: $register-Support-content;
+    line-height: 32px;
+}
+
+.register-Support-prev {
+    cursor: pointer;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.register-Support-prev>span {
+    color: $register-Support-prev;
+}
+
+.register-Support-prev>img {
+    vertical-align: text-bottom;
+}
+
+.register-Support-prev>span:hover {
+    color: $register-Support-prevHover;
+    -webkit-transition: .5s all;
+    -o-transition: .5s all;
+    -moz-transition: .5s all;
+    transition: .5s all;
+}
+
+.register-left {
+    width: 600px;
+    padding-left: 0;
+}
+
+.checkbox label,
+.radio label {
+    padding-left: 0;
+}
+
+#registerTips>a {
+    text-decoration: underline!important;
+}
+
+
+/*--------自适应--------*/
+
+@media screen and (min-width: 2000px) {
+    #register {
+        padding-top: 190px;
+    }
+}
+
+@media screen and (min-height: 1255px) {
+    #register {
+        padding-top: 150px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .register-Triangle {
+        display: none;
+    }
+    .register-lt-top {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    .register-lt-top-logo {
+        bottom: 55px;
+        left: inherit;
+        right: 50px;
+    }
+    .register-warp-right {
+        padding-left: 80px;
+        padding-right: 80px;
+    }
+    .register-warp-left {
+        height: auto;
+    }
+    .downbottom {
+        padding-top: 0;
+    }
+    .register-Support {
+        margin-left: 0;
+    }
+    .register-Success {
+        width: auto;
+    }
+    .register-Success-bottom {
+        padding-top: 150px;
+        padding-bottom: 30px;
+    }
+    .register-Success-bottom>a {
+        margin-right: 70px!important;
+    }
+}
+
+@media screen and (min-width: 1280px)and (max-width: 1366px) {
+    .well #register_form2 {
+        position: relative;
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 1200px) {
+    #register .well {
+        width: 100%;
+    }
+    .well #register_form2 {}
+    .en .regsuccess {
+        height: 313px;
+    }
+}
+
+@media screen and (max-width: 764px) {
+    #register .well {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .register-left {
+        width: auto;
+    }
+    .register-left .checkbox a {
+        margin-right: 5px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    body {
+        padding-top: 0;
+    }
+    #register .well {
+        padding: 19px 15px 105px;
+        margin-bottom: 0;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+    }
+    .well .widgettitle {
+        margin-top: 0;
+    }
+    /*获取按钮*/
+    .send-but {
+        font-size: 15px;
+    }
+    #regBtn {
+        width: 45%;
+        font-size: 15px;
+        margin-top: 45px;
+        margin-bottom: 35px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    #register .well {
+        border: 0;
+    }
+    .warming {
+        line-height: 15px;
+    }
+    .well #register_form2 {
+        margin-bottom: 30px;
+    }
+    .register-lt-top-logo {
+        display: none;
+    }
+}
+
+
+/*手机端*/
+
+@media screen and (max-width: 540px) {
+    .bottomdiv {
+        height: 60px;
+        line-height: 65px;
+    }
+    .bottomdiv img {
+        width: 107px;
+    }
+    .well #register_form2 {
+        min-height: auto;
+    }
+    .warming {
+        line-height: 22px;
+    }
+    .warming {
+        line-height: 16px;
+    }
+    .en .icon_norepeat {
+        top: 4px;
+    }
+}
+
+@media screen and (max-width:600px) {
+    #regBtn {
+        width: 62%;
+    }
+    #register .well {
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .bottomdiv a {
+        line-height: 60px;
+    }
+}
+
+@media screen and (max-width: 598px) {
+    .register-warp-left {
+        padding-left: 10px;
+    }
+    #register .well {
+        width: 100%;
+    }
+    .logo {
+        margin-top: 8px;
+    }
+    .bottomdiv .back {
+        line-height: 60px;
+    }
+    .form-group-strength #strength-check {
+        top: 65px;
+        left: 62%;
+        width: 280px;
+    }
+    .registerCon {
+        padding-top: 70px;
+    }
+    #register>.registerCon>.row {
+        padding: 15px;
+        padding-bottom: 60px;
+    }
+    .register-phone {
+        right: 0;
+    }
+    .register-warp-right {
+        padding-right: 30px;
+        padding-left: 39px;
+        padding-bottom: 39px;
+    }
+    .register-Success-bottom>a {
+        margin-right: 45px!important;
+    }
+    .register-Success-bottom {
+        padding-top: 70px;
+    }
+    .register-Success-top {
+        padding-top: 75px;
+        padding-bottom: 60px;
+    }
+    .register-lt-top {
+        margin-left: 10px;
+        font-size: 20px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        margin-bottom: 0;
+    }
+    .register-Success-top-title>img {
+        width: 55px;
+    }
+    .register-Success-middle-con:nth-child(1) {
+        font-size: 14px;
+    }
+    .register-Success-middle-con {
+        font-size: 12px;
+    }
+    .register-Success-bottom {
+        padding-top: 50px;
+    }
+    .register-Success-top {
+        padding-top: 40px;
+        padding-bottom: 50px;
+    }
+    .register-Success-top-title>img {
+        vertical-align: middle;
+    }
+    .well .intl-tel-input .country-list {
+        width: 330px;
+    }
+    .register-warp-right>#registration_form1>.warmingBox {
+        margin-top: 0;
+        margin-bottom: -10px;
+        padding-top: 0;
+    }
+    .well .intl-tel-input .flag-dropdown {
+        top: 7px;
+    }
+    .register-warp-right>#registration_form1 .nopad {
+        margin-bottom: 10px;
+    }
+    .register-icon {
+        width: 14px !important;
+    }
+}
+
+@media screen and (max-width: 414px) {
+    .register-lt-top {
+        font-size: 20px;
+        padding: 0;
+        margin-left: 0;
+    }
+    .warmingBox {
+        margin-top: 0;
+        padding-top: 0;
+        margin-bottom: -10px
+    }
+    .nopad {
+        margin-bottom: 10px;
+    }
+    #regBtn {
+        margin-top: 45px;
+        margin-bottom: 0px;
+    }
+    #register {
+        margin-top: 70px;
+    }
+    .register-Support-title {
+        padding-top: 15px;
+        font-size: 16px;
+    }
+    #register a,
+    span {
+        margin-left: 5px;
+    }
+}

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>夺标网代码规范说明</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./bt/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="./bt/assets/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+        .code {background-color: #000; color:#fff; width: 70%; margin:auto; text-align: left; padding-left: 10px;}
+    </style>
+  </head>
+
+  <body>
+  	<div class="container">
+  		<div class="row" style="margin-top: 50px;">
+  			<div class="col-md-12">
+  				<div class="panel panel-info">
+  					<div class="panel-heading">
+  						<h3>夺标网代码规范说明</h3>
+  					</div>
+					<div class="panel-body">					
+						<p><a href="./index.html">0、总接口目录页</a></p>
+						<p><a href="#001">1、接口数据规范</a></p>
+						<p><a href="#002">2、控制器、模块、Common/function.php说明</a></p>
+
+					</div>  					
+  				</div>
+  				
+  				
+  					<div class="panel panel-success">
+  					<div class="panel-heading">
+  						<h4><a name="001" id="001">1、接口数据规范</a></h4>
+  					</div>
+					<div class="panel-body">
+						<p>说明：返回值200为成功，其他为异常</p>
+						<ul>
+						</ul>
+						<pre>
+范例：
+接口负责人：XXX							
+请求方式：POST
+请求参数：Controller/method       // 控制器/方法
+POST到服务器的json数据：
+{
+	"type":"1",          // 字段说明
+	"orderId":"123"      // 字段说明
+}
+成功返回：
+{
+	"code": 200,
+	"msg": "",
+	"data": [ {
+            "order_id": "1",
+            "bank_num": "123456789987564321",
+	        } ]
+}
+或者返回空数组：
+{
+    "data": [],
+    "code": "200",
+    "msg": "success"
+}
+
+错误数据
+失败返回：
+{
+    "data": [],
+    "code": "201",                 // 错误代号
+    "msg": "错误信息"                 // 错误信息
+}
+
+
+						</pre>
+					</div> 
+					<div class="panel-footer">
+						<p>补充:</p>
+
+					</div>  	 					
+  				</div>
+  					<div class="panel panel-success">
+  					<div class="panel-heading">
+  						<h4><a name="002" id="002">2、控制器、模块、common/function.php说明</a></h4>
+  					</div>
+					<div class="panel-body">
+						<p>说明：</p>
+						<ul>
+							<li>1、参数判断都在控制器内做判断，业务逻辑代码基本不在控制器类写</li>
+							<li>2、业务逻辑代码基本写在逻辑类或模块类里面，基本不再做参数入库的判断</li>
+							<li>3、在控制器内做事务处理，不在模块类或逻辑类做，防止事务嵌套</li>
+							<li>4、Common/function.php,这个文件基本不要有数据的读写，部分特殊的例外，如post_log这里的日志</li>
+							<li>5、写funtion时要初略已有的fun函数和框架提供的函数，不要重复造轮子，fun命名要有意义的英文单词或缩写，不能中英文结合</li>
+							<li>6、fun，类和方法，要写注释和作者</li>
+						</ul>
+						</div>
+  				</div>
+  				
+  				
+
+  				
+  			</div>
+  		</div>  	
+  	</div>
+
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="./bt/dist/js/jquery.min.1.11.3.js"></script>
+    <script src="./bt/dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="./bt/assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>

@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>线下交易订单接口</title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="../bt/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../bt/dist/css/yangshi.css" rel="stylesheet" type="text/css"><!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+        <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+        <script src="../bt/assets/js/ie-emulation-modes-warning.js"></script>
+    
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="row" style="margin-top: 50px;">
+                <div class="col-md-12">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h4>线下交易订单接口目录</h4>
+                        </div>
+                        <div class="panel-body">
+                            <p><a href="index.html">0、目录页</a></p>
+                            <p><a href="#api1">1、获取交易地区</a></p>
+                            <p><a href="#api2">2、获取用户银行列表和货币信息(卖家挂单使用)</a></p>
+                            <p><a href="#api3">3、根据地区获取银行列表</a></p>
+                            <p><a href="#api4">4、获取待买入的订单列表</a></p>
+                            <p><a href="#api5">5、卖家卖单</a></p>
+                            <p><a href="#api6">6、卖家撤销订单</a></p>
+                            <p><a href="#api7">7、买家购买订单</a></p>
+                            <p><a href="#api8">8、买家确认汇款/卖家确认收款</a></p>
+                            <p><a href="#api9">9、查询订单</a></p>
+                            <p><a href="#api10">10、查询订单卖家的银行信息</a></p>
+                            <p><a href="#api11">11、卖家:收款异常</a></p>
+                        </div>                      
+                    </div>
+                    <div class="panel panel-success">
+    <div class="panel-heading">
+        <h4><a name="api1" id="api1">1、获取交易地区</a></h4>
+    </div>
+    <div class="panel-body">
+        <p>说明：</p>
+        <ul>
+        </ul>
+<div class="row"><div class="col-md-9">接口负责人：刘富国</div></div>
+<div class="row"><div class="col-md-9">请求方式：POST</div></div>
+
+请求示例：
+<pre>
+{
+    "server": "GetArea",
+    "ver": "1.0.0"
+}
+</pre>
+
+成功返回：
+<pre>
+{
+    "data": [
+        {
+            "area_id": "1",//ID
+            "area_om": "852",  //编码
+            "area_name": "中國(香港)"
+        }
+    ],
+    "error": "0",
+    "msg": "success"
+}
+</pre>
+失败返回：（有多种情况）
+<pre>
+{
+    "data": {},
+    "error": "错误码",
+    "msg": "错误说明"
+}
+</pre>
+    </div> 
+    <div class="panel-footer">
+        <p>补充:</p>
+    </div>                          
+</div>
+                    <div class="panel panel-success">
+    <div class="panel-heading">
+        <h4><a name="api2" id="api2">2、获取用户银行列表和货币信息(卖家挂单使用)</a></h4>
+    </div>
+    <div class="panel-body">
+        <p>说明：卖家挂单时候，获取用户的银行信息和货币的最新价格，用户这货币的剩余数量</p>
+        <ul>
+        </ul>
+        <div class="row"><div class="col-md-9">接口负责人：刘富国</div></div>
+<div class="row"><div class="col-md-9">请求方式：POST</div></div>
+
+请求示例：
+<pre>
+{
+    "server": "GetUserBindBankAndCurrencyInfo",
+    "ver": "1.0.0",
+    "token": "xxxxxxxx",
+    "data": {
+        "currency_id": "1"  //货币类型ID （必填）
+        "area_id": "1"  //地区ID，根据GetArea方法可以获取area_id  （可为空）
+        "user_bank_id": "181"  //用户银行ID （可为空）
+    }
+}
+</pre>
+成功返回：
+<pre>
+    {
+    "data": {
+        "area_info": [
+            {
+                "area_id": "3",   //交易区id
+                "area_om": "86",  //交易区编码
+                "area_name": "中國", //交易区名称
+                "area_rate":"3.2",//当前交易区汇率
+                "unit":"USD",//交易区价格单位
+                "bank_list": [
+                        {
+                            "user_bank_id": "163",  //用户银行ID
+                            "bank_real_name": "刘富国",  //开户名
+                            "bank_num": "1231654541264231231",  //银行账号
+                            "bank_name": "工商银行", //银行名称
+                            "bank_address": "广州支行" //银行支行
+                        }
+                ]
+            }
+        ],
+        "currency_info": {
+            "currency_id": "1",  //货币类型ID
+            "currency_name": "BTC", //货币名称
+            "num": "203.19996131",  //用户货币剩余数量
+            "last_price": "13616" //货币最新价格
+        },
+        "msg": "您的證件信息已過期" //用户权限校验说明
+        "code": "30017",  // //用户权限校验错误码
+    },
+    "error": "0",
+    "msg": "success"
+}
+
+
+</pre>
+失败返回：（有多种情况）
+<pre>
+{
+    "data": {},
+    "error": "错误码",
+    "msg": "错误说明"
+}
+</pre>
+    </div> 
+    <div class="panel-footer">
+        <p>补充:</p>
+    </div>                          
+</div>
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            <h4><a name="api3" id="api3">3、根据地区获取银行列表</a></h4>
+                        </div>
+                        <div class="panel-body">
+                            <p>说明：</p>
+                            <ul>
+                            </ul>
+                            <div class="row"><div class="col-md-9">接口负责人：刘富国</div></div>
+                            <div class="row"><div class="col-md-9">请求方式：POST</div></div>
+
+                            请求示例：
+                            <pre>
+{
+    "server": "GetBankInfoByArea",
+    "ver": "1.0.0",
+  "data": {
+        "area_id": "1"  //地区ID，根据GetArea方法可以获取area_id
+    }
+}
+</pre>
+                            成功返回：
+                            <pre>
+{
+    "data": [
+        {
+            "bank_id": "9",         //银行ID
+            "bank_name": "中国银行", //银行名
+            "bank_logo_pic": "xxxx" //LOGO图片
+        }
+    ],
+    "error": "0",
+    "msg": "success"
+}
+
+</pre>
+                            失败返回：（有多种情况）
+                            <pre>
+{
+    "data": {},
+    "error": "错误码",
+    "msg": "错误说明"
+}
+</pre>
+                        </div>
+                        <div class="panel-footer">
+                            <p>补充:</p>
+                        </div>
+                    </div>
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            <h4><a name="api4" id="api4">4、获取待买入的订单列表</a></h4>
+                        </div>
+                        <div class="panel-body">
+                            <p>说明：</p>
+                            <ul>
+                            </ul>
+                            <div class="row"><div class="col-md-9">接口负责人：刘富国</div></div>
+                            <div class="row"><div class="col-md-9">请求方式：POST</div></div>
+
+                            请求示例：
+                            <pre>
+{
+    "server": "GetPendingPurchaseOrderList",
+    "ver": "1.0.0",
+    "token": "xxxxxxxx",
+    "data": {
+        "currency_id":"1",  // 货币类型 (可选)
+        "area_id":"1",  // 地区ID (可选)
+        "bank_id":"2",  // 银行ID (可选)
+        "page": "1",  //页数
+        "limit": "10"  // 每页显示行数
+    }
+}
+</pre>
+                            成功返回：
+                            <pre>
+{
+    "data": {
+        "total": "1",
+        "list": [
+            {
+                "order_id": "104", //订单ID
+                "level": "2",  //卖家等级
+                "num": "1230.00000000", //销售数量
+                "price": "100.0000",  //单价（美元）
+                "refer_price": "123000", //总价(美元)
+                "user_bank_id": "164",   //卖家银行ID
+                "bank_name": "工商银行", //银行名称
+                "currency_id": "1", //货币类型ID
+                "bank_log_pic": "XXXX.jpg",// //银行图标
+                "area_name": "中國", //地区名
+                "trade_flag":1//1当前订单交易区和用户绑定交易区一制  0不一致
+                "unit":"USD",//交易区参考价的单位
+                "reference_price":"15646",//参考价
+                "reference_total_price":"165466",//参考总价
+                "rate":"6.5",//当前交易区的汇率
+            }
+        ],
+        "pager": {
+            "current_page": "1",
+            "last_page": "",
+            "next_page": "",
+            "total_pages": "1"
+        },
+        "msg": "您的證件信息已過期",//用户权限校验说明
+        "code": "30017" //用户权限校验错误码
+    },
+    "error": "0",
+    "msg": "success"
+}
+
+</pre>
+                            失败返回：（有多种情况）
+                            <pre>
+{
+    "data": {},
+    "error": "错误码",
+    "msg": "错误说明"
+}
+</pre>
+                        </div>
+                        <div class="panel-footer">
+                            <p>补充:</p>
+                        </div>
+                    </div>
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            <h4><a name="api5" id="api5">5、卖家卖单</a></h4>
+                        </div>
+                        <div class="panel-body">
+                            <p>说明：</p>
+                            <ul>
+                            </ul>
+                            <div class="row"><div class="col-md-9">接口负责人：刘富国</div></div>
+                            <div class="row"><div class="col-md-9">请求方式：POST</div></div>
+
+                            请求示例：
+                            <pre>
+{
+    "token": "xxxx",
+    "server": "Selling",
+    "ver": "1.0.0",
+    "data": {
+        "area_id": 3,  // 地区ID
+        "user_bank_id": 164, //卖家银行ID
+        "coin_price": 10000.0010, //销售价
+        "coin_num": 3, //销售数量
+        "currency_id": 1,  //币种
+        "trade_pwd": 123456,  //资金密码
+
+    }
+}
+</pre>
+                            成功返回：
+                            <pre>
+            {
+                "data": {
+                    "is_success": "1",
+                    "order_id":"254"
+                },
+                "error": "0",
+                "msg": "success"
+            }
+
+</pre>
+                            失败返回：（有多种情况）
+                            <pre>
+{
+    "data": {},
+    "error": "错误码",
+    "msg": "错误说明"
+}
+</pre>
+                        </div>
+                        <div class="panel-footer">
+                            <p>补充:</p>
+                        </div>
+                    </div>
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            <h4><a name="api6" id="api6">6、卖家撤销订单</a></h4>
+                        </div>
+                        <div class="panel-body">
+                            <p>说明：</p>
+                            <ul>
+                            </ul>
+                            <div class="row"><div class="col-md-9">接口负责人：刘富国</div></div>
+                            <div class="row"><div class="col-md-9">请求方式：POST</div></div>
+
+                            请求示例：
+                            <pre>
+{
+    "token": "xxxx",
+    "server": "RevokeOrder",
+    "ver": "1.0.0",
+    "data": {
+        "order_id": 3,  //订单ID
+    }
+}
+</pre>
+                            成功返回：
+                            <pre>
+    {
+        "data": {
+            "is_success": "1"
+        },
+        "error": "0",
+        "msg": "success"
+    }
+
+</pre>
+                            失败返回：（有多种情况）
+                            <pre>
+{
+    "data": {},
+    "error": "错误码",
+    "msg": "错误说明"
+}
+</pre>
+                        </div>
+                        <div class="panel-footer">
+                            <p>补充:</p>
+                        </div>
+                    </div>
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            <h4><a name="api7" id="api7">7、买家购买订单</a></h4>
+                        </div>
+                        <div class="panel-body">
+                            <p>说明：</p>
+                            <ul>
+                            </ul>
+                            <div class="row"><div class="col-md-9">接口负责人：刘富国</div></div>
+                            <div class="row"><div class="col-md-9">请求方式：POST</div></div>
+
+                            请求示例：
+                            <pre>
+{
+    "token": "xxxx",
+    "server": "Buying",
+    "ver": "1.0.0",
+    "data": {
+        "order_id": "115" ,//订单ID
+        "currency_id":1,  //货币ID
+        "user_bank_id":209,   //卖家银行ID
+        "trade_pwd":123456  //用户资金密码
+    }
+}
+</pre>
+                            成功返回：
+                            <pre>
+    {
+        "data": {
+            "is_success": "1"
+        },
+        "error": "0",
+        "msg": "success"
+    }
+
+</pre>
+                            失败返回：（有多种情况）
+                            <pre>
+{
+    "data": {},
+    "error": "错误码",
+    "msg": "错误说明"
+}
+</pre>
+                        </div>
+                        <div class="panel-footer">
+                            <p>补充:</p>
+                        </div>
+                    </div>
+                    <div class="panel panel-success">
+                    <div class="panel-heading">
+                        <h4><a name="api8" id="api8">8、买家确认汇款/卖家确认收款</a></h4>
+                    </div>
+                    <div class="panel-body">
+                        <p>说明：如果是买家的token：买家确认汇款，如果是卖家的token就是：卖家确认收款</p>
+                        <p>卖家确认收款，需要资金密码</p>
+                        <ul>
+                        </ul>
+                        <div class="row"><div class="col-md-9">接口负责人：刘富国</div></div>
+                        <div class="row"><div class="col-md-9">请求方式：POST</div></div>
+
+                        请求示例：
+                        <pre>
+{
+    "token": "xxxx",
+    "server": "ConfirmOrderPaidOrOrderAccept",
+    "ver": "1.0.0",
+    "data": {
+        "order_id": "115" ,//订单ID
+        "trade_pwd": "123456" ,//卖家确认收款，需要资金密码
+    }
+}
+</pre>
+                        成功返回：
+                        <pre>
+    {
+        "data": {
+            "is_success": "1"
+        },
+        "error": "0",
+        "msg": "success"
+    }
+
+</pre>
+                        失败返回：（有多种情况）
+                        <pre>
+{
+    "data": {},
+    "error": "错误码",
+    "msg": "错误说明"
+}
+</pre>
+                    </div>
+                    <div class="panel-footer">
+                        <p>补充:</p>
+                    </div>
+                </div>
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            <h4><a name="api9" id="api9">9、查询订单</a></h4>
+                        </div>
+                        <div class="panel-body">
+                            <p>说明：</p>
+                            <ul>
+                            </ul>
+                            <div class="row"><div class="col-md-9">接口负责人：刘富国</div></div>
+                            <div class="row"><div class="col-md-9">请求方式：POST</div></div>
+
+                            请求示例：
+                            <pre>
+{
+    "token": "xxxx",
+    "server": "GetOrderList",
+    "ver": "1.0.0",
+    "data": {
+        "type":"1" //1为全部买入卖出订单，2：买入，3：卖出；
+                   // 4：历史订单：买入; 5:历史订单：卖出；6：已撤销
+    }
+}
+</pre>
+                            成功返回：
+                            <pre>
+{
+    "data": {
+        "total": "1",
+        "list": [
+            {
+                "currency_id": "1",  //货币类型
+                "coin_name": "BTC",  //货币名称
+                "order_num": "201712075551100989",  //订单编码
+                "price": "10000.0010",  //单价
+                "num": "1.00000000",    //数量
+                "total_price": "10000.001", //总价
+                "add_time": "1512638023",  //创建时间
+                "trade_time": "1512639640",  //购买时间
+                "shoukuan_time": "0",  //买家汇款时间
+                "end_time": "0",  //结束时间（卖家确认收款时间）或者是撤销时间
+                "status": "1",   //订单状态：0挂单1买入成功2买家确认打款3卖家确认收款4后台确认5撤销6后台撤销 7.系统自动撤单 8待处理
+                "status_str": "等待汇款",  //订单状态描述
+                "time_limit": "0",			// 确认已汇款 或者 確認已收款 按钮剩余时间
+                "opt_unreceipt_type": "1", // 是否可点击 收款异常按钮 0 不可点击1可点击
+                "opt_str_unreceipt": "收款異常", 	// 收款异常按钮 为空则没有
+                "type_str": "打款",  //操作按钮文字，如果为空，请不要显示操作按钮
+                "details": "详情",  //详情按钮文字
+                "user_bank_id": "164", //卖家银行ID
+                "om": "86",       //地区编码
+                "order_id": "116",  //订单ID
+                "transaction_type": "1", //1买单，2为卖单
+                "bank_name": "农业银行", //收款人银行
+                "bank_address": "广州支行;" //开户行地址
+                "bank_num": "1246542123122232323",  //收款卡号
+                "bank_real_name": "刘富国", //收款人姓名
+                "buyer_real_name": "王宝强", //买家开户行姓名
+                "unit":'CNY',//参考价的单位
+                "reference_price":'54456',//参考价
+                "reference_total_price":'1651564',//参考总价
+            }
+        ],
+        "pager": {
+            "current_page": "1",
+            "last_page": "",
+            "next_page": "",
+            "total_pages": "1"
+        }
+    },
+    "error": "0",
+    "msg": "success"
+}
+
+</pre>
+                            失败返回：（有多种情况）
+                            <pre>
+{
+    "data": {},
+    "error": "错误码",
+    "msg": "错误说明"
+}
+</pre>
+                        </div>
+                        <div class="panel-footer">
+                            <p>补充:</p>
+                        </div>
+                    </div>
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            <h4><a name="api10" id="api10">10、查询订单卖家的银行信息</a></h4>
+                        </div>
+                        <div class="panel-body">
+                            <p>说明：只有买家才能看对应订单的卖家银行信息</p>
+                            <ul>
+                            </ul>
+                            <div class="row"><div class="col-md-9">接口负责人：刘富国</div></div>
+                            <div class="row"><div class="col-md-9">请求方式：POST</div></div>
+
+                            请求示例：
+                            <pre>
+{
+    "token": "xxxx",
+    "server": "GetSellerBankInfo",
+    "ver": "1.0.0",
+    "data": {
+        "order_id":"115"  //订单ID
+    }
+}
+</pre>
+                            成功返回：
+                            <pre>
+{
+    "data": {
+        "user_bank_id": "164",     //用户银行ID
+        "bank_real_name": "刘富国",//开户名
+        "bank_num": "1246542123122232323",  //银行账号
+        "bank_name": "农业银行"  //银行名称
+    },
+    "error": "0",
+    "msg": "success"
+}
+
+</pre>
+                            失败返回：（有多种情况）
+                            <pre>
+{
+    "data": {},
+    "error": "错误码",
+    "msg": "错误说明"
+}
+</pre>
+                        </div>
+                        <div class="panel-footer">
+                            <p>补充:</p>
+                        </div>
+                    </div>
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            <h4><a name="api11" id="api11">11、卖家:收款异常</a></h4>
+                        </div>
+                        <div class="panel-body">
+                            <p>说明：买家付款2小时后，卖家点击收款异常按钮</p>
+                            <ul>
+                            </ul>
+                            <div class="row"><div class="col-md-9">接口负责人：刘富国</div></div>
+                            <div class="row"><div class="col-md-9">请求方式：POST</div></div>
+
+                            请求示例：
+                            <pre>
+{
+    "token": "xxxx",
+    "server": "UnGetMoney",
+    "ver": "1.0.0",
+    "data": {
+        "order_id":"115"  //订单ID
+        "trade_pwd": 123456,  //资金密码
+    }
+}
+</pre>
+                            成功返回：
+                            <pre>
+ {
+        "data": {
+            "is_success": "1"
+        },
+        "error": "0",
+        "msg": "success"
+    }
+
+</pre>
+                            失败返回：（有多种情况）
+                            <pre>
+{
+    "data": {},
+    "error": "错误码",
+    "msg": "错误说明"
+}
+</pre>
+                        </div>
+                        <div class="panel-footer">
+                            <p>补充:</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+          
+    </body>
+    </html>
+
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../bt/dist/js/jquery.min.1.11.3.js"></script>
+    <script src="../bt/dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../bt/assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="../bt/dist/js/yangshi.js"></script>
+  </body>
+</html>

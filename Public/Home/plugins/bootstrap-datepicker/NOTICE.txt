@@ -1,0 +1,2 @@
+This plugin's code has been modified by WiseBoard team.
+Notes about file(s) modifications can be found at the top of the modified file(s).

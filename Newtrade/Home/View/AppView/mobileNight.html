@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>TradingView chart</title>
+		<!-- Fix for iOS Safari zooming bug -->
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<script type="text/javascript" src="__HOME_JS__/jquery.min.js"></script>
+		<script type="text/javascript" src="__HOME_CHART__/Appcharting_library.min.js"></script>
+		<script type="text/javascript" src="__HOME_CHART__/datafeed/udf/Appdatafeed.js"></script>
+
+		<script type="text/javascript">
+		    // 获取请求接口
+		   var postUrl="{:U('AppView/api')}";
+		   //获取语言
+ 		   var lang="{$lang}";        
+ 		    //获取symbol符号请求数据
+	       var symbols="{$symbol}";
+	       //填充默认的请求数据时间
+	       var dataTime="{$time}";
+	       
+	       //样式默认配置
+	       var HAstyle=parseInt("{$style}");
+	       if(dataTime==1440)
+	    	{
+	    	   dataTime='D';
+	    	}   
+	       
+ 		   function langChage(lang)
+		   {
+			   var ArrLang=new Array();
+			   ArrLang['zh-cn']="zh";
+			   ArrLang['zh-tw']="zh_TW";
+		       ArrLang['en-us']="en";
+		       return ArrLang[lang];
+		   }
+			TradingView.onready(function()
+			{
+				var widget = new TradingView.widget({
+					fullscreen: true,
+					timezone:'Asia/Shanghai',
+					symbol: symbols,
+					interval: dataTime, 
+					container_id: "tv_chart_container",
+					datafeed: new Datafeeds.UDFCompatibleDatafeed(postUrl),
+					library_path: "/Public/Home/charting_library/",
+					locale: langChage(lang),
+					debug:true,
+					preset: "mobile",     //针对移动端的配置
+					drawings_access: { type: 'black', tools: [ { name: "Regression Trend" } ] },
+					disabled_features: [
+					                    "use_localstorage_for_settings",
+					                    "show_chart_property_page",      //禁掉K线属性指标数
+					                    ],
+					studies_overrides: {
+					      // volume styles
+					      /* 'volume.volume.color.0': '#d5e3ed',
+					      'volume.volume.color.1': '#d5e3ed',
+					      'volume.volume.transparency': 70, */
+					    'volume.volume.color.0': '#9a4d36',   //红色
+					    'volume.volume.color.1': '#569b4f',   //绿色 
+					
+					    },
+					overrides: {
+						"mainSeriesProperties.candleStyle.upColor":   "#50E4C3",          //绿涨  红跌  蜡烛图的样式
+						 "mainSeriesProperties.candleStyle.downColor": "#FF3C54",  
+					     "mainSeriesProperties.candleStyle.borderUpColor": "#50E4C3",    //蜡烛边框颜色
+					     "mainSeriesProperties.candleStyle.borderDownColor": "#FF3C54",
+					     "mainSeriesProperties.candleStyle.wickUpColor":"#50E4C3",		//升跌时上下两条直线的颜色
+					     "mainSeriesProperties.candleStyle.wickDownColor":"#FF3C54",
+					     
+					     "paneProperties.rightMargin": 5,  //控制边距
+					     "mainSeriesProperties.barStyle.upColor": "#50E4C3",
+						 "mainSeriesProperties.barStyle.downColor": "#FF3C54",
+						
+						 "mainSeriesProperties.haStyle.upColor":"#50E4C3", 
+						 "mainSeriesProperties.haStyle.downColor":"#FF3C54",              //平均线HA样式
+						 "mainSeriesProperties.haStyle.borderDownColor": "#FF3C54",
+					     "mainSeriesProperties.haStyle.borderUpColor":"#50E4C3",
+						
+						"paneProperties.background": "#262A34",
+                        "paneProperties.vertGridProperties.color": "#262A34",
+                        "paneProperties.horzGridProperties.color": "#262A34",
+						"symbolWatermarkProperties.transparency": 90,
+						"scalesProperties.textColor" : "#AAA",
+						'mainSeriesProperties.style': HAstyle,       //覆盖配置蜡烛线
+					},
+					studies_overrides: {
+					      // volume styles
+					       'volume.volume.color.0': '#FF3C54',   //红色
+					       'volume.volume.color.1': '#50E4C3',   //绿色 
+					} 
+				});
+				widget.onChartReady(function() {
+					widget.chart().createStudy("Moving Average", false, false, [5], null, {  "plot.color": "#fff" });
+					widget.chart().createStudy("Moving Average", false, false, [10], null, { "plot.color": "#dad553" });
+				});
+				
+			});
+		</script>
+	</head>
+	<body style="margin:0px;">
+		<div  id="tv_chart_container"></div>
+	</body>
+
+</html>

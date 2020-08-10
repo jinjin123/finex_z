@@ -1,0 +1,78 @@
+<include file="Public:header1" />
+<!--头部动画图片-->
+<div class="about_header_img_box" id="about_img_box">
+    <div class='about_header_img fadeInUp' id="about_img1"><img class="heart_bottom" src="__HOME_IMG__/aboutus/us_bg_top_1.png" alt="" data-depth="0.15"></div>
+    <div class='about_header_img fadeInUp ' id="about_img2"><img src="__HOME_IMG__/aboutus/us_bg_top_2.png" alt="" data-depth="0.15"></div>
+    <div class='about_header_img fadeInUp' id="about_img3"><img class='heart_bottom' src="__HOME_IMG__/aboutus/us_bg_top_3.png" alt="" data-depth="0.15"></div>
+    <div class='about_header_img fadeInUp' id="about_img4"><img class='heart_bottom1' src="__HOME_IMG__/aboutus/us_bg_top_4.png" alt="" data-depth="0.15"></div>
+    <div class='about_header_img fadeInUp'><img src="__HOME_IMG__/aboutus/us_bg_top_5.png" alt=""></div>
+    <div class='about_header_img fadeInUp ' id="about_img6"><img class="heart_bottom" src="__HOME_IMG__/aboutus/us_bg_top_6.png" alt="" data-depth="0.15"></div>
+    <div class='about_header_img fadeInUp ' id="about_img7"><img class="heart_bottom" src="__HOME_IMG__/aboutus/us_bg_top_7.png" alt="" data-depth="0.15"></div>
+    <div class='about_header_img fadeInUp' id="about_img8"><img src="__HOME_IMG__/aboutus/us_bg_top_8.png" alt="" data-depth="0.15"></div>
+    <div class='about_header_img fadeIn' id="about_box_btm"><img src="__HOME_IMG__/aboutus/us_bg_top_box_btm.png" alt="" data-depth="0.15"></div>
+    <div class='about_header_img fadeIn' id="about_box_left"><img src="__HOME_IMG__/aboutus/us_bg_top_box_left.png" alt="" data-depth="0.15"></div>
+    <div class='about_header_img fadeIn' id="about_box_right"><img src="__HOME_IMG__/aboutus/us_bg_top_box_right.png" alt="" data-depth="0.15"></div>
+    <div class='about_header_img fadeIn' id="about_box_line"><img src="__HOME_IMG__/aboutus/us_bg_top_line.png" alt=""></div>
+    <div class='phone_header_img fadeInUp' id='phone_us_bg_top'><img src="__HOME_IMG__/aboutus/us_bg_top.png" alt="" data-depth="0.08"></div>
+</div>
+<!-- 关于我们 -->
+<div class='about_wrap'>
+    <!-- 关于我们手机图片切换 -->
+    <div class='about_middle_img fadeIn' id="about_bg_left"><img src="__HOME_IMG__/aboutus/us_bg_left.png" alt="" data-depth="0.15"></div>
+    <div class='about_bottom_img clearfix fadeIn' id="about_bg_right"><img src="__HOME_IMG__/aboutus/us_bg_right.png" alt="" data-depth="0.15"></div>
+    <div class='phone_middle_img fadeIn' id='phone_us_bg_left'><img src="__HOME_IMG__/aboutus/us_bg_left copy.png" alt="" data-depth="0.08"></div>
+    <div class='phone_bottom_img clearfix fadeIn' id='phone_us_bg_right'><img src="__HOME_IMG__/aboutus/us_bg_right copy.png" alt="" data-depth="0.08" class='pull-right'></div>
+    <div class='about_container'>
+        <!-- 关于我们标题 -->
+        <div class='about_header text-center'>
+            <p class="ab_header_top">關於我們</p>
+            <p class="ab_header_top">About Us</p>
+        </div>
+        <!-- 关于我们第一段 -->
+        <div class='about_middle text-center'>
+            <p>{$Think.lang._TGDXTZCLHGJ_}</p>
+            <p class='about_content'>{$Think.lang._SJCLGSBGSJLWTZRTGZYDXM_}</p>
+            <p class='about_content'>{$Think.lang._BGSCQGZSCQKHJMJJQS_}</p>
+        </div>
+        <!-- 关于我们第二段 -->
+        <div class='about_middle text-center'>
+            <p>{$Think.lang._SZZCJYPT_}</p>
+            <p class='about_content'>{$Think.lang._BGSDKJYFTDCGBRLZSJGDHZGJNZMQY_}</p>
+            <p class='about_content'>{$Think.lang._XZTDNDLYFHSJWSDSZZCJYPT_}</p>
+        </div>
+
+    </div>
+</div>
+
+<!-- 返回头部 -->
+<div class="backTop" id="backtop"></div>
+
+<include file="Public:footer1" />
+</body>
+
+</html>
+<script src="__HOME_PLUG__/jquery.parallax/parallax.js"></script>
+<script type="text/javascript">
+    function para(param, scalarY, invertY) {
+        new Parallax(param, {
+            calibrateX: true,
+            calibrateY: false,
+            invertX: false,
+            invertY: invertY,
+            limitX: false,
+            limitY: false,
+            scalarX: 0,
+            scalarY: scalarY,
+            originX: 0.5,
+            originY: 0.5
+        });
+    }
+
+    //手机图片 重力效果
+    var phone_us_bg_top = document.getElementById('phone_us_bg_top');
+    var phone_us_bg_left = document.getElementById('phone_us_bg_left');
+    var phone_us_bg_right = document.getElementById('phone_us_bg_right');
+    new Parallax(phone_us_bg_top);
+    new Parallax(phone_us_bg_left);
+    new Parallax(phone_us_bg_right);
+</script>

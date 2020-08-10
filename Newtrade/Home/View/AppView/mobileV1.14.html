@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>BTCsale</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+</head>
+<body style="margin: 0; padding: 0;">
+
+<div id="trading-view"></div>
+
+</body>
+
+<script>
+    window.tvAppConfig = {
+   		option : JSON.parse('{$option}'),
+   		config : JSON.parse('{$config}'),
+   		symbol : JSON.parse('{$symbol}'),
+   		theme: '{$theme}',
+    };
+</script>
+<script src="/Public/Home/tradeview_v1.14/scripts/mobile.js?t={$time}"></script>
+
+</html>

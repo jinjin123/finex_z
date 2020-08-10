@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="2161px" height="2572px" viewBox="0 0 2161 2572" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.1 (67048) - http://www.bohemiancoding.com/sketch -->
+    <title>dl_bg_top</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="133.896504%" y1="22.5496249%" x2="-5.7944671%" y2="66.2028611%" id="linearGradient-1">
+            <stop stop-color="#141633" offset="0%"></stop>
+            <stop stop-color="#1C1E35" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="改版二-下载及教程" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.9">
+        <g id="下载页-新-copy-2" transform="translate(-399.000000, -15.000000)" fill="url(#linearGradient-1)" fill-rule="nonzero">
+            <g id="背景">
+                <g id="dl_bg" transform="translate(0.000000, 15.000000)">
+                    <polygon id="dl_bg_top" points="399 1299.46907 2560.75255 2572.33779 2560.75255 480.03846 2560.75255 0"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

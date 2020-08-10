@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="764px" height="820px" viewBox="0 0 764 820" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.1 (67048) - http://www.bohemiancoding.com/sketch -->
+    <title>tech_line</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="117.039669%" y1="-8.36147425%" x2="50%" y2="77.558963%" id="linearGradient-1">
+            <stop stop-color="#4277F3" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#1D61FF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="96.9052134%" x2="26.9149103%" y2="24.2379061%" id="linearGradient-2">
+            <stop stop-color="#509AEF" offset="0%"></stop>
+            <stop stop-color="#3C6AF0" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="147.160395%" y1="87.6260337%" x2="19.6809747%" y2="18.3614848%" id="linearGradient-3">
+            <stop stop-color="#509AEF" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#3C6AF0" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="11.8494402%" y1="100%" x2="100%" y2="33.5216869%" id="linearGradient-4">
+            <stop stop-color="#509AEF" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#3C6AF0" stop-opacity="0.6" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="改版二-下载及教程" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="教程页-新-2560" transform="translate(-281.000000, -382.000000)">
+            <g id="背景" transform="translate(0.000000, -1.333125)">
+                <g id="tech_line" transform="translate(281.000000, 350.009687)">
+                    <g transform="translate(0.000000, 34.000000)">
+                        <polyline id="路径" stroke="url(#linearGradient-1)" stroke-width="2" fill-rule="nonzero" points="762.487838 2.61277231e-13 150 817.376084 546.375 817.376084"></polyline>
+                        <g id="分组" opacity="0.7" transform="translate(0.333333, 249.955625)">
+                            <polygon id="Fill-1" fill="url(#linearGradient-2)" points="54.1606635 0 0.179715168 31.353392 55.3799462 63.2057942 109.360635 31.8526614"></polygon>
+                            <polygon id="Fill-2" fill="url(#linearGradient-3)" points="55.3798684 63.2058719 55.2001273 129.651473 109.180816 98.2980814 109.360557 31.8527392"></polygon>
+                            <polygon id="Fill-3" fill="url(#linearGradient-4)" points="0 97.7989416 55.2002311 129.651344 55.3799722 63.2060016 0.179741105 31.3533402"></polygon>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

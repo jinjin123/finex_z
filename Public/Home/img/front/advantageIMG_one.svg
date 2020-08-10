@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="99px" height="117px" viewBox="0 0 99 117" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50 (54983) - http://www.bohemiancoding.com/sketch -->
+    <title>homeic_ad_one</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="-58.3206838%" y1="-28.2906928%" x2="72.3014543%" y2="93.9492583%" id="linearGradient-1">
+            <stop stop-color="#4694FD" offset="0%"></stop>
+            <stop stop-color="#3C6AF0" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="92.3804012%" y1="93.3247579%" x2="14.9290392%" y2="27.4311867%" id="linearGradient-2">
+            <stop stop-color="#6BC0FB" offset="0%"></stop>
+            <stop stop-color="#3665ED" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="195.534688%" y1="121.994108%" x2="5.30583658%" y2="26.5245521%" id="linearGradient-3">
+            <stop stop-color="#509AEF" stop-opacity="0.402541893" offset="0%"></stop>
+            <stop stop-color="#3C6AF0" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="BTCsale首页-2" transform="translate(-180.000000, -4055.000000)">
+            <g id="3" transform="translate(120.000000, 3796.000000)">
+                <g id="Group-11" transform="translate(30.000000, 239.000000)">
+                    <g id="1">
+                        <g id="Group-9">
+                            <g id="homeic_ad_one" transform="translate(30.000000, 20.000000)">
+                                <polygon id="Stroke-8" stroke="url(#linearGradient-1)" points="92.7078125 86.3073958 92.7078125 35.6230208 48.8130208 10.2813542 4.9203125 35.6230208 4.9203125 86.3073958 48.8130208 111.650104"></polygon>
+                                <path d="M48.8133333,10.2810417 L48.8133333,111.649792" id="Stroke-10" stroke="url(#linearGradient-1)"></path>
+                                <path d="M4.9840625,35.5114583 L92.6423958,86.4197917" id="Stroke-12" stroke="url(#linearGradient-1)"></path>
+                                <path d="M5.075625,86.5755208 L92.5527083,35.3557292" id="Stroke-14" stroke="url(#linearGradient-1)"></path>
+                                <path d="M0.0009375,88.61875 L28.1634375,104.879167 L28.2540625,72.5177083 L0.0915625,56.2572917 L0.0009375,88.61875 Z M8.73114583,83.6510417 L8.7665625,71.2739583 L19.5301042,77.4895833 L19.4957292,89.865625 L8.73114583,83.6510417 Z" id="Fill-1" fill="url(#linearGradient-2)"></path>
+                                <path d="M48.1645833,0 L48,61.2135417 L98.5520833,90.4 L98.7166667,29.1864583 L48.1645833,0 Z M58.5333333,18.0135417 L88.284375,35.190625 L88.184375,72.3854167 L58.4322917,55.2083333 L58.5333333,18.0135417 Z" id="Fill-2" fill="url(#linearGradient-2)"></path>
+                                <path d="M9.77020833,35.7382292 C9.77020833,38.4173958 7.59833333,40.5882292 4.92020833,40.5882292 C2.24,40.5882292 0.0691666667,38.4173958 0.0691666667,35.7382292 C0.0691666667,33.0590625 2.24,30.8882292 4.92020833,30.8882292 C7.59833333,30.8882292 9.77020833,33.0590625 9.77020833,35.7382292" id="Fill-4" fill="url(#linearGradient-3)"></path>
+                                <path d="M53.6636458,111.649792 C53.6636458,114.328958 51.4928125,116.499792 48.8136458,116.499792 C46.1344792,116.499792 43.9626042,114.328958 43.9626042,111.649792 C43.9626042,108.970625 46.1344792,106.799792 48.8136458,106.799792 C51.4928125,106.799792 53.6636458,108.970625 53.6636458,111.649792" id="Fill-6" fill="url(#linearGradient-3)"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

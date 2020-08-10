@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1483px" height="1074px" viewBox="0 0 1483 1074" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.1 (67048) - http://www.bohemiancoding.com/sketch -->
+    <title>dl_two</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="102.220498%" y1="145.6841%" x2="5.2313402%" y2="7.25650301%" id="linearGradient-1">
+            <stop stop-color="#3C6AF0" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#3C6AF0" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="113.547669%" y1="63.6109856%" x2="0%" y2="58.7406614%" id="linearGradient-2">
+            <stop stop-color="#3CA4FF" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#2C62FF" stop-opacity="0.8" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="109.088562%" y1="105.97105%" x2="1.84354111%" y2="0%" id="linearGradient-3">
+            <stop stop-color="#509AEF" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#3C6AF0" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="88.6362038%" y1="100%" x2="-19.7841978%" y2="12.5250364%" id="linearGradient-4">
+            <stop stop-color="#519BFF" offset="0%"></stop>
+            <stop stop-color="#2C62FF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="0%" y1="0%" x2="100%" y2="35.7961129%" id="linearGradient-5">
+            <stop stop-color="#509AEF" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#3C6AF0" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="0%" y1="114.878078%" x2="74.7581708%" y2="27.9995582%" id="linearGradient-6">
+            <stop stop-color="#509AEF" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#325BCF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="112.157607%" y1="0%" x2="70.1071797%" y2="60.7366708%" id="linearGradient-7">
+            <stop stop-color="#509AEF" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#255DFF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="0%" y1="50%" x2="100%" y2="50%" id="linearGradient-8">
+            <stop stop-color="#509AEF" offset="0%"></stop>
+            <stop stop-color="#3C6AF0" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="80.1682088%" y1="112.006974%" x2="80.1682088%" y2="-25.2017231%" id="linearGradient-9">
+            <stop stop-color="#509AEF" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#3C6AF0" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="改版二-下载及教程" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="下载页-新-copy" transform="translate(-1076.000000, -3109.000000)">
+            <g id="2" transform="translate(452.000000, 3108.181669)">
+                <g id="dl_two" transform="translate(625.333333, 0.000000)">
+                    <polygon id="Fill-1" fill="url(#linearGradient-1)" points="758.559225 449.12284 758.427442 501.735217 395.918915 292.426859 396.050698 239.816032"></polygon>
+                    <polygon id="Fill-2" fill="url(#linearGradient-2)" points="1027.38047 298.715909 889.414574 378.89734 621.188217 224.027823 759.154109 143.846392"></polygon>
+                    <polyline id="Stroke-3" stroke="url(#linearGradient-3)" stroke-width="2" points="985.622946 524.940295 621.187287 315.461384 621.187287 224.028133"></polyline>
+                    <polygon id="Fill-4" fill="url(#linearGradient-4)" points="621.187907 224.027978 621.187907 315.461229 890.80031 470.436179 889.414264 378.897495"></polygon>
+                    <g id="分组" transform="translate(0.000000, 1.089986)" stroke-width="2">
+                        <polyline id="Stroke-5" stroke="url(#linearGradient-5)" points="538.363411 156.12804 538.363411 597.74455 538.363411 604.490681 890.844031 808.006452 890.844031 469.275025 1027.38047 389.057934 1027.38047 297.626233"></polyline>
+                        <polyline id="Stroke-7" stroke="url(#linearGradient-6)" points="0 1072.19893 781.473798 620.001144 620.639704 529.443842 620.639704 420.02455"></polyline>
+                        <g transform="translate(395.131783, 0.000000)" id="Stroke-9" stroke="url(#linearGradient-7)">
+                            <polyline points="1.03193798 238.76977 409.746667 1.23650638 1085.75824 1.23650638"></polyline>
+                        </g>
+                    </g>
+                    <polygon id="Fill-11" fill="url(#linearGradient-8)" points="1015.73581 540.701061 809.617984 660.491008 782.613333 644.899399 988.731163 525.109452"></polygon>
+                    <path d="M758.559225,393.887518 L758.559225,451.790128" id="Stroke-12" stroke="url(#linearGradient-9)" stroke-width="2"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

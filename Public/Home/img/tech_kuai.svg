@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="134px" height="159px" viewBox="0 0 134 159" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.1 (67048) - http://www.bohemiancoding.com/sketch -->
+    <title>tech_kuai</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="96.9052134%" x2="26.9149103%" y2="24.2379061%" id="linearGradient-1">
+            <stop stop-color="#509AEF" offset="0%"></stop>
+            <stop stop-color="#3C6AF0" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="147.160395%" y1="87.6260337%" x2="19.6809747%" y2="18.3614848%" id="linearGradient-2">
+            <stop stop-color="#509AEF" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#3C6AF0" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="11.8494402%" y1="100%" x2="100%" y2="33.5216869%" id="linearGradient-3">
+            <stop stop-color="#509AEF" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#3C6AF0" stop-opacity="0.6" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="改版二-下载及教程" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.9">
+        <g id="教程页-新-2560" transform="translate(-2156.000000, -348.000000)">
+            <g id="背景" transform="translate(0.000000, -1.333125)">
+                <g id="tech_line" transform="translate(281.000000, 350.009687)">
+                    <g id="tech_kuai" transform="translate(1875.000000, 0.000000)">
+                        <polygon id="Fill-1" fill="url(#linearGradient-1)" points="65.9775355 0 0.21892575 38.1941321 67.4628436 76.9961493 133.221137 38.802333"></polygon>
+                        <polygon id="Fill-2" fill="url(#linearGradient-2)" points="67.4627488 76.996244 67.2437915 157.939068 133.002085 119.744936 133.221043 38.8024277"></polygon>
+                        <polygon id="Fill-3" fill="url(#linearGradient-3)" points="0 119.136893 67.2439179 157.93891 67.4628752 76.9964019 0.218957346 38.1940689"></polygon>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

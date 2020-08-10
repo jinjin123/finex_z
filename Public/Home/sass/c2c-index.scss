@@ -1,0 +1,1832 @@
+@charset "utf-8";
+
+/*
+	引入皮肤变量
+
+	@import "c2cStyle"; 引入c2c默认样式文件
+
+*/
+
+@import "c2cStyle";
+table {
+    border-collapse: collapse;
+}
+
+.modal-open.page-overflow .page-container,
+.modal-open.page-overflow .page-container .navbar-fixed-top,
+.modal-open.page-overflow .page-container .navbar-fixed-bottom,
+.modal-open.page-overflow .modal-scrollable {
+    overflow-y: hidden;
+}
+
+
+/*--------- 表格头部固定 ----------*/
+
+.tablde_thead li {
+    float: left;
+    font-size: 13px;
+    font-weight: bold;
+    width: 19.5%;
+    text-align: center;
+}
+
+.tablde_thead li:nth-last-of-type(2n) {
+    width: 18%;
+}
+
+.tablde_thead li:last-of-type {
+    width: 14%;
+}
+
+
+/*--------- 我的订单 ----------*/
+
+.orderBook.panel,
+.orderManageBox.panel {
+    border: none;
+}
+
+.orderManageBox .zoom-Note a {
+    color: $zoom-ordera-Bg;
+    font-size: 1.2rem;
+    margin-left: 10px;
+}
+
+.orderManageBox .zoom-Note a:hover {
+    text-decoration: underline;
+}
+
+.orderBook .zoom-ordera a {
+    color: $white;
+    font-size: 1.2rem;
+    display: block;
+    padding: 3px 8px;
+    background-color: $zoom-ordera-Bg;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.orderBook .zoom-ordera a img {
+    vertical-align: -3px;
+    margin-right: 5px;
+}
+
+.orderBook .zoom-ordera a:hover {
+    text-decoration: none;
+}
+
+#coinNameOrderList {
+    text-transform: uppercase;
+}
+
+.hideScrollBox {
+    width: 50%;
+    float: left;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.hideScrollBox:first-child {
+    border-right: solid 1px $hideScrollBox-border-right;
+}
+
+.orderBook .table-responsive {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    padding-left: 0;
+    padding-right: 18px;
+    height: 195px;
+    overflow-y: scroll;
+}
+
+.orderBook .panel-body,
+.orderManageBox .panel-body {
+    padding: 15px;
+}
+
+.orderBook tbody tr {
+    position: relative;
+    height: 30px;
+    padding: 4px 0;
+    background-color: $orderBook-tr-Bg;
+    -webkit-background-clip: content-box;
+    background-clip: content-box;
+}
+
+.orderBook tbody tr::before {
+    /*content: '';
+  width: 100%;
+  height: 34px;*/
+    /*background-color: red;*/
+    /*position: absolute;*/
+}
+
+.orderBook tbody tr .buybar,
+.orderBook tbody tr .sellbar {
+    width: 100%;
+    padding: 4px 0;
+    height: 34px;
+    position: absolute;
+    left: 0;
+    -webkit-background-clip: content-box;
+    background-clip: content-box;
+    opacity: 0.2;
+    z-index: 1;
+}
+
+.orderBook tbody tr .bg {
+    width: 100%;
+    padding: 4px 0;
+    height: 34px;
+    position: absolute;
+    left: 0;
+    -webkit-background-clip: content-box;
+    background-clip: content-box;
+    opacity: 0.2;
+    z-index: 0;
+    background-color: $orderBook-bg-Bg;
+}
+
+.orderBook .sell-table .buybar {
+    background-color: $orderBook-buybar-Bg;
+}
+
+.orderBook .buy-table .sellbar {
+    background-color: $orderBook-sellbar-Bg;
+}
+
+.orderBook tbody td {
+    position: relative;
+    z-index: 2;
+    width: 21%;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    line-height: 25px!important;
+}
+
+.orderBook tbody td:first-child span,
+.orderBook tbody td:nth-child span {
+    padding: 0 0.4rem;
+}
+
+.orderBook .sell-table tr td:nth-child(6) button:hover {
+    color: $white;
+    background-color: $orderBook-buybar-Bg;
+}
+
+
+/*卖家信用*/
+
+.orderBook .table-responsive tr td:nth-child(5) img {
+    height: 16px;
+    vertical-align: -2px;
+}
+
+.orderBook .table-responsive tr td:nth-child(6) {
+    min-width: 75px;
+    max-width: 75px;
+    width: 75px;
+    padding: 4px 0;
+    -webkit-background-clip: content-box;
+    background-clip: content-box;
+    background-color: $table-responsive-tdBg;
+    overflow: hidden;
+}
+
+.orderBook .table-responsive tr td:nth-child(6) button {
+    border: none;
+    padding: 0;
+    width: 100%;
+    color: $white;
+    /*background-color: #344048;*/
+    min-width: 30px;
+}
+
+.orderBook .table-responsive tr td:nth-child(6) button:focus {
+    outline: none;
+}
+
+@-moz-document url-prefix() {
+    .sell-table,
+    .buy-table {
+        width: 103%;
+    }
+}
+
+.china-Bbutton {
+    background-color: rgba(86, 115, 79, .8);
+}
+
+.china-Sbutton {
+    background-color: rgba(208, 92, 69, .4);
+}
+
+.sell-table {
+    border-right: solid 1px $sell-table-borderRight;
+}
+
+
+/*序号*/
+
+.orderBook tbody .order-number {
+    position: relative;
+    z-index: 2;
+    min-width: 123px;
+    max-width: 123px;
+}
+
+.orderBook .buy-table .order-number {
+    color: $buyTable-orderNumber-Color;
+}
+
+.orderBook .sell-table .order-number {
+    color: $sellTable-orderNumber-Color;
+}
+
+
+/*实心条*/
+
+.orderBook .sell-table .order-number span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    padding: 4px 0;
+    height: 100%;
+    width: 0;
+    -webkit-background-clip: content-box;
+    background-clip: content-box;
+    background-color: $sellTable-span-Bg;
+}
+
+.orderBook .buy-table .order-number span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 4px 0;
+    display: block;
+    height: 100%;
+    width: 0;
+    -webkit-background-clip: content-box;
+    background-clip: content-box;
+    background-color: $buyTable-span-Bg;
+}
+
+.orderBook .buy-table tr td:nth-child(6) button:hover {
+    background-color: $buyTable-button-hoverBg;
+    color: $white;
+}
+
+
+/*-------- 订单管理 ---------*/
+
+.orderManage {
+    color: $orderManage-Color;
+}
+
+.doubleCol p {
+    width: 35%;
+    float: left;
+}
+
+.doubleCol p:nth-child(2) {
+    width: 65%;
+}
+
+.threeCol p {
+    width: 32.5%;
+    float: left;
+}
+
+.threeCol p:first-child {
+    width: 35%;
+    float: left;
+}
+
+.doubleCol-long p {
+    width: 67%;
+}
+
+.doubleCol-long p:nth-child(2) {
+    width: 33%;
+}
+
+
+/*左边订单汇总*/
+
+.orderCollect {
+    padding: 0;
+    border-right: 1px solid $orderCollect-border-right;
+    height: 425px;
+    overflow: hidden;
+    /*background: url(../../img/front/c2c-coin.png) center 65% no-repeat;*/
+}
+
+.orderCollect::before {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    line-height: 425px;
+    text-align: center;
+    /*content:attr(data-coin);*/
+    /*background: url(../../img/front/c2c-coin.png) center bottom no-repeat;*/
+    color: $orderManage-before-Color;
+    font-weight: bold;
+    font-size: 80px;
+    font-family: cursive;
+}
+
+.orderCollect-scroll {
+    padding-right: 18px;
+    overflow-y: scroll;
+    height: 92%;
+    width: 100%;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+.orderCollect .table-responsive {
+    margin-right: -18px;
+    position: relative;
+    z-index: 2;
+    margin-bottom: 0;
+}
+
+@media screen\0 {
+    .orderCollect .table-responsive {
+        width: 100%;
+    }
+}
+
+
+/*Edge*/
+
+_:-ms-lang(x),
+_::-webkit-meter-bar,
+.orderCollect .table-responsive {
+    width: 100%;
+}
+
+.orderCollect th {
+    -ms-word-break: break-all;
+    word-break: break-all;
+    font-size: 13px;
+    padding-bottom: 10px !important;
+}
+
+.orderCollect td {
+    white-space: nowrap;
+    width: 11%;
+}
+
+.orderCollect tr th:first-child,
+.orderCollect tr td:first-child {
+    width: 24%;
+    padding-left: 60px;
+}
+
+.orderCollect tr th:last-child,
+.orderCollect tr td:last-child {
+    width: 24%;
+    padding-right: 35px;
+}
+
+.orderCollect tbody tr {
+    cursor: pointer;
+}
+
+orderCollect tbody tr:first-of-type {
+    color: red;
+}
+
+.orderCollect tr.activebg {
+    background-color: $orderCollect-activeBg;
+}
+
+.orderCollect tbody td {
+    font-size: 12px;
+}
+
+.orderCollect .filldot {
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+    background: url(../../img/front/c2chand.svg) center center no-repeat;
+    -webkit-background-size: contain;
+    background-size: contain;
+    margin-left: -19px;
+    margin-right: 5px;
+    vertical-align: top;
+}
+
+.orderCollect tr {
+    height: 32px;
+}
+
+
+/*右边的具体信息*/
+
+#tab-trading-now .col-md-6 {
+    padding-left: 0;
+}
+
+#tab-trading-now .revokeNowOrder {
+    border: solid 1px $revokeNowOrder-Border;
+    color: $revokeNowOrder-Color;
+    background-color: $revokeNowOrder-Bg;
+    border-radius: 4px;
+}
+
+#tab-trading-now .warmTipsBox {
+    width: 100%;
+    background-color: $warmTipsBox-Bg;
+    position: absolute;
+    bottom: 0;
+    padding-top: 8px;
+}
+
+#tab-trading-now .warmTips {
+    width: 92%;
+    border-top: solid 1px $warmTipsBox-border-top;
+    margin: 28px 5px 0 18px;
+    text-align: right;
+    padding-top: 10px;
+    font-size: 1.2rem;
+}
+
+#tab-trading-now .warmTips img {
+    vertical-align: -3px;
+    margin-right: 5px;
+}
+
+#tab-trading-now .revokeNowOrder:hover {
+    border: 1px solid $revokeNowOrder-Border-Hover;
+}
+
+#tab-trading-now .revokeNowOrder i {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: url(../../img/front/withdraw.svg) center center no-repeat;
+    -webkit-background-size: contain;
+    background-size: contain;
+    margin-right: 4px;
+}
+
+.orderListBox {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    height: 404px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    width: 100%;
+    padding-right: 25px;
+    padding-left: 8px;
+}
+
+.orderListBox::-webkit-scrollbar {
+    /*display: none;*/
+}
+
+.col-md-6 .orderListBox:nth-child(1) {
+    display: block;
+}
+
+.remittanceInfo {
+    padding: 10px 28px 7px 28px;
+    font-size: 12px;
+    margin: 15px 0 0 7px;
+    position: relative;
+    background-color: $remittanceInfo-Bg;
+}
+
+.remittanceInfo .orderList-coin {
+    font-size: 1.7rem;
+    float: left;
+    margin-right: 1.8rem;
+    margin-bottom: 5px;
+    color: $orderList-coin-Color;
+}
+
+.remittanceInfo .orderList-coin img {
+    height: 2.2rem;
+    vertical-align: -0.5rem;
+    margin-right: 0.2rem;
+}
+
+#ETH-sale .orderList-coin img {
+    margin: 5% auto;
+}
+
+.remittanceInfo .row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.remittanceInfo .row:first-child {
+    padding-bottom: 2px;
+    border-bottom: solid 2px $remittanceInfo-border-bottom;
+}
+
+.remittanceInfo .col-md-10,
+.remittanceInfo .col-md-12 {
+    padding-left: 0;
+}
+
+.remittanceInfo .col-md-12 {
+    margin-top: 10px;
+}
+
+.remittanceInfo .col-md-10 span {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.remittanceInfo .row:last-of-type .col-md-10 span,
+.remittanceInfo .row:last-of-type .col-md-12 span {
+    margin-left: 5px;
+}
+
+.remittanceInfo .col-md-10>p:first-child img {
+    height: 16px;
+    margin-left: 10px;
+}
+
+.remittanceInfo:first-child {
+    margin-top: 1px;
+    margin-right: 0;
+}
+
+.remittanceInfo .col-md-10 .number,
+.remittanceInfo .col-md-10 .price,
+.remittanceInfo .col-md-10 .sum {
+    font-size: 1.2rem;
+}
+
+.remittanceInfo .col-md-10 .sum {
+    color: $remittanceInfo-sum-Color;
+    font-size: 1.5rem;
+}
+
+.remittanceInfo .col-md-10 .num-currency,
+.remittanceInfo .col-md-10 .price-currency,
+.remittanceInfo .col-md-10 .sum-currency {
+    font-size: 1.2rem;
+    margin-left: 3px;
+}
+
+.remittanceInfo .col-md-10 .sum-currency {
+    margin-right: 10px;
+}
+
+.remittanceInfo .col-md-10>.doubleCol img {
+    width: 28px;
+    margin-left: 10px;
+}
+
+.remittanceInfo .orderList-coin+.row {
+    padding: 30px 0 20px;
+}
+
+.remittanceInfo .btn-confirm {
+    width: 88px;
+    height: 30px;
+    margin-top: 0.5rem;
+    line-height: 1.5rem;
+    /*padding: 7px 0;*/
+}
+
+.opt_confirm {
+    padding: 0;
+}
+
+
+/*收款按钮*/
+
+.remittanceInfo .unreceivable {
+    float: right;
+    background-color: transparent;
+    border-color: $unreceivable-border-color;
+}
+
+.remittanceInfo .unreceivable:active,
+.remittanceInfo .unreceivable:active:hover,
+.remittanceInfo .unreceivable:active:focus {
+    background-color: $unreceivable-active-Bg;
+    border-color: $unreceivable-active-Bg;
+}
+
+.remittanceInfo .btn-confirm+p {
+    text-align: right;
+}
+
+.remittanceInfo .col-md-10 .sum-currency+span {
+    padding: 0;
+}
+
+.gather .row:nth-child(2) {
+    position: relative;
+}
+
+.gather .row:nth-child(2) .text-right {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.remainTime {
+    display: inline-block;
+    /* visibility:hidden;*/
+    margin-bottom: 0;
+    font-weight: 400;
+}
+
+.remit_tips {
+    display: inline-block;
+    padding-top: 6px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    margin-left: 20px;
+    position: relative;
+}
+
+.remit_tips::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    background: $remit_tips-before-Bg;
+    position: absolute;
+    border-radius: 50%;
+    top: 12px;
+    left: 0;
+}
+
+.waitPay {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: $waitPay-Color;
+    float: right;
+}
+
+.waitPay img {
+    margin-right: 5px;
+    width: 20px;
+    vertical-align: -3px;
+}
+
+.waitPay+button {
+    margin-top: 35px;
+}
+
+.orderListBox-null {
+    display: none;
+    position: relative;
+    height: 372px;
+    width: 100%;
+}
+
+.orderListBox-null>p {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    /* IE 9 */
+    -moz-transform: translateX(-50%) translateY(-50%);
+    /* Firefox */
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    /* Safari 和 Chrome */
+    -o-transform: translateX(-50%) translateY(-50%);
+    /* Opera */
+    transform: translateX(-50%) translateY(-50%);
+    font-size: 20px;
+}
+
+
+/*“订单管理模块” -- 改变右边订单详情币种背景的颜色*/
+
+
+/*订单发布弹窗*/
+
+.orderDetail {
+    font-size: 12px;
+    color: $orderDetail-Color;
+    padding: 0;
+}
+
+.orderDetail .modal-header {
+    padding: 0;
+}
+
+.orderDetail .col-lg-11 {
+    width: 88%;
+}
+
+.orderDetail .buyBox .col-lg-11,
+.orderDetail .sellBox .col-lg-11 {
+    padding: 0;
+}
+
+.orderDetail h5.modal-title {
+    font-size: 13px;
+    padding: 15px 30px 15px 20px;
+    background-color: $orderDetail-modalTitle-Bg;
+    color: $white;
+}
+
+.issue .tishi {
+    position: relative;
+    left: 5px;
+    top: 0;
+}
+
+.issue .modal-dialog {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.issue .modal-content {
+    margin-top: 0 !important;
+    background-color: $orderDetail-modalContent-Bg;
+    border: none;
+}
+
+.issue .row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.issue .modal-body {
+    background-color: $orderDetail-modalContent-Bg;
+    padding-bottom: 20px;
+}
+
+
+/*买入和卖出切换按钮*/
+
+.issue-buy,
+.issue-sell {
+    display: inline-block;
+    font-size: 13px;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    margin-top: 20px;
+    color: $issueSell-Color;
+    float: left;
+    position: relative;
+}
+
+.issue-buy .icon,
+.issue-sell .icon {
+    left: -21px;
+    top: 1.5px !important;
+}
+
+.issue-buy {
+    float: left;
+    margin-left: 15%;
+}
+
+.issue-sell {
+    float: right;
+    margin-right: 15%;
+}
+
+.issue-buy:after,
+.issue-sell:after {
+    content: '';
+    display: block;
+    width: 27px;
+    height: 1.1px;
+    background-color: $issueSell-Color;
+    position: absolute;
+    bottom: -7px;
+    visibility: hidden;
+}
+
+.issue-buy:hover,
+.issue-sell:hover {
+    text-decoration: none;
+}
+
+.issue-buy.active {
+    color: $issueBuy-active-Color;
+}
+
+.issue-buy.active:after {
+    visibility: visible;
+    background-color: $issueBuy-active-Color;
+}
+
+.issue-sell.active {
+    color: $issueSell-active-Color;
+}
+
+.issue-sell.active:after {
+    visibility: visible;
+    background-color: $issueSell-active-Color;
+}
+
+
+/*参考栏*/
+
+.reference {
+    background-color: $reference-Bg;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 25px;
+}
+
+.reference>div {
+    display: inline-block;
+    display: inline-block;
+}
+
+.reference p {
+    color: inherit;
+}
+
+.reference-bs p {
+    font-size: 1rem;
+    display: inline-block;
+}
+
+.reference p:first-child {
+    font-size: 19px;
+    color: $white;
+}
+
+.reference p:last-child {
+    font-size: 12px;
+}
+
+.reference>div p:first-child {
+    font-size: 1.4rem;
+    color: $white;
+}
+
+.reference>div p:last-child {
+    margin-top: 1.2rem;
+}
+
+
+/*表单内容*/
+
+.issue .row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.issue input,
+.sell-issue input {
+    border: 0;
+    width: 100%;
+    height: 30px;
+    background-color: transparent;
+    color: $white;
+    font-size: 13px;
+    text-align: left;
+    outline: none;
+    padding-left: 1.4rem;
+}
+
+.issue input[type="password"] {
+    background-color: $input-typePassword-Bg;
+    height: 31px;
+}
+
+.modal-scrollable #order-issue .icon {
+    top: 7.5px;
+}
+
+.issue .issue-item {
+    margin-top: 15px;
+    padding-bottom: 5px;
+}
+
+.issue .issue-item:nth-child(1) {
+    margin-top: 25px;
+}
+
+.issue .issue-title {
+    line-height: 30px;
+    padding: 0;
+}
+
+.issue issue-item:last-of-type .issue-title {
+    line-height: 35px;
+}
+
+.issue .item-border .issue-contain {
+    padding-right: 0;
+}
+
+.issue .item-border .issue-contain input,
+.issue .item-border .issue-contain>.clearfix {
+    border-bottom: solid 1px $issue-border;
+}
+
+.issue .issue-nocoin {
+    height: 30px;
+    line-height: 30px;
+    color: $white;
+    padding-right: 0;
+    font-size: 12px;
+}
+
+.issue .item-border .issue-nocoin {
+    border-bottom: solid 1px $issue-border;
+}
+
+.issue-way,
+.issue-password {
+    line-height: 30px;
+}
+
+.issue .item-border .col-xs-10 {
+    height: auto;
+}
+
+.bootstrap-select>select {
+    z-index: -1;
+}
+
+.issue .bootstrap-select {
+    background-color: transparent;
+    width: 100px!important;
+    height: 30px;
+    float: right;
+}
+
+.issue .bootstrap-select.btn-group .dropdown-toggle .filter-option {
+    text-align: right;
+    color: $white;
+}
+
+.issue .btn-group>.btn:first-child {
+    padding-right: 15px;
+}
+
+.issue .bootstrap-select.btn-group .dropdown-toggle .caret {
+    right: 0;
+}
+
+
+/*保证金*/
+
+//.promise {
+//  margin-top: 10px;
+//  margin-bottom:20px;
+//}
+//.promise div:nth-child(1) {
+//  padding: 0;
+//}
+//.issue .promiseCash {
+//  padding: 0 5px 0 0;
+//}
+//.promise-icon {
+//  display: inline-block;
+//  margin-left: 10px;
+//  width: 15px;
+//  height: 15px;
+//  vertical-align: middle;
+//  background: url(../../img/front/details.svg) no-repeat center center;
+//  -webkit-background-size: contain;
+//  background-size: contain;
+//}
+
+/*买入和卖出提交按钮*/
+
+.orderSub {
+    border-top: solid 1px $issue-border;
+}
+
+.buySub,
+.sellSub {
+    font-size: 12px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.buySub {
+    background-color: $green;
+    border-color: $green;
+}
+
+.buySub:hover,
+.buySub:focus,
+.buySub:active,
+.buySub:visited,
+.buySub:active:focus {
+    background-color: rgba(110, 207, 84, 0.9);
+    border-color: rgba(110, 207, 84, 0.9);
+    outline-color: transparent;
+}
+
+.sellSub {
+    background-color: $orange;
+    border-color: $orange;
+}
+
+.sellSub:hover,
+.sellSub:focus,
+.sellSub:active,
+.sellSub:visited,
+.sellSub:active:focus {
+    background-color: rgba(232, 101, 59, 0.9);
+    border-color: rgba(232, 101, 59, 0.9);
+    outline-color: transparent;
+}
+
+.serviceFee {
+    padding: 0 10px;
+}
+
+
+/*订单发布弹窗*/
+
+
+/* 买入卖出弹框*/
+
+.sell-issue .tishi {
+    position: relative;
+    left: 5px;
+    top: 0;
+}
+
+.sell-issue .modal-dialog {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.sell-issue .modal-content {
+    margin-top: 0 !important;
+    background-color: $orderDetail-modalContent-Bg;
+}
+
+.sell-issue .modal-body {
+    background-color: $orderDetail-modalContent-Bg;
+    padding-bottom: 20px;
+}
+
+.sell-issue .item-border:nth-child(5) .col-xs-10 {
+    height: 35px;
+}
+
+.sell-issue .bootstrap-select {
+    background-color: transparent;
+    width: 200px!important;
+    height: 30px;
+    float: right;
+}
+
+.sell-issue .reference p {
+    font-size: 1rem;
+    margin-bottom: 0.4rem;
+}
+
+#buy-issue .reference>div p:nth-child(3) {
+    color: $green;
+}
+
+#sell-issue .reference>div p:nth-child(3) {
+    color: $orange;
+}
+
+.sell-issue .bootstrap-select .btn-default,
+.sell-issue .issue-item .col-xs-3.text-right {
+    color: $sell-issue-font;
+}
+
+.sell-issue .sell-issue-exchange {
+    padding-top: 5px;
+    color: $sell-issue-exchange-Color;
+}
+
+.sell-issue .modal-content,
+.sell-issue .orderSub {
+    border: 0;
+}
+
+.sell-issue .sell-issue-seller-img {
+    width: 30px;
+}
+
+.issue-checkbox-wrap {
+    /*position: absolute;
+  right: 108px;
+  top: 3px;*/
+}
+
+.issue-checkbox {
+    padding: 0 15px;
+}
+
+.issue-checkbox:nth-child(2) {
+    position: relative;
+}
+
+.issue-checkbox-wrap .checkService {
+    padding: 3px;
+    border: 1px solid $issue-select-Border;
+    border-radius: 5px;
+    font-size: 12px;
+    display: inline-block;
+}
+
+.issue-checkbox .checkService.blueCheck {
+    background-color: $checkServiceBlueCheck-Bg;
+    color: $white;
+    border-color: $checkServiceBlueCheck-Bg;
+}
+
+.issue-checkbox-wrap {
+    margin-bottom: 3px;
+    display: inline-block;
+    float: right;
+}
+
+.issue-checkbox-wrap .issue-checkbox:last-child label {
+    vertical-align: -5px;
+}
+
+.issue-checkbox-wrap .issue-checkbox:last-child {
+    margin-top: -1px;
+}
+
+.issue-select {
+    position: absolute;
+    left: 38px;
+    top: -3px;
+    outline: none;
+    background: $issue-select-Bg;
+    border-radius: 5px;
+    width: auto!important;
+}
+
+.orderManage .issue-select {
+    position: static;
+    left: auto;
+    top: auto;
+}
+
+.area-issue-select {
+    left: 135px;
+    top: 1px;
+}
+
+.panel .panel-tools .area-issue-select .dropdown-menu {
+    left: 0;
+}
+
+.issue-select .btn-group.bootstrap-select {
+    background: $issue-select-Bg;
+    border: 1px solid $issue-select-Border;
+    border-radius: 5px;
+}
+
+.issue-select .bootstrap-select .btn-default {
+    height: 22px;
+    color: $sell-issue-exchange-Color;
+    font-size: 12px;
+    border: 0;
+    padding: 0px;
+    width: 95px;
+    margin-left: 3px;
+}
+
+.area-issue-select .bootstrap-select .btn-default {
+    height: 17px;
+}
+
+.area-issue-select .bootstrap-select .btn-default {
+    width: 75px;
+}
+
+.area-issue-select .btn-group .dropdown-toggle .caret {
+    right: 5px;
+}
+
+.area-issue-select .dropdown-menu li>a {
+    padding: 5px;
+}
+
+.issue-checkbox:nth-child(2) .issue-select>.form-control {
+    width: 101px!important;
+    height: 24px;
+    margin-top: 2px;
+    margin-left: 3px;
+}
+
+.issue-checkbox .bootstrap-select>select {
+    left: 0;
+}
+
+.issue-checkbox .bootstrap-select.btn-group .dropdown-menu li a {
+    padding: 5px 3px;
+}
+
+.issue-checkbox .bootstrap-select.btn-group .dropdown-toggle .filter-option:focus {
+    outline: none;
+}
+
+.sell-issue .warmTips img {
+    float: left;
+    display: block;
+    margin-top: 2px;
+}
+
+.sell-issue .warmTips span {
+    display: block;
+    padding-left: 20px;
+}
+
+
+/* switch */
+
+.switch-small {
+    min-width: 45px;
+    display: inline-block;
+    padding-left: 10px;
+}
+
+.switch .check_text {
+    margin-right: 5px;
+    font-size: 12px;
+}
+
+.bootstrap-switch .bootstrap-switch-handle-off,
+.bootstrap-switch .bootstrap-switch-handle-on,
+.bootstrap-switch .bootstrap-switch-label {
+    padding: 0;
+    font-size: 12px;
+    line-height: 17px;
+}
+
+.bootstrap-switch {
+    border-color: transparent;
+    padding: 1px 0;
+    border-radius: 11px;
+    transition: .3s all;
+}
+
+.bootstrap-switch-on {
+    background: $bootstrap-switch-on;
+}
+
+.bootstrap-switch-off {
+    background: $bootstrap-switch-off;
+}
+
+.bootstrap-switch.bootstrap-switch-focused {
+    box-shadow: none;
+    outline: none;
+    border: none;
+}
+
+
+/* on */
+
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-inverse,
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-inverse {
+    background-color: transparent;
+    transform: scale(.8) translate(3px, 1px);
+}
+
+
+/* 中间白色圆点 */
+
+.bootstrap-switch .bootstrap-switch-label {
+    background-color: $whitefff;
+}
+
+.bootstrap-switch.bootstrap-switch-off .bootstrap-switch-label,
+.bootstrap-switch.bootstrap-switch-on .bootstrap-switch-label {
+    border-radius: 50%;
+    line-height: 20px;
+    transform: scale(.6, .7);
+}
+
+
+/* off */
+
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-default,
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-default {
+    background-color: transparent;
+    transform: scale(.8) translate(-3px, 1px);
+}
+
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-default,
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-default {
+    color: $white;
+}
+
+
+/*撤销弹窗*/
+
+.cancleStyle .modal-body p {
+    font-size: 1.5rem;
+    color: $white;
+    padding-top: 30px;
+    padding-bottom: 10px;
+}
+
+.cancleStyle .modal-body p span {
+    color: $cancleStyle-span-Color;
+}
+
+.cancleStyle .modal-footer {
+    padding-bottom: 25px;
+}
+
+.cancleStyle button {
+    -webkit-border-radius: 5px!important;
+    -moz-border-radius: 5px!important;
+    border-radius: 5px!important;
+    width: 85px!important;
+}
+
+.cancleStyle button.pull-left {
+    border: 1px solid $cancleStyle-pullLeft-Border;
+    color: $cancleStyle-pullLeft-Color;
+    background-color: transparent;
+}
+
+.cancleStyle button.pull-left:hover,
+.cancleStyle button.pull-left:active,
+.cancleStyle button.pull-left:active:hover {
+    border: 1px solid $cancleStyle-pullLeft-hoverBorder;
+    color: $cancleStyle-pullLeft-hoverColor;
+    background-color: transparent;
+}
+
+.cancleStyle button.pull-right,
+.cancleStyle button.pull-right:active,
+.cancleStyle button.pull-right:active:hover {
+    color: $white;
+    background-color: $cancleStyle-pullLeft-hoverColor;
+    border: solid 1px $cancleStyle-pullLeft-hoverBorder;
+}
+
+
+/*websocket断开提示弹窗*/
+
+.websocketWarm,
+.websocketWarm .modal-content {
+    background-color: $websocketWarm-Bg;
+}
+
+.websocketWarm .modal-dialog {
+    margin-top: 1rem;
+}
+
+.websocketWarm .modal-content {
+    border: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    margin-top: 0;
+}
+
+.websocketWarm .modal-header img {
+    width: 100px;
+}
+
+.websocketWarm .modal-body {
+    padding: 0 2.1rem;
+}
+
+.websocketWarm .modal-footer {
+    padding-bottom: 0;
+}
+
+.websocketWarm .modal-footer button.btn {
+    border: solid 1px $websocketWarm-button-Border;
+    color: $websocketWarm-button-Border;
+    padding: 0.4rem 0;
+    width: 110px;
+    background-color: transparent;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    margin-right: 1rem;
+}
+
+.websocketWarm .modal-footer button.btn:hover,
+.websocketWarm .modal-footer button.btn:active {
+    background-color: $websocketWarm-button-Bg;
+    color: $white;
+}
+
+.websocketWarm p {
+    color: $white;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    word-spacing: 0.3rem;
+}
+
+
+/*--------- 自适应 -----------*/
+
+@media screen and (min-width: 2100px) {
+    .tablde_thead li:nth-last-of-type(2n) {
+        width: 19%;
+    }
+}
+
+@media screen and (max-width: 1366px) {
+    /*压缩弹窗*/
+    /*卖出发布弹窗*/
+    .modal.fade.in#order-issue,
+    .modal.fade.in#sell-issue,
+    .modal.fade.in#buy-issue {
+        top: 38%;
+    }
+    #order-issue .modal-header .modal-title,
+    .sell-issue .modal-header .modal-title {
+        line-height: 1.5;
+    }
+    .sell-issue .reference {
+        padding-right: 5%;
+        padding-left: 5%;
+        margin-top: 1rem;
+    }
+    .reference {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        margin: 2rem;
+    }
+    .reference>div p:last-child {
+        margin-top: 0;
+    }
+    .remit_tips {
+        margin-left: 5px;
+    }
+    .issue-item:first-child {
+        margin-top: 1rem!important;
+    }
+    .issue .issue-item {
+        margin-top: 0.3rem;
+    }
+    .sell-issue .issue-waybox {
+        margin-top: 0.7rem!important;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .confirmPayMone {
+        margin-left: -1rem;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .waitPay {
+        font-size: 16px;
+    }
+    .waitPay img {
+        width: 16px;
+    }
+    .orderBook .table-responsive tr td:nth-child(6) button {
+        opacity: 1;
+        visibility: visible;
+    }
+    .orderCollect th:nth-child(6) {
+        width: 25%;
+    }
+    .modal.fade.in#order-issue,
+    .modal.fade.in#sell-issue,
+    .modal.fade.in#buy-issue {
+        top: 38%;
+    }
+    .target-optstr {
+        width: auto;
+    }
+    .confirmPayMone {
+        margin-left: 0;
+        margin-top: -80px;
+    }
+    .remittanceInfo {
+        padding: 10px 20px 7px 20px;
+        margin-right: 22px;
+    }
+}
+
+
+/*ipad*/
+
+@media screen and (max-width: 768px) {
+    .orderCollect {
+        height: 220px;
+    }
+    .orderCollect:before {
+        line-height: 200px;
+    }
+    .orderCollect-scroll {
+        height: 78%;
+    }
+    #tab-trading-now .col-md-6:last-of-type {
+        margin-top: 2rem;
+    }
+    .orderBook .table-responsive tr td:nth-child(6) {
+        z-index: 2;
+    }
+    .waitPay {
+        font-size: 18px;
+    }
+    .waitPay img {
+        width: 24px;
+    }
+    .hideScrollBox {
+        width: 100%;
+    }
+    .orderBook .table-responsive {
+        padding-right: 0;
+    }
+    .orderBook .table-responsive tr td:nth-child(6) {
+        min-width: 60px;
+        max-width: 60px;
+        width: 60px;
+        background-color: $table-responsive-tdBg2;
+    }
+    .hideScrollBox:first-child {
+        border: none;
+    }
+    .modal.fade.in#order-issue {
+        top: 10%;
+    }
+    .orderCollect tr th:first-child,
+    .orderCollect tr td:first-child {
+        width: 15%;
+    }
+    .modal.fade.in#order-issue,
+    .modal.fade.in#sell-issue,
+    .modal.fade.in#buy-issue {
+        top: 5%;
+    }
+    /*收款按钮*/
+    .confirmPayMone {
+        margin-top: auto;
+    }
+    .remit_tips {
+        margin-left: 20px;
+    }
+    .tablde_thead li:nth-last-of-type(2n),
+    .tablde_thead li:last-of-type {
+        width: 19%;
+    }
+}
+
+
+/*phone*/
+
+@media screen and (max-width: 640px) {
+    /*订单簿*/
+    .orderBook .area-issue-select {
+        left: 100px;
+    }
+    .orderBook .zoom-Note i {
+        margin-left: 5px;
+    }
+    .orderBook .zoom-ordera a {
+        padding: 2px 4px;
+    }
+    /*序号*/
+    .orderBook tbody .order-number {
+        position: relative;
+        z-index: 2;
+        min-width: 60px;
+        max-width: 60px;
+    }
+    .orderBook .table-responsive tr td:nth-child(6) {
+        min-width: 40px;
+        max-width: 40px;
+        width: 40px;
+    }
+    .orderCollect:before {
+        font-size: 60px;
+        background: url(../../img/front/c2c-coin.png) center bottom no-repeat;
+        background-size: 80%;
+        line-height: 220px;
+    }
+    .orderCollect tr {
+        height: 43px;
+    }
+    .orderCollect td {
+        padding-top: 8px!important;
+        padding-bottom: 8px!important;
+    }
+    .orderCollect .table-responsive {
+        height: 215px;
+        overflow-y: scroll;
+    }
+    .doubleCol p,
+    .doubleCol p:nth-child(2) {
+        width: 100%;
+    }
+    .threeCol p {
+        width: 100%;
+    }
+    /*发布订单弹窗*/
+    .issue-title {
+        width: 20%;
+    }
+    .issue-buy,
+    .issue-sell {
+        margin-top: 1rem;
+    }
+    .issue-contain {
+        width: 60%;
+    }
+    .issue-contain.col-xs-10 {
+        width: 80%;
+    }
+    .issue-nocoin {
+        width: 20%;
+    }
+    .buySub,
+    .sellSub {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    #order-issue issue-item:last-of-type .col-xs-2 {
+        line-height: normal;
+    }
+    .sell-issue .sell-issue-exchange {
+        padding-top: 0;
+    }
+    /*订单管理*/
+    .orderCollect {
+        height: 260px;
+    }
+    .orderCollect .orderCollect-scroll {
+        height: 215px;
+    }
+    .orderCollect tr th:first-child,
+    .orderCollect tr td:first-child {
+        padding-left: 35px;
+    }
+    .orderCollect tr th:last-child,
+    .orderCollect tr td:last-child {
+        padding-right: 30px;
+    }
+    .remittanceInfo {
+        padding: 8px 15px;
+    }
+    .remittanceInfo .orderList-coin img {
+        width: 2rem;
+        vertical-align: -0.5rem;
+        margin-right: 0.2rem;
+    }
+    .remittanceInfo .orderList-coin {
+        font-size: 2rem;
+        margin-right: 0.8rem;
+        margin-top: 0.5rem;
+    }
+    .remittanceInfo .orderList-coin img {
+        width: 2.3rem;
+    }
+    .remittanceInfo .col-md-10 .sum-currency+span {
+        padding-left: 3rem
+    }
+    .gather .doubleCol:nth-of-type(2) p {
+        width: 120%;
+    }
+    .gather .text-right {
+        padding: 0;
+    }
+    .remainTime {
+        float: right;
+        margin-top: 10px;
+    }
+    .waitPay {
+        width: 100%;
+        text-align: right;
+        font-size: 1.4rem;
+        margin-top: -1rem;
+    }
+    .waitPay img {
+        width: 17px;
+        vertical-align: -4px;
+    }
+    #tab-trading-now .warmTips {
+        margin: 0 1.5rem 0;
+        text-align: center;
+    }
+    .orderManageBox .zoom-Note a {
+        font-size: 1.2rem;
+    }
+    #tab-trading-now .col-md-6:last-of-type {
+        margin-top: 3rem;
+    }
+    /*撤销弹窗*/
+    .cancleStyle .modal-body {
+        padding-bottom: 0;
+    }
+    .cancleStyle .modal-body p {
+        padding-top: 20px;
+        padding-bottom: 15px;
+    }
+    .modal.fade.in#order-issue,
+    .modal.fade.in#sell-issue,
+    .modal.fade.in#buy-issue {
+        top: 3%;
+    }
+    .reference-price-currency {
+        display: block;
+    }
+    /*超时提醒*/
+    .remit_tips {
+        margin-top: -1rem;
+        padding-top: 0;
+        margin-left: 0;
+        float: left;
+        margin-bottom: 0.1rem;
+    }
+    .remit_tips:before {
+        top: 5px;
+    }
+    /*收款按钮*/
+    .confirmPayMone {
+        margin-bottom: 0;
+    }
+    /* 表格头部 */
+    .tablde_thead li {
+        width: 20%;
+    }
+    .tablde_thead li:nth-last-of-type(2n) {
+        width: 20%;
+    }
+    .tablde_thead li:last-of-type {
+        width: 17%;
+    }
+}
+
+@media screen and (max-width: 414px) {
+    .issue-checkbox-wrap {
+        left: 5%;
+    }
+    .orderListBox {
+        margin-top: 15px;
+        padding-left: 0;
+    }
+}
+
+
+/*英文页面布局修改*/
+
+.en .orderCollect tr th:first-child,
+.en .orderCollect tr td:first-child {
+    width: 15%;
+    padding-left: 25px;
+}
+
+.en .orderCollect tr th:nth-child(5),
+.en .orderCollect tr td:nth-child(5) {
+    width: 15%;
+}
+
+.en .orderCollect tr th:last-child,
+.en .orderCollect tr td:last-child {
+    width: 14%;
+    padding-right: 15px;
+}
+
+.en .orderBook tbody td:nth-child(4) {
+    width: 18%;
+}
+
+.en .orderBook tbody td:nth-child(5) {
+    width: 24%;
+}
+
+@media screen and (max-width: 1024px) {
+    .en .orderCollect tr th,
+    .en .orderCollect tr td {
+        white-space: nowrap;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .en .orderBook tbody td:nth-child(4) {
+        width: 18%;
+    }
+    .en .orderBook tbody td:nth-child(5) {
+        width: 22%;
+    }
+    .en .orderCollect tr th,
+    .en .orderCollect tr td {
+        white-space: normal;
+    }
+    .en .orderCollect tr th:first-child,
+    .en .orderCollect tr td:first-child {
+        width: 15%;
+    }
+    .en .orderCollect th:nth-child(6) {
+        width: auto;
+    }
+}

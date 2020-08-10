@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="2560px" height="5703px" viewBox="0 0 2560 5703" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.1 (67048) - http://www.bohemiancoding.com/sketch -->
+    <title>dl_bg</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="133.896504%" y1="22.5496249%" x2="-5.7944671%" y2="66.2028611%" id="linearGradient-1">
+            <stop stop-color="#141633" offset="0%"></stop>
+            <stop stop-color="#1C1E35" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="103.083171%" y1="82.3166607%" x2="38.4970772%" y2="32.8800865%" id="linearGradient-2">
+            <stop stop-color="#141633" offset="0%"></stop>
+            <stop stop-color="#1C1E35" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="改版二-下载及教程" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.9">
+        <g id="下载页-新-copy" fill-rule="nonzero">
+            <g id="背景">
+                <g id="dl_bg">
+                    <polygon id="dl_bg_top" fill="url(#linearGradient-1)" points="1764.94644 0 398.666667 820.473256 2560.41921 2093.34197 2560.41921 1.04264318"></polygon>
+                    <polygon id="dl_bg_btm" fill="url(#linearGradient-2)" transform="translate(1158.322286, 4602.935703) scale(-1, 1) translate(-1158.322286, -4602.935703) " points="2316.64457 3502.87141 0 4884.59601 1366.35902 5703 2316.64457 5703"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

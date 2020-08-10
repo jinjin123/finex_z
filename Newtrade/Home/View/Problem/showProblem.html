@@ -1,0 +1,251 @@
+<include file="Public:PersonalCenterHeader" />
+<link id="Problem" href="__HOME_CSS__/Problem_purple.css" rel="stylesheet" type="text/css" data-depStyle="depStyle">
+
+<!--右边打竖第一块-->
+<div class="col-lg-12 col-md-12 col-sm-12 clearfix">
+    <div class="panel-heading large-heading clearfix">
+        <div class="panel-action pull-left">
+            <!-- 左边币种tab切换 -->
+            <ul class="nav nav-tabs solid-tabs nav-stacked  underline-tabs personalCenter_nav">
+                <li>
+                    <a href="{:U('PersonalCenter/index')}">{$Think.lang._ZHANGHU_}</a>
+                </li>
+                <li>
+                    <a href="{:U('PersonalCenter/showBankCardBind')}">{$Think.lang._YHKBD_}</a>
+                </li>
+                <li>
+                    <a href="{:U('PersonalCenter/integrityScore')}">{$Think.lang._XYPJ_}</a>
+                </li>
+                <li>
+                    <a href="{:U('PersonalCenter/historyLoad')}">{$Think.lang._LSJL_}</a>
+                </li>
+                <li class="active">
+                    <a href="{:U('Problem/showProblem')}">{$Think.lang._WTFK_}</a>
+                </li>
+            </ul>
+
+            <!-- 手机端时的tab切换 -->
+            <div class="smshow smshow-account visible-xs-block">
+                <div class="btn-group bootstrap-select">
+                    <select class="selectpicker" tabindex="-98">
+                        <option value="0">&nbsp;&nbsp;{$Think.lang._ZHANGHU_}</option>
+                        <option value="1">&nbsp;&nbsp;{$Think.lang._YHKBD_}</option>
+                        <option value="2">&nbsp;&nbsp;{$Think.lang._XYPJ_}</option>
+                        <option value="3">&nbsp;&nbsp;{$Think.lang._LSJL_}</option>
+                        <option value="4" selected>&nbsp;&nbsp;{$Think.lang._WTFK_}</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 主体内容 -->
+<div class="col-lg-12 col-md-12 col-sm-12">
+    <div class='panel panel-default'>
+        <div class="panel-heading clearfix">
+            <div class="pull-left target_panel_title question_title">
+                <span>{$Think.lang._WTFK_}</span>
+                <a class='feedback_title_list' href="{:U('Problem/ProblemList')}">{$Think.lang._WTLB_}</a>
+            </div>
+        </div>
+        <div class='panel-body'>
+            <div class="tab-content setting-tabs">
+                <div class="tab-pane active in">
+                    <!-- {$Think.lang._WTFK_}-->
+                    <div class="credit_form clearfix">
+                        <form id="feedback_form" class="clearfix" enctype="multipart/form-data">
+                            <!-- 问题类型-->
+                            <div class="form-group col-lg-2 col-md-2 text-left showbink_select">
+                                <p class='feedback_title'>{$Think.lang._WENTLX_}<span class='feedback_stars'>*</span></p>
+                            </div>
+                            <div class="form-group col-lg-2 col-md-3 text-left showbank_bottom showbink_select feedback_wrap feedback_bottom">
+                                <div class="form-control p-left-0 Question_type_1 ">
+                                    <ul class=" showbink_select">
+                                        <li class="dropdown">
+                                            <input type="hidden" name='m_title' value="">
+                                            <p class="dropdown-toggle clearfix" data-toggle="dropdown">
+                                                <span>{$Think.lang._QXZWTLX_}</span>
+                                                <i class="fa fa-angle-down pull-right"></i>
+                                            </p>
+                                            <ul class="dropdown-menu Question_content" id='type_problem_1'>
+                                                <li value="-1" class='active'><span>{$Think.lang._QXZWTLX_}</span></li>
+                                                <foreach name="problems" item="vo">
+                                                    <li value="{$vo.id}">
+                                                        <span>{$vo.title}</span>
+                                                    </li>
+                                                </foreach>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                            <div class="form-group col-lg-2 col-md-3 text-left showbank_bottom showbink_select feedback_bottom feedback_wrap">
+                                <div class="form-control p-left-0">
+                                    <ul class=" showbink_select">
+                                        <li class="dropdown">
+                                            <input type="hidden" name='v_title' value="">
+                                            <p class="dropdown-toggle clearfix" data-toggle="dropdown">
+                                                <span>{$Think.lang._QXZWTLX_}</span>
+                                                <i class="fa fa-angle-down pull-right"></i>
+                                            </p>
+                                            <ul class="dropdown-menu Question_content" id='type_problem_2'>
+                                                <li value="-1" class='active'><span>{$Think.lang._QXZWTLX_}</span></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- 订单编号 -->
+                            <div class="form-group col-lg-12 col-md-12 text-left m-bottom-0 p-left-0 pro_orderNumber" style="display: none">
+                                <div class='col-lg-2 showbink_select the-orderNumber'>
+                                    <p class='feedback_title'>{$Think.lang._DDHM_}:</p>
+                                </div>
+                                <div class='col-lg-5 showbink_select showbank_bottom feedback_title the-email-bottom'>
+                                    <input type="text" class="form-control" value="" name="ex_orderNumber" placeholder="{$Think.lang._QSRXYFKDDDHM_}" maxlength="40" />
+                                </div>
+                            </div>
+                            <!-- 问题描述 -->
+                            <div class="form-group col-lg-12 col-md-12 text-left showbink_select m-bottom-0 p-left-0 feedback_box">
+                                <div class='col-lg-2 showbink_select'>
+                                    <p class='feedback_title_two'>{$Think.lang._WTMS_}<span class='feedback_stars'>*</span></p>
+                                </div>
+                                <div class='col-lg-5 col-md-6 showbink_select the-describe-bottom'>
+                                    <textarea name="describe" class='feedback_content p-10' placeholder="{$Think.lang._QSR_}" maxlength="200" autocomplete="off"></textarea>
+                                </div>
+                                <div class="col-lg-5 col-md-6 provided_data_box">
+                                    <!-- 需要提供的资料 -->
+                                    <div class="provided_data">
+                                        <div class="provided_title" style="margin-bottom: 1.2%;">{$Think.lang._QTGYXZL_}</div>
+                                        <ol class="provided_list" style="padding-left: 15px; margin-bottom: 0;">
+
+                                        </ol>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 邮箱 -->
+                            <div class="form-group col-lg-12 col-md-12 text-left m-bottom-0 p-left-0">
+                                <div class='col-lg-2 showbink_select the-email'>
+                                    <p class='feedback_title'>{$Think.lang._EMAIL_}:</p>
+                                </div>
+                                <div class='col-lg-5 showbink_select showbank_bottom feedback_title the-email-bottom'>
+                                    <input type="text" class="form-control" value="{$user.email}" name="ex_email" placeholder="{$Think.lang._QSRNDYX_}" maxlength="60" />
+                                </div>
+                            </div>
+                            <!-- 联系电话 -->
+                            <div class="form-group col-lg-12 col-md-12 text-left m-bottom-0 p-left-0">
+                                <div class='col-lg-2 showbink_select the-callphone'>
+                                    <p class='feedback_title'>{$Think.lang._LXDH_}:</p>
+                                </div>
+                                <div class='col-lg-5 showbink_select showbank_bottom feedback_title the-callphone-bottom'>
+                                    <input type="hidden" name="telCode" value="" class="telCode" />
+                                    <input type="text" class="form-control" id="inputName1" value="{$user.phone}" name="ex_phone" placeholder="{$Think.lang._QSUNDSJH_}" maxlength="11" />
+                                </div>
+                            </div>
+                            <!-- 上传护照个人信息页 -->
+                            <div class="form-group clearfix col-lg-12 col-md-12 text-left showbink_select feedback_upload">
+                                <label class="control-label feedback_title">{$Think.lang._SCZPXX_}</label>
+                                <!-- 上传input框 -->
+
+                                <div class="fileinput fileinput-new" data-provides="fileinput">
+                                    <div class="form-control showbank_bottom " data-trigger="fileinput">
+                                        <span class="fileinput-filename  p-left-0"></span>
+                                    </div>
+                                    <span class=" btn btn-light-purple btn-file">
+										<span class="fileinput-new">{$Think.lang._SELECTFILE_}</span>
+                                    <span class="fileinput-exists">{$Think.lang._REFRESH_}</span>
+                                    <input type="hidden"><input type="file" name="image_one" id='feedback_img1' class="size_map" accept="image/gif,image/jpeg,image/jpg,image/png,image/svg">
+                                    </span>
+                                    <a href="#" data-dismiss="fileinput" class=" btn btn-light-purple fileinput-exists">{$Think.lang._REMOVE_}</a>
+                                </div>
+                                <div class="fileinput fileinput-new" data-provides="fileinput" style="display:none">
+                                    <div class="form-control showbank_bottom " data-trigger="fileinput">
+                                        <span class="fileinput-filename  p-left-0"></span>
+                                    </div>
+                                    <span class=" btn btn-light-purple btn-file">
+										<span class="fileinput-new">{$Think.lang._SELECTFILE_}</span>
+                                    <span class="fileinput-exists">{$Think.lang._REFRESH_}</span>
+                                    <input type="hidden"><input type="file" name="image_two" id='feedback_img2' class="size_map" accept="image/gif,image/jpeg,image/jpg,image/png,image/svg">
+                                    </span>
+                                    <a href="#" data-dismiss="fileinput" class=" btn btn-light-purple fileinput-exists">{$Think.lang._REMOVE_}</a>
+                                </div>
+                                <div class="fileinput fileinput-new" data-provides="fileinput" style="display:none">
+                                    <div class="form-control showbank_bottom " data-trigger="fileinput">
+                                        <span class="fileinput-filename  p-left-0"></span>
+                                    </div>
+                                    <span class=" btn btn-light-purple btn-file">
+										<span class="fileinput-new">{$Think.lang._SELECTFILE_}</span>
+                                    <span class="fileinput-exists">{$Think.lang._REFRESH_}</span>
+                                    <input type="hidden"><input type="file" name="image_three" id='feedback_img3' class="size_map" accept="image/gif,image/jpeg,image/jpg,image/png,image/svg">
+                                    </span>
+                                    <a href="#" data-dismiss="fileinput" class=" btn btn-light-purple fileinput-exists">{$Think.lang._REMOVE_}</a>
+                                </div>
+                            </div>
+                            <div class='form-group col-lg-12 col-md-12 text-left showbink_select'>
+                                <p class='feedback_tips'><span class='feedback_resolved_span'>{$Think.lang._KSCTGFJ_}</span> , {$Think.lang._MGWJDXBDCGFMFJZCDGSY_}: '<span class="font-Arial">jpg</span>', '<span class="font-Arial">jpeg</span>','png', 'gif'{$Think.lang._PUNCTUATION_}</p>
+                            </div>
+                            <!-- 提交 -->
+                            <div class="form-group text-center col-lg-12 col-md-12 p-left-0 p-right-0">
+                                <button type="button" id="btn_Psubmit" class="btn btn-grey gradual_change_blue m-top-20">{$Think.lang._TIJIAO_}</button>
+                            </div>
+                        </form>
+                        <!-- /.form-group -->
+                    </div>
+                </div>
+                <!-- /.tab-pane -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /end -->
+
+<include file="Public:PersonalCenterFooter" />
+<!-- 区号 -->
+<script src="__HOME_JS__/intlTelInput.min.js"></script>
+<!-- 问题反馈-->
+<script src="__HOME_JS__/Problem/index.js"></script>
+<script>
+    var ProblemList = "{:U('Problem/ProblemList')}";
+    var ajaxGetProlblemTitle = "{:U('/Problem/ajaxGetProblemTitle')}";
+    var jump_url = "{:U('/Problem/ProblemList')}";
+    var language = "{$language}";
+    var first_TIPS = "{$Think.lang._QXZWTLX_}";
+    var target_datepicker = "{$time}";
+    var gsbzq = "{$Think.lang._GSBZQ_}";
+    var tpgd = "{$Think.lang._TPGD_}";
+    var problem_jywt = "{$Think.lang._WTFKQSR_}";
+    var problem_qsr = "{$Think.lang._QSR_}";
+    var resolved = "{$Think.lang._NDQMYYJJDWT_}";
+    var unsolved = "{$Think.lang._NDQMYWJJDWT_}";
+    var look = "{:U('/Problem/showResponse')}";
+    var reply = "{$Think.lang._KFHF_}";
+    var see = "{$Think.lang._LOOK_}";
+    var wentibianhao = "{$Think.lang._WTBH_}";
+    var wentileixing = "{$Think.lang._WENTLX_}";
+    var sendTime = "{$Think.lang._TJSJ_}";
+    var pleaseInput = "{$Think.lang._MCDDQSR_}";
+    var addSubmit = "{$Think.lang._TIJIAO_}";
+    var BTC_charge_TGDZCBWDZ = "{$Think.lang._BTCTGDZCBWDZ_}";
+    var BTC_charge_NBZHWDZ = "{$Think.lang._BTCNBZHWDZ_}";
+    var BTC_charge_CZDCWDZ = "{$Think.lang._BTCCZDCWDZ_}";
+    var BTC_charge_QT = "{$Think.lang._BTCQT_}";
+    var BTC_charge_TBDDRGSH = "{$Think.lang._BTCTBDDRGSH_}";
+    var BTC_charge_SQCXTB = "{$Think.lang._BTCSQCXTB_}";
+    var BTC_charge_QTTBWT = "{$Think.lang._BTCQTTBWT_}";
+    var BTC_charge_SQGHYX = "{$Think.lang._BTCSQGHYX_}";
+    var BTC_charge_SQGHBDSJ = "{$Think.lang._BTCSQGHBDSJ_}";
+    var BTC_charge_WFXGDLMM = "{$Think.lang._BTCWFXGDLMM_}";
+    var BTC_charge_WFXGJYMM = "{$Think.lang._BTCWFXGJYMM_}";
+    var BTC_charge_ZHWFDR = "{$Think.lang._BTCZHWFDR_}";
+    var BTC_charge_QTZHAQWT = "{$Think.lang._BTCQTZHAQWT_}";
+    var BTC_charge_WFSCZJZL = "{$Think.lang._BTCWFSCZJZL_}";
+    var BTC_charge_BBJYWT = "{$Think.lang._BTCBBJYWT_}";
+    var BTC_charge_PPCCJYWT = "{$Think.lang._BTCPPCCJYWT_}";
+    var BTC_charge_CPJY = "{$Think.lang._BTCCPJY_}";
+    var BTC_charge_FWJY = "{$Think.lang._BTCFWJY_}";
+    var userOm = "{$user.om}";
+    var sizefalse = "{$Think.lang._GSBDCXSC_}";
+    var over2M = "{$Think.lang._TPCCTD_}";
+    var ajaxGetProblemDetialById = "{:U('Problem/ajaxGetProblemDetialById')}";
+</script>

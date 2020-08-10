@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>登录注册</title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="../bt/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../bt/dist/css/yangshi.css" rel="stylesheet" type="text/css">
+        <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+        <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+        <script src="../bt/assets/js/ie-emulation-modes-warning.js"></script>
+    
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="row" style="margin-top: 50px;">
+                <div class="col-md-12">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h4>通用 登录注册接口目录</h4>
+                        </div>
+                        <div class="panel-body">
+                            <p><a href="index.html">0、目录页</a></p>
+                            <p><a href="#api1">1、发送验证码接口</a></p>
+                            <p><a href="#api2">2、登录接口</a></p>
+                            <p><a href="#api4">4、退出登录接口</a></p>
+                            <p><a href="#api5">5、忘记密码接口</a></p>
+                            <p><a href="#api6">6、语言版本切换</a></p>
+                            <p><a href="#api7">7、二维码登录</a></p>
+                        </div>                      
+                    </div>
+                    <div class="panel panel-success">
+                        <div class="panel-body">
+                            <p>登录说明：发送验证码接口 -> 登录接口  </p>
+                        </div>
+                    </div>
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            <h4><a name="api1" id="api1">1、发送验证码接口</a></h4>
+                        </div>
+                        <div class="panel-body">
+                            <p>说明：</p>
+                            <ul>
+                            </ul>
+                            <div class="row"><div class="col-md-9">接口负责人：刘富国</div></div>
+                            <div class="row"><div class="col-md-9">请求方式：POST</div></div>
+
+                            请求示例：
+                            <pre>
+{
+    "server": "LoginSendCode",
+    "ver": "1.0.0",
+    "data": {
+      "username" : "xxxxx"   //RSA加密用户名
+      "phone_imei": "xxx" //手机唯一标示imei码
+    }
+}
+
+</pre>
+
+                            成功返回：
+                            <pre>
+{
+    "error":"0",
+    "msg":"success",
+    "data":{
+        "is_send":"1" // 发送成功
+    }
+}
+</pre>
+                            失败返回：（有多种情况）
+                            <pre>
+{
+    "data": {},
+    "error": "错误码",
+    "msg": "错误说明"
+}
+</pre>
+                        </div>
+                        <div class="panel-footer">
+                            <p>补充:</p>
+                        </div>
+                    </div>
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            <h4><a name="api2" id="api2">2、登录接口</a></h4>
+                        </div>
+                        <div class="panel-body">
+                            <p>说明：用户名和密码经过公钥加密后，要再用base64_encode编码加密</p>
+                            <p>说明：测试公钥：-----BEGIN PUBLIC KEY-----
+                                MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC/fvg+WnKnZdazOSne0b0+qJZj
+                                BZghhirp2XEyJPTgGNTAIEFn/TbLfRvFRPrBahvCpDlpt+oBwGTMG2A6kpyIt7Nu
+                                bh0FzAaGjO3Mn7AsCR7TN1joIWc7r9smU/YYathRyyODOwuzht6Wj8ZEvrYUXPnU
+                                +h6i28THulRm1kknpQIDAQAB
+                                -----END PUBLIC KEY-----</p>
+                            <ul>
+                            </ul>
+                            <div class="row"><div class="col-md-9">接口负责人：刘富国</div></div>
+                            <div class="row"><div class="col-md-9">请求方式：POST</div></div>
+
+                            请求示例：
+                            <pre>
+{
+    "server": "SignIn",
+    "ver": "1.0.0",
+    "data": {
+        "username": "xxxxx", // 用户名(rsa+base64加密)
+        "password": "xxxx", // 登录密码(rsa+base64加密)
+        "sms_code": "n643h7", //登录短信验证码
+        "phone_imei": "xxx" //手机唯一标示imei码
+        "regId": "XXXX" // Jpush设备ID
+        "login_continue":"0" //如果有其他平台已登录，提示用户是否切换为本设备，0为提示，1为不提示
+    }
+}
+
+</pre>
+                            登录成功返回：
+                            <pre>
+    {
+    "data": {
+         "token": "xxxxx", // TOKEN
+         "username": "lfg", // 用户名
+         "uid": "278",  //用户ID
+         "level": "1", // 等级
+         "phone": "135000000", //用户手机号码
+         "checkUserReal": "1", //实名认证：0 否，1 是,-1 您的證件已過期
+         "area_om": "86", // 地区代码
+         "area_id": "3", //地区ID
+         "area_name": "中国大陆", //地区名称
+    },
+    "error": "0",
+    "msg": "success"
+}
+
+</pre>
+                            失败返回：（有多种情况）
+                            <pre>
+{
+    "data": {},
+    "error": "错误码",
+    "msg": "错误说明"
+}
+</pre>
+                        </div>
+                        <div class="panel-footer">
+                            <p>补充:</p>
+                        </div>
+                    </div>
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            <h4><a name="api4" id="api4">4、退出登录接口</a></h4>
+                        </div>
+                        <div class="panel-body">
+                            <p>说明：</p>
+                            <ul>
+                            </ul>
+                            <div class="row"><div class="col-md-9">接口负责人：刘富国</div></div>
+                            <div class="row"><div class="col-md-9">请求方式：POST</div></div>
+                            请求示例：
+                            <pre>
+
+{
+    "server": "LoginOut",
+    "ver": "1.0.0",
+    "token": "xxxx",
+}
+
+</pre>
+                            成功返回：
+                            <pre>
+{
+    "error":"0",
+    "msg":"success",
+    "data":{
+        "is_logout":"1" // 退出成功
+    }
+}
+</pre>
+                            失败返回：（有多种情况）
+                            <pre>
+{
+    "data": {},
+    "error": "错误码",
+    "msg": "错误说明"
+}
+</pre>
+                        </div>
+                        <div class="panel-footer">
+                            <p>补充:</p>
+                        </div>
+                    </div>
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            <h4><a name="api5" id="api5">5、忘记密码接口</a></h4>
+                        </div>
+                        <div class="panel-body">
+                            <p>说明：</p>
+                            <ul>
+                            </ul>
+                            <div class="row"><div class="col-md-9">接口负责人：刘富国</div></div>
+                            <div class="row"><div class="col-md-9">请求方式：POST</div></div>
+                            请求示例：
+<pre>
+    {
+    "server": "ForgetPwd",
+    "ver": "1.0.0",
+    "data": {
+        "username": "XXXXX", //rsa加密用户名
+        "sms_code": "123456",
+        "password": "Abcefg",
+        "repassword": "Abcefg"
+    }
+}
+
+</pre>
+                            成功返回：
+                            <pre>
+{
+  "data": {
+    "is_modify": "1" // 设置成功
+  },
+  "error": "0",
+  "msg": "success"
+}
+</pre>
+                            失败返回：（有多种情况）
+                            <pre>
+{
+    "data": {},
+    "error": "错误码",
+    "msg": "错误说明"
+}
+</pre>
+
+                        </div>
+                        <div class="panel-footer">
+                            <p>补充:</p>
+                        </div>
+                    </div>
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            <h4><a name="api6" id="api6">6、语言版本切换</a></h4>
+                        </div>
+                        <div class="panel-body">
+                            <p>说明：语言版本切换</p>
+                            <ul>
+                            </ul>
+                            <div class="row"><div class="col-md-9">接口负责人：刘富国</div></div>
+                            <div class="row"><div class="col-md-9">请求方式：POST</div></div>
+                            请求示例：
+                            <pre>
+{
+    "server": "SetLang",
+    "ver": "1.0.0",
+    "token": "xxxxxx", // TOKEN
+    "data": {
+        "var_language": "zh-tw"  // 允许切换的语言列表 ：英文：en-us,简体 zh-cn,繁体 zh-tw
+        "phone_imei": "xxxx"  //设备ID(可选)
+    }
+}
+</pre>
+                            成功示例：
+                            <pre>
+{
+    "data": {
+        "is_success": "1"
+    },
+    "error": "0",
+    "msg": "success"
+}
+</pre>
+                            失败返回：（有多种情况）
+                            <pre>
+{
+    "data": {},
+    "error": "错误码",
+    "msg": "错误说明"
+}
+</pre>
+                        </div>
+                        <div class="panel-footer">
+                            <p>补充：</p>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            <h4><a name="api7" id="api7">7、PC端二维码登录</a></h4>
+                        </div>
+                        <div class="panel-body">
+                            <p>说明：</p>
+                            <ul>
+                            </ul>
+                            <div class="row"><div class="col-md-9">接口负责人：刘富国</div></div>
+                            <div class="row"><div class="col-md-9">请求方式：POST</div></div>
+                            请求示例：http://192.168.2.228:7766/home/project/test_QR_login
+
+                            <pre>
+                                二维码信息：
+{
+	"php_session_id": "xxx",
+	"company_QR": "btcsale"
+}
+
+                                读取接口PC端登录
+{
+    "server": "QRLogin",
+    "ver": "1.0.0",
+    "token": "xxxx",
+    "data": {
+        "php_session_id": "xxxxx",  //用户浏览器的session_id
+       "login_time":1516084200 //二维码时间，一分钟有效
+    }
+}
+
+                            //定时20秒发一次心跳包：
+                            结构：
+                            {"method": "heartbeat"}
+
+</pre>
+                            成功返回：
+                            <pre>
+{
+    "error":"0",
+    "msg":"success",
+    "data":{
+        "is_success":"1" // 登录成功
+    }
+}
+</pre>
+                            失败返回：（有多种情况）
+                            <pre>
+{
+    "data": {},
+    "error": "错误码",
+    "msg": "错误说明"
+}
+</pre>
+                        </div>
+                        <div class="panel-footer">
+                            <p>补充:</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+          
+    </body>
+    </html>
+
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../bt/dist/js/jquery.min.1.11.3.js"></script>
+    <script src="../bt/dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../bt/assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="../bt/dist/js/yangshi.js"></script>
+  </body>
+</html>

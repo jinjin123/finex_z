@@ -1,0 +1,312 @@
+<include file="Public:header1" />
+<!-- my css -->
+<link rel="stylesheet" href="__HOME_CSS__/front/register.css">
+<link rel="stylesheet" href="__HOME_CSS__/front/showlogin.css">
+<!-- ============== input style ============== -->
+<link href="__HOME_PLUG__/icheck/css/skins/all.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="__HOME_CSS__/front/input-strength.css">
+
+<div id='register' class="registerFlex">
+    <div class='container registerCon'>
+        <div class="row">
+            <div class="well col-sm-6 col-lg-12">
+                <div class="register-wrap clearfix">
+                    <div class="row" style='margin:0'>
+                        <div class='register-warp-left col-lg-6 col-md-12 col-sm-12 col-xs-12'>
+                            <div class='register-left-title'>
+                                <!-- 动画 -->
+                                <div class="Login_animationBody"></div>
+                                <!-- logo -->
+                                <p class='register-lt-top-logo'><img src='__HOME_IMG__/register-logo.svg' /> </p>
+                                <!-- 三角形 -->
+                                <div class='register-Triangle'></div>
+                            </div>
+                        </div>
+                        <div class='register-warp-right registration_form_div pull-right col-lg-6  col-md-12 col-sm-12  col-xs-12' id='register_form1'>
+                            <!--上边-->
+                            <div class="clearfix showlogin-title">
+                                <h3 class='pull-left'>{$Think.lang._ZHDL_}</h3><span class='pull-right QRcode'><img src="__HOME_IMG__/front/qrCode2.svg" alt="" width="26"></span>
+                            </div>
+                            <div class="register-right col-md-12 col-sm-12">
+                                <!--您的用户名错误-->
+                                <div class="warmingBox showlogin-warmingBox">
+                                    <div class="warming" style="display: none;">
+                                        <span class="registerTips"></span>
+                                    </div>
+                                    <!-- 未绑定动态密令提示语 -->
+                                    <p id="downLoadApp" style="display: none;">{$Think.lang._YHWBDDTML_},
+                                        <a href="../DownloadApp/index.html" style="color: #fff;">{$Think.lang._JRXZYM_}</a>.</p>
+                                </div>
+                                <!-- 用户名 -->
+                                <div class="mar5">
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-md-12 col-sm-12 col-xs-12 nopad">
+                                                <img src="__HOME_IMG__/front/su_icon_account.svg" class="register-icon" alt="">
+                                                <input type="text" id="username" name="YourName" class="form-control" placeholder="{$Think.lang._YHM_}" maxlength="18" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 密码 -->
+                                <div class="mar5">
+                                    <div class="form-group form-group-strength">
+                                        <div class="row">
+                                            <div class="col-md-12 col-sm-12 col-xs-12 nopad">
+                                                <img src="__HOME_IMG__/front/su_icon_pw.svg" class="register-icon" alt="">
+                                                <input type="password" gid="password_group" autocomplete="off" id="password" maxlength="18" name="password" class="form-control text-field" placeholder="{$Think.lang._MIMA_}" value="" />
+                                                <p class='showlogin-forget'>
+                                                    <a href="javascript:void(0); ">{$Think.lang._WJMM_}</a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 登录 -->
+                                <div class="reg_foot">
+                                    <div class="mar5 text-center">
+                                        <div class="form-group">
+                                            <button type="button" id="loginBtn" class="btn btn-primary smfullBtn">{$Think.lang._DENGLU_}</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--二维码扫码-->
+                            <div class="code-right col-md-12 col-sm-12">
+                                <div class="row">
+                                    <div class="clearfix showlogin-title">
+                                        <h3 class='pull-left'>{$Think.lang._SMDL_}</h3><span class='pull-right QRcode'><img src="__HOME_IMG__/front/su_icon_pw.svg" style="vertical-align: middle;" width="18"></span>
+                                    </div>
+                                    <p>{$Think.lang._QDKNDSJSMEWMKSDL_}</p>
+                                    <div class="codeIMG text-left QRLoginBox" id='code'>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 动态密令 div层 -->
+                            <div class='Dynamic'>
+                                <div class="showlogin-title">
+                                    <h3>{$Think.lang._DTML_}</h3>
+                                </div>
+                                <p class='Dynamic-middle'>{$Think.lang._DKSJDTMLSRLWDTZL_}</p>
+                                <!--您的用户名错误-->
+                                <div class="warmingBox Dynamic-warmingBox">
+                                    <div class="warming" style="display: none;">
+                                        <span class="registerTips"></span>
+                                    </div>
+                                </div>
+                                <!-- 令牌 -->
+                                <div class="mar5">
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-md-12 col-sm-12 col-xs-12 nopad hold-height_pass clearfix">
+                                                <img src="__HOME_IMG__/front/dynamic.svg" class="register-icon" alt="">
+                                                <input type="text" id="oneTimePwd" name="PhoneCode" class="form-control text-field" placeholder="{$Think.lang._DTML_}" maxlength="6" onInput="value=value.replace(/[^\d\a-\z\A-\Z]/g,'')"/>
+                                                <p class='Dynamic-forget pull-right'>{$Think.lang._MLDS_}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 登录 -->
+                                <div class="reg_foot">
+                                    <div class="mar5 text-center">
+                                        <div class="form-group">
+                                            <button type="button" id="loginNow" class="btn btn-primary smfullBtn">{$Think.lang._DENGLU_}</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 忘记密码  第一步-->
+                            <div class='Forget-password' style='display: none;'>
+                                <div class="showlogin-title">
+                                    <h3>{$Think.lang._YZZH_}</h3>
+                                </div>
+                                <!--您的用户名错误-->
+                                <div class="warmingBox showlogin-warmingBox Dynamic-warmingBox">
+                                    <div class="warming" style="display: none;">
+                                        <span class="registerTips"></span>
+                                    </div>
+                                </div>
+                                <div class="mar5">
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-md-12 col-sm-12 col-xs-12 nopad hold-height_account">
+                                                <img src="__HOME_IMG__/front/su_icon_account.svg" class="register-icon" alt="">
+                                                <input type="text" id="forget-username" name="forget-username" class="form-control text-field" placeholder="{$Think.lang._YHM_}" maxlength="18" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mar5">
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-md-12 col-sm-12 col-xs-12 nopad hold-height_account">
+                                                <img src="__HOME_IMG__/front/su_icon_tel.svg" class="register-icon register_phone_icon" alt="">
+                                                <input type="text" id="phone" name="phone" class="form-control text-field" placeholder="{$Think.lang._mobile_} ({$Think.lang._WXTXQH_})" maxlength="11" />
+                                                <p class='forget-Support-prev'><img src="__HOME_IMG__/register-prev.svg" width="15" /><span>{$Think.lang._FHDL_}</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 登录 -->
+                                <div class="reg_foot">
+                                    <div class="mar5 text-center">
+                                        <div class="form-group">
+                                            <button type="button" id="ResBtn1" name='register' class="btn btn-primary smfullBtn">{$Think.lang._QRTJ_}</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 忘记密码  第二步-->
+                            <div class='Forget-password-two' style='display: none;'>
+                                <div class="showlogin-title">
+                                    <h3>{$Think.lang._YZZHDTML_}</h3>
+                                </div>
+                                <p class='Dynamic-middle'>{$Think.lang._DKSJDTMLSRLWDTZL_}</p>
+                                <!--您的用户名错误-->
+                                <div class="warmingBox Dynamic-warmingBox">
+                                    <div class="warming" style="display: none;">
+                                        <span class="registerTips"></span>
+                                    </div>
+                                </div>
+                                <!-- 令牌 -->
+                                <div class="mar5">
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-md-12 col-sm-12 col-xs-12 nopad hold-height_dynamic clearfix">
+                                                <img src="__HOME_IMG__/front/dynamic.svg" class="register-icon" alt="">
+                                                <input type="text" id="token" name="token" class="form-control text-field" placeholder="{$Think.lang._DTML_}" maxlength="6" onInput="value=value.replace(/[^\d\a-\z\A-\Z]/g,'')"/>
+                                                <p class='Dynamic-forget pull-right'>{$Think.lang._MLDS_}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 登录 -->
+                                <div class="reg_foot">
+                                    <div class="mar5 text-center">
+                                        <div class="form-group">
+                                            <button type="button" id="next" name='register' class="btn btn-primary smfullBtn ">{$Think.lang._XIAYB_}</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 忘记密码  第三步-->
+                            <div class='Forget-password-three' style='display: none;'>
+                                <div class="showlogin-title">
+                                    <h3>{$Think.lang._CZMM_}</h3>
+                                </div>
+                                <!--您的用户名错误-->
+                                <div class="warmingBox Dynamic-warmingBox">
+                                    <div class="warming" style="display: none;">
+                                        <span class="registerTips"></span>
+                                    </div>
+                                </div>
+                                <div class="mar5">
+                                    <div class="form-group form-group-strength">
+                                        <div class="row">
+                                            <div class="col-md-12 col-sm-12 col-xs-12 nopad hold-height_resetpsd">
+                                                <img src="__HOME_IMG__/front/su_icon_pw.svg" class="register-icon" width="13">
+                                                <input type="Password" name="newpwd" class="form-control text-field" placeholder="{$Think.lang._MIMA_}" maxlength="18" data-strength="focusout" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mar5">
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-md-12 col-sm-12 col-xs-12 nopad hold-height_resetpsd">
+                                                <img src="__HOME_IMG__/front/su_icon_pw.svg" class="register-icon" width="13">
+                                                <input type="Password" name="repeatpwd" class="form-control text-field" placeholder="{$Think.lang._QRMM_}" maxlength="18" />
+                                                <p class='repeatpwd-content'>{$Think.lang._WLNDAQCZMMHDL_}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 登录 -->
+                                <div class="reg_foot">
+                                    <div class="mar5 text-center">
+                                        <div class="form-group">
+                                            <button type="button" id="reset_submitBut" name='register' class="btn btn-primary smfullBtn ">{$Think.lang._QUEDING_}</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!--注册成功后的弹窗 结束end-->
+
+<include file="Public:footer1" />
+<!-- icheck -->
+<script src="__HOME_PLUG__/icheck/js/icheck.min.js"></script>
+<script type="text/javascript">
+    var registerUrl = "{:U('register/subRegister')}";
+    var verifyUrl = "{:U('CheckVerify/getVerify')}";
+    var sendPhoneCodeUrl = "{:U('register/sendPhoneCode')}";
+    var checkRegisterParamUrl = "{:U('register/checkRegisterParam')}";
+    var phoneTips1 = "{$Think.lang._SJHMBNWK_}";
+    var pwdTips1 = "{$Think.lang._DLMMBNK_}";
+    var pwdTips2 = "{$Think.lang._QRDLMMBNK_}";
+    var pwdTips3 = "{$Think.lang._QRDLYDLMMBYZ_}";
+    var phoneCodeTips = "{$Think.lang._SJYZMBNWK_}";
+    var vercodeTips = "{$Think.lang._TPYZMBNWK_}";
+    var checkBoxTips = '{$Think.lang._QQRYDBQRTK_}';
+    var strengthTitle1 = "{$Think.lang._NDMMBXBH_}";
+    var strengthTips1 = "{$Think.lang._ZSLW_}";
+    var strengthTips2 = "{$Think.lang._SZMDX_}";
+    var strengthTips3 = "{$Think.lang._ZSTZFLZYSZH_}";
+    var strengthTitle2 = "{$Think.lang._MMQD_}";
+    var strengthWarming = "{$Think.lang._BMSYQTWZMMBAQ_}";
+    var loginUrl = "{:U('Login/subLogin')}";
+    var logingInUrl = "{:U('Login/logingIn')}";
+    var UserCenter = "{:U('UserCenter/index')}";
+    var usernameTips = "{$Think.lang._YHMBNWK_}";
+    var passwordTips = "{$Think.lang._DLMMBNK_}";
+    var verifyCodeTips = "{$Think.lang._TPYZMBNWK_}";
+    var oneTimePwdTips = "{$Think.lang._DTMLBNWK_}";
+    var loginTip = "{$login}";
+    var subForgetPassWorld = "{:U('ForgetPassWord/subForgetPassWord')}";
+    var verifyUrl = "{:U('CheckVerify/getVerify')}";
+    var checkTokenUrl = "{:U('ForgetPassWord/checkToken')}";
+    var subSetPassWordUrl = "{:U('ForgetPassWord/subSetPassWord')}";
+    var homeUrl = "{:U('Index/index')}";
+    var uid = 0;
+    var tijiao = "{$Think.lang._TIJIAO_}";
+    var strengthTitle1 = "{$Think.lang._NDMMBXBH_}";
+    var strengthTips1 = "{$Think.lang._ZSLW_}";
+    var strengthTips2 = "{$Think.lang._SZMDX_}";
+    var strengthTips3 = "{$Think.lang._ZSTZFLZYSZH_}";
+    var strengthTitle2 = "{$Think.lang._MMQD_}";
+    var strengthWarming = "{$Think.lang._BMSYQTWZMMBAQ_}";
+    var czcg = "{$Think.lang._CZCG_}";
+    var pswstr = {
+        "pswnotsame": "{$Think.lang._LCMMSRBYZ_}",
+        "putpsw": "{$Think.lang._QSRMM_}",
+    }
+</script>
+<!--二维码-->
+<script type="text/javascript" src="__HOME_JS__/login_in/jquery.qrcode.js"></script>
+<script type="text/javascript" src="__HOME_JS__/login_in/qrcode.js"></script>
+<!-- 登录ajax -->
+<script src='__HOME_JS__/login_in/login.js' type="text/javascript"></script>
+<!--忘记密码-->
+<script src="__HOME_JS__/resetpwd/resetpwd.js"></script>
+<!-- 左边动画 -->
+<script type="text/javascript">
+    var loginAnimate = bodymovin.loadAnimation({
+        path: "__HOME_JS__/bodymovin/login.json", //json文件路径
+        loop: false,
+        autoplay: false,
+        renderer: 'svg', //渲染方式，有"html"、"canvas"和"svg"三种
+        container: document.querySelector('.Login_animationBody'),
+    });
+    loginAnimate.setSpeed(2);
+
+
+
+</script>

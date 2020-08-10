@@ -1,0 +1,240 @@
+/*# sourceMappingURL=custom.css.map */
+a {
+    color: rgb(22, 82, 240);
+}
+
+.bg-primary {
+    background-color: rgb(22, 82, 240) !important;
+}
+
+.text-primary, .text-primary-all *, .text-primary-all *:before, .text-primary-all *:after {
+    color: rgb(22, 82, 240) !important;
+}
+
+.custom-radio .custom-control-input:checked ~ .custom-control-label::before,
+.custom-control-input:checked ~ .custom-control-label::before {
+    background-color: rgb(22, 82, 240) !important;
+}
+
+.custom-file-input:focus + .custom-file-label {
+    border-color: rgb(22, 82, 240);
+}
+
+.selectgroup-input:checked + .selectgroup-button {
+    background-color: rgb(22, 82, 240);
+}
+
+.custom-switch-input:checked ~ .custom-switch-indicator {
+    background: rgb(22, 82, 240);
+}
+
+.custom-switch-input:focus ~ .custom-switch-indicator {
+    border-color: rgb(22, 82, 240);
+}
+
+.imagecheck-input:focus ~ .imagecheck-figure {
+    border-color: rgb(22, 82, 240);
+}
+
+.imagecheck-figure:before {
+    background: rgb(22, 82, 240) url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E") no-repeat center center/50% 50%;
+}
+
+.list-group-item.active {
+    background-color: rgb(22, 82, 240);
+}
+
+.list-group-item-primary {
+    background-color: rgb(22, 82, 240);
+}
+
+.alert.alert-primary {
+    background-color: rgb(22, 82, 240);
+}
+
+.card .card-header h4 {
+    color: rgb(22, 82, 240);
+}
+
+.card .card-header h4 + .card-header-action .btn.active,
+.card .card-header h4 + .card-header-form .btn.active {
+    background-color: rgb(22, 82, 240);
+}
+
+.card.card-primary {
+    border-top: 2px solid rgb(22, 82, 240);
+}
+
+.card.card-hero .card-header {
+    background-image: linear-gradient(to bottom, rgb(22, 82, 240), #95a0f4);
+}
+
+.nav-tabs .nav-item .nav-link {
+    color: rgb(22, 82, 240);
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    background-color: rgb(22, 82, 240);
+}
+
+.nav-pills .nav-item .nav-link {
+    color: rgb(22, 82, 240);
+}
+
+.nav-pills .nav-item .nav-link.active {
+    background-color: rgb(22, 82, 240);
+}
+
+.page-item .page-link {
+    color: rgb(22, 82, 240);
+}
+
+.page-item.active .page-link {
+    background-color: rgb(22, 82, 240);
+    border-color: rgb(22, 82, 240);
+}
+
+.page-item.disabled .page-link {
+    color: rgb(22, 82, 240);
+}
+
+.page-link:hover {
+    background-color: rgb(22, 82, 240);
+}
+
+.badge.badge-primary {
+    background-color: rgb(22, 82, 240);
+}
+
+.btn-primary, .btn-primary.disabled {
+    background-color: rgb(22, 82, 240);
+    border-color: rgb(22, 82, 240);
+}
+
+.btn-outline-primary, .btn-outline-primary.disabled {
+    border-color: rgb(22, 82, 240);
+    color: rgb(22, 82, 240);
+}
+
+.btn-outline-primary:hover, .btn-outline-primary:focus, .btn-outline-primary:active, .btn-outline-primary.disabled:hover, .btn-outline-primary.disabled:focus, .btn-outline-primary.disabled:active {
+    background-color: rgb(22, 82, 240) !important;
+}
+
+.btn-outline-white:hover, .btn-outline-white:focus, .btn-outline-white:active, .btn-outline-white.disabled:hover, .btn-outline-white.disabled:focus, .btn-outline-white.disabled:active {
+    color: rgb(22, 82, 240);
+}
+
+.btn-group .btn.active {
+    background-color: rgb(22, 82, 240);
+}
+
+.media .media-right {
+    color: rgb(22, 82, 240);
+}
+
+.accordion .accordion-header[aria-expanded="true"] {
+    background-color: rgb(22, 82, 240);
+    color: #fff;
+}
+
+.navbar.active {
+    background-color: rgb(22, 82, 240);
+}
+
+.navbar-bg {
+    background-color: rgb(22, 82, 240);
+}
+
+.nav-collapse .navbar-nav .nav-item .nav-link:hover {
+    color: rgb(22, 82, 240);
+}
+
+.nav-collapse .navbar-nav .nav-item:focus > a, .nav-collapse .navbar-nav .nav-item.active > a {
+    background-color: rgb(22, 82, 240);
+}
+
+a.dropdown-item:focus, a.dropdown-item:active, a.dropdown-item.active {
+    background-color: rgb(22, 82, 240);
+}
+
+.dropdown-list .dropdown-item:focus {
+    background-color: rgb(22, 82, 240);
+}
+
+.dropdown-flag .dropdown-item.active {
+    background-color: rgb(22, 82, 240);
+}
+
+.progress-bar {
+    background-color: rgb(22, 82, 240);
+}
+
+:root {
+    /* Colors */
+    --primary: rgb(22, 82, 240);
+}
+
+a.bb {
+    border-bottom: 1px solid rgb(22, 82, 240);
+}
+
+.circle-step .circle.circle-primary {
+    border-color: rgb(22, 82, 240);
+    color: rgb(22, 82, 240);
+}
+
+.section .section-header .section-header-back .btn:hover {
+    background-color: rgb(22, 82, 240);
+}
+
+.section .section-title:before {
+    background-color: rgb(22, 82, 240);
+}
+
+body.sidebar-mini .main-sidebar .sidebar-menu > li.active > a {
+    background-color: rgb(22, 82, 240);
+}
+
+body.sidebar-mini .main-sidebar .sidebar-menu > li ul.dropdown-menu li.active > a:hover {
+    background-color: rgb(22, 82, 240) !important;
+}
+
+body.layout-2 .main-sidebar .sidebar-menu li a:hover {
+    color: rgb(22, 82, 240);
+}
+
+body.layout-3 .navbar.navbar-secondary .navbar-nav > .nav-item.active > .nav-link {
+    color: rgb(22, 82, 240);
+}
+
+body.layout-3 .navbar.navbar-secondary .navbar-nav > .nav-item > .nav-link:before {
+    background-color: rgb(22, 82, 240);
+}
+
+body.layout-3 .navbar.navbar-secondary .navbar-nav > .nav-item .dropdown-menu .nav-item .nav-link:focus {
+    background-color: rgb(22, 82, 240);
+}
+
+.main-sidebar .sidebar-menu li.active a {
+    color: rgb(22, 82, 240);
+}
+
+.main-sidebar .sidebar-menu li ul.dropdown-menu li a:hover {
+    color: rgb(22, 82, 240);
+}
+
+.main-sidebar .sidebar-menu li ul.dropdown-menu li.active > a {
+    color: rgb(22, 82, 240);
+}
+
+body:not(.sidebar-mini) .sidebar-style-1 .sidebar-menu li.active a {
+    background-color: rgb(22, 82, 240);
+}
+
+body:not(.sidebar-mini) .sidebar-style-1 .sidebar-menu li.active ul.dropdown-menu li a:hover {
+    background-color: rgb(22, 82, 240);
+}
+
+body:not(.sidebar-mini) .sidebar-style-2 .sidebar-menu > li.active > a:before {
+    background-color: rgb(22, 82, 240);
+}

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="85px" height="85px" viewBox="0 0 85 85" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.1 (67048) - http://www.bohemiancoding.com/sketch -->
+    <title>tc_notice</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="78.275288%" y1="130.6469%" x2="10.4919357%" y2="39.4384252%" id="linearGradient-1">
+            <stop stop-color="#509AEF" offset="0%"></stop>
+            <stop stop-color="#3C6AF0" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="4.钱包" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="确认弹窗-黑" transform="translate(-158.000000, -38.000000)" fill="url(#linearGradient-1)" fill-rule="nonzero">
+            <path d="M200.5,123 C177.027898,123 158,103.972102 158,80.5 C158,57.0278981 177.027898,38 200.5,38 C223.972102,38 243,57.0278981 243,80.5 C243,103.972102 223.972102,123 200.5,123 Z M200.5,118 C221.210678,118 238,101.210678 238,80.5 C238,59.7893219 221.210678,43 200.5,43 C179.789322,43 163,59.7893219 163,80.5 C163,101.210678 179.789322,118 200.5,118 Z M196.78,56.52 L203.29,56.52 L202.17,93.06 L197.83,93.06 L196.78,56.52 Z M200,98.17 C201.19,98.17 202.24,98.52 203.08,99.36 C203.85,100.13 204.27,101.11 204.27,102.3 C204.27,103.56 203.85,104.54 203.08,105.31 C202.24,106.08 201.19,106.5 200,106.5 C198.81,106.5 197.83,106.08 196.99,105.31 C196.15,104.47 195.8,103.49 195.8,102.3 C195.8,101.11 196.15,100.13 196.99,99.36 C197.83,98.52 198.81,98.17 200,98.17 Z" id="tc_notice"></path>
+        </g>
+    </g>
+</svg>

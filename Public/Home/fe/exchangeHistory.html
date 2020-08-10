@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="zxx">
+
+<include file="./Public/Home/fe/base/head.html"/>
+
+<body>
+<include file="./Public/Home/fe/base/loader.html"/>
+
+<div class="site-content">
+
+    <include file="./Public/Home/fe/base/nav.html"/>
+
+    <div id="sticky-header"></div>
+    <div class="page-title-area bg-primary" style="background-image: url('static/images/shape/shape-dot1.png')">
+        <div class="shape-group">
+            <div class="shape"></div>
+            <div class="shape"></div>
+            <div class="shape"></div>
+            <div class="shape"></div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="page-header-content text-center">
+                        <div class="page-header-caption">
+                            <h2 class="page-title">Exchange History</h2>
+                        </div>
+                        <div class="breadcrumb-area">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="..">Home</a></li>
+                                <li class="breadcrumb-item"><a href="?User">User Panel</a></li>
+                                <li class="breadcrumb-item active">Exchange History</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="dashboard-page-block ptb-120">
+        <div class="container">
+            <div class="row flex-wrap-reverse">
+                <div class="col-lg-12">
+                    <div class="dashboard-page-main">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th>Chain</th>
+                                    <th>Quantity</th>
+                                    <th>Chain</th>
+                                    <th>Quantity</th>
+                                    <th class="text-right">Time</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                    <volist name="list" id ="vo">
+                                        <tr>
+                                            <th>{$vo.b_chain}</th>
+                                            <th>{$vo.b_quantity}</th>
+                                            <th>{$vo.s_chain}</th>
+                                            <th>{$vo.s_quantity}</th>
+                                            <th class="text-right">{$vo.add_time}</th>
+                                        </tr>
+                                    </volist>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div><!-- /.dashboard-page-main -->
+                </div><!-- /.col-lg-9 -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </div>
+
+    <include file="./Public/Home/fe/base/footer.html"/>
+
+</div>
+</body>
+
+</html>

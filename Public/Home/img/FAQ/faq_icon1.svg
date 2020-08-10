@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="26px" height="30px" viewBox="0 0 26 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.1 (67048) - http://www.bohemiancoding.com/sketch -->
+    <title>faq_icon1</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="105.68529%" y1="-62.56323%" x2="50%" y2="86.7648827%" id="linearGradient-1">
+            <stop stop-color="#F9F9F9" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#2D62FD" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="100%" y1="67.3270312%" x2="0%" y2="64.399842%" id="linearGradient-2">
+            <stop stop-color="#509AEF" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#3C6AF0" stop-opacity="0.6" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="2.67115226%" y1="33.5876709%" x2="121.726511%" y2="74.952217%" id="linearGradient-3">
+            <stop stop-color="#509AEF" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#3C6AF0" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="FAQ" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="B.0.FAQ主页-新" transform="translate(-190.000000, -439.000000)" fill-rule="nonzero">
+            <g id="登陆问题" transform="translate(160.000000, 420.000000)">
+                <g id="登錄问题" transform="translate(30.000000, 19.000000)">
+                    <g id="faq_icon1">
+                        <polygon id="多边形" fill="url(#linearGradient-1)" points="13.125 7.91666667 19.4397686 11.5625 19.4397686 18.8541667 13.125 22.5 6.81023143 18.8541667 6.81023143 11.5625"></polygon>
+                        <polygon id="多边形" fill="url(#linearGradient-2)" points="25.9807621 22.5 12.9903811 30 -2.26186326e-13 22.5 -2.34479103e-13 7.5"></polygon>
+                        <polygon id="多边形" fill="url(#linearGradient-3)" points="12.9903811 3.55271368e-15 25.9807621 7.5 25.9807621 22.5 -2.34479103e-13 7.5"></polygon>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

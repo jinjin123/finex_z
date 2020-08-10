@@ -1,0 +1,181 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>BTCsale</title>
+    <!-- Fix for iOS Safari zooming bug -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <!-- jQuery is not required to use Charting Library. It is used only for sample datafeed ajax requests. -->
+    <script type="text/javascript" src="__HOME_JS__/jquery.min.js"></script>
+    <script type="text/javascript" src="__HOME_CHART__/charting_library.min.js"></script>
+    <script type="text/javascript" src="__HOME_CHART__/datafeed/udf/datafeed.js"></script>
+    <script type="text/javascript">
+        // 获取请求接口
+        var postUrl = "{:U('TradingView/api')}";
+        //获取语言
+        var lang = "{$lang}";
+        var isDebug = "{$tvdebug}";
+
+        function tvdebug(isDebug) {
+            var ArrLang = new Array();
+            ArrLang['1'] = true;
+            ArrLang['2'] = false;
+            return ArrLang[isDebug];
+        }
+
+        function langChage(lang) {
+            var ArrLang = new Array();
+            ArrLang['zh-cn'] = "zh";
+            ArrLang['zh-tw'] = "zh_TW";
+            ArrLang['en-us'] = "en";
+            return ArrLang[lang];
+        }
+        //覆盖图表样式
+        var HAstyle = parseInt("{$style}");
+        //获取symbol符号请求数据
+        var symbols = "{$symbol}";
+        //填充默认的请求数据时间
+        var dataTime = "{$time}";
+        var get_tv_chart_css = JSON.parse(localStorage.getItem("tv_chart_css")) ? JSON.parse(localStorage.getItem("tv_chart_css")).text : "white";
+
+        //测试
+        var testcolor = '';
+        window.parent.$(document).ready(function() {
+            if (/black/.test(get_tv_chart_css) == true) {
+                testcolor = "#262A34";
+            } else {
+                testcolor = "#fff";
+            }
+            TradingView.onready(function() {
+                Kfunc(testcolor,"tv_chart_container");
+            })
+        })
+        var i = 1;
+
+        //创建button
+        function createResolutionBtn(resolution, txt, min1Type) {
+            tvWidget.createButton()
+                .on('click', function(e) {
+                    tvWidget.chart().setResolution(resolution);
+                })
+                .append($('<span>' + txt + '</span>'));
+        }
+
+        //更改分辨率
+        function changeResolution(resolution, min1Type) {
+
+            if (!tvWidget) {
+                return;
+            }
+            tvWidget.chart().setResolution(resolution);
+        }
+
+        //k线图函数
+        function Kfunc(bg,id) {
+
+            var widget = window.tvWidget = new TradingView.widget({
+                fullscreen: true,
+                timezone: 'Asia/Shanghai',
+                symbol: symbols,
+                interval: dataTime,
+                container_id: id,
+                datafeed: new Datafeeds.UDFCompatibleDatafeed(postUrl),
+                locale: langChage(lang) || 'zh',
+                debug: tvdebug(isDebug) || false,
+                disabled_features: [
+                    "use_localstorage_for_settings",
+                    "header_symbol_search",
+                    "header_compare",
+                    "header_undo_redo",
+                    "compare_symbol",
+                    'timeframes_toolbar'
+                ],
+                library_path: "/Public/Home/charting_library/",
+                overrides: {
+                    "mainSeriesProperties.candleStyle.upColor": "#69c0ad", //绿涨  红跌  蜡烛图的样式
+                    "mainSeriesProperties.candleStyle.downColor": "#f25c6f",
+                    "mainSeriesProperties.candleStyle.borderUpColor": "#69c0ad", //蜡烛边框颜色
+                    "mainSeriesProperties.candleStyle.borderDownColor": "#f25c6f",
+                    "mainSeriesProperties.candleStyle.wickUpColor": "#69c0ad", //升跌时上下两条直线的颜色
+                    "mainSeriesProperties.candleStyle.wickDownColor": "#f25c6f",
+
+                    "paneProperties.rightMargin": 5, //控制边距
+                    "mainSeriesProperties.barStyle.upColor": "#69c0ad",
+                    "mainSeriesProperties.barStyle.downColor": "#f25c6f",
+
+                    "mainSeriesProperties.haStyle.upColor": "#69c0ad",
+                    "mainSeriesProperties.haStyle.downColor": "#f25c6f", //平均线HA样式
+                    "mainSeriesProperties.haStyle.borderDownColor": "#f25c6f",
+                    "mainSeriesProperties.haStyle.borderUpColor": "#69c0ad",
+
+                    "paneProperties.background": bg,
+                    "paneProperties.vertGridProperties.color": bg,
+                    "paneProperties.horzGridProperties.color": bg,
+                    "scalesProperties.textColor": "#AAA",
+                    'mainSeriesProperties.style': HAstyle, //覆盖配置蜡烛线
+                },
+                studies_overrides: {
+                    // volume styles
+                    'volume.volume.color.0': '#f25c6f', //红色
+                    'volume.volume.color.1': '#69c0ad', //绿色
+                }
+            });
+            //均线日线
+            widget.onChartReady(function() {
+                //					if(i>=2)
+                //					{
+                //					    return ;
+                //					}	
+                //分辨率按钮
+                widget.chart().createStudy("Moving Average", false, false, [5], null, {
+                    "plot.color": "#fff"
+                });
+                widget.chart().createStudy("Moving Average", false, false, [10], null, {
+                    "plot.color": "#dad553"
+                });
+
+                createResolutionBtn('1', '1min');
+                createResolutionBtn('5', '5min');
+                createResolutionBtn('15', '15min');
+                createResolutionBtn('30', '30min');
+                createResolutionBtn('60', '1h');
+                createResolutionBtn('240', '4h');
+                createResolutionBtn('D', '1D');
+                createResolutionBtn('W', 'W');
+                //防止2次进行调用
+                i++;
+            });
+            // return widget
+        }
+
+        //点击k线图里面的放大框
+        function f_fullscreen() {
+            clearInterval(find_fullscreen);
+            var find_fullscreen = setInterval(function() {
+                if (window.parent.$("#kline_iframe").contents().find("#tv_chart_container").contents().contents().find(".fullscreen").length == 1) {
+                    clearInterval(find_fullscreen);
+                    window.parent.$("#kline_iframe").contents().find("#tv_chart_container").contents().contents().find(".fullscreen").click(function() {
+                        if ($(".navbg")) {
+                            $(".navbg").addClass("phone");
+                        }
+
+                        var aaa = $(this).parents(".layout__area--top").siblings(".layout__area--center").children(".chart-container");
+                        setTimeout(function() {
+                            aaa.css({
+                                top: aaa.position().top - 25 + "px"
+                            });
+                        }, 300);
+                    });
+                }
+            }, 1600);
+        }
+        f_fullscreen()
+    </script>
+</head>
+
+<body style="margin:0px;">
+    <div id="tv_chart_container"></div>
+</body>
+
+</html>

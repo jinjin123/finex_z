@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>提币</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../bt/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="../bt/assets/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+<div class="container">
+    <div class="row" style="margin-top: 50px;">
+        <div class="col-md-12">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h4>首页数据接口目录</h4>
+                </div>
+                <div class="panel-body">
+                    <p><a href="index.html">0、目录页</a></p>
+                    <p><a href="#api1">1、首页数据获取接口</a></p>
+                    <p><a href="#api2">2、价格牌websocket推送接口</a></p>
+                    <p><a href="#api3">3、消息推送websocket推送接口</a></p>
+                    <p><a href="#api4">4、获取交易模块是否暂停记录</a></p>
+                    <p><a href="#api5">5、首页消息公告</a></p>
+                </div>
+            </div>
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <h4><a name="api1" id="api1">1、首页数据获取接口</a></h4>
+                </div>
+                <div class="panel-body">
+                    <ul>
+                    </ul>
+                    <div class="row"><div class="col-md-9">接口负责人：李江</div></div>
+                    <div class="row"><div class="col-md-9">请求方式：POST</div></div>
+
+                    请求示例：
+                    <pre>
+{
+    "token": "xxxx",
+    "server": "GetCoinInfoList",
+    "ver": "1.0.0",
+    "data": {
+    }
+}
+</pre>
+
+                    成功返回：
+                    <pre>
+{
+    "error":"0",
+    "msg":"success",
+     "data": [
+        {
+            "vol": "73,559",  //成交数量
+            "money_usa": "859,386,429.59",  //过去24h成交总额（数量*最后成交价）
+            "high": "14356", //最高价
+            "rtq": "11683",  //最后成交价
+            "low": "10891",  //最低价
+            "rate": "14.69%",  //每日涨跌比例(百分数表示)
+            "perc_status": "-1", //涨跌标识  1 涨 -1跌
+            "currency_id": "1",  //货币类型
+            "currency_name": "BTC", //货币类型名称
+            "currency_logo": "http://nat1.target.com/Upload/Back/2018-02-26/currency.png",
+            "app_index_log": "http://nat1.target.com/Public/AppTrade/price_index/bch.png",
+            "app_pull_checked_log": "http://nat1.target.com/Public/AppTrade/price_index/bch.png",
+            "app_pull_nochecked_log": "http://nat1.target.com/Public/AppTrade/pull/bch.png",
+            "night_log": "http://nat1.target.com/Public/AppTrade/night/bch.png"
+        }
+      ]
+
+}
+
+</pre>
+                    失败返回：（有多种情况）
+                    <pre>
+{
+    "data": {},
+    "error": "错误码",
+    "msg": "错误说明"
+}
+</pre>
+                </div>
+                <div class="panel-footer">
+                    <p>补充:</p>
+                </div>
+            </div>
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <h4><a name="api2" id="api2">2、websocket推送接口</a></h4>
+                </div>
+                <div class="panel-body">
+                    <ul>
+                    </ul>
+                    <div class="row"><div class="col-md-9">接口负责人：刘富国</div></div>
+                    <div class="row"><div class="col-md-9">请求方式：POST</div></div>
+
+                    请求示例：
+                    <pre>
+                        参考：http://nat1.target.com/home/WebSocketPushClient/appPrice
+
+链接地址：ws://192.168.2.228:9502
+                        请求参数：
+   msg = {
+        "method":"join",   //链接方式 //方法名，如有多方法名，用 | 英文竖线隔开
+        "uid":xxxx,         //时间戳
+        "hobby":1,          //申请次数，默认1
+        "service_name":"appCoinInfoList"// 获取的服务名,如订阅多服务名，用 | 英文竖线隔开
+    };
+
+    ws.send(JSON.stringify(msg));
+
+</pre>
+
+                    成功返回：
+                    <pre>
+{
+	"status": 1,
+	"message": "success",
+	"data": {
+		"method": "push",  //服务器推送方式
+		"service_name": "appCoinInfoList", // 获取的服务名
+		"data": [{
+			"vol": "73,559",  //成交数量
+            "money_usa": "859,386,429.59",  //过去24h成交总额（数量*最后成交价）
+            "high": "14356", //最高价
+            "rtq": "11683",  //最后成交价
+            "low": "10891",  //最低价
+            "rate": "14.69%",  //每日涨跌比例(百分数表示)
+            "perc_status": "-1", //涨跌标识  1 涨 -1跌
+            "currency_id": "1",  //货币类型
+            "currency_name": "BTC", //货币类型名称
+            "currency_logo": "http://www.target2.com/Upload/Back/2017-12-20/BTC.svg"
+		}]
+	}
+}
+
+
+</pre>
+                    失败返回：（有多种情况）
+                    <pre>
+ {
+	"status": 1,
+	"message": "success",
+	"data": {}
+}
+</pre>
+                </div>
+                <div class="panel-footer">
+                    <p>补充:</p>
+                </div>
+            </div>
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <h4><a name="api3" id="api3">3、消息推送websocket推送接口</a></h4>
+                </div>
+                <div class="panel-body">
+                    <ul>
+                    </ul>
+                    <div class="row"><div class="col-md-9">接口负责人：刘富国</div></div>
+                    <div class="row"><div class="col-md-9">请求方式：POST</div></div>
+
+                    请求示例：
+                    <pre>
+订阅消息频道：http://www.target2.com/project/getJpush/uid/181
+链接地址：ws://192.168.2.228:9502
+                        请求参数:
+   msg =
+     {
+        "method": "join",//方法名，如有多方法名，用 | 英文竖线隔开
+        "service_name": "JpushWebsocket", // 服务名，,如订阅多服务名，用 | 英文竖线隔开
+        "data": {
+            "uid": 2  //用户ID
+        }
+    }
+    ws.send(JSON.stringify(msg));
+
+
+测试发送消息：http://test.target4.com/project/jpush
+</pre>
+
+                    成功返回：
+                    <pre>
+{
+	"status": 1,
+	"message": "success",
+	"data": {
+		"method": "push",
+		"service_name": "JpushWebsocket",
+		"data": {
+			"push_id": "123",//消息id
+			"title": "买家已付款",
+			"content": "请您及时查收并尽快进行确认收款操作。",
+			"uid": 1,  //用户ID
+			"extras": {
+				"send_modle": "P2P",  //更新模块名
+				"new_order_penging": "1"  //订单需要处理标示
+			},
+			"app_platform": "app_target" //APP模块
+		}
+	}
+}
+
+
+</pre>
+                    失败返回：（有多种情况）
+                    <pre>
+ {
+	"status": 1,
+	"message": "success",
+	"data": {}
+}
+</pre>
+                </div>
+                <div class="panel-footer">
+                    <p>补充:</p>
+                </div>
+            </div>
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <h4><a name="api4" id="api4">4、获取交易模块是否暂停记录</a></h4>
+                </div>
+                <div class="panel-body">
+                    <ul>
+                    </ul>
+                    <div class="row"><div class="col-md-9">接口负责人：刘富国</div></div>
+                    <div class="row"><div class="col-md-9">请求方式：POST</div></div>
+
+                    请求示例：
+                    <pre>
+                        {
+    "token": "xxxx",
+    "server": "GetTradeMaintainInfo",
+    "ver": "1.0.0",
+    "data": {}
+}
+</pre>
+
+                    成功返回：
+                    <pre>
+{
+    "data": [
+        {
+            "forbid_order": "1", //0.不开启 1.停止下单
+            "list_order": "0",  //市场订单（0.正常显示订单 ，1不显示订单列表）
+            "deal_order": "1",  // 用户自己订单（0.正常显示未完成订单 ，1不显示未完成订单）
+            "master_switch": "0", //总开关 （0.默认不开启 ，1.表示forbid_order，list_order.deal_order 全部关闭）
+            "type": "1"   //交易模式 (1.p2p , 2.c2c , 3.币币)
+        }
+    ],
+    "error": "0",
+    "msg": "success"
+}
+
+    websocket请求示例：
+                    <pre>
+链接地址：ws://192.168.2.228:9502
+                        请求参数:
+   msg =
+     {
+        "method": "getTradeMaintain",//方法名，如有多方法名，用 | 英文竖线隔开
+        "service_name": "WebsocketMsg", // 服务名，,如订阅多服务名，用 | 英文竖线隔开
+        "data": {}
+    }
+    ws.send(JSON.stringify(msg));
+</pre>
+ websocket 推送信息：
+  {
+	"status": 1,
+	"message": "success",
+	"data": {
+		"method": "getTradeMaintain",
+		"service_name": "WebsocketMsg",
+		"data": [{
+			"forbid_order": "1", //0.不开启 1.停止下单
+            "list_order": "0",  //市场订单（0.正常显示订单 ，1不显示订单列表）
+            "deal_order": "1",  // 用户自己订单（0.正常显示未完成订单 ，1不显示未完成订单）
+            "master_switch": "0", //总开关 （0.默认不开启 ，1.表示forbid_order，list_order.deal_order 全部关闭）
+            "type": "1"   //交易模式 (1.p2p , 2.c2c , 3.币币)
+		}],
+		"status": 1
+	}
+}
+
+</pre>
+                    失败返回：（有多种情况）
+                    <pre>
+ {
+	"status": 1,
+	"message": "success",
+	"data": {}
+}
+</pre>
+                </div>
+                <div class="panel-footer">
+                    <p>补充:</p>
+                </div>
+            </div>
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <h4><a name="api5" id="api5">5、首页显示最新消息公告</a></h4>
+                </div>
+                <div class="panel-body">
+                    <ul>
+                    </ul>
+                    <div class="row"><div class="col-md-9">接口负责人：刘富国</div></div>
+                    <div class="row"><div class="col-md-9">请求方式：POST</div></div>
+
+                    请求示例：
+                    <pre>
+                        {
+    "token": "xxxx",
+    "server": "Notice",
+    "ver": "1.0.0",
+    "data": {"var_language": "en-us"} //语言版：en-us 英文,zh-cn 简体,zh-tw 繁体
+}
+</pre>
+
+                    成功返回：
+                    <pre>
+{
+    "data": {
+        "title": "xxxxx",
+        "content": "xxxxxx",
+        "id": "13",
+        "add_time": "1553685049"
+    },
+    "error": "0",
+    "msg": "success"
+}
+
+</pre>
+                    失败返回：（有多种情况）
+                    <pre>
+{
+    "data": {},
+    "error": "0",
+    "msg": "success"
+}
+</pre>
+                </div>
+                <div class="panel-footer">
+                    <p>补充:</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
+
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="../bt/dist/js/jquery.min.1.11.3.js"></script>
+<script src="../bt/dist/js/bootstrap.min.js"></script>
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="../bt/assets/js/ie10-viewport-bug-workaround.js"></script>
+</body>
+</html>

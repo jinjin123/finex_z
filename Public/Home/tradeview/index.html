@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>BTCsale</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <link rel="stylesheet" href="assets/css/index.css">
+    <script>
+        var win = window, doc = document, re = /_PF_/,
+        script = '<script type="text/javascript" src="assets/js/libs/_PF_"><\/script>';
+        win.Promise || doc.write(script.replace(re, 'promise-polyfill.min.js'), script.replace(re, 'es6-polyfill.min.js'));
+    </script>
+    <script src="assets/charting_library/charting_library.min.js"></script>
+    <script src="assets/js/libs/jquery.min.js"></script>
+    <script src="assets/js/libs/pako.min.js"></script>
+    <script src="assets/js/libs/moment.min.js"></script>
+    <script src="assets/js/libs/utils.js"></script>
+    <script src="assets/js/libs/config.js"></script>
+</head>
+
+<body style="padding: 0; margin: 0;">
+
+<div class="trading-view-container" style="position: relative;z-index: 10000;">
+    <div class="k-toolbar-wrap">
+        <div class="k-toolbar">
+            <div class="fullscreen icon-button">
+                <i class="iconfont icon-fullscreen2"></i>
+            </div>
+        </div>
+    </div>
+    <div id="trading-view" class="trading-view-main"></div>
+</div> 
+
+</body>
+
+<script src="assets/js/index.js"></script>
+
+</html>

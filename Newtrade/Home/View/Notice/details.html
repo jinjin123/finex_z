@@ -1,0 +1,35 @@
+<include file="Public:Faqheader" />
+<!-- 背景图 -->
+<div class='public_font_Himg'></div>
+<!-- 告示 -->
+<div id="notice_view">
+    <div class='container content-title'>
+        <div class=" headtitle col-lg-12 col-md-12 col-xs-12">
+            <svg class="icon register-icon" aria-hidden="true"><use xlink:href="#icon-icon_notice1"></use></svg>
+            <h1 class="title">{$Think.lang._GONGGAO_}</h1>
+        </div>
+    </div>
+    <div class="notice_view_bot">
+        <div class="container ">
+            <h4 class="sub-title">{$data.title}</h4>
+            <!-- 日期 -->
+            <div class="date">{$data.add_time|date='Y-m-d',###}</div>
+            <!-- 文章 -->
+            <article>
+                {$data.content}
+            </article>
+            <!-- 下一条上一条 -->
+            <div class="row pageOrder">
+                <if condition="$is_prev eq 1">
+                    <div class="notice_prev">Prev：<a href="{$page['prev']['url']}">{$page['prev']['title']}</a></div>
+                </if>
+                <if condition="$is_next eq 1">
+                    <div class="notice_next">Next：<a href="{$page['next']['url']}">{$page['next']['title']}</a></div>
+                </if>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 返回头部 -->
+<div class="backTop" id="backtop"></div>
+<include file="Public:footer1" />

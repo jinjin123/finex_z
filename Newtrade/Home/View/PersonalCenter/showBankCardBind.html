@@ -1,0 +1,272 @@
+<include file="Public:PersonalCenterHeader" />
+<link id="showBankCardBind" href="__HOME_CSS__/showBankCardBind_purple.css" rel="stylesheet" type="text/css" data-depStyle="depStyle">
+
+<!--右边打竖第一块-->
+<div class="col-lg-12 col-md-12 col-sm-12 clearfix">
+    <div class="panel-heading large-heading clearfix">
+        <div class="panel-action pull-left">
+            <!-- 左边币种tab切换 -->
+            <ul class="nav nav-tabs solid-tabs nav-stacked  underline-tabs personalCenter_nav">
+                <li>
+                    <a href="{:U('PersonalCenter/index')}">{$Think.lang._ZHANGHU_}</a>
+                </li>
+                <li class="active">
+                    <a href="{:U('PersonalCenter/showBankCardBind')}">{$Think.lang._YHKBD_}</a>
+                </li>
+                <li>
+                    <a href="{:U('PersonalCenter/integrityScore')}">{$Think.lang._XYPJ_}</a>
+                </li>
+                <li>
+                    <a href="{:U('PersonalCenter/historyLoad')}">{$Think.lang._LSJL_}</a>
+                </li>
+                <li>
+                    <a href="{:U('Problem/showProblem')}">{$Think.lang._WTFK_}</a>
+                </li>
+            </ul>
+
+            <!-- 手机端时的tab切换 -->
+            <div class="smshow smshow-account visible-xs-block">
+                <div class="btn-group bootstrap-select">
+                    <select class="selectpicker" tabindex="-98">
+                        <option value="0">&nbsp;&nbsp;{$Think.lang._ZHANGHU_}</option>
+                        <option value="1" selected>&nbsp;&nbsp;{$Think.lang._YHKBD_}</option>
+                        <option value="2">&nbsp;&nbsp;{$Think.lang._XYPJ_}</option>
+                        <option value="3">&nbsp;&nbsp;{$Think.lang._LSJL_}</option>
+                        <option value="4">&nbsp;&nbsp;{$Think.lang._WTFK_}</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 银行卡绑定 -->
+<div class="col-lg-12 col-md-12 col-sm-12">
+    <div class='panel panel-default'>
+        <div class="panel-heading credit_card_title clearfix">
+            <div class="pull-left target_panel_title">
+                <span>{$Think.lang._YHKBD_}</span></div>
+            <div class="panel-tools panel-action text-right pull-right">
+                <button class="btn btn-min"></button>
+            </div>
+        </div>
+        <div class='panel-body'>
+            <div class="tab-content setting-tabs">
+                <div class="tab-pane active in">
+                    <!-- 绑定银行卡表单 -->
+                    <div class="credit_form clearfix">
+                        <div class="alert alert-info text-left alert_info_leftafter">
+                            <p> {$Think.lang._ZYSXIANG_}：</p>
+                            <ol>
+                                <li>
+                                    <p>　{$Think.lang._BDYHKQBXSMRZ_}</p>
+                                </li>
+                                <li>
+                                    <p>　{$Think.lang._MGYHZNBYZQJS_}</p>
+                                </li>
+                                <li>
+                                    <p>　{$Think.lang._SBYHKXYSMXXPPFZWX_}</p>
+                                </li>
+                            </ol>
+                        </div>
+                        <!-- 选择地区 -->
+                        <form role="form" id="showBank_form" class="clearfix">
+                            <div class="form-group col-lg-6 col-md-6 text-left showbank_bottom showbink_select">
+                                <label for="" class="control-label">{$Think.lang._XZDQ_}</label>
+                                <div class="form-control bootstrap-select showbink_select selectPickerAddress">
+                                    <select class="selectpicker" id='country-area' name="area" style="width: 100%;">
+										<volist name='bank_country' id='vo'>
+											<option <if condition="$vo.code eq $code">selected="selected"</if>value="{$vo.code}">{$vo.code|formatAreas=###}</option>
+										</volist>
+									</select>
+                                </div>
+
+                            </div>
+                            <!-- 开户银行名称 -->
+                            <div class="form-group col-lg-6 col-md-6 text-left showbank_bottom showbink_select">
+                                <label for="" class="control-label">{$Think.lang._KHYHMC_}</label>
+                                <div class="form-control bootstrap-select showbink_select selectPickerAddress">
+                                    <select class="selectpicker selectPickerAddress" name="bank_type" id='inputTypeBank1' style="width: 100%;" data-size="7">
+										<volist name='bank_xg' id='vo'>
+											<option value="{$vo.id}">{$vo.id|formatBankType=###}</option>
+										</volist>
+									</select>
+                                </div>
+                            </div>
+                            <!-- 姓名 -->
+                            <div class="form-group col-lg-12 col-md-12 text-left showbank_bottom showbink_select">
+                                <label for="inputName1" class="control-label">{$Think.lang._YHKKHRXM_}</label>
+                                <input type="text" readonly='readonly' class="form-control" id="inputName1" name="name" value="{$real_info['bank_name']}" />
+                            </div>
+
+                            <!-- 卡号 -->
+                            <div class="form-group col-lg-12 col-md-12 text-left showbank_bottom showbink_select">
+                                <label for="inputNumber1" class="control-label">{$Think.lang._KAHAO_}</label>
+                                <input type="text" class="form-control" id="inputNumber1" name="bank_num" maxlength="19" autocomplete="off" />
+                            </div>
+
+                            <!-- 开户地区以及支行地址 -->
+                            <div class="form-group col-lg-12 col-md-12 text-left showbank_bottom showbink_select" id="bank_address">
+                                <label for="inputAddress1" class="control-label">{$Think.lang._KHDQJZHDZ_}</label>
+                                <input autocomplete="off" type="text" class="form-control" id="inputAddress1" name="bank_address" maxlength="45" style="resize:none">
+                            </div>
+                        </form>
+                        <!-- 提交 -->
+                        <div class="form-group text-center col-lg-12 col-md-12">
+                            <br/>
+                            <button type="button" id="btn_submit" class="btn btn-grey gradual_change_blue">{$Think.lang._TIJIAO_}</button>
+                        </div>
+                        <!-- /.form-group -->
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 银行卡列表区域选项卡 -->
+<div class="col-lg-12 col-md-12 col-sm-12 clearfix" style="margin: 0 auto;">
+    <div class="tab-content setting-tabs">
+        <div class="tab-pane active in" id="credit_card">
+            <!-- 地区选择 -->
+            <ul class="nav nav-tabs underline-tabs">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+						{$Think.lang._GUOJIA_} &nbsp;&nbsp;&nbsp;<i class="fa fa-angle-down"></i>
+					</a>
+                    <ul id="default_card" class="dropdown-menu">
+                        <li class="active">
+                            <a id="hong" href="#hk" data-toggle="tab" value="+852">{$Think.lang._ZGXG_}</a>
+                        </li>
+                        <!-- <li>
+                            <a id="taw" href="#taiwan" data-toggle="tab" value="+886">{$Think.lang._ZGTW_}</a>
+                        </li> -->
+                        <li>
+                            <a id="ch" href="#china" data-toggle="tab" value="+86">{$Think.lang._ZHONGGUO_}</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- 银行卡列表 -->
+            <div class="tab-content">
+                <foreach name="user_bank_lists" item="value" key="key">
+                    <div class="tab-pane active fade credit_list in clearfix" id="{$key|formatArea=###}">
+                        <if condition="$value[0]['bank_list_id'] eq ''">
+                            <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 bank_card">
+                                <div class="panel panel-default border-default">
+                                    <div class="panel-heading">
+                                        <div class="panel-title">{$Think.lang._GDQZWBDYHK_}</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <else />
+                            <foreach name="value" item="vo">
+                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 bank_card">
+                                    <div class="panel panel-default border-default">
+                                        <div class="panel-heading">
+                                            <div class="panel-title">{$vo.bank_list_id|formatBankType=###}</div>
+                                            <div class="panel-tools panel-action text-right">
+                                                <span id="{$vo.bank_list_id}" title="{$vo.id}"> {$Think.lang._MRXZ_}</span>
+                                                <button class="btn btn-min"></button>
+                                            </div>
+                                        </div>
+                                        <div class="panel-body" style="display:none;">
+                                            <div class='clearfix'>
+                                                <div class="col-md-4 col-xs-6 text-left dl-horizontal">
+                                                    <p>{$Think.lang._KHYHMC_}</p>
+                                                    <p>{$Think.lang._KAHAO_}</p>
+                                                    <!-- 台湾不显示开户行地址 -->
+                                                    <if condition="$value[0]['country_code'] neq '+886'">
+                                                        <p>{$Think.lang._KHDQHZHDZ_}</p>
+                                                    </if>
+                                                </div>
+                                                <div class="col-md-8  col-xs-6 text-left dl-horizontal">
+                                                    <p>{$vo.bank_list_id|formatBankType=###}</p>
+                                                    <p>{$vo.bank_num|hideBankNumber=###}</p>
+                                                    <!-- 台湾不显示开户行地址 -->
+                                                    <if condition="$value[0]['country_code'] neq '+886'">
+                                                        <p>{$vo.bank_address}</p>
+                                                    </if>
+                                                </div>
+                                            </div>
+                                            <div class=' clearfix m-bottom-20'>
+                                                <div class='col-md-4 col-xs-6 text-left dl-horizontal'>
+                                                    <p>{$Think.lang._TJSJ_}</p>
+                                                </div>
+                                                <div class='col-md-8 col-xs-6 text-left dl-horizontal'>
+                                                    <p>{$vo.add_time|date="Y-m-d H:i:s",###}</p>
+                                                </div>
+
+                                            </div>
+                                            <div class="text-right">
+                                                <a href="#" class="delete_bank" data-toggle="modal" data-target="#delete" style="padding-right: 35px;color: #FF5F5F;"><svg class="icon icon_norepeat" aria-hidden="true" style="font-size: 17px;"><use xlink:href="#icon-ic_delete"></use></svg>
+													{$Think.lang._SHANCHU_}</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </foreach>
+                        </if>
+                    </div>
+                </foreach>
+            </div>
+        </div>
+        <!-- /.tab-pane -->
+    </div>
+    <!-- /.tab-content -->
+</div>
+
+<!--弹窗七 撤销弹窗 -->
+<div class="modal fade modalStyle cancleStyle" id="delete" data-width="380" style="display: none;">
+    <div class="modal-content">
+        <div class="modal-body m-top-10">
+            <div class="col-lg-11 nofloat_auto">
+                <!-- 标题 -->
+                <h5 class="text-center">{$Think.lang._QRSSCS_}?</h5>
+                <!-- 按钮 -->
+                <div class="buttonArea TwoButton m-bottom-10">
+                    <button type="button" data-dismiss="modal" class="btn gradual_change_Cqueding pull-left" id="revokeOrderById">{$Think.lang._QUEDING_}</button>
+                    <button type="button" data-dismiss="modal" class="btn gradual_change_Cquxiao pull-right" id="revokeOrderCancel">{$Think.lang._QUXIAO_}</button>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 撤销弹窗 结束 -->
+
+<include file="Public:PersonalCenterFooter" />
+<script>
+    //前端验证卡号的正则
+    //卡号不能为空
+    var tips1 = '{$Think.lang._KHBNWK_}';
+    //卡号应为16-19位
+    var tips2 = '{$Think.lang._KHDZBNWK_}';
+    var userbanks = JSON.parse('{$userbanks}');
+    var subBankUrl = "{:U('PersonalCenter/subBankCardBind')}";
+    var bankDataGet = "{:U('PersonalCenter/ajaxDataGet')}";
+    var bankDefult = "{:U('PersonalCenter/ajaxBankDefault')}";
+    var mrxz = "{$Think.lang._MRXZ_}";
+    var shemoren = "{$Think.lang._SZMR_}";
+    var numerror = "{$Think.lang._KHDQZHDZSRLXSZ_}";
+    var code = '{$code}';
+    var needinfo = '{$Think.lang._QSRWZDRZXX_}';
+    var bindok = '{$Think.lang._BDYHKCG_}';
+    var real_status = "{$real_info['status']}";
+    var smrz = "{$Think.lang._SMRZ_}";
+    var sm_status0 = "{$Think.lang._ZYSMQBNJXJYCZQW_}";
+    var strengthTitle1 = "{$Think.lang._NDMMBXBH_}";
+    var strengthTips1 = "{$Think.lang._ZSLW_}";
+    var strengthTips2 = "{$Think.lang._SZMDX_}";
+    var strengthTips3 = "{$Think.lang._ZSTZFLZYSZH_}";
+    var strengthTitle2 = "{$Think.lang._MMQD_}";
+    var strengthWarming = "{$Think.lang._BMSYQTWZMMBAQ_}";
+    var fullBankInfo = "{$Think.lang._QSRWZDYHKXX_}";
+    var GDQZWBDYHK = "{$Think.lang._GDQZWBDYHK_}";
+
+    var DeleteBank = "{:U('/PersonalCenter/BankDel')}";
+
+    var showbank = "{:U('/PersonalCenter/showBankCardBind')}"
+</script>
+<script src="__HOME_JS__/personalcenter/bankcardBind.js"></script>

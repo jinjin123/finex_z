@@ -1,0 +1,430 @@
+@charset "utf-8";
+// 背景颜色
+$background: #ffffff;
+$background-gradient: 312deg,
+rgba(247, 248, 249, 0) 40%,
+rgba(72, 135, 239, .15) 100%;
+$black-bg:#fbfcfd;
+$panel-bg:#fff;
+$blue-right:51deg,
+#3C6AF0 0%,
+#509AEF 100%;
+$alert-bottom-bg:#232323;
+$input-bg:#10181D;
+$panel-title:#002257;
+$rightpanel-title:#1e2b34;
+$navtab-color:#1a1a1a;
+$dropdown-bg:#fff;
+$page:#212121;
+$tooltip:#262626;
+$btn-confirm:#3B8EDE;
+$input-select-bg:#fbfcfd;
+$select-font-color:#333C63;
+$select-box-shadow:0 2px 30px 0 rgba(114, 125, 172, 0.15);
+$account-panel-bg:#fff;
+$account-panel-shadow:0 2px 30px 0 rgba(114, 125, 172, 0.15);
+$orderDetail_title:#182047;
+$orderDetail_bg:90deg,
+rgba(250, 250, 250, 1) 0%,
+rgba(250, 250, 250, 1) 100%;
+$orderDetail_border:rgba(255, 95, 95, 0.3);
+$modalStyle_bg:38deg,
+rgba(72, 135, 239, 0) 0%,
+rgba(74, 139, 239, 0.00) 100%;
+$delete_backcolor: 312deg,
+rgba(247, 248, 249, 1) 52%,
+rgba(237, 243, 253, .8) 100%;
+$panel_box_shaow:0 1px 10px 0 rgba(114, 125, 172, 0.3);
+// 边框颜色
+$border-color:#2f3c44;
+$border-color2:#2e3c44;
+$border-color3:#2e3e46;
+$border-bottom-color:#4BD2B7;
+$border-table-color:#10181D;
+$dropdown-hover-bg:#fff;
+$border-table-color3:#444;
+$alert-bottom-border:#ff5b5b;
+$btn-grey:#345573;
+$btn-confirm2:#2C69A3;
+$panel-title-labelborder:#fff;
+$account-panel-border:#fff;
+$orderCollect_border_right:#509AEF;
+// 字体颜色
+$font-color:#333C63;
+$dropdown-color:#002257;
+$dropdown-hover-color:#3C6BF0;
+$dropdown-color2:#aaa;
+$grey-color2:#d4d4d4;
+$grey-color3:#f5f5f5;
+$grey-color4:#ccc;
+$grey-color5:#aaa;
+$grey-color6:#333C63;
+$pai-color:#fff;
+$panel-title-font:#002257;
+$panel-title-fontHover:#3C6AF0;
+$label-color:#fff;
+$nav-hover-color:#fff;
+$pointred:#AA413E;
+$footer-color:#002257;
+$copyright-color:#8D9499;
+$priceBox-color:#41535E;
+$cxlx-color:#002257;
+$filter-color:#3C6BF0;
+$credit_form_info:#3C6BF0;
+$undo_front_color:#002257;
+$date-color:#777777;
+//钱包eos
+$wallen_eosp_gradient:89deg,
+#2D62FD 0%,
+rgba(53, 103, 186, 0.00) 100%;
+$wallen_eosright_gradient:-90deg,
+rgba(74, 139, 239, 0.00) 0%,
+rgba(45, 125, 255, 0.15) 100%,
+rgba(74, 139, 239, 0.00) 100%;
+$wallen_eosright2_gradient:0deg,
+rgba(45, 125, 255, 0.15) 11%,
+rgba(74, 139, 239, 0.00) 100%,
+rgba(74, 139, 239, 0.00) 100%;
+$wallet_eos_placeholder:#66688F;
+$wallen_eossvg1_gradient:240deg,
+#f7fafe 50%,
+#edf3fe 100%;
+$eos_title:#3c6bf0;
+$eos_wrap:#fff;
+$eos_leftspan:#002257;
+$eos_leftsvg:#3c6bf0;
+$wallen_eos_right:#ff5f5f;
+// 颜色
+$info:#ccc;
+$font-hover:#3C6AF0;
+$green:#4BD2B7;
+$green2:#81f164;
+$green3:#4BD2B7;
+$green4:#76dd60;
+$red:#FF5F5F;
+$grey:#f1f1f1;
+$grey2:#626b71;
+$tran: transparent;
+$white: #fff;
+$deepGrey: #1a1a1a;
+$orange:#FF5F5F;
+$orange2:#FF5F5F;
+$blue :#3B8EDE;
+$blue2:#3A648C;
+$strengthBG:#ffffff;
+$strengthColor:#a8a8bc;
+$strengthSpan:#abbac8;
+$strengthTurnGreen:#3c6af0;
+// 导航栏
+$navbarLable:#E86544;
+$navbar-top-bg:#2f3d45;
+$navbar-nav-color:#8d959a;
+$navbar-nav-bg:#17242d;
+$TourBtn_color:#3D6CF0;
+$navtab-color:#447CF0;
+$table-nav:#268BFF;
+$table-nav2:#727DAC;
+$sm-navtab-bg:rgb(99, 103, 130);
+$navtab-button-actbg:rgba(43, 54, 105, 0.5);
+//nav-tabs
+$navtabs-color: #fff;
+$navtabs-color-active:#fff;
+$navtabs-hoverBg: #16242C;
+$navtabs-hoverBorder: #b3b8ba;
+$navtabs-hovercolor: #ccc;
+$navtabs-hoverBorder2: #2e3c44;
+$navtabs-borderbottom: #ccc;
+$list-dropdown-color: #aaa;
+$list-dropdown-Bg: #3a464d;
+$list-dropdownhover-color: #fff;
+$list-dropdownhover-Bg: #1e2b34;
+//Panel  content-left
+$panel-boxshadow: #344451;
+$panel-footer-bg: #3a464d;
+$panel-footer-bg2: #3A454E;
+$panel-footer-border: #404B54;
+$panel-card-borderright: #4A555E;
+$panel-card-paneltitle: #fff;
+//Panel  content-right
+$panel-alert-infoBg: #45535c;
+$panel-alert-infoColor: #ccc;
+$col-item-strongColor: #8F9395;
+$col-item-spanColor: #ccc;
+$col-item-borderLeft: #2f3c44;
+$col-item-borderRight: #4A555E;
+$b-icon-bg: #1f2b32;
+$b-icon-dropdown-headerBg: #ff4c31;
+$b-icon-dropdown-headerColor: #fff;
+$rightpanel-title-shadow: #2b3943;
+$ng-pri-subSellInfoBg: #509CF1;
+$content-right-thColor: #7e8486;
+$tab-underline-home4: #a4a9ac;
+$BuyOrder1-borderColor: #ff6200;
+$BuyOrder1-Color: #ff6200;
+$BuyOrder1-border: #8f959a;
+//绿色按钮
+$primaryColor: rgba(0, 34, 87, .5);
+$deepPrimaryColor: #71E266;
+//撤销按钮
+$revokebg:#FF5A5A;
+$repealColor: #626b71;
+$repealOutlineColor:#70d666;
+$btnfont:#fff;
+$btn_undo_Confirm:#E6EAEE;
+$btn_the_cancel:#000;
+//提交按钮-有渐变
+$submit-gradient:42deg,
+#3C6AF0 0%,
+#509AEF 98%;
+// 蓝色按钮
+$btnBlue:#345573;
+$btnBlueBg:#3A648C;
+$btnBlueActive:#ccc;
+$buttonHover:42deg,
+#509AEF 0%,
+#3C6AF0 98%;
+// 取消按钮
+$btnCancle:#70d666;
+$btnCancleBg:#1a1a1a;
+$btnCancleHoverColor:#474747;
+$btnCancleHoverBorder:#e0e1e1;
+$btnCancleHoverBg:#e7e8e8;
+$btnCancleDisableBorder:#d6d7d7;
+$btnCancleDisableBg:#d6d7d7;
+// 上传证件按钮
+$btnUpload:#002257;
+$btnUploadBg:#9db5f9;
+$btnUploadHoverColor:#ffffff;
+$btnUploadHoverBg:#bbcdff;
+$btnUploadDisableBg:#d6d7d7;
+// 倒计时按钮
+$countdownColor:#3B8EDE;
+$countdownBg:#3A454E;
+$countdownHoverColor:#fff;
+$countdownHoverBorder:#345573;
+$countdownHoverBg:#3A648C;
+// 确认按钮
+$btnConfirm:#fff;
+$btnConfirmBorder:#2C69A3;
+$btnConfirmBg:#3B8EDE;
+$btnConfirmHoverBorder:#2175c5;
+$btnConfirmHoverBg:#2581da;
+$btnConfirmActive:#388cdd;
+// 日期选择列表datepicker
+$datepickerFont:#3C6BF0;
+$datepickerBg:#509CF1;
+$datepickerHoverFont:#000;
+$datepickerHoverBg:#000;
+//alert
+$namealertColor:#FF5A5A;
+$alertwarningBorder:#487AB3;
+$alertwarningColor:#002257;
+$alertextraBorder:#3c6af1;
+$alertextraBg:#3c6af1;
+$alertfontColor:#ffffff;
+$alertsuccessBorder:#4bd2b7;
+$alertsuccessBg:#4bd2b7;
+$alertsuccessColor:#fff;
+$alertfailBorder:#FF5F5F;
+$alertfailsBg:#FF5F5F;
+$alertfailColor:#fff;
+//币种选择侧边栏
+$coinSlide-btn-groupBg: #FF4C31;
+$coinMoneyListBg: #333C63;
+$coinMoneyListBg-Hover: #000;
+$coinSlide-border-bottom: #17242d;
+$exchangeRate-border-bottom: #141F26;
+$exchangeRate-color: #e5e5e5;
+// 卖出订单
+$tab-profile4-border: #303B44;
+$saleout-part-border: #333E47;
+$subSellInfoBg: #569A4F;
+$fa-angle-down:#c0c4d2;
+$dark-placeholder:#A8A8BC;
+//弹窗
+$modalColor:#002257;
+$placeholder:#A8A8BC;
+$modalStyleBg: 90deg,
+rgba(72, 135, 239, 0.05) 0%,
+rgba(74, 139, 239, 0.00) 100%;
+$modalStyle-headerColor: #8F9395;
+$modalStyle-alertBg: #45535c;
+$modalStyle-alertColor: #ccc;
+$modalStyle—button:42deg,
+#3C6AF0 0%,
+#509AEF 98%;
+$modalStyle-border:#3C6AF0;
+$modalStyle-alertbg:rgba(45, 125, 255, 0.10);
+$modalStyle-alertColor:#268BFF;
+$cancleStyle-content-Bg: #3A444E;
+$cancleStyle-alertBg: #3A444E;
+$cancleStyle-border: #434D55;
+$cancleStyle-btn-greenColor: #9DA2A5;
+$cancleStyle-btn-greenBorder: #71777A;
+$cancleStyle-btn-greenHoverColor: #71777A;
+$websocketColor:#000;
+// 返回按钮
+$back:#ccc;
+//下拉框
+$selectbtn:#999;
+$selectbg:#fff;
+$selectColor:#ffffff;
+$selectHoverColor:#3C6BF0;
+// C2C表单
+$issueColor:#ffffff;
+$issuepassInput:#10181C;
+$issueborderColor:#455058;
+// 分页
+$pageFont:#fff;
+$pagehoverBg:#474747;
+$pagationFont2:#000;
+$pagation-hover-Bg:#268BFF;
+$pagehoverLine:#2e2e2e;
+$pageActive:#212121;
+$pagefocusBg:#47535a;
+//提币
+$charging-money-detailBorder:#484F53;
+$charing-numBorder:#444e53;
+$charing-leftColor:#F1F2F2;
+//表格table
+$table-border:#404B54;
+$allCoinColor:#ccc;
+$listOrder2-th-Color:#bdc0bf;
+$listOrder2-count_td-Color:#fd6838;
+//手机端的tab
+$extraBg:#f4f4f4;
+//账户信息
+$font_conBorderColor:#3A454E;
+$btn-default-Color:#002257;
+$btn-default-Bg:transparent;
+$btn-default-Bg-Name:#f6f6f6;
+$Name_statusColor:#65D8C1;
+$Name_status1Color:#65D8C1;
+$Name_status2Color:#FF5F5F;
+$btn_submit_background:126.61deg,
+#509aef 0%,
+#3c6af0 100%;
+$showbank_bottom_after:89deg,
+#2D62FD 0%,
+rgba(53, 103, 186, 0.1) 97%;
+$certificate-allURL_after:left,
+rgba(72, 135, 239, 0.7),
+rgba(72, 135, 239, 0);
+//信用评级
+$userCon-panelBg:#1e2b34;
+$userCon-panelBorder:#2e3e46;
+$userCon-panelShadow:#2b3943;
+$userCon-pbminBg:#17242d;
+$progressBg:#A9C0FF;
+$pointaddBg:#FF6200;
+//购物车提交订单信息
+$orderDetailColor:#A4A9AC;
+$orderDetail-h5-Bg:#313B43;
+$orderDetail-bank-Border:#4D5255;
+//首页详情按钮
+$getDetailsColor:#70d666;
+$getDetailsHoverColor:#4279f0;
+$myOrderListAll-btnGreenColor:#70d666;
+//订单薄资金密码
+$staticDetail-border-bottom:#484F53;
+$Confirmation-inputBg:#101A22;
+//财务总账
+$autoheightBg:#1E2B34;
+//账户页面信用评级
+$rateDetail:#3C91DF;
+//确认订单 买入和卖出
+$button-zoom-btnBg:#e8653b;
+$button-zoom-btnColor:#dc5e35;
+$order-max-activeColor:#509AF0;
+//button下滑效果
+$deleteConfirm-yes-bg:#fff;
+$deleteConfirm-yes-color:#3C6AF0;
+$deleteConfirm-no-bg:#66688f;
+$deleteConfirm-no-color:#a8a8bc;
+// 左边区块
+$content-left-color:#fff;
+$left-bg:#192148;
+$left-title:#0c0f30;
+$coinTimefont:#3C6AF0;
+$CoinColor:#fff;
+$panel-card-border:rgba(255, 255, 255, 0.30);
+$content-left-pad:25px;
+$title-height:40px;
+$title-gradient:51deg,
+rgba(60, 106, 240, 0) 0%,
+#3C6AF0 50%,
+rgba(60, 106, 240, 0) 100%;
+$quoteprice_border:left,
+rgba(72, 135, 239, 0.70),
+rgba(72, 135, 239, 0);
+$quoteprice_bg:left,
+rgba(12, 15, 48, 0.9),
+rgba(12, 15, 48, 0);
+$quoteprice_active:#fff;
+// p2p页面
+$PtwoP_order_li:#002257;
+$bottom_sortable-theme-bootstrap:#002257;
+$TourBtn_color:#447CF0;
+$TourBtn_state_background:#ff3a55;
+$my_order_target_bordercolor:#ddd;
+$sellOrder_buyList:#2F2D61;
+$buyList_color:#fff;
+$buyList_backcolor:51deg,
+#3C6AF0 0%,
+#509AEF 100%;
+$buyList_backcolor_hover:#3C6AF0;
+$alert-warning_background:rgba(80, 154, 240, 0.3);
+$langCheck_btn:51deg,
+rgba(68, 121, 235, 0) 0%,
+#3C6AF0 50%,
+rgba(68, 121, 235, 0) 100%;
+$PtwoP_KXT_content_spancolor:#002257;
+$panel_content_boxshaow:#000;
+$introjs-arrow_right_bordercolor:transparent transparent transparent rgba(66, 66, 66, 1);
+$sell_input_color:#555;
+
+/*币币交易*/
+
+//$trad_coin_BUSE_back：#4BD2B7;
+$trad_coin_titleB_color:#FF5F5F;
+$trad_coin_titleA_color:#4BD2B7;
+$trad_coin_datablock:#001027;
+$trad_coin_confirmOrder_sell:90deg,
+rgba(255, 95, 95, 0.20) 0%,
+rgba(255, 95, 95, 0.00) 90%;
+$trad_coin_confirmOrder_buy:-90deg,
+rgba(75, 210, 183, 0.00) 15%,
+rgba(75, 210, 183, 0.20) 100%;
+$trad_coin_confirmOrder_buy_boxSH:rgba(114, 125, 172, 0.15);
+$trad_coin_confirmOrder_sell_boxSH:rgba(114, 125, 172, 0.15);
+$Total-amount_color:#002257;
+$tradcoin_ordername_color:#032659;
+$my_order_target_border:#E4E5EC;
+$green_line_background:-180deg,
+rgba(75, 210, 183, 0.50) 0%,
+rgba(75, 210, 183, 0.10) 100%;
+$orange_line_background:0deg,
+rgba(255, 95, 95, 0.10) 1%,
+rgba(255, 95, 95, 0.50) 100%;
+$listOrder2_th_color:#bdc0bf;
+$progress-bar_span_border:rgba(255, 255, 255, 0);
+$getUrl_color:rgba(0, 34, 87, 0.5);
+
+/* c2c交易 */
+
+$area_choice_bg:rgba(251, 251, 251, 0.83);
+
+/*问题反馈*/
+
+$feedback_content_bg:#fff;
+$Customer_progress:#2F2D61;
+$problembg:-75deg,
+rgba(72, 135, 239, 0.10) 0%,
+rgba(74, 139, 239, 0.00) 100%;
+$feedback_url: url("../img/front/icon_ques_back_dark.svg");
+
+/*护照有效时间实名*/
+
+$datepicker_day:#002257;
+//問題反饋 問題進度
+$problem_problem_progress:#333c63;

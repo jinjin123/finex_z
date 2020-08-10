@@ -1,0 +1,6447 @@
+@charset "utf-8";
+
+/*
+	引入皮肤变量
+
+	@import "PlatBlack"; 引入黑色皮肤文件
+	@import "PlatPurple"; 引入紫色皮肤文件
+	@import "_mixins"; 引入函数文件
+*/
+
+@import "mixins";
+@import "PlatBlack";
+
+/* ------------ 滚动条消失 ------------- */
+
+html {
+    scrollbar-base-color: #fff;
+    scrollbar-base-color: #fff;
+    scrollbar-3dlight-color: #fff;
+    scrollbar-highlight-color: #fff;
+    scrollbar-track-color: #fff;
+    scrollbar-arrow-color: #fff;
+    scrollbar-shadow-color: #fff;
+    scrollbar-dark-shadow-color: #fff;
+}
+
+
+/*webkit内核*/
+
+::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+}
+
+::-webkit-scrollbar-button {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+::-webkit-scrollbar-track-piece {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+::-webkit-scrollbar-corner {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+::-webkit-scrollbar-resizer {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+
+/*o内核*/
+
+.-o-scrollbar {
+    -moz-appearance: none !important;
+    background: rgba(0, 255, 0, 0) !important;
+}
+
+::-o-scrollbar-button {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+::-o-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+::-o-scrollbar-track-piece {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+::-o-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+::-o-scrollbar-corner {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+::-o-scrollbar-resizer {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+
+/*IE10,IE11,IE12*/
+
+.aside {
+    -ms-scroll-chaining: chained;
+    -ms-overflow-style: none;
+    -ms-content-zooming: zoom;
+    -ms-scroll-rails: none;
+    -ms-content-zoom-limit-min: 100%;
+    -ms-content-zoom-limit-max: 500%;
+    -ms-scroll-snap-type: proximity;
+    -ms-scroll-snap-points-x: snapList(100%, 200%, 300%, 400%, 500%);
+    -ms-overflow-style: none;
+    overflow: auto;
+}
+
+
+/* -------------公共变量------------- */
+
+@font-face {
+    font-family: 'PingFang';
+    src: url('fonts/PingFang/PingFang.eot');
+    src: url('fonts/PingFang/PingFang.woff') format("woff"), url('fonts/PingFang/PingFang.ttf') format("truetype"), url('fonts/PingFang/PingFang.svg') format("svg");
+}
+
+@font-face {
+    font-family: 'PingFangSC-Regular';
+    src: url('fonts/PingFangSC-Regular/PingFangSC-Regular.eot');
+    src: url('fonts/PingFangSC-Regular/PingFangSC-Regular.woff') format("woff"), url('fonts/PingFangSC-Regular/PingFangSC-Regular.ttf') format("truetype"), url('fonts/PingFangSC-Regular/PingFangSC-Regular.svg') format("svg");
+}
+
+@font-face {
+    font-family: 'PingFangSC-Semibold';
+    src: url('fonts/PingFangSC-Semibold/PingFangSC-Semibold.eot');
+    src: url('fonts/PingFangSC-Semibold/PingFangSC-Semibold.woff') format("woff"), url('fonts/PingFangSC-Semibold/PingFangSC-Semibold.ttf') format("truetype"), url('fonts/PingFangSC-Semibold/PingFangSC-Semibold.svg') format("svg");
+}
+
+@font-face {
+    font-family: 'avenir';
+    src: url('fonts/avenir/avenir.eot');
+    src: url('fonts/avenir/avenir.woff') format("woff"), url('fonts/avenir/avenir.ttf') format("truetype"), url('fonts/avenir/avenir.svg') format("svg");
+}
+
+@font-face {
+    font-family: 'PingFangSC-Bold';
+    src: url('fonts/PingFangSC-Bold/PingFangSC-Bold.eot');
+    src: url('fonts/PingFangSC-Bold/PingFangSC-Bold.woff') format("woff"), url('fonts/PingFangSC-Bold/PingFangSC-Bold.ttf') format("truetype"), url('fonts/PingFangSC-Bold/PingFangSC-Bold.svg') format("svg");
+}
+
+// 底部
+$footer-pad:15px;
+// 侧边栏宽度
+$aside-width:320px;
+//顶部导航栏高度
+$nav-height:90px;
+
+/* ---------公共样式------------- */
+
+p {
+    margin: 0 0 5px;
+}
+
+.marbot10 {
+    margin-bottom: 10px;
+}
+
+.floatRight {
+    float: right;
+}
+
+.qwerr {
+    color: red;
+}
+
+.col-lg-1,
+.col-lg-10,
+.col-lg-11,
+.col-lg-12,
+.col-lg-2,
+.col-lg-3,
+.col-lg-4,
+.col-lg-5,
+.col-lg-6,
+.col-lg-7,
+.col-lg-8,
+.col-lg-9,
+.col-md-1,
+.col-md-10,
+.col-md-11,
+.col-md-12,
+.col-md-2,
+.col-md-3,
+.col-md-4,
+.col-md-5,
+.col-md-6,
+.col-md-7,
+.col-md-8,
+.col-md-9,
+.col-sm-1,
+.col-sm-10,
+.col-sm-11,
+.col-sm-12,
+.col-sm-2,
+.col-sm-3,
+.col-sm-4,
+.col-sm-5,
+.col-sm-6,
+.col-sm-7,
+.col-sm-8,
+.col-sm-9,
+.col-xs-1,
+.col-xs-10,
+.col-xs-11,
+.col-xs-12,
+.col-xs-2,
+.col-xs-3,
+.col-xs-4,
+.col-xs-5,
+.col-xs-6,
+.col-xs-7,
+.col-xs-8,
+.col-xs-9 {
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.content-wrapper {
+    padding-top: 60px;
+}
+
+.nofloat_auto {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.lgNopadLeft {
+    padding-left: 0;
+}
+
+.lgNopadRight {
+    padding-right: 30px;
+    padding-left: 30px;
+    z-index: 1033;
+}
+
+.nopadLeft {
+    padding-left: 0 !important;
+}
+
+.nopadRight {
+    padding-right: 0 !important;
+    ;
+}
+
+.nopadTop {
+    padding-top: 0 !important;
+    ;
+}
+
+.nopadBottom {
+    padding-bottom: 0 !important;
+    ;
+}
+
+.nomarBot {
+    margin-bottom: 0;
+}
+
+.orange {
+    color: $orange !important;
+}
+
+.blueButton {
+    background: #3C6BF0;
+}
+
+.tishi {
+    fill: $grey-color4;
+    font-size: 14px;
+}
+
+.modal-scrollable {
+    overflow-x: hidden;
+}
+// K线图手机放大样式
+.panel-body.kline.addFullScreen{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+    padding: 0;
+}
+.panel-body.kline.addFullScreen iframe{
+    height: 100% !important;
+}
+/*可拖拽模态框鼠标样式*/
+
+.modal[data-drag] .modal-header {
+    cursor: all-scroll;
+}
+
+.lg_hide {
+    display: none;
+}
+
+.underline {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+// 页面加载效果
+.pbmin {
+    animation: show 0.3s ease-in-out;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes show {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+/* ---------tour样式------------- */
+
+.introjs-tooltip {
+    background: #fff;
+}
+
+.introjs-nextbutton,
+.introjs-prevbutton {
+    color: $font-hover;
+}
+
+.introjs-tooltiptext {
+    color: #333C63;
+}
+
+.introjs-tooltiptext h4 {
+    font-size: 16px;
+    color: #002257;
+}
+
+.introjs-skipbutton,
+.introjs-skipbutton:hover,
+.introjs-skipbutton:focus,
+.introjs-skipbutton:active {
+    color: #333C63;
+}
+
+.introjs-nextbutton:hover,
+.introjs-nextbutton:focus,
+.introjs-nextbutton:active,
+.introjs-prevbutton:hover,
+.introjs-prevbutton:focus,
+.introjs-prevbutton:active {
+    color: #447CF0;
+}
+
+
+/* ---------图片验证码------------- */
+
+.verifyImg {
+    width: 100%;
+    height: 30px;
+}
+
+
+/* ---------Generic styles------------- */
+
+html {
+    overflow-x: hidden;
+}
+
+body {
+    background-color: $background;
+    color: $font-color;
+    position: relative;
+    font-family: 'PingFang', Arial;
+    transition: .7s all;
+    overflow-x: hidden;
+    &::after {
+        width: 100%;
+        height: 100%;
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        @include gradient($background-gradient);
+        z-index: -1;
+    }
+}
+
+a {
+    color: $panel-title-font;
+}
+
+a:hover {
+    color: $font-hover;
+    text-decoration: underline;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+/*---------  bootstrap-select样式  -------------*/
+
+.bootstrap-select {
+    width: 100% !important;
+}
+
+.bootstrap-select .btn-default {
+    margin-bottom: 0;
+    color: $select-font-color;
+}
+
+.bootstrap-select .btn-default,
+.bootstrap-select .btn-default:hover,
+.bootstrap-select .btn-default:active,
+.bootstrap-select .btn-default.active,
+.bootstrap-select .open>.dropdown-toggle.btn-default,
+.bootstrap-select .btn-default:active:hover,
+.bootstrap-select .btn-default.active:hover,
+.bootstrap-select .open>.dropdown-toggle.btn-default:hover,
+.bootstrap-select .btn-default:active:focus,
+.bootstrap-select .btn-default.active:focus,
+.bootstrap-select .open>.dropdown-toggle.btn-default:focus,
+.bootstrap-select .btn-default:active.focus,
+.bootstrap-select .btn-default.active.focus,
+.bootstrap-select .open>.dropdown-toggle.btn-default.focus {
+    border: none;
+    background: inherit;
+    color: $btn-default-Color;
+}
+
+.selectPickerAddress .btn-default,
+.selectPickerAddress .btn-default:hover,
+.selectPickerAddress .btn-default:active,
+.selectPickerAddress .btn-default.active,
+.selectPickerAddress .open>.dropdown-toggle.btn-default,
+.selectPickerAddress .btn-default:active:hover,
+.selectPickerAddress .btn-default.active:hover,
+.selectPickerAddress .open>.dropdown-toggle.btn-default:hover,
+.selectPickerAddress .btn-default:active:focus,
+.selectPickerAddress .btn-default.active:focus,
+.selectPickerAddress .open>.dropdown-toggle.btn-default:focus,
+.selectPickerAddress .btn-default:active.focus,
+.selectPickerAddress .btn-default.active.focus,
+.selectPickerAddress .open>.dropdown-toggle.btn-default.focus{
+    background-color: $btn-default-Bg;
+}
+
+.bootstrap-select .btn-default:focus {
+    border-color: $border-color2;
+    border: none;
+}
+
+.bootstrap-select.btn-group .dropdown-menu li a {
+    font-size: 13px;
+    background-color: inherit;
+    padding: 10px 0;
+}
+
+.bootstrap-select.btn-group .dropdown-menu li:hover {
+    border: none;
+    color: $selectHoverColor;
+}
+
+.bootstrap-select .dropdown-menu .inner .selected>a {
+    color: $font-hover;
+    background-color: inherit;
+}
+
+.record {
+    width: 83% !important;
+}
+
+.SaleType.btn-group .dropdown-menu li a:hover {
+    background-color: inherit;
+}
+
+.SaleType .btn-default:focus {
+    border-color: inherit;
+}
+
+.supportType .bootstrap-select {
+    width: auto!important;
+}
+
+.bootstrap-select .btn-default[data-id='userArea'],
+.bootstrap-select .btn-default[data-id='userBindBank'] {
+    height: 35px;
+}
+
+
+/*实名认证的手机端bootstrap-select样式*/
+
+.smshow {
+    margin-bottom: 20px;
+}
+
+.smshow>.btn-group.bootstrap-select {
+    width: 40% !important;
+}
+
+.smshow .open.bootstrap-select {
+    width: 100% !important;
+}
+
+.bootstrap-select.btn-group .dropdown-menu li a span.text {
+    white-space: initial;
+}
+
+
+/*密码强度样式*/
+
+#strength-check {
+    background-color: $strengthBG !important;
+}
+
+#strength-check div.strength-check-heading .turngreen {
+    color: $strengthTurnGreen !important;
+}
+
+#strength-check p {
+    color: $strengthColor !important;
+}
+
+#strength-check span {
+    color: $strengthSpan !important;
+}
+
+
+/*================================= C2C start ==================================*/
+
+// .issue-select {
+//     position: absolute;
+//     left: 38px;
+//     top: -3px;
+//     outline: none;
+//     border-radius: 5px;
+//     width: auto!important;
+// }
+// .orderManage .issue-select {
+//     position: static;
+//     left: auto;
+//     top: auto;
+// }
+// .area-issue-select {
+//     left: 105px;
+//     top: 2px;
+// }
+// .panel .panel-tools .area-issue-select .dropdown-menu {
+//     left: 0;
+// }
+// .issue-select .btn-group.bootstrap-select {
+//     background: linear-gradient(51deg, #3C6AF0 0%, #509AEF 100%);
+//     border: none;
+//     border-radius: 100px;
+//     color: #fff;
+// }
+// .issue-select .bootstrap-select .btn-default {
+//     height: 22px;
+//     color: #fff;
+//     font-size: 12px;
+//     border: 0;
+//     padding: 0px;
+//     width: 70px;
+//     margin-left: 3px;
+// }
+// .area-issue-select .bootstrap-select .btn-default {
+//     border-radius: 100px;
+// }
+// .area-issue-select .btn-group .dropdown-toggle .caret {
+//     right: 5px;
+// }
+// .area-issue-select .dropdown-menu li>a {
+//     padding: 5px;
+// }
+// .issue-checkbox:nth-child(2) .issue-select>.form-control {
+//     width: 101px!important;
+//     height: 24px;
+//     margin-top: 2px;
+//     margin-left: 3px;
+// }
+// .issue-checkbox .bootstrap-select>select {
+//     left: 0;
+// }
+// .issue-checkbox .bootstrap-select.btn-group .dropdown-menu li a {
+//     padding: 5px 3px;
+// }
+// .issue-checkbox .bootstrap-select.btn-group .dropdown-toggle .filter-option:focus {
+//     outline: none;
+// }
+// .sell-issue .warmTips img {
+//     float: left;
+//     display: block;
+//     margin-top: 2px;
+// }
+// .sell-issue .warmTips span {
+//     display: block;
+//     padding-left: 10px;
+//     padding-bottom: 15px;
+// }/*================================= C2C start ==================================*/
+
+// .issue-select {
+//     position: absolute;
+//     left: 38px;
+//     top: -3px;
+//     outline: none;
+//     border-radius: 5px;
+//     width: auto!important;
+// }
+// .orderManage .issue-select {
+//     position: static;
+//     left: auto;
+//     top: auto;
+// }
+// .area-issue-select {
+//     left: 105px;
+//     top: 2px;
+// }
+// .panel .panel-tools .area-issue-select .dropdown-menu {
+//     left: 0;
+// }
+// .issue-select .btn-group.bootstrap-select {
+//     background: linear-gradient(51deg, #3C6AF0 0%, #509AEF 100%);
+//     border: none;
+//     border-radius: 100px;
+//     color: #fff;
+// }
+// .issue-select .bootstrap-select .btn-default {
+//     height: 22px;
+//     color: #fff;
+//     font-size: 12px;
+//     border: 0;
+//     padding: 0px;
+//     width: 70px;
+//     margin-left: 3px;
+// }
+// .area-issue-select .bootstrap-select .btn-default {
+//     border-radius: 100px;
+// }
+// .area-issue-select .btn-group .dropdown-toggle .caret {
+//     right: 5px;
+// }
+// .area-issue-select .dropdown-menu li>a {
+//     padding: 5px;
+// }
+// .issue-checkbox:nth-child(2) .issue-select>.form-control {
+//     width: 101px!important;
+//     height: 24px;
+//     margin-top: 2px;
+//     margin-left: 3px;
+// }
+// .issue-checkbox .bootstrap-select>select {
+//     left: 0;
+// }
+// .issue-checkbox .bootstrap-select.btn-group .dropdown-menu li a {
+//     padding: 5px 3px;
+// }
+// .issue-checkbox .bootstrap-select.btn-group .dropdown-toggle .filter-option:focus {
+//     outline: none;
+// }
+// .sell-issue .warmTips img {
+//     float: left;
+//     display: block;
+//     margin-top: 2px;
+// }
+// .sell-issue .warmTips span {
+//     display: block;
+//     padding-left: 10px;
+//     padding-bottom: 15px;
+// }
+.C2C_isBlock {
+    display: none;
+    font-size: 12px;
+    color: $PtwoP_order_li;
+    font-family: PingFangSC-Regular;
+    margin-left: 30px;
+    line-height: 30px;
+    font-weight: bold;
+}
+
+// .C2C_notBlock {
+//     display: block;
+// }
+.orderManageBox .zoom-Note a {
+    color: $panel-title-font;
+    font-size: 1.2rem;
+    margin-left: 10px;
+}
+
+.word_break {
+    word-break: break-all;
+}
+
+
+/*买入和卖出切换按钮*/
+
+.issue-buy,
+.issue-sell {
+    font-size: 15px;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    margin-top: 20px;
+    color: $modalColor;
+    float: left;
+    position: relative;
+}
+
+.issue-buy {
+    float: left;
+    margin-left: 18%;
+}
+
+.issue-sell {
+    float: right;
+    margin-right: 18%;
+}
+
+.issue-buy:hover,
+.issue-sell:hover {
+    text-decoration: none;
+}
+
+.issue-buy.active {
+    color: #4bd2b7;
+}
+
+.issue-sell.active {
+    color: #FF5F5F;
+}
+
+
+/*================================= C2C end ==================================*/
+
+// c2c p2p 公共 --s
+
+/*参考栏价格*/
+
+.reference {
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.reference>div {
+    display: inline-block;
+    display: inline-block;
+}
+
+.reference p {
+    color: inherit;
+}
+
+.reference p:first-child {
+    font-size: 22px;
+    font-weight: 600;
+    color: $panel-title-font;
+}
+
+.reference p:last-child {
+    color: $panel-title-font;
+    font-size: 12px;
+    font-family: PingFangSC-Regular;
+}
+
+.reference>div p:first-child {
+    font-size: 13px;
+    color: $panel-title-font;
+    font-weight: lighter;
+}
+
+.reference>div p:last-child {
+    margin-top: 1.2rem;
+    font-size: 13px;
+}
+
+// c2c p2p 公共 --e
+
+/* --------- 分页 ------------- */
+
+.pagination {
+    float: right;
+    margin: 20px 20px 0 0;
+    box-shadow: none;
+    font-family: Arial, sans;
+    font-size: 13px;
+}
+
+.pagination li>a {
+    padding: 2px 8px;
+}
+
+.pagination li>a:hover,
+.pagination li>span:hover,
+.pagination li>a:focus,
+.pagination li>span:focus {
+    background: transparent;
+    text-decoration: underline;
+    color: $pageFont;
+}
+
+.pagination li.active>a,
+.pagination li.active>span,
+.pagination li.active>a:hover,
+.pagination li.active>span:hover,
+.pagination li.active>a:focus,
+.pagination li.active>span:focus {
+    background: $pagefocusBg;
+}
+
+
+/* ---------------按钮-------------------- */
+
+.btn-info {
+    background-color: $repealColor;
+    border: none;
+    border-radius: 4px;
+}
+
+.btn-info-outline {
+    color: $repealOutlineColor;
+    background-color: transparent;
+    border-color: #F3F6FA;
+}
+
+.btn-min,
+.btn-plus,
+.btn-expand,
+.btn-compress {
+    color: $panel-title-font;
+    border-radius: 0;
+}
+
+.btn-min:hover,
+.btn-plus:hover,
+.btn-expand:hover,
+.btn-compress:hover {
+    background-color: transparent;
+}
+
+.btn-submit-gradient {
+    @include gradient($submit-gradient);
+    border-radius: 4px;
+    color: white;
+    border-color: #509AEF;
+}
+
+.bootstrap-touchspin .input-group-btn-vertical>.btn {
+    padding-top: 7.7px;
+    padding-bottom: 8.5px;
+}
+
+.back {
+    border-color: $back;
+    color: $back;
+    background-color: transparent;
+    border-radius: 4px;
+}
+
+.btn-green {
+    color: $font-color;
+    background-color: #FF5A5A;
+    border-radius: 100px;
+}
+
+.btn-green:hover,
+.btn-green:focus,
+.btn-green.focus {
+    color: $getUrl_color;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    //  border-color: $primaryColor;
+    //  background-color: $primaryColor;
+}
+
+.btn-gradient {
+    @include gradient($blue-right);
+    color: #fff;
+    border-radius: 100px;
+    padding: 4px 12px;
+}
+
+.btn-gradient.focus, .btn-gradient:focus, .btn-gradient:hover{
+    color: rgba(255,255,255,1);
+}
+
+button.btn-gradient:hover,a.btn-gradient:hover{
+    background: $buyList_backcolor_hover;
+}
+
+.countdown {
+    line-height: 35px;
+    color: $font-hover;
+    border: none;
+    background: none;
+    padding: 0;
+}
+
+.btn-grey {
+    color: $btnfont;
+    border-color: $revokebg;
+    background-color: $revokebg;
+    border-radius: 4px;
+}
+
+.revokeNowOrder {
+    color: $font-color;
+    background: $revokebg !important;
+    border-radius: 100px;
+    &:hover,
+    &:active,
+    &:focus,
+    &:visited {
+        background-color: darken($revokebg, 10%) !important;
+    }
+}
+
+.btn-grey:hover,
+.btn-grey:focus,
+.btn-grey.focus {
+    color: $btnfont;
+    border-color: $revokebg;
+    background-color: $revokebg;
+}
+
+.btn-grey:active,
+.btn-grey.active,
+.open>.dropdown-toggle.btn-grey,
+.btn-grey:active:hover,
+.btn-grey.active:hover,
+.open>.dropdown-toggle.btn-grey:hover,
+.btn-grey:active:focus,
+.btn-grey.active:focus,
+.open>.dropdown-toggle.btn-grey:focus,
+.btn-grey:active.focus,
+.btn-grey.active.focus,
+.open>.dropdown-toggle.btn-grey.focus {
+    color: $btnfont;
+    border-color: $revokebg;
+    background-color: $revokebg;
+}
+
+.btn-grey.disabled,
+.btn-grey[disabled],
+fieldset[disabled] .btn-grey,
+.btn-grey.disabled:hover,
+.btn-grey[disabled]:hover,
+fieldset[disabled] .btn-grey:hover,
+.btn-grey.disabled:focus,
+.btn-grey[disabled]:focus,
+fieldset[disabled] .btn-grey:focus,
+.btn-grey.disabled.focus,
+.btn-grey[disabled].focus,
+fieldset[disabled] .btn-grey.focus {
+    border-color: $btnBlueActive;
+    background-color: $btnBlueActive;
+}
+
+.btn-cancel {
+    color: $btnCancle;
+    border-color: $btnCancle;
+    background-color: $btnCancleBg;
+}
+
+.btn-cancel:hover,
+.btn-cancel:focus,
+.btn-cancel.focus {
+    color: $btnCancleHoverColor;
+    border-color: $btnCancleHoverBorder;
+    background-color: $btnCancleHoverBg;
+}
+
+.btn-cancel:active,
+.btn-cancel.active,
+.open>.dropdown-toggle.btn-cancel,
+.btn-cancel:active:hover,
+.btn-cancel.active:hover,
+.open>.dropdown-toggle.btn-cancel:hover,
+.btn-cancel:active:focus,
+.btn-cancel.active:focus,
+.open>.dropdown-toggle.btn-cancel:focus,
+.btn-cancel:active.focus,
+.btn-cancel.active.focus,
+.open>.dropdown-toggle.btn-cancel.focus {
+    color: $btnCancleHoverColor;
+    border-color: $btnCancleHoverBorder;
+    background-color: $btnCancleHoverBg;
+}
+
+.btn-cancel.disabled,
+.btn-cancel[disabled],
+fieldset[disabled] .btn-cancel,
+.btn-cancel.disabled:hover,
+.btn-cancel[disabled]:hover,
+fieldset[disabled] .btn-cancel:hover,
+.btn-cancel.disabled:focus,
+.btn-cancel[disabled]:focus,
+fieldset[disabled] .btn-cancel:focus,
+.btn-cancel.disabled.focus,
+.btn-cancel[disabled].focus,
+fieldset[disabled] .btn-cancel.focus {
+    border-color: $btnCancleDisableBorder;
+    background-color: $btnCancleDisableBg;
+}
+
+.btn-light-purple {
+    color: $btnUpload;
+    background-color: $btnUploadBg;
+    border-radius: 4px;
+    margin: 0;
+    width: 10%;
+    font-weight: bold;
+}
+
+.btn-light-purple:hover,
+.btn-light-purple:focus,
+.btn-light-purple.focus {
+    color: $btnUploadHoverColor;
+    background-color: $btnUploadHoverBg;
+}
+
+.btn-light-purple:active,
+.btn-light-purple.active,
+.open>.dropdown-toggle.btn-light-purple,
+.btn-light-purple:active:hover,
+.btn-light-purple.active:hover,
+.open>.dropdown-toggle.btn-light-purple:hover,
+.btn-light-purple:active:focus,
+.btn-light-purple.active:focus,
+.open>.dropdown-toggle.btn-light-purple:focus,
+.btn-light-purple:active.focus,
+.btn-light-purple.active.focus,
+.open>.dropdown-toggle.btn-light-purple.focus {
+    color: $btnUploadHoverColor;
+    background-color: $btnUploadHoverBg;
+}
+
+.btn-light-purple.disabled,
+.btn-light-purple[disabled],
+fieldset[disabled] .btn-light-purple,
+.btn-light-purple.disabled:hover,
+.btn-light-purple[disabled]:hover,
+fieldset[disabled] .btn-light-purple:hover,
+.btn-light-purple.disabled:focus,
+.btn-light-purple[disabled]:focus,
+fieldset[disabled] .btn-light-purple:focus,
+.btn-light-purple.disabled.focus,
+.btn-light-purple[disabled].focus,
+fieldset[disabled] .btn-light-purple.focus {
+    background-color: $btnUploadDisableBg;
+}
+
+// 待删除 --s
+// .input-icon-left img {
+//     position: absolute;
+//     right: 0;
+//     bottom: 5px;
+// }
+// 待删除 --e
+.datepicker table tr td.today {
+    color: $datepickerFont !important;
+    background: none !important;
+}
+
+#allCurrencyList i {
+    padding: 1px 0;
+}
+
+#moneypwdBtn {
+    margin-bottom: 8px
+}
+
+
+/* -----------------箭头样式--------------------- */
+
+.fa-long-arrow-up {
+    color: $green;
+}
+
+.fa-long-arrow-down {
+    color: $red;
+}
+
+
+/* ---------------label-info-------------------- */
+
+.label-info {
+    color: $panel-title !important;
+    background-color: transparent;
+}
+
+.navbar-top .navbar-nav>li>a .label {
+    background-color: $navbarLable;
+}
+
+
+/* ---------------------- alert --------------------- */
+
+
+/* alertBox外层div层级调到1080 */
+
+.p-0 {
+    z-index: 99999999!important;
+}
+
+.p-all-0 {
+    padding: 0;
+    text-align: left!important;
+}
+
+.alert a {
+    text-decoration: underline;
+}
+
+// .NameAlert a {
+//     color: $namealertColor;
+// }
+#isRealName .alert-warning {
+    background-color: rgba($alert-warning_background, 0.23);
+    color: $alertwarningColor;
+    border: none;
+    padding: 4px 20px;
+}
+
+.alert-bottom {
+    padding-top: 10px;
+    background-color: $alert-bottom-bg;
+    border: 2px solid $info !important;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    color: #fff;
+    z-index: 10000;
+}
+
+.alert-bottom.alert-dismissable .close,
+.alert-bottom.alert-dismissible .close {
+    top: 8px;
+    outline: none;
+}
+
+.alert-extra {
+    margin-left: 20px;
+    border-color: $alertextraBorder !important;
+    background-color: $alertextraBg;
+    color: $white;
+}
+
+.alert-extra a {
+    color: $alertfontColor !important;
+    font-weight: bold !important;
+    margin: 0 4px;
+}
+
+.alert-info-success {
+    border-color: $alertsuccessBorder !important;
+    background-color: $alertsuccessBg;
+    color: $alertsuccessColor;
+}
+
+.alert-info-success a {
+    color: $alertfontColor !important;
+    font-weight: bold !important;
+}
+
+.alert-info-fail {
+    border-color: $alertfailBorder !important;
+    background-color: $red;
+    color: $alertfailColor;
+    z-index: 1080;
+}
+
+.alert-info-fail a {
+    color: $alertfontColor !important;
+    font-weight: bold !important;
+}
+
+.shiming.alert.alert-info.border-info.alert-extra.alert-dismissible {
+    padding: 10px 12px 10px 15px;
+}
+
+
+/* ----------------下拉框样式-------------------- */
+
+.dropdown-menu {
+    background-color: $dropdown-hover-bg;
+    cursor: pointer;
+    @include dropmenuBoxshadow(0px 0px 5px rgba(114,
+    125,
+    172,
+    0.15));
+}
+
+.dropdown-menu .dropdown-header {
+    background-color: $dropdown-bg;
+    color: $dropdown-color;
+}
+
+.dropdown-menu,
+.Question_content {
+    border: none;
+    .active>a {
+        color: $dropdown-hover-color;
+        background-color: $dropdown-hover-bg;
+        &:hover {
+            color: $dropdown-hover-color;
+            background: $dropdown-hover-bg;
+        }
+        &::after {
+            width: 4px;
+            height: 100%;
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 0;
+            background: $dropdown-hover-color;
+        }
+    }
+    li {
+        position: relative;
+        a {
+            padding: 8px 30px;
+            text-align: center;
+            color: $dropdown-color;
+            &:focus {
+                color: $dropdown-hover-color;
+            }
+            &:hover {
+                background: $dropdown-hover-bg;
+                color: $dropdown-hover-color!important;
+            }
+        }
+        &:hover {
+            color: $dropdown-hover-color!important;
+            background: $dropdown-hover-bg;
+            span {
+                color: $dropdown-hover-color!important;
+                background: $dropdown-hover-bg;
+            }
+            &::after {
+                width: 4px;
+                height: 100%;
+                content: '';
+                position: absolute;
+                right: 0;
+                top: 0;
+                background: $dropdown-hover-color;
+            }
+        }
+    }
+    li.active {
+        color: $dropdown-hover-color!important;
+        background: $dropdown-hover-bg;
+        span {
+            color: $dropdown-hover-color!important;
+            background: $dropdown-hover-bg;
+        }
+    }
+    li.active::after {
+        width: 4px;
+        height: 100%;
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 0;
+        background: $dropdown-hover-color;
+    }
+}
+
+.dropdown-menu li.selected::after,
+.dropdown-menu li:active::after {
+    width: 4px;
+    height: 100%;
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: $dropdown-hover-color;
+}
+
+.dropdown .dropdown-menu a:hover {
+    color: $dropdown-color;
+}
+
+.navbar-top .navbar-nav {
+    .open .dropdown-menu {
+        @include dropmenuBoxshadow(0px 0px 8px rgba(114,
+        125,
+        172,
+        0.15));
+    }
+    .dropdown-menu {
+        width: auto;
+        li {
+            a {
+                &:hover {
+                    &::after {
+                        left: auto;
+                        right: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/* ---------------牌价币种icon-------------------- */
+
+#tab-underline-home3 tr td .pai_icon_BTC,
+#getMyCurrencyList tr td .pai_icon_BTC,
+#getImgicon .pai_icon_BTC {
+    background: url('../img/coin_icon/BTC.svg') no-repeat;
+}
+
+#tab-underline-home3 tr td .pai_icon_LTC,
+#getMyCurrencyList tr td .pai_icon_LTC,
+#getImgicon .pai_icon_LTC {
+    background: url('../img/coin_icon/LTC.svg') no-repeat;
+}
+
+#tab-underline-home3 tr td .pai_icon_ETC,
+#getMyCurrencyList tr td .pai_icon_ETC,
+#getImgicon .pai_icon_ETC {
+    background: url('../img/coin_icon/ETC.svg') no-repeat;
+}
+
+#tab-underline-home3 tr td .pai_icon_ETH,
+#getMyCurrencyList tr td .pai_icon_ETH,
+#getImgicon .pai_icon_ETH {
+    background: url('../img/coin_icon/ETH.svg') no-repeat;
+}
+
+#tab-underline-home3 tr td .pai_icon_BCH,
+#getMyCurrencyList tr td .pai_icon_BCH,
+#getImgicon .pai_icon_BCH {
+    background: url('../img/coin_icon/BCH.svg') no-repeat;
+}
+
+
+/* ---------------顶部导航栏-------------------- */
+
+.left-logo {
+    width: ($aside-width)+8;
+    height: $nav-height;
+    background-color: $left-bg;
+    position: fixed;
+    padding: 2rem;
+    //transition: .3s all;
+    z-index: 1032;
+    .navbar-brand {
+        padding: 2px 0 0 0;
+        img {
+            width: auto;
+            height: 36px;
+            margin-top: 3px;
+        }
+    }
+    .sidebar-toggle {
+        display: none;
+    }
+}
+
+.navbar-top {
+    background: transparent;
+    border: none;
+    height: $nav-height;
+    padding-top: 8px;
+    padding-left: ($aside-width)+25;
+    .dropdown-menu {
+        z-index: 1034;
+    }
+    .dropdown_img {
+        padding: 16px 0px 16px 0px;
+    }
+    .dropdown_img a {
+        width: 25px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .dropdown_img a img {
+        display: inline-block;
+        width: inherit;
+        height: auto;
+    }
+    .dropdown_img .active {
+        opacity: 0.6;
+    }
+    .lang_icon {
+        padding-top: 3px;
+        margin-right: 3rem;
+    }
+    .lang_icon button {
+        padding: 16px 7px 12px 0;
+        background: transparent;
+        font-size: 13px;
+        //padding-bottom: 10px;
+    }
+    .sm_navbar {
+        display: none;
+        position: relative;
+    }
+    .navbar-header {
+        text-align: left;
+    }
+    .navbar-brand {
+        padding: 15px 10px;
+        line-height: normal;
+        height: auto;
+        float: none;
+    }
+    .navbar-nav>li>a {
+        color: $navbar-nav-color;
+        padding-bottom: 12px;
+    }
+    .navbar-nav #quotations a {
+        background-color: $navbar-nav-bg;
+    }
+    .navbar-nav>li>a:hover:after,
+    .navbar-nav>li>a:active:after,
+    .navbar-nav>li>a:focus:after {
+        background-color: inherit!important;
+        opacity: 1;
+    }
+    .navbar-nav>li>a:after,
+    .btn-info-outline:after,
+    .langCheck>.btn:after {
+        content: '';
+        position: absolute;
+        left: 2%;
+        bottom: 4px;
+        width: 100%;
+        height: 2px;
+        display: inline-block;
+        opacity: 0;
+        @include gradient($langCheck_btn);
+        //transition: .3s all;
+    }
+    .navbar-top .navbar-nav>li>a {
+        color: $navbar-nav-color;
+        padding-bottom: 12px;
+    }
+    .navbar-top .navbar-nav>li>a {
+        color: $navbar-nav-color;
+        padding-bottom: 12px;
+    }
+    .navbar-nav #quotations {
+        display: none;
+    }
+    .navbar-nav .fr {
+        float: right;
+    }
+}
+
+.aside_top_CurrencyList {
+    background: $left-title;
+    border-radius: 100px;
+    padding: 5px 10px;
+}
+
+.aside_top_CurrencyList>div {
+    font-size: 12px;
+}
+
+.target_panel_title>span {
+    font-size: 16px;
+    color: $PtwoP_KXT_content_spancolor;
+    font-weight: 600;
+    margin-right: 25px;
+    line-height: 30px;
+}
+
+ul li a.target_Pattern_ordertwo0 {
+    line-height: 22px;
+}
+
+ul li a.target_Pattern_orderone0 {
+    line-height: 12px;
+}
+/*切换语言 选中效果css*/
+.dropdown_img_icon{
+    opacity: .4;
+}
+.dropdown_img_active {
+    opacity: 1
+}
+
+/* 关机按钮 */
+
+.sign-out {
+    display: none !important;
+}
+
+.sign-out a {
+    padding-top: 4px !important;
+}
+
+
+/*实名认证提示*/
+
+#isRealName {
+    display: none;
+    padding: 0;
+    margin-bottom: 10px;
+}
+
+.isRealName_personal:after {
+    display: none;
+}
+
+
+/* -----------------顶部导航栏右边------------------ */
+
+.text-info {
+    color: $green !important;
+}
+
+
+/* -----------------内容--------------------------- */
+
+.content {
+    min-height: 65rem;
+}
+
+
+/* -----------------内容导航栏右边------------------ */
+
+.nav-tabs li.active>a {
+    color: $panel-title-font;
+}
+
+.nav-tabs li>a {
+    color: $panel-title-font;
+}
+
+.nav .open>a,
+.nav .open>a:hover,
+.nav .open>a:focus {
+    background-color: transparent;
+}
+
+.nav-tabs.solid-tabs>li>a {
+    background-color: transparent;
+}
+
+.nav-tabs.underline-tabs.primary-tabs>li.active>a,
+.nav-tabs.underline-tabs.primary-tabs>li.active>a:hover,
+.nav-tabs.underline-tabs.primary-tabs>li.active>a:focus {
+    color: $navtabs-color;
+    border-bottom-color: $navtabs-borderbottom;
+}
+
+.nav-tabs.underline-tabs.info-tabs>li.active>a,
+.nav-tabs.underline-tabs.info-tabs>li.active>a:hover,
+.nav-tabs.underline-tabs.info-tabs>li.active>a:focus {
+    border-bottom-color: $navtabs-borderbottom;
+}
+
+.nav-tabs .solid-tabs>li.active>a,
+.nav-tabs>li.active>a:focus,
+.nav-tabs .solid-tabs>li.active>a:hover {
+    color: $navtabs-hovercolor;
+    border: 1px solid $navtabs-hoverBorder2;
+}
+
+.navbar-top .navbar-nav .dropdown-menu .list-dropdown-content>li>a {
+    color: $dropdown-color;
+}
+
+.navbar-top .navbar-nav .dropdown-menu .list-dropdown-content>li>a:hover {
+    color: $dropdown-hover-color;
+    background-color: $dropdown-bg;
+    text-decoration: none;
+}
+
+.navbar-top .navbar-nav .dropdown-menu .list-dropdown-content>li>a:focus {
+    color: $navtabs-hovercolor;
+}
+
+.navbar-top .dropdown .btn2 {
+    color: $TourBtn_color;
+}
+
+
+/* -----------------左边内容块----------------- */
+
+.aside {
+    position: fixed;
+    //  width: $aside-width + 8;
+    height: 100%;
+    overflow: hidden;
+    top: $nav-height;
+    left: 0;
+    z-index: 1032;
+    background-color: $left-bg;
+    transition: .4s all ease-in-out;
+    padding-bottom: 5rem;
+    @include dropmenuBoxshadow(0px 12px 15px rgba(114,
+    125,
+    172,
+    0.15));
+}
+
+.content-left {
+    width: $aside-width + 8 !important;
+    height: 100%;
+    color: $content-left-color;
+    overflow-y: scroll;
+    transition: .3s all;
+    padding-bottom: 90px;
+    position: initial !important;
+    background-color: transparent !important;
+    .navbar-brand {
+        padding: 5px 0 10px 0;
+    }
+    .nav-tabs li>a {
+        color: $content-left-color;
+    }
+    .panel {
+        box-shadow: none;
+        background: transparent;
+        .panel-title {
+            color: $content-left-color;
+        }
+        .panel-body {
+            padding: 20px $content-left-pad 0 $content-left-pad;
+        }
+        .panel-heading {
+            height: $title-height;
+            line-height: $title-height;
+            background-color: $left-title;
+            border: none;
+            padding: 0 $content-left-pad;
+        }
+        .nav-tabs {
+            border: none;
+        }
+    }
+}
+
+_::-webkit-full-page-media,
+_:future,
+ :root .content-left {
+    padding-bottom: 10rem;
+}
+
+.content-left .panel-card {
+    p {
+        text-align: center;
+        width: 33.33%;
+        float: left;
+        &:last-of-type {
+            border-right: none;
+        }
+    }
+    .panel-title {
+        font-size: 14px;
+        color: $panel-card-paneltitle;
+        .label {
+            border: none;
+            color: $content-left-color;
+        }
+    }
+    .border-bottom {
+        border-bottom: 1px solid $panel-card-border;
+        span {
+            display: block;
+            color: $coinTimefont;
+            padding: 8px 0;
+        }
+        p:first-of-type {
+            width: 29.33%;
+        }
+        p:nth-of-type(2) {
+            width: 41.33%;
+        }
+        p:last-of-type {
+            width: 29.33%;
+        }
+    }
+    .panel-footer {
+        background-color: transparent;
+        border-top: none;
+        padding: 12px 28px 0 38px;
+    }
+}
+
+
+/* 牌价 */
+
+.content-left .quoteprice {
+    margin: 40px 0 25px 0;
+    #allCoin .myCollection {
+        width: 16px;
+        height: 16px;
+    }
+    .panel-default>.panel-footer {
+        background-color: $panel-footer-bg;
+    }
+    .panel-heading {
+        .tools-content,
+        .nav,
+        li,
+        li a {
+            height: 100%;
+        }
+        ul li {
+            width: 50%;
+            text-align: center;
+            margin-left: 0;
+            margin-right: 0;
+            a {
+                line-height: ($title-height)-11;
+                border: none;
+                cursor: pointer;
+                position: relative;
+                &:after {
+                    content: '';
+                    position: absolute;
+                    left: 10%;
+                    bottom: 4px;
+                    width: 80%;
+                    height: 2.5px;
+                    display: inline-block;
+                    opacity: 0;
+                    @include gradient($title-gradient);
+                    transition: .3s all;
+                }
+            }
+        }
+        li.active a,
+        li a:hover {
+            background-color: transparent;
+            border: none;
+            &:after {
+                opacity: 1;
+            }
+        }
+        li.active a:hover {
+            color: $content-left-color;
+        }
+    }
+    .panel-body {
+        padding: 20px 0;
+    }
+    .quoteprice_box {
+        position: relative;
+        padding: ($content-left-pad)-5 ($content-left-pad)-10;
+        .quote_coinname {
+            font-size: 14px;
+            .col-lg-6:first-of-type .icon {
+                color: $coinTimefont;
+            }
+        }
+        .tag02 {
+            color: $content-left-color;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .quote_nowprice {
+            color: $red;
+            font-size: 15px;
+            padding: 7px 0 20px 0;
+        }
+        .quote_volume {
+            font-size: 12px;
+            .font11 {
+                transform: scale(.95);
+                display: inline-block;
+            }
+            .vol_font {
+                color: $red;
+            }
+            div.text-right {
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+        }
+        &:after {
+            content: '';
+            width: 90%;
+            height: 2px;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            display: inline-block;
+            @include gradient($quoteprice_border);
+        }
+    }
+    // 绿字
+    .quoteprice_box.kl_green {
+        .quote_volume .vol_font {
+            color: $green;
+        }
+    }
+    //当前选中
+    .quoteprice_box.active {
+        color: $quoteprice_active;
+        @include gradient($quoteprice_bg);
+        .tag02,
+        .col-lg-6:first-of-type .icon {
+            color: $quoteprice_active;
+        }
+        .quote_coinname {
+            color: $quoteprice_active;
+        }
+    }
+    #allCoin .myCollection {
+        width: 16px;
+        height: 16px;
+    }
+    .panel-default>.panel-footer {
+        background-color: $panel-footer-bg;
+    }
+}
+
+// 余额
+.content-left .remaining {
+    .panel-title {
+        font-size: 14px;
+    }
+    th,
+    td {
+        color: $content-left-color;
+        padding: 10px 0;
+        border: none;
+        font-weight: normal;
+    }
+}
+
+.sidebar-extra-scroller .panel-card .panel-footer {
+    background-color: $panel-footer-bg2;
+}
+
+
+/*----------------------币种选择侧边栏----------------------*/
+
+.coinSlide {
+    position: relative;
+    .coinSelect {
+        width: 100%;
+        font-size: 14px;
+        background-color: $left-title;
+        height: $title-height;
+        line-height: $title-height;
+        color: $white;
+        margin-top: 0;
+        padding: 0 $content-left-pad;
+        text-decoration: none;
+        img {
+            width: 22px;
+            height: 22px;
+            margin: -2px 5px 0 0;
+        }
+        i {
+            font-size: 16px;
+            font-weight: bold;
+            margin: 12px 5px 0 0;
+            float: right;
+        }
+    }
+    #coinTotalMoney {
+        float: right;
+        border: none;
+    }
+}
+
+#coinMoneyList {
+    position: absolute;
+    width: 100%;
+    margin-top: 0;
+    border: none;
+    a {
+        position: relative;
+        width: 100%;
+        height: 40px;
+        line-height: 40px;
+        font-size: 14px;
+        padding: 0 25px;
+        text-align: left;
+        text-decoration: none;
+        &:last-of-type {
+            border-bottom: none;
+        }
+    }
+    li.active>a {
+        &::after {
+            left: 0;
+        }
+    }
+    img {
+        width: 22px;
+        height: 22px;
+    }
+    li.active {
+        &:after {
+            left: 0;
+        }
+    }
+    li {
+        width: 100%;
+        font-size: 13px;
+        height: 40px;
+        line-height: 40px;
+        border-bottom: none;
+        color: $dropdown-color;
+        &:hover {
+            color: $dropdown-hover-color;
+            border-bottom: none;
+            &:after {
+                left: 0;
+            }
+        }
+        &:last-of-type {
+            border: none;
+        }
+    }
+}
+
+
+/* -----------------右边内容块----------------- */
+
+.content-right {
+    padding-bottom: $footer-pad;
+    padding-left: ($aside-width)+5;
+}
+
+
+/* ---------------------- 卖出订单 --------------------- */
+
+.white {
+    color: $white;
+}
+
+.content {
+    background: $background;
+}
+
+.form-control,
+.form-control[disabled],
+.form-control[readonly],
+fieldset[disabled] .form-control {
+    background-color: $btn-default-Bg;
+    border: none;
+}
+
+.panel {
+    background: $panel-bg;
+    border-color: $border-color;
+    margin-bottom: 30px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    box-shadow: $panel_box_shaow;
+    -webkit-box-shadow: $panel_box_shaow;
+}
+
+.panel .panel-heading {
+    border: none;
+    background-color: transparent;
+}
+
+.panel .panel-title {
+    color: $panel-title;
+}
+
+.panel .panel-title .label {
+    color: $panel-title-font;
+    background-color: transparent;
+    border-color: $panel-title-labelborder;
+}
+
+.panel .panel-tools {
+    color: $panel-title-font !important;
+}
+
+.panel .panel-tools .dropdown-menu {
+    left: -35px;
+}
+
+.panel .alert-info {
+    background-color: inherit;
+    color: $panel-title-font;
+}
+
+.alert.alert-info .fa.fa-copy,
+.alert.alert-info .fa.fa-refresh {
+    background: rgba(107, 113, 117, 0.68);
+    padding: 3px;
+}
+
+.alert.alert-info .fa.fa-refresh {
+    display: inline-block;
+    width: 19px;
+    height: 19px;
+}
+
+.panel .panel-body {
+    padding: 14px;
+}
+
+.panel .panel-body .dl-horizontal p {
+    padding-left: 4rem;
+    font-weight: 100;
+    color: $panel-title-font;
+}
+
+.panel .panel-body .col-item {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.panel .panel-body .col-item strong {
+    display: block;
+    font-size: 20px;
+    color: $col-item-strongColor;
+}
+
+.panel .panel-body .col-item .col-item span {
+    font-size: 16px;
+    color: $col-item-spanColor;
+}
+
+.panel .panel-body .col-item+.col-item {
+    text-align: right;
+    border-left: 1px solid $col-item-borderLeft;
+}
+
+.panel .panel-default>.panel-heading>.panel-title>.panel-tools>.title {
+    width: 1%;
+    padding-right: 0;
+}
+
+.panel-card .panel-body p {
+    text-align: center;
+    width: 33.33%;
+    float: left;
+}
+
+.panel-card .panel-body p:nth-child(3) {
+    border-right: none;
+}
+
+.panel-card .b-icon {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    left: 0;
+    top: -40px;
+    background-color: $b-icon-bg;
+}
+
+.panel-card .b-icon .dropdown-menu {
+    max-width: 206px;
+}
+
+.panel-card .b-icon .dropdown-menu .dropdown-header {
+    background-color: $b-icon-dropdown-headerBg;
+    height: 43px;
+    color: $b-icon-dropdown-headerColor;
+    padding: 13px 65px;
+}
+
+.panel-card .b-icon .dropdown-menu>li>a {
+    padding: 23px 85px;
+}
+
+.panel-card .panel-heading {
+    font-size: 14px;
+    height: 30px;
+}
+
+.panel-card .panel-heading .panel-title {
+    font-weight: 400;
+    line-height: 1.7;
+}
+
+.panel-card .panel-heading .panel-title .label {
+    float: right;
+    font-size: 12px;
+}
+
+#tab-underline-home3 thead>tr:nth-child(1),
+#tab-underline-profile3 thead>tr:nth-child(1) {
+    color: $white;
+}
+
+#tab-underline-profile4 .bootstrap-select.btn-group .fa-angle-down {
+    color: $fa-angle-down;
+    font-weight: 700;
+    font-size: 15px;
+    margin-left: 5px;
+}
+
+
+/* ----------------- c2c地区选择 ----------------- */
+
+.area_choice li {
+    background: $area_choice_bg;
+}
+
+.area_choice li.active {
+    background: $panel-bg;
+}
+
+
+/* -----------------首页订单----------------- */
+
+#coinNameOrderList {
+    text-transform: uppercase;
+}
+
+
+/*P2P 确认汇款信息*/
+
+// #static1 a.pull-right {
+//     display: block;
+//     height: 28px;
+//     padding-top: 4px;
+//     padding-bottom: 4px;
+//     padding-right: 20px;
+//     margin-left: 18px;
+//     position: relative;
+//     text-decoration: none;
+// }
+// #static1 a.pull-right i {
+//     transition: 0.5s;
+//     position: absolute;
+//     right: 0;
+//     top: 22%;
+// }
+#static1 a.pull-right:hover {
+    color: $btnConfirmBg;
+}
+
+#static1 a.pull-right:hover i {
+    color: $btnConfirmBg;
+    right: -10px;
+}
+
+#SaleIn,
+#SaleOut {
+    height: 277px;
+}
+
+#SaleIn .BuyForm,
+#SaleOut .BuyForm {
+    padding: 10px 25px;
+}
+
+#SaleIn .order-group,
+#SaleOut .order-group {
+    height: 45px;
+    padding-left: 15px;
+    color: $white;
+    position: relative;
+}
+
+#SaleIn .order-group {
+    border-bottom: solid 1px rgba(75, 210, 183, 0.30);
+}
+
+#SaleOut .order-group {
+    border-bottom: solid 1px rgba(255, 95, 95, 0.30);
+}
+
+#SaleIn .order-group label,
+#SaleOut .order-group label {
+    float: left;
+    height: 45px;
+    margin-bottom: 0;
+    line-height: 45px;
+    font-size: 12px;
+    color: $tradcoin_ordername_color;
+}
+
+#SaleIn .order-group .group-right,
+#SaleOut .order-group .group-right {
+    float: right;
+}
+
+#SaleIn .order-group .form-control,
+#SaleOut .order-group .form-control {
+    background-color: transparent !important;
+    border-color: transparent;
+}
+
+#SaleIn .order-group .order-max,
+#SaleOut .order-group .order-max,
+.maxButton {
+    display: inline-block;
+    width: 38px;
+    height: 18px;
+    margin-top: 13px;
+    margin-left: 13px;
+    line-height: 15px;
+    position: absolute;
+    border-radius: 16px;
+    text-align: center;
+    color: $white;
+    cursor: pointer;
+}
+
+#SaleIn .order-group .order-max {
+    background: $trad_coin_titleA_color;
+    border: 1px solid $trad_coin_titleA_color;
+}
+
+#SaleOut .order-group .order-max {
+    background: #FF5F5F;
+    border: 1px solid #FF5F5F;
+}
+
+#SaleIn .order-btc,
+#SaleOut .order-btc {
+    display: inline;
+    font-size: 13px;
+}
+
+#SaleIn .tipsWarm,
+#SaleOut .tipsWarm {
+    padding-bottom: 5px;
+}
+
+#SaleIn .tipsWarm {
+    border-bottom: solid 1px rgba(75, 210, 183, 0.30);
+}
+
+#SaleOut .tipsWarm {
+    border-bottom: solid 1px rgba(255, 95, 95, 0.30);
+}
+
+.sub_Con_Gtips {
+    border-bottom: solid 1px rgba(75, 210, 183, 0.30);
+}
+
+.sub_Con_Rtips {
+    border-bottom: solid 1px rgba(255, 95, 95, 0.30);
+}
+
+#SaleIn .tipsWarm .lgNopadLeft,
+#SaleOut .tipsWarm .lgNopadLeft {
+    padding-right: 0;
+    padding-top: 0;
+    padding-left: 14px;
+    color: $tradcoin_ordername_color;
+    text-align: left;
+}
+
+#SaleIn .tipsWarm .lgNopadRight,
+#SaleOut .tipsWarm .lgNopadRight {
+    padding-left: 15px;
+    color: $tradcoin_ordername_color;
+}
+
+#SaleIn .tipsWarm .lgNopadRight {
+    border-left: solid 1px rgba(75, 210, 183, 0.30);
+}
+
+#SaleOut .tipsWarm .lgNopadRight {
+    border-left: solid 1px rgba(255, 95, 95, 0.30);
+}
+
+#SaleIn .supportType .select2,
+#SaleOut .supportType .select2 {
+    width: 100px !important;
+}
+
+#SaleIn .supportType .select2 .select2-selection,
+#SaleOut .supportType .select2 .select2-selection {
+    height: 45px;
+    background-color: transparent;
+    border-color: transparent;
+}
+
+#SaleIn .supportType .select2 .select2-selection .select2-selection__arrow b,
+#SaleOut .supportType .select2 .select2-selection .select2-selection__arrow b {
+    border-color: $white transparent transparent transparent;
+}
+
+#SaleIn .supportType span:first-of-type,
+#SaleOut .supportType span:first-of-type {
+    line-height: 29px;
+    margin-right: 0;
+    color: $tradcoin_ordername_color;
+}
+
+#SaleIn .typebox,
+#SaleOut .typebox {
+    height: 90px;
+}
+
+#SaleOut .typebox #SaleIn .typebox .BuyCount label,
+#SaleIn .typebox .BuyMoney label,
+#SaleIn .typebox .market_sell label,
+#SaleOut .typebox .BuyCount label,
+#SaleOut .typebox .BuyMoney label,
+#SaleOut .typebox .market_sell label {
+    width: 42%;
+}
+
+#SaleIn .typebox .BuyCount .group-right,
+#SaleIn .typebox .BuyMoney .group-right,
+#SaleIn .typebox .market_sell .group-right,
+#SaleOut .typebox .BuyCount .group-right,
+#SaleOut .typebox .BuyMoney .group-right,
+#SaleOut .typebox .market_sell .group-right {
+    padding-top: 8px;
+    width: 50%;
+}
+
+#SaleIn .typebox .BuyCount .group-right input,
+#SaleIn .typebox .BuyMoney .group-right input,
+#SaleIn .typebox .market_sell .group-right input,
+#SaleOut .typebox .BuyCount .group-right input,
+#SaleOut .typebox .BuyMoney .group-right input,
+#SaleOut .typebox .market_sell .group-right input {
+    float: right;
+    text-align: right;
+    width: 100%;
+    padding-top: 0;
+    margin-right: 6px;
+    background: transparent !important;
+}
+
+#SaleIn .button-zoom div:first-child,
+#SaleOut .button-zoom div:first-child {
+    padding-left: 0;
+}
+
+#SaleIn .button-zoom div.col-md-12:nth-child(3),
+#SaleOut .button-zoom div.col-md-12:nth-child(3) {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#SaleIn .button-zoom p,
+#SaleOut .button-zoom p {
+    text-align: left;
+    padding-top: 10px;
+    padding-left: 15px;
+}
+
+#SaleIn .button-zoom p label,
+#SaleOut .button-zoom p label {
+    color: $tradcoin_ordername_color;
+}
+
+#SaleIn .button-zoom button,
+#SaleOut .button-zoom button {
+    margin-top: 12px;
+}
+
+
+/*P2P 卖出订单模块*/
+
+// #tab-underline-profile4 .bootstrap-select.btn-group .dropdown-toggle .filter-option.pull-left {
+//     text-align: right;
+// }
+// #tab-underline-profile4 .panel {
+//     border: none;
+//     box-shadow: none;
+//     margin-bottom: 15px;
+// }
+// #tab-underline-profile4 .panel .panel-body {
+//     padding: 0 14px;
+// }
+// #tab-underline-profile4 .panel-heading {
+//     border-bottom: none;
+//     padding-left: 0px;
+// }
+#tab-underline-profile4 form .row {
+    color: $PtwoP_order_li;
+    text-align: left;
+}
+
+// #tab-underline-profile4 .col-md-3,
+// #tab-underline-profile4 .col-md-4,
+// #tab-underline-profile4 .col-md-6,
+// #tab-underline-profile4 .col-md-8,
+// #tab-underline-profile4 .col-md-12,
+// #tab-underline-profile4 .col-lg-6 {
+//     padding-left: 0;
+//     padding-right: 0;
+// }
+// #tab-underline-profile4 label,
+// #tab-underline-profile4 .form-control {
+//     font-size: 12px;
+// }
+// #tab-underline-profile4 .form-group,
+// #tab-underline-profile4 p {
+//     margin-bottom: 0;
+// }
+// #tab-underline-profile4 label {
+//     text-align: left;
+//     height: 35px;
+//     margin-bottom: 0;
+//     padding-top: 11px;
+// }
+// #tab-underline-profile4 .form-control-static {
+//     padding-top: 11px;
+//     padding-bottom: 0;
+//     word-break: break-all;
+//     -ms-word-wrap: break-word;
+//     word-wrap: break-word;
+// }
+// #tab-underline-profile4 .col-md-3.saleout-part {
+//     padding: 5px 20px;
+// }
+// #tab-underline-profile4 .col-md-3.saleout-part:nth-of-type(2) {
+//     padding: 5px 30px;
+// }
+// #tab-underline-profile4 .saleout-part-border {
+//     border-bottom: 1px solid #b1c4f9;
+// }
+// #tab-underline-profile4 .saleout-part {
+//     padding-top: 0;
+//     padding-bottom: 0;
+// }
+// #tab-underline-profile4 .panel-title {
+//     font-size: 1.3rem;
+//     padding-left: 8px;
+// }
+#tab-underline-profile4 .form-control {
+    color: $sell_input_color;
+    text-align: right;
+}
+
+#tab-underline-profile4 input.form-control::-webkit-input-placeholder {
+    color: $dark-placeholder !important;
+    text-align: right;
+    font-weight: 100;
+}
+
+#Trapass_modify .form-group input::-webkit-input-placeholder,
+#pass_modify .form-group input::-webkit-input-placeholder,
+#phone_modify .form-group input::-webkit-input-placeholder,
+.modalStyle .form-group input::-webkit-input-placeholder,
+#SaleIn_count_2::-webkit-input-placeholder,
+#SaleOut_count_2::-webkit-input-placeholder,
+#SaleOut_mar_1::-webkit-input-placeholder,
+#SaleIn_mar_1::-webkit-input-placeholder,
+#Confirmation-psd::-webkit-input-placeholder,
+.feedback_content::-webkit-input-placeholder {
+    color: $dark-placeholder!important;
+}
+
+.green {
+    color: $green3;
+}
+
+.orange {
+    color: $orange2;
+}
+
+// 市场订单
+// #tab-underline-home4 {
+//     tr td:first-of-type,
+//     tr th:first-of-type {
+//         width: 8%;
+//     }
+// }
+
+/* -----------------select2框----------------- */
+
+// 待删除 --s
+// .select2-container--bootstrap .select2-search--dropdown .select2-search__field {
+//     background-color: $input-bg;
+//     border-color: $border-table-color;
+//     color: $grey-color4;
+// }
+// .select2-container--bootstrap .select2-results__group {
+//     color: $grey-color3;
+// }
+// .select2-container--bootstrap .select2-results__option {
+//     background-color: $rightpanel-title;
+// }
+// .select2-container--bootstrap .select2-results__option[aria-selected=true] {
+//     background-color: $panel-bg;
+//     color: $white;
+// }
+// .select2-container--bootstrap .select2-results__option--highlighted[aria-selected] {
+//     background-color: $selectbg;
+//     color: $white;
+// }
+// .select2-container--bootstrap .select2-selection {
+//     background-color: $input-bg;
+// }
+// .select2-container--bootstrap .select2-selection {
+//     border-color: $border-table-color;
+// }
+// .select2-container--focus.select2-container--bootstrap .select2-selection,
+// .select2-container--open.select2-container--bootstrap .select2-selection {
+//     border-color: $border-bottom-color;
+// }
+// .select2-search--dropdown {
+//     background-color: $rightpanel-title;
+// }
+// .select2-dropdown {
+//     border-color: $info;
+// }
+// 待删除 --e
+
+/* -----------------表格----------------- */
+
+.table-bordered>thead>tr>th,
+.table-bordered>tbody>tr>th,
+.table-bordered>tfoot>tr>th,
+.table-bordered>thead>tr>td,
+.table-bordered>tbody>tr>td,
+.table-bordered>tfoot>tr>td,
+.table-bordered,
+.table>thead:first-child>tr:first-child>th,
+.table>tbody>tr>td {
+    border: none;
+}
+
+.content-right .table-bordered>thead>tr>th,
+.content-right .table-bordered>tbody>tr>th,
+.content-right .table-bordered>tfoot>tr>th,
+.content-right .table-bordered>thead>tr>td,
+.content-right .table-bordered>tbody>tr>td,
+.content-right .table-bordered>tfoot>tr>td,
+.content-right .table-bordered,
+.content-right .table>thead:first-child>tr:first-child>th,
+.content-right .table>tbody>tr>td {
+    border: none;
+}
+
+.table {
+    font-size: 13px;
+}
+
+// 待删除 --s
+// #allCoin {
+//     color: $grey-color6;
+// }
+// #allCoin a {
+//     display: inline-block;
+// }
+// #allCoin a:hover,
+// #allCoin a:focus {
+//     text-decoration: none;
+//     color: $allCoinColor;
+// }
+// .table-striped>tbody>tr:nth-of-type(odd) {
+//     background-color: $input-bg;
+// }
+// 待删除 --e
+.table-responsive {
+    color: $grey-color6;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    z-index: 0;
+    color: $panel-title-font;
+    background-color: transparent;
+    padding-top: $footer-pad;
+    padding-bottom: $footer-pad;
+    width: calc(100% - 300px);
+}
+
+.footer p {
+    margin-bottom: 0;
+}
+
+.form-layout-heading {
+    border-bottom-color: $black-bg;
+}
+
+.pagination>li>a,
+.pagination>li>span {
+    background-color: transparent;
+    border: none;
+    color: inherit;
+}
+
+
+/* ---------------------- 安全信息 --------------------- */
+
+.border-default {
+    border-color: $border-color !important;
+}
+
+
+/*================================================================
+                            弹窗Modal
+==================================================================*/
+
+
+/* 表单内容样式 */
+
+.issue input,
+.sell-issue input {
+    border: 0;
+    width: 100%;
+    height: 30px;
+    background-color: transparent;
+    color: $panel-title-font;
+    font-size: 13px;
+    outline: none;
+    text-align: right;
+    padding-right: 0;
+}
+
+.issue {
+    .row {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .issue-containAuto {
+        input {
+            padding: 0;
+        }
+    }
+    .input-text-left {
+        text-align: left;
+    }
+    .issue-item {
+        padding: 10px 0;
+    }
+    .item-border {
+        padding: 10px;
+    }
+    .issue-title {
+        line-height: 30px;
+        padding: 0;
+        font-weight: 400;
+    }
+    issue-item:last-of-type .issue-title {
+        line-height: 35px;
+    }
+    .issue-contain {
+        padding-right: 0;
+        text-align: right;
+        line-height: 30px;
+        font-weight: 600;
+    }
+    .issue-contain>.form-group {
+        margin-bottom: 0;
+    }
+    .issue-nocoin {
+        height: 30px;
+        line-height: 30px;
+        color: $panel-title-font;
+        padding-right: 0;
+        font-size: 12px;
+    }
+    .issue-way,
+    .issue-password {
+        line-height: 30px;
+    }
+    .item-border .col-xs-10 {
+        height: auto;
+    }
+    .modal-content {
+        margin-top: 0 !important;
+    }
+    .bootstrap-select {
+        background-color: transparent;
+        //width: auto!important;
+        height: 30px;
+        float: right;
+    }
+    .bootstrap-select.btn-group .dropdown-toggle .filter-option {
+        text-align: right!important;
+        color: $panel-title-font;
+    }
+    .bootstrap-select.btn-group .dropdown-toggle .caret {
+        right: 0;
+    }
+    .bootstrap-select>.dropdown-toggle {
+        padding-right: 12px;
+    }
+}
+
+.bootstrap-select>select {
+    z-index: -1;
+}
+
+.buyBox_bottom_title {
+    font-family: PingFangSC-Regular;
+    font-size: 12px;
+    color: $panel-title-font;
+    letter-spacing: 0;
+    margin-bottom: 20px;
+}
+
+
+/*================ modal公共样式 ===============*/
+
+.modal.fade.in {
+    overflow: visible;
+}
+
+.modalStyle {
+    color: $modalColor;
+    .modal-content {
+        @include gradient($orderDetail_bg);
+        border: none;
+    }
+    //@include gradient($modalStyleBg);
+    .modal-header {
+        background-color: $orderDetail_title;
+        color: #fff;
+        border-bottom: none;
+        text-align: center;
+    }
+    .close {
+        outline: none;
+        margin-top: 0;
+        line-height: 17px;
+        position: absolute;
+        right: 15px;
+    }
+    .modal-body {
+        padding-top: 20px;
+        label,
+        i {
+            margin-bottom: 0;
+            //font-weight: 600;
+            color: $modalColor;
+        }
+        .fa-circle {
+            transform: scale(.35);
+            position: absolute;
+            left: 0;
+            top: 3px;
+        }
+        .item-border {
+            border-bottom: 1px solid rgba($modalStyle-border, 0.3);
+        }
+        .item-green-border {
+            border-bottom: 1px solid rgba($green, 0.3);
+        }
+        .item-red-border {
+            border-bottom: 1px solid rgba($red, 0.3);
+        }
+        /*---------- 提示 --------*/
+        .alert {
+            background-color: $modalStyle-alertbg;
+            margin-bottom: 40px;
+            margin-top: 20px;
+            font-size: 13px;
+        }
+        /*=============蓝色提示框============ */
+        .alert-info {
+            p {
+                color: rgba($modalStyle-alertColor, 1);
+                margin-top: 0;
+                position: relative;
+                font-weight: 100;
+            }
+            .alert-title {
+                color: $panel-title-font;
+                margin-bottom: 5px;
+                font-weight: 600;
+                padding-left: 0;
+            }
+            .fa-circle {
+                color: rgba($modalStyle-alertColor, 1);
+            }
+        }
+        .icon-info {
+            svg.icon {
+                position: absolute;
+                top: 3px;
+                left: 0;
+            }
+        }
+        /*====================== 绿色提示框 ======================*/
+        .alert-green {
+            background: rgba($green, 0.1);
+            p {
+                font-size: 1rem;
+                margin-bottom: 0.4rem;
+            }
+        }
+        /*====================== 红色提示框 ======================*/
+        .alert-red {
+            background: rgba($red, 0.1);
+        }
+    }
+    // 提交按钮
+    .buttonArea {
+        button {
+            box-shadow: 0 2px 1px 0 rgba(0, 0, 0, 0.03);
+            margin-top: 25px;
+        }
+        .gradual_change_Cqueding,
+        .btn-confirm {
+            color: #fff;
+        }
+    }
+    .TwoButton {
+        button {
+            width: 45%;
+        }
+    }
+}
+
+
+/*====================== 订单详情 ======================*/
+
+.onlyDetail {
+    .modal-body {
+        .issue .issue-item {
+            margin-top: 0px;
+        }
+    }
+}
+
+
+/*======================= 收款信息弹窗 ======================*/
+
+.confirmStyle {
+    .modal-body .warning_content {
+        background-color: transparent;
+        margin: 0;
+        padding: 1rem 0;
+        p {
+            color: $panel-title-font;
+        }
+        .fa-circle {
+            color: $panel-title-font;
+        }
+    }
+    .modal-body .issue_info {
+        padding: 8% 2% 0 2%;
+        margin-top: 3%;
+        border-top: 1px solid rgba($modalStyle-border, 0.3);
+        .form-group {
+            margin-bottom: 10px;
+        }
+    }
+    .btn-confirm {
+        width: 32.5%;
+        padding: 8px 0;
+        width: 40%;
+    }
+    .btn-red {
+        padding: 8px 0;
+        width: 40%;
+    }
+}
+
+
+/*====================== C2C弹窗 ======================*/
+
+.c2c_info {
+    padding-left: 4rem;
+    padding-right: 4rem;
+    font-weight: 400;
+}
+
+
+/*======================== 筛选框 =======================*/
+
+#search {
+    .search_title {
+        padding-top: 4px;
+        padding-left: 10px;
+    }
+    .number,
+    .number-pri {
+        text-align: center;
+    }
+    .numberBox,
+    .priceBox {
+        padding: 0 55px 0 0;
+        width: 47%;
+        position: relative;
+        span {
+            position: absolute;
+            top: 10px;
+            right: 22px;
+            color: $priceBox-color;
+        }
+    }
+    .smybolTo {
+        height: 35px;
+        text-align: center;
+        line-height: 35px;
+        padding: 0;
+        width: 6%;
+    }
+}
+
+
+/* ========================= C2C左边表格 ======================== */
+
+.orderCollect {
+    padding: 0;
+    border-right: 1px solid $orderCollect_border_right;
+    height: 370px;
+    overflow: hidden;
+    /*background: url(../../img/front/c2c-coin.png) center 65% no-repeat;*/
+}
+
+
+/* ========================= websocket断开提示弹窗 ======================== */
+
+.websocketWarm .modal-header img {
+    width: 216px;
+    height: 140px;
+    margin-top: 20px;
+}
+
+.websocketWarm .modal-footer {
+    padding-bottom: 0;
+}
+
+.websocketWarm .modal-footer button.btn {
+    padding: 10.5px 0;
+    width: 100%;
+    background-color: transparent;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    margin-right: 1rem;
+}
+
+.websocketWarm .modal-footer button.btn:hover,
+.websocketWarm .modal-footer button.btn:active {
+    background-color: #A5A8A9;
+    color: #fff;
+}
+
+.websocketWarm p {
+    color: $websocketColor;
+    font-size: 14px;
+    line-height: 2rem;
+    word-spacing: 0.3rem;
+    margin-top: 15px;
+}
+
+
+/* ---------------------- ETH提币 --------------------- */
+
+// 待删除 --s
+// .charing-tibi {
+//     padding-left: 5px;
+//     font-size: 13px;
+// }
+// .charing-left {
+//     color: $charing-leftColor;
+// }
+// .charing-num {
+//     width: 80%;
+//     margin-left: 5px;
+//     font-size: 13px;
+//     padding-bottom: 10px;
+//     background-color: transparent;
+//     border-color: transparent;
+//     border-bottom: 1px solid $charing-numBorder;
+//     outline: none;
+// }
+// .charg-currency {
+//     position: absolute;
+//     right: 15px;
+//     top: 5px;
+//     font-size: 13px;
+// }
+// .charging-msg {
+//     padding-left: 23px;
+// }
+// .charging-msg img {
+//     margin-right: 5px;
+// }
+// 待删除 --e
+
+/* ---------------------- 钱包 --------------------- */
+
+.table-responsive .tibi>thead>tr>th:nth-of-type(1),
+.table-responsive .chongbi>thead>tr>th:nth-of-type(1) {
+    text-align: left;
+    padding-left: 35px;
+}
+
+.table-responsive .tibi>tbody>tr>td:nth-of-type(1),
+.table-responsive .chongbi>tbody>tr>td:nth-of-type(1) {
+    text-align: left;
+    padding-left: 43px;
+}
+
+.input-group .wallen-tibi {
+    width: auto;
+    min-width: 27%;
+    color: $panel-title-font;
+    text-align: left;
+}
+
+
+/* 手机端的tab */
+
+.navbar-brand {
+    padding-bottom: 0;
+}
+
+.extra {
+    background: $extraBg;
+    margin-bottom: 10px;
+}
+
+
+/* h4 */
+
+.tab-pane h4 {
+    margin-bottom: 20px;
+}
+
+
+/* 验证码 */
+
+.nopadLeft {
+    padding-left: 0;
+}
+
+.nav-tabs {
+    border: none;
+}
+
+
+/*  账户信息、信用评级、历史操作  公共样式  */
+
+.Name_status2 {
+    vertical-align: bottom;
+    padding-left: 10px;
+    font-size: 14px;
+    color: $Name_status2Color;
+}
+
+.Name_status2+a:hover {
+    color: $Name_status2Color;
+}
+
+#credit_card .tab-content {
+    min-height: 60px;
+}
+
+.tibi .tab-pane .panel-default {
+    width: 99%;
+}
+
+.record .dropdown-toggle {
+    height: 35px;
+}
+
+.nav-tabs.underline-tabs.primary-tabs>li.active>a,
+.nav-tabs.underline-tabs.primary-tabs>li.active>a:hover,
+.nav-tabs.underline-tabs.primary-tabs>li.active>a:focus {
+    color: $font-hover;
+    border-bottom-color: $white;
+}
+
+.nav-tabs.underline-tabs>li>a:nth-child(1) {
+    color: $table-nav2;
+}
+
+.nav-tabs.underline-tabs.info-tabs>li.active>a,
+.nav-tabs.underline-tabs.info-tabs>li.active>a:hover,
+.nav-tabs.underline-tabs.info-tabs>li.active>a:focus {
+    border-bottom-color: $navtabs-borderbottom;
+}
+
+.nav-tabs .solid-tabs>li.active>a,
+.nav-tabs>li.active>a:focus,
+.nav-tabs .solid-tabs>li.active>a:hover {
+    color: $navtabs-hovercolor;
+    border: 1px solid $navtabs-hoverBorder2;
+}
+
+.nav.nav-tabs.personalCenter_nav>li {
+    float: left;
+    margin-right: 25px;
+    margin-left: 0;
+    padding-bottom: 15px;
+    cursor: pointer;
+}
+
+.nav.nav-tabs.personalCenter_nav>li.active>a,
+.nav.nav-tabs.personalCenter_nav>li.active>a:hover,
+.nav.nav-tabs.personalCenter_nav>li.active>a:focus {
+    background-image: linear-gradient(51deg, #509AEF 0%, #3C6AF0 100%);
+    color: #fff;
+    border-radius: 100px;
+}
+
+.nav.nav-tabs.personalCenter_nav>li>a,
+.nav.nav-tabs.personalCenter_nav>li>a:hover,
+.nav.nav-tabs.personalCenter_nav>li>a:focus {
+    background: inherit;
+    color: $panel-title-font;
+    border: none;
+    border-radius: 100px;
+    padding: 4px 12px;
+}
+
+.tab-ctl.solid-tabs>li.active>a,
+.tab-ctl.solid-tabs>li.active>a:hover,
+.tab-ctl.solid-tabs>li.active>a:focus,
+.tab-ctl.solid-tabs>li>a {
+    border: 0;
+}
+
+.bank_card {
+    margin-bottom: 20px;
+}
+
+.bank_card .panel {
+    margin-bottom: 0;
+}
+
+.bank_card .bank_city {
+    margin-bottom: 0;
+    &::after {
+        content: '';
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        width: 8px;
+        height: 100%;
+        opacity: 1;
+        background: #3C6BF0;
+        border-radius: 4px 0 0 4px;
+    }
+}
+
+
+/*钱包 eos*/
+
+.coinType_coin_change .btn-green {
+    background: none;
+}
+
+.eos_svg1_hover {
+    display: none;
+    position: absolute;
+    left: 80%;
+    top: -358%;
+    padding: 12px 20px 16px;
+    width: 260%;
+    z-index: 4;
+    line-height: 20px;
+}
+
+.en .eos_svg1_hover {
+    top: -189px;
+}
+
+.eos_svg1_hover {
+    @include gradient($wallen_eossvg1_gradient);
+    box-shadow: 0px 0 2px 0px rgba(0, 0, 0, 0.08);
+}
+
+.eos_svg1_hover::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-right: 10px solid transparent;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid $eos_leftsvg;
+}
+
+.eos_patent_top:hover .eos_svg1_hover,
+.eos_patent_bottom:hover .eos_svg2_hover {
+    display: block;
+}
+
+.eos_svg1_hover p:nth-child(1) {
+    font-family: PingFangSC-Medium;
+    font-size: 15px;
+    color: $eos_leftspan;
+    letter-spacing: 0;
+}
+
+.eos_svg1_hover p:nth-child(2) {
+    font-size: 12px;
+    color: $eos_leftspan;
+    letter-spacing: 0;
+    margin-bottom: 0
+}
+
+.eos_svg1_hover p:nth-child(1) svg {
+    margin-right: 5px;
+    margin-left: 0;
+}
+
+.wallen_eos_right {
+    width: 84%;
+    @include gradient($wallen_eosright_gradient);
+    // background-image: linear-gradient(-90deg, rgba(74, 139, 239, 0.00) 0%, rgba(45, 125, 255, 0.15) 100%, rgba(74, 139, 239, 0.00) 100%);
+}
+
+.wallen_eos_right button {
+    background-color: inherit;
+    padding: 2px 8px;
+}
+
+.wallen_eos_right button:nth-child(1) {
+    margin-right: 5%;
+}
+
+.eos_right_one {
+    width: 60%;
+    margin-right: 21%;
+}
+
+.wallen_eos_right p:nth-child(1) {
+    position: relative;
+    padding: 12px 0px;
+    font-size: 15px;
+    font-family: Avenir-Heavy;
+    color: $eos_leftspan;
+    letter-spacing: 0;
+    font-weight: 600;
+}
+
+.wallen_eos_right p:nth-child(1)::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    width: 100%;
+    @include gradient($wallen_eosp_gradient);
+}
+
+.wallen_eos_right p:nth-child(2) {
+    font-family: PingFangSC-Regular;
+    font-size: 12px;
+    color: $wallen_eos_right;
+    letter-spacing: 0;
+    padding: 2px 30px;
+}
+
+#eos_modal .modal-content {
+    background-image: linear-gradient(-38deg, rgba(72, 135, 239, 0.10) 0%, rgba(74, 139, 239, 0.00) 100%);
+    background-color: $background;
+}
+
+#eos_modal .modal-body p:nth-child(1) {
+    padding: 20px 0 10px 0;
+}
+
+#eos_modal .modal-body p:nth-child(2) {
+    padding: 20px 60px 0;
+}
+
+#eos_modal .modal-footer button {
+    width: auto;
+    color: #fff;
+    margin-bottom: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+
+/*  钱包、提币、冲币 公共样式 */
+
+.coin_left_nav {
+    max-width: 75%;
+    padding-bottom: 50px;
+}
+
+#takecoin .maxButton {
+    font-size: 12px;
+    line-height: 17px;
+    top: 9px;
+    right: 0;
+    margin: 0;
+}
+
+
+/* 提币*/
+
+.en #charge_money,
+.en #withdraw_money {
+    width: 70px;
+}
+
+.en .coin_money_control>.my_order_target {
+    right: 13px;
+    width: 140px;
+}
+
+.Withdraw_money_address svg,
+.coin_money_address svg {
+    font-size: 17px;
+}
+
+.panel-body .coin_money_content .alert-info {
+    background-color: inherit;
+    color: $panel-title-font;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-left: 30px;
+    font-size: 13px;
+}
+
+.panel-body .coin_money_content>h4 {
+    padding-left: 30px;
+    font-weight: 600;
+    margin-top: 15px;
+}
+
+.coin_money_address,
+.Withdraw_money_address {
+    padding: 10px 0;
+}
+
+.coin_money_address>.input-group,
+.Withdraw_money_address>.input-group {
+    display: block;
+    padding-left: 20px;
+}
+
+.coin_money_address>.input-group>input,
+.Withdraw_money_address>.input-group>input {
+    background-color: inherit;
+    border: none;
+    display: block;
+    color: $credit_form_info;
+    text-align: left;
+    font-size: 15px;
+    width: 32%;
+}
+
+.coin_money_address>.input-group>span,
+.Withdraw_money_address>.input-group>span {
+    display: block;
+}
+
+.coin_money_address>.input-group>span>button,
+.Withdraw_money_address>.input-group>span>button {
+    background-color: inherit;
+}
+
+.coin_money_address>label,
+.Withdraw_money_address>label {
+    // font-family: PingFangSC-Semibold;
+    font-size: 18px;
+    color: $panel-title-font;
+    letter-spacing: 0;
+    margin-left: 30px;
+    font-weight: 600;
+    padding-bottom: 20px;
+}
+
+.coin_money_Record,
+.panel-default.Withdraw_money_Record {
+    padding: 16px 0;
+}
+
+ul.coin_money_control>li.my_order_target {
+    border-left-color: #509AEF;
+    border-top-color: #3C6AF0;
+    border-bottom-color: #509AEF;
+    border-right-color: #3C6AF0;
+    height: 26px;
+    right: 0 !important;
+    bottom: 0px;
+}
+
+.order-wrap .my_order_target {
+    height: 22px;
+    right: 90px;
+    bottom: -4px;
+}
+
+
+/*确认订单中的单价和卖出量*/
+
+// 待删除 --s
+// .auto-center {
+//     display: inline-block;
+//     margin: 0 auto;
+// }
+// .priceAndCount .text-center h3 {
+//     margin-left: 10px;
+//     margin-right: 10px;
+// }
+// .priceAndCount table {
+//     margin: 0 auto;
+// }
+// .priceAndCount .sortable-theme-bootstrap {
+//     width: 100%;
+// }
+// 待删除 --e
+
+/*首页详情按钮*/
+
+.getDetails:hover,
+.getDetails:visited,
+.getDetails:active,
+.getDetails:focus {
+    color: $getDetailsHoverColor;
+}
+
+#myOrderListAll td:last-of-type .btn,
+#myOrderListSale td:last-of-type .btn,
+#myOrderListBuy td:last-of-type .btn {
+    color: $btnfont;
+    @include gradient($buyList_backcolor);
+    border-radius: 100px;
+    transform: scale(.95);
+    transition: 0s all;
+    &:hover,
+    &:active,
+    &:focus,
+    &:visited {
+        background: $buyList_backcolor_hover;
+    }
+}
+
+.confirmOrder {
+    border-radius: 5px;
+}
+
+
+/*B2B 订单薄 资金密码 */
+
+.Confirmation>.Con-wrap>.order-group-border>.Confirmation-con {
+    line-height: 35px;
+    color: $panel-title-font;
+    text-align: left;
+}
+
+.content-right .autoheight {
+    background-color: $autoheightBg;
+}
+
+div.panel-default div.large-heading div.panel-title {
+    font-size: 18px;
+    color: $cxlx-color;
+}
+
+
+/*账户页面信用评级*/
+
+.panel-default-grd>.panel-heading>.panel-action .btn-plus.default-plus,
+.panel-default>.panel-heading>.panel-action .btn-plus.default-plus,
+.panel-primary>.panel-heading>.panel-action .btn-plus.default-plus,
+.panel-success>.panel-heading>.panel-action .btn-plus.default-plus,
+.panel-info>.panel-heading>.panel-action .btn-plus.default-plus,
+.panel-warning>.panel-heading>.panel-action .btn-plus.default-plus,
+.panel-danger>.panel-heading>.panel-action .btn-plus.default-plus,
+.panel-inverse>.panel-heading>.panel-action .btn-plus.default-plus {
+    background-image: url(../img/ic_hidden.png);
+}
+
+.panel-default-grd>.panel-heading>.panel-action .btn-plus.default-plus:hover,
+.panel-default>.panel-heading>.panel-action .btn-plus.default-plus:hover,
+.panel-primary>.panel-heading>.panel-action .btn-plus.default-plus:hover,
+.panel-success>.panel-heading>.panel-action .btn-plus.default-plus:hover,
+.panel-info>.panel-heading>.panel-action .btn-plus.default-plus:hover,
+.panel-warning>.panel-heading>.panel-action .btn-plus.default-plus:hover,
+.panel-danger>.panel-heading>.panel-action .btn-plus.default-plus:hover,
+.panel-inverse>.panel-heading>.panel-action .btn-plus.default-plus:hover {
+    background-image: url(../img/ic_hidden.png);
+}
+
+.panel-heading .rateDetail {
+    width: 110px;
+    vertical-align: text-top;
+    font-size: 12px;
+    color: $Total-amount_color;
+    text-align: left;
+}
+
+.rateDetail img {
+    width: 23px;
+    vertical-align: middle;
+    margin-right: 3px;
+}
+
+
+/*footer版权*/
+
+.footer .col-xs-6 a {
+    display: block;
+    margin-top: 8px;
+    text-align: left;
+}
+
+
+/*-------------交易订单-----------------*/
+
+.nopad {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.listOrder2 th {
+    font-weight: 100 !important;
+    color: $listOrder2_th_color;
+    text-align: right;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    font-size: 12px;
+}
+
+.listOrder2 .green_line {
+    @include gradient($green_line_background);
+}
+
+.listOrder2 .orange_line {
+    @include gradient($orange_line_background);
+}
+
+.listOrder2 .price_td {
+    color: $font-color;
+    font-family: PingFang;
+    padding-top: 15px!important;
+}
+
+.listOrder2 .count_td {
+    color: $font-color;
+    font-family: PingFang;
+    padding-top: 15px!important;
+}
+
+.listOrder2 .saleOut .count_td {
+    color: $font-color;
+}
+
+// C2C B2B P2P 公共 --s
+#SaleIn .dropdown-menu li>a,
+#SaleOut .dropdown-menu li>a {
+    padding-left: 13px;
+    padding-right: 13px;
+}
+
+#SaleIn .order-group .order-max:hover,
+#SaleOut .order-group .order-max:hover {
+    color: $Total-amount_color;
+    cursor: pointer;
+}
+
+#SaleIn .order-group .order-max.order-max-active,
+#SaleOut .order-group .order-max.order-max-active {
+    color: $undo_front_color;
+}
+
+#SaleIn .fa-angle-down,
+#SaleOut .fa-angle-down {
+    position: absolute;
+    top: 12px;
+    font-size: 16px;
+}
+
+.height277 {
+    height: 310px;
+    overflow: hidden;
+}
+
+#SaleIn input:-webkit-autofill,
+#SaleOut input:-webkit-autofill,
+#SaleIn input:visited:-webkit-autofill,
+#SaleOut input:visited:-webkit-autofill {
+    background: transparent !important;
+}
+
+// C2C B2B P2P 公共 --e
+
+/* ================ button下滑效果 ================= */
+
+.remittanceInfo .btn-confirm.delete-button {
+    display: inline-block;
+    line-height: 38px;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.63, 1.75, 0.22, 0.57);
+    overflow: hidden;
+    transform: translate3d(0, 0, 0);
+    padding: 0;
+    border: none;
+}
+
+.delete-button.activate .confirm,
+.delete-button.activate .button-face {
+    transform: translate3d(0, 0px, 0);
+}
+
+.confirm {
+    height: inherit;
+    width: inherit;
+    color: $white;
+    font-size: 16px;
+}
+
+.confirm,
+.button-face {
+    transform: translate3d(0, -38px, 0);
+    transition: -webkit-transform 0.2s cubic-bezier(0.63, 1.75, 0.22, 0.57);
+    background: #FFFFFF;
+    box-shadow: 0 2px 1px 0 rgba(0, 0, 0, 0.03);
+    border-radius: 4px;
+    font-family: PingFang-SC-Bold;
+    font-size: 14px;
+    color: #268BFF;
+    letter-spacing: 0;
+}
+
+.delete-button .confirm button {
+    width: 50%;
+    height: 100%;
+    border: none;
+    color: #fff;
+    font-size: 12px;
+    outline: none;
+}
+
+.delete-button .confirm .yes {
+    float: left;
+    transition: .3s all;
+    background: $deleteConfirm-yes-bg;
+    color: $deleteConfirm-yes-color;
+}
+
+.delete-button .confirm .yes:hover {
+    background: darken($deleteConfirm-yes-bg, 5%)
+}
+
+.delete-button .confirm .yes.success {
+    width: 100%;
+}
+
+.delete-button .confirm .no {
+    background: $deleteConfirm-no-bg;
+    float: right;
+    color: $deleteConfirm-no-color;
+}
+
+.delete-button .confirm .no:hover {
+    background: darken($deleteConfirm-no-bg, 5%);
+}
+
+.remaining>.panel-body>.table-responsive {
+    margin-bottom: 40px;
+}
+
+#TourBtn>button:hover:after {
+    opacity: 1;
+}
+
+
+/*p2p*/
+
+#pendingOrder>tr>td>.BuyOrder1:hover {
+    text-decoration: none;
+    cursor: pointer;
+    color: $panel-title-font;
+}
+
+.sortable-theme-bootstrap>thead>tr>th {
+    color: $PtwoP_order_li;
+}
+
+.PtwoP_navbar>li {
+    margin-right: 4rem;
+    margin-left: 0;
+}
+
+.lgNopadRight>.navbar.navbar-top>.container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.PtwoP_navbar>li>a {
+    color: $TourBtn_color!important;
+}
+
+.changeModel .PtwoP_navbar>li>a>i {
+    color: #C0C4D2;
+    margin-left: 25px;
+}
+
+.lgNopadRight>.navbar-top>.container-fluid>.PtwoP_navbar>li>a {
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 10px;
+}
+
+.lgNopadRight>.navbar-top>.container-fluid>.PtwoP_navbar>li.langCheck {
+    margin-right: 0;
+}
+
+.langCheck>.btn:hover:after {
+    opacity: 1;
+}
+
+#TourBtn>button {
+    background: transparent;
+    padding: 20px 8px 12px 8px;
+    font-size: 13px;
+    color: $TourBtn_color;
+    border: none;
+}
+
+#TourBtn .TourBtn_state {
+    display: none;
+    position: absolute;
+    width: 11px;
+    height: 11px;
+    background: $TourBtn_state_background;
+    top: 18px;
+    right: 0;
+    border-radius: 50%;
+}
+
+ul.nav .my_order_target {
+    position: absolute;
+    right: 2px;
+    bottom: 0px;
+    width: 88px;
+    height: 22px;
+    background: $buyList_color;
+    border: 1px solid $my_order_target_border;
+    border-radius: 15px;
+    z-index: 1!important;
+    margin-left: 0!important;
+}
+
+.nav.nav-tabs.underline-tabs>.target_order_buse>a {
+    width: 45px;
+    height: 22px;
+    border-radius: 15px;
+    color: $sellOrder_buyList;
+    margin-left: 0;
+    margin-top: 4px;
+    line-height: 14px;
+    z-index: 2;
+    font-size: 12px;
+    text-align: center;
+}
+
+.nav.nav-tabs.feedback_control>.target_order_buse>a {
+    line-height: 20px;
+    width: 77px;
+    height: 28px;
+}
+
+.nav.nav-tabs.feedback_control>.my_order_target {
+    right: 0px;
+    height: 28px;
+    width: 150px;
+}
+
+.active #buyList,
+.active #sellOrder,
+.active #charge_money,
+.active #withdraw_money,
+.target_order_buse .active.target_tab_control {
+    color: $buyList_color!important;
+    @include gradient($buyList_backcolor);
+}
+
+.target_order_buse {
+    margin-left: 0!important;
+}
+
+.wallent_lg_buse {
+    margin-top: 0px!important;
+    line-height: 18px;
+    height: 26px;
+}
+
+.nav.nav-tabs.underline-tabs.coin_money_control>.target_order_buse>.wallent_lg_buse {
+    height: 26px;
+    line-height: 18px;
+}
+
+.coin_money_control>.target_order_buse {
+    float: left;
+    cursor: pointer;
+}
+
+.order>thead>tr>th,
+.order>tbody>tr>th,
+.order>tfoot>tr>th,
+.order>thead>tr>td,
+.order>tbody>tr>td,
+.order>tfoot>tr>td {
+    padding: 8px 4px;
+}
+
+
+/*币币交易*/
+
+#SaleIn_count_2,
+#SaleIn_count_1,
+#SaleOut_count_1,
+#SaleOut_count_2 {
+    color: $tradcoin_ordername_color;
+}
+
+.Total-amount {
+    color: $tradcoin_ordername_color;
+    margin-right: 7px;
+}
+
+.panel.nopad.trad_coin_confirmOrder_buy {
+    @include gradient($trad_coin_confirmOrder_buy);
+    box-shadow: 0 2px 10px 0 $trad_coin_confirmOrder_buy_boxSH;
+    border-radius: 4px;
+    background-color: $panel-bg;
+}
+
+.panel.nopad.trad_coin_confirmOrder_sell {
+    @include gradient($trad_coin_confirmOrder_sell);
+    box-shadow: 0 1px 10px 0 $trad_coin_confirmOrder_sell_boxSH;
+    border-radius: 4px;
+    background-color: $panel-bg;
+}
+
+.wrap-wrap {
+    margin-bottom: 30px;
+}
+
+.trad_coin_middlecontent {
+    width: 98.5%;
+    margin: 0 auto;
+}
+
+div.remove-expand {
+    width: 100%;
+}
+
+// 待删除 --e
+.Coin-mount {
+    color: $trad_coin_datablock;
+}
+
+.coinSlide .trad_coin_coinMoneyList>li {
+    width: 100%;
+    font-size: 13px;
+    height: 40px;
+    line-height: 40px;
+    border-bottom: none;
+    padding: 0 25px 0 45px;
+}
+
+#transactionType-1 #D2D_buy.transactionType_buy {
+    background-color: $trad_coin_titleA_color;
+    color: $white
+}
+
+#transactionType-2 #D2D_sell.transactionType_sell {
+    background-color: $trad_coin_titleB_color;
+    color: $white
+}
+
+#transactionType-1 #D2D_buy.transactionType_normal,
+#transactionType-2 #D2D_sell.transactionType_normal {
+    background-color: inherit;
+    color: $sellOrder_buyList
+}
+
+#SaleOut_mar_1,
+#SaleIn_mar_1 {
+    color: $panel-title-font;
+}
+
+// .coin_trad_shuxian {
+//     margin: 0 10px;
+// }
+
+/*c 2 c*/
+
+.order-wrap .warmTips {
+    font-size: 12px;
+    color: $PtwoP_order_li;
+    font-family: PingFangSC-Regular;
+    margin-left: 30px;
+    line-height: 30px;
+}
+
+.order-wrap .area-issue-select {
+    display: none;
+}
+
+.order-wrap .area-issue-select .fa-angle-down {
+    position: absolute;
+    right: 7px;
+    top: 5px;
+}
+
+.orderManageBox>.order-wrap {
+    padding-left: 10px;
+}
+
+.orderManageBox>.order-wrap .panel-title .title1.zoom-Note,
+.tradcoin_order_li>.title,
+.trad_coin_datablock>.panel-title {
+    font-size: 20px!important;
+}
+
+
+/*账户*/
+
+.panel.panel-default>.credit_card_title>.panel-title {
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.alert-info.alert_info_leftafter {
+    padding-top: 10px;
+    padding-bottom: 40px;
+    color: $credit_form_info;
+}
+
+.alert.alert-info ol {
+    list-style: disc;
+    padding-inline-start: 21px;
+}
+
+.alert_info_leftafter>p+p {
+    position: relative;
+    font-family: PingFangSC-Regular;
+    margin-left: 3px;
+}
+
+.alert_info_leftafter>p+p:after {
+    content: '';
+    position: absolute;
+    left: 0px;
+    top: 8px;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    opacity: 1;
+    background: $credit_form_info;
+}
+#inputName1{
+    background: $btn-default-Bg-Name;
+}
+#inputName1,
+#inputNumber1,
+#inputAddress1 {
+    color: $panel-title-font;
+}
+
+.control-label {
+    color: $panel-title-font;
+    font-size: 13px;
+}
+
+.showbink_select {
+    padding-left: 0;
+    margin-bottom: 25px;
+}
+
+.showbink_select button,
+.showbink_select>input {
+    padding-left: 0;
+    color: $panel-title-font;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.showbink_select .bootstrap-select button {
+    width: auto;
+}
+
+.showbink_select .bootstrap-select button i {
+    font-weight: 600;
+}
+
+.feedback_wrap .bootstrap-select button {
+    width: 100%;
+}
+
+.personal-info {
+    color: $panel-title-font;
+    padding-left: 40px;
+    position: relative;
+}
+
+.personal-info .form-content {
+    margin: 0px 0 20px 0;
+}
+
+.personal-info label {
+    margin: 10px 0;
+    font-weight: 300;
+    font-size: 14px;
+}
+
+.personal-info>.target_panel_title {
+    padding-bottom: 30px;
+    padding-left: 8px;
+}
+
+#account .panel {
+    background: $account-panel-bg;
+    box-shadow: 0 1px 10px 0 $account-panel-shadow;
+    -webkit-box-shadow: $account-panel-shadow;
+}
+
+#account .account-title {
+    color: $panel-title-font;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.personal-security {
+    padding-left: 0;
+    margin-top: 45px;
+}
+
+#realform {
+    padding-left: 40px;
+}
+
+#realform .form-group {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+#realform .form-group .control-label {
+    color: $panel-title-font;
+    font-weight: 300;
+    margin-bottom: 8px;
+    font-size: 13px;
+}
+
+#realform .form-group input.form-control {
+    padding-left: 0;
+    padding-right: 0;
+    color: $panel-title-font;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.passport-name,
+.certificate-name,
+.certificate-validity {
+    padding-left: 0;
+}
+
+//对齐按钮
+.panel .panel-heading {
+    padding: 15px 30px;
+}
+
+.panel .panel-heading .panel-tools.panel-action .btn-min,
+.panel .panel-heading .panel-tools.panel-action .btn-plus {
+    margin-right: 2px;
+}
+
+.panel .panel-heading .panel-tools.panel-action.pull-right {
+    width: auto;
+    margin-top: 7px;
+}
+
+.panel .panel-heading .panel-tools.panel-action>.have-dropdown {
+    margin-top: 0;
+    margin-left: 10px;
+    width: auto;
+}
+
+.panel .panel-heading .panel-action ul {
+    margin-right: 0px;
+}
+
+#account .panel .panel-heading {
+    padding: 15px 30px 15px;
+}
+
+.Name_status_not {
+    line-height: 30px;
+}
+
+.Name_status_not span {
+    color: $font-color;
+}
+
+#account .panel .panel-body .forn_cont {
+    padding-left: 32px;
+    line-height: 35px;
+}
+
+#account .panel .panel-body>p.forn_cont:nth-of-type(1) {
+    padding-left: 38px;
+}
+
+#account .panel .panel-body .forn_cont>.font-group label {
+    color: $panel-title-font;
+    font-weight: bold;
+}
+
+#account .panel .panel-body .forn_cont>.font-group label a:hover {
+    color: $panel-title-fontHover;
+}
+
+#realform .fileinput,
+#feedback_form .fileinput {
+    width: 100%;
+}
+
+#feedback_form .fileinput {
+    margin-bottom: 25px;
+}
+
+#realform .fileinput .form-control,
+#feedback_form .fileinput .form-control {
+    width: 78%;
+    position: relative;
+}
+
+#realform .form-control .fileinput-filename,
+#feedback_form .fileinput .form-control {
+    width: 70%;
+    color: $panel-title-font;
+    padding-left: 0;
+    font-weight: bold;
+}
+
+.submit-block button {
+    width: 25%;
+    margin: 0;
+    padding-top: 11px;
+    padding-bottom: 11px;
+}
+
+
+/*下滑线蓝色 伪类 2px 公用 class*/
+
+.showbank_bottom {
+    position: relative;
+}
+
+.showbank_bottom:after {
+    content: '';
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: 2px;
+    display: inline-block;
+    opacity: 1;
+    @include gradient($quoteprice_border);
+}
+
+.PersonalCenter_uploading.showbank_bottom:after {
+    width: 80%;
+}
+
+.submit-block {
+    padding: 0 0 15px 0;
+}
+
+#btn_submit {
+    width: 32.3%;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.dataPage {
+    float: right;
+    padding: 30px 20px 30px 0;
+}
+
+.pagation li {
+    float: left;
+    line-height: 22px;
+    text-align: center;
+    padding: 0 7px;
+    color: $pagationFont2;
+}
+
+.pagation .first svg,
+.pagation .last svg,
+.pagation .prev_page svg,
+.pagation .next_page svg {
+    font-size: 13px;
+}
+
+.pagation a {
+    color: $pagationFont2;
+    display: inline-block;
+    line-height: 20px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.pagation-active a,
+.pagation a:hover {
+    background-color: $pagation-hover-Bg;
+    color: $pageFont;
+    text-decoration-line: none;
+}
+
+.pagation .prev_page a,
+.pagation li:nth-last-child(2) a,
+.pagation .first a,
+.pagation .last a {
+    color: $pagationFont2;
+    background-color: transparent;
+}
+
+.target_panel_title>.integral-title-right {
+    font-size: 12px;
+    font-weight: 400;
+    margin-left: 25px;
+}
+
+#websocketBtn {
+    margin-top: 5px;
+    margin-right: 0;
+    margin-bottom: 20px;
+}
+
+#phone_modify .alert-info,
+#Email_binding .alert-info {
+    padding-right: 25px;
+}
+
+#Email_binding .input-icon-left svg {
+    left: 0;
+    top: 0;
+}
+
+#Email_binding .input-icon-left input {
+    padding-left: 30px;
+}
+
+.tibiBtn {
+    margin-top: 15px;
+}
+
+.modalStyle .form-group .bindBtn_input {
+    padding-left: 25px;
+}
+
+.tools-content .dropdown-menu>li>a {
+    color: $panel-title-font;
+}
+
+.modal-body .changeAddress,
+.delAddress_wrap .modal-body h5 {
+    margin-bottom: 0;
+}
+
+
+/*首页introJs样式*/
+
+.introjs-helperLayer {
+    background-color: rgba(255, 255, 255, .25);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, .4);
+}
+
+.introjs-button:hover,
+.introjs-button:focus,
+.introjs-button:active {
+    border-color: transparent;
+}
+
+.col-md-10.bootstrap-select.record>.dropdown-menu:nth-child(3) {
+    width: 100%;
+}
+
+
+/*----------- 人民币汇率页面 -----------*/
+
+.exchangeRate h1 {
+    width: 92%;
+    height: 1.8rem;
+    line-height: 1.8rem;
+    margin: 3rem auto 1.5rem;
+    font-size: 22px;
+    font-weight: 600;
+    color: $panel-title-font;
+}
+
+.exchangeRate table {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.exchangeRate th {
+    padding: 2rem 0;
+    text-align: center;
+    color: $panel-title-font;
+}
+
+.exchangeRate tbody tr:nth-child(odd) {
+    background-color: rgba(60, 107, 240, .1);
+}
+
+.exchangeRate td {
+    width: 33.3%;
+    color: $panel-title-font;
+    padding: 1rem 0;
+}
+
+
+/*Edge Hack*/
+
+_:-ms-lang(x),
+_::-webkit-meter-bar,
+.panel-card .panel-body p {
+    width: 32%;
+}
+
+
+//充币提币 记录
+.Wallent_coin_title {
+    padding-left: 15px;
+}
+
+#subSellInfo {
+    margin-top: 25px;
+}
+
+
+/*------------- 渐变按钮蓝色 公共 ---------------*/
+
+.gradual_change_blue,
+.gradual_change_Cqueding {
+    width: 100%;
+    @include gradient($btn_submit_background);
+    border-radius: 5px;
+    font-size: 13px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-weight: 400;
+    color: #fff;
+    border: none;
+}
+
+.gradual_change_blue:hover,
+.gradual_change_Cqueding:hover,
+.gradual_change_blue:active,
+.gradual_change_Cqueding:active,
+.gradual_change_blue:focus,
+.gradual_change_Cqueding:focus {
+    @include gradient($buttonHover);
+}
+
+
+/*渐变按钮绿色 公共*/
+
+.gradual_change_green {
+    width: 100%;
+    background: $green;
+    border-radius: 5px;
+    font-size: 13px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-weight: 400;
+    color: #fff;
+    border: none;
+}
+
+.gradual_change_green:hover,
+.gradual_change_green:active,
+.gradual_change_green:focus {
+    background: darken($green, 5%);
+}
+
+
+/*渐变按钮红色公共*/
+
+.gradual_change_red {
+    width: 100%;
+    background: $red;
+    border-radius: 5px;
+    font-size: 13px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-weight: 400;
+    color: #fff;
+    border: none;
+}
+
+.gradual_change_red:hover,
+.gradual_change_red:active,
+.gradual_change_red:focus {
+    background: darken($red, 5%);
+}
+
+
+/*渐变  撤销按钮取消*/
+
+.gradual_change_Cquxiao {
+    background: $btn_undo_Confirm;
+    border-radius: 5px;
+    font-size: 13px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-weight: 400;
+    color: $btn_the_cancel;
+    border: none;
+}
+
+.gradual_change_Cquxiao:hover,
+.gradual_change_Cquxiao:active,
+.gradual_change_Cquxiao:focus {
+    background: darken($btn_undo_Confirm, 5%);
+    color: $btn_the_cancel;
+}
+
+.target_form_all {
+    tr th:first-of-type,
+    tr td:first-of-type {
+        width: 6%;
+    }
+}
+
+
+/* 国家列表*/
+
+.intl-tel-input {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.intl-tel-input * {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+.intl-tel-input .hide {
+    display: none;
+}
+
+.intl-tel-input .v-hide {
+    visibility: hidden;
+}
+
+.intl-tel-input input {
+    position: relative;
+    z-index: 0;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+.intl-tel-input .flag-dropdown {
+    position: absolute;
+    top: 1px;
+    bottom: 0;
+}
+
+.intl-tel-input .flag-dropdown:hover {
+    cursor: pointer;
+}
+
+.intl-tel-input input[disabled]+.flag-dropdown:hover {
+    cursor: default;
+}
+
+.intl-tel-input input[disabled]+.flag-dropdown:hover .selected-flag {
+    background-color: transparent;
+}
+
+.intl-tel-input .selected-flag {
+    z-index: 1;
+    position: relative;
+    width: 75px;
+    height: 85%;
+}
+
+.intl-tel-input .selected-flag .flag {
+    position: absolute;
+    top: 30%;
+    width: 80%;
+    color: $font-color;
+}
+
+.intl-tel-input .selected-flag i {
+    left: auto;
+    right: -14px;
+    width: auto;
+    height: auto;
+    bottom: 6px;
+    font-weight: 600;
+    margin-left: 2px;
+}
+
+.intl-tel-input .selected-flag .arrow.up {
+    border-top: none;
+    border-bottom: 4px solid #555;
+}
+
+.intl-tel-input .country-list {
+    list-style: none;
+    position: absolute;
+    z-index: 2;
+    padding: 0 10px 5px 0;
+    margin: 0 0 0 -1px;
+    box-shadow: 0px 0px 5px rgba(114, 125, 172, 0.15);
+    background-color: $dropdown-hover-bg;
+    width: 320px;
+    max-height: 200px;
+    overflow-y: scroll;
+    color: #ccc;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+}
+
+.intl-tel-input .country-list .flag {
+    display: inline-block;
+}
+
+.intl-tel-input .country-list .divider {
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #ccc;
+    display: none;
+}
+
+.intl-tel-input .country-list .country {
+    line-height: 11px;
+    padding: 9px 10px;
+    position: relative;
+}
+
+.intl-tel-input .country-list .country .dial-code {
+    color: $dropdown-color;
+    float: right;
+}
+
+.intl-tel-input .country-list .country.highlight .country-name {
+    color: $dropdown-hover-color;
+}
+
+.intl-tel-input .country-list .country.active::after {
+    /*background-color: rgba(0, 0, 0, 0.05);*/
+    width: 4px;
+    height: 100%;
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: $dropdown-hover-color;
+}
+
+.intl-tel-input .country-list .flag,
+.intl-tel-input .country-list .country-name {
+    margin-left: 5px;
+    color: $dropdown-color;
+}
+
+.intl-tel-input .country-list .flag {
+    display: none;
+}
+
+.intl-tel-input .country-list .country-name {
+    display: inline-block;
+    width: 80%;
+}
+
+.intl-tel-input.inside .flag-dropdown {
+    padding: 1px 1px 1px 0;
+}
+
+.intl-tel-input.inside input[type="text"],
+.intl-tel-input.inside input[type="tel"] {
+    padding-left: 57px;
+    margin-left: 0;
+}
+
+.intl-tel-input.outside input[type="text"],
+.intl-tel-input.outside input[type="tel"] {
+    border: none;
+    margin-left: 38px;
+}
+
+// 需要提供的资料
+.provided_data_box {
+    display: none;
+}
+
+.provided_data {
+    width: 60%;
+    @include gradient($problembg);
+    border-top: 2.5px solid $dropdown-hover-color;
+    color: $panel-title;
+    font-size: 13px;
+    padding: 3%;
+    display: inline-block;
+    .provided_title {
+        margin-bottom: 1.5%;
+    }
+    ol {
+        margin-bottom: 0;
+        li {
+            line-height: 20px;
+            font-size: 12px;
+        }
+    }
+}
+
+//护照有效期日历
+.datepicker table tr td.day {
+    position: relative;
+    color: $datepicker_day;
+}
+
+.datepicker table tr td>span.year.focused,
+.datepicker table tr td>span.month.active.active {
+    background: none;
+    color: $datepicker_day;
+}
+
+.datepicker table tr td>span.year.focused:hover {
+    background: #3C6BF0;
+    color: #fff;
+}
+
+.datepicker table tr td>span.year.old,
+.datepicker table tr td>span.year.new,
+.datepicker table tr td>span.decade.old,
+.datepicker table tr td>span.decade.new,
+.datepicker table tr td>span.century.old,
+.datepicker table tr td>span.century.new {
+    color: $datepicker_day;
+}
+
+// .datepicker table tr td span.year.old,
+// .datepicker table tr td span.year.new,
+// .datepicker table tr td span.decade.old,
+// .datepicker table tr td span.decade.new,
+// .datepicker table tr td span.century.new{
+//   color: $date-color;
+// }
+// .datepicker-dropdown:after {
+//     content: '';
+//     display: inline-block;
+//     border-left: 6px solid transparent;
+//     border-right: 6px solid transparent;
+//     border-bottom: 6px solid #4279f0;
+//     border-top: 0;
+//     position: absolute;
+// }
+
+/*切换语言css*/
+
+.dropdown_img_active {
+    opacity: 1
+}
+
+.dropdown_img_default {
+    opacity: 0.4
+}
+
+.area_choice li.active {
+    box-shadow: -4px -2px 5px rgba(114, 125, 172, 0.18);
+    color: $font-hover;
+}
+
+.orderCollect tr.activebag {
+    color: $font-hover;
+    font-weight: 600;
+}
+
+
+/* ---------------------- media --------------------- */
+
+
+/*钱包 eos*/
+
+@media screen and (min-width:650px) {
+    .wallen_eos_right {
+        width: 82%;
+    }
+    .eos_right_one {
+        width: 61%;
+    }
+}
+
+
+/*手机 1500px分辨率*/
+
+@media screen and (max-width: 1500px) {
+    .target_form_all {
+        tr th:first-of-type,
+        tr td:first-of-type {
+            width: 9%;
+        }
+    }
+}
+
+
+/*手机 1470px分辨率*/
+
+@media screen and (max-width: 1470px) {
+    .order-form {
+        line-height: 17px !important;
+    }
+    .or-button {
+        margin-top: 13px;
+    }
+    .input-group .wallen-tibi {
+        width: 35%;
+    }
+}
+
+
+/*手机 1386px分辨率*/
+
+@media screen and (max-width: 1386px) {
+    .PtwoP_navbar>li {
+        margin-right: 1rem;
+    }
+}
+
+
+/*手机 1240px分辨率*/
+
+@media screen and (max-width: 1240px) {
+    .lgNopadRight>.navbar-top>.container-fluid>.PtwoP_navbar>li>a {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .order-form {
+        line-height: 13px !important;
+    }
+}
+
+
+/*手机 1200px分辨率*/
+
+@media screen and (max-width: 1200px) {
+    .light-wrap,
+    .trad_coin_middlecontent {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    .input-group .wallen-tibi {
+        width: 60%;
+    }
+    .form-control-static {
+        line-height: 17px !important;
+    }
+    .navbar-top .navbar-nav>li>a {
+        padding-right: 0;
+    }
+    .navbar-nav {
+        margin-right: 0;
+    }
+    .PtwoP_navbar>li {
+        margin-right: 0.8rem;
+    }
+    .wrap-wrap {
+        margin-bottom: 0;
+    }
+}
+
+//问题反馈 提交按钮
+@media screen and (min-width: 1201px) {
+    #btn_Psubmit.gradual_change_blue,
+    #btn_Psubmit.gradual_change_Cqueding {
+        width: 39%;
+    }
+}
+
+
+/*手机 1024px分辨率*/
+
+@media screen and (max-width: 1200px) {
+    body {
+        padding-left: 0;
+    }
+    .navbg {
+        background-color: $left-bg;
+        .navbar {
+            padding-left: 0;
+            padding: 1.5rem 0;
+            float: right;
+            li>a {
+                padding-right: 7px;
+            }
+            .caret {
+                margin-left: 10px;
+            }
+            li>a span {
+                display: none;
+            }
+            .dropdown .btn2 {
+                margin-left: 0;
+            }
+        }
+    }
+    .left-logo {
+        width: ($aside-width)-35;
+        position: static;
+        float: left;
+        .sidebar-toggle {
+            display: block;
+            width: 27px;
+            height: 27px;
+            padding: 0;
+            margin-top: 10px;
+            border: none;
+            outline: none;
+            background-color: transparent;
+            float: right;
+            margin-left: 2rem;
+            font-size: 20px;
+            color: $content-left-color;
+        }
+        .sidebar-more {
+            display: none;
+        }
+    }
+    .left-logo.scroll-on {
+        position: fixed;
+    }
+    .aside {
+        z-index: 999999;
+        left: -($aside-width)-35;
+    }
+    .content-left {
+        width: ($aside-width)-35;
+        margin-right: 0;
+        .aside_nav_icon {
+            padding: 21px;
+            background-color: $left-title;
+            img {
+                width: 25px;
+                height: 25px;
+            }
+        }
+        .panel {
+            .panel-body {
+                padding: 20px ($content-left-pad)-10 0 ($content-left-pad)-10;
+            }
+        }
+        .panel-card .panel-footer {
+            padding: 12px 20px 0 20px;
+        }
+        .quoteprice {
+            .panel-body {
+                padding: 20px 0;
+            }
+            .quoteprice_box {
+                padding: 20px ($content-left-pad)-20;
+            }
+        }
+    }
+    .content-left,
+    .content-right {
+        float: none;
+    }
+    .content-right {
+        padding-left: 0;
+        padding-top: 2rem;
+    }
+    .content-wrapper {
+        padding-top: 60px;
+    }
+    //下拉
+    .PtwoP_navbar .dropdown-menu li a {
+        padding: 8px 10px;
+    }
+    #mention .mdhide,
+    .tibi .mdhide {
+        display: none;
+    }
+    #mention>.col-xs-3,
+    .tibi .col-xs-3 {
+        width: 40%;
+    }
+    #mention .visible-sm-block,
+    .tibi .visible-sm-block {
+        display: block !important;
+        margin-bottom: 20px;
+    }
+    .coin_money_address>.input-group>input,
+    .Withdraw_money_address>.input-group>input {
+        width: 35%;
+    }
+    .smshow>.btn-group.bootstrap-select {
+        width: 100% !important;
+    }
+    .footer {
+        width: 100%;
+    }
+    .content-left,
+    .content-right {
+        min-height: 74.5rem;
+    }
+    .integral .panel-body .table-responsive tbody tr td:nth-child(1) {
+        width: 25%;
+    }
+    .Confirmation {
+        text-align: left;
+    }
+    .eos_svg1_hover {
+        left: 81%;
+        top: -364%;
+    }
+    .en .eos_svg1_hover {
+        top: -189px;
+    }
+}
+
+
+/*手机 1048px分辨率*/
+
+@media screen and (max-width: 1048px) {
+    .isRealName_personal {
+        padding-left: 0;
+        padding-right: 25px;
+    }
+    #platCharge .panel-body .table-responsive tbody tr td:nth-child(1) {
+        width: 30%;
+    }
+    .benefits .panel-body .table-responsive tbody tr td:nth-child(1) {
+        width: 25%;
+    }
+    .the-email,
+    .the-callphone {
+        margin-bottom: 8px;
+    }
+    .the-email-bottom,
+    .the-callphone-bottom,
+    .the-describe-bottom {
+        margin-bottom: 30px;
+    }
+}
+
+
+/*手机 979px分辨率*/
+
+@media screen and (max-width: 979px) {
+    .modal.cancleStyle.fade.in,
+    .modal.container.fade.in,
+    .modal.modal-overflow.fade.in {
+        top: 50%;
+    }
+    #static1.fade.in {
+        top: 22%;
+    }
+    #tab-underline-profile4 .saleout-part {
+        border-right: 0;
+    }
+    .content-wrapper {
+        padding-top: 0;
+    }
+    #mention>.col-xs-3 {
+        width: 40%;
+    }
+    .orderCollect {
+        border-right: none;
+    }
+}
+
+//C2C订单管理 小于876分辨率
+@media screen and (max-width: 876px) {
+    .order-wrap .warmTips {
+        width: 100%;
+        text-align: left;
+        margin-left: 0;
+        margin-right: 0;
+        padding-top: 15px;
+    }
+    .C2C_isBlock {
+        display: block;
+    }
+    .C2C_notBlock {
+        display: none;
+    }
+    .target_panel_title>span {
+        margin-right: 5px;
+    }
+    .target_panel_title>span {
+        font-size: 14px;
+        margin-right: 8px;
+    }
+    .bootstrap-switch.bootstrap-switch-animate .bootstrap-switch-container {
+        width: 173px!important;
+    }
+    .bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-inverse,
+    .bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-inverse,
+    .bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-default,
+    .bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-default {
+        width: 48px!important;
+    }
+}
+
+
+/*手机 768px分辨率*/
+
+@media screen and (max-width: 768px) {
+    .left-logo {
+        width: 270px;
+    }
+    /*买入卖出数据块自适应*/
+    .small-screen {
+        width: 58.33333333%!important;
+    }
+    .sixphone .sell-out,
+    .small-screen {
+        float: right;
+    }
+    .Data-trend,
+    .navbar-top .changeModel,
+    .sixphone .saleIn {
+        float: left;
+    }
+    .small-screen {
+        padding-left: 40px;
+    }
+    .sell-out {
+        padding: 0;
+    }
+    #tab-underline-profile4>.col-md-5,
+    .sixphone .saleIn,
+    .sixphone .sell-out {
+        width: 100%;
+    }
+    #tab-underline-profile4 {
+        padding: 0 !important;
+    }
+    .navbar-top .navbar-nav {
+        margin-right: 0;
+    }
+    .navbar-top .navbar-brand {
+        padding-left: 0;
+    }
+    .content-wrapper {
+        padding-top: 0;
+    }
+    #static {
+        margin: 0 auto !important;
+    }
+    .modal {
+        right: 14%;
+        left: 14%;
+    }
+    .modal.fade.in {
+        top: 26%;
+    }
+    .userCenter .modal-body {
+        padding: 15px 15px 0 15px;
+    }
+    .userCenter .modal-footer {
+        padding: 0 10px 10px 0;
+    }
+    .modal.fade.in.modalStyle.cancleStyle {
+        right: 25%;
+        left: 25%;
+    }
+    .alert-info-success,
+    .alert-info-fail {
+        padding-right: 0;
+    }
+    .shiming.alert.alert-info.border-info.alert-extra.alert-dismissible {
+        padding: 10px 15px 10px 15px;
+    }
+    .footer {
+        min-height: auto!important;
+    }
+    .nofloat_auto .form-group-strength #strength-check {
+        top: 64px;
+        left: 43%;
+    }
+    .panel .panel-heading .panel-tools.panel-action>.have-dropdown {
+        margin-top: 0;
+        margin-left: 5px;
+        width: auto;
+    }
+    .alert.alert-info ol li {
+        text-indent: -15px;
+    }
+    .alert.alert-info ol li p {
+        margin-left: 14px;
+    }
+    //实名认证失败后提示语
+    .hold-sm-block>.Name_status {
+        display: none;
+        padding-left: 0;
+    }
+    .hold-sm-block~.Name_status {
+        display: block;
+        padding-left: 0;
+        margin-top: 5px;
+    }
+    .hold-sm-block~.Name_status>i {
+        padding-left: 0;
+    }
+    .hold-sm-block {
+        width: 80%;
+    }
+    .hold-sm-block~.Name_status {
+        color: #65D8C1;
+        font-weight: 600;
+    }
+    .verifyImg {
+        width: 85%
+    }
+    .nav.nav-tabs.personalCenter_nav>li {
+        padding: 0 0 10px 0;
+    }
+    .dropdown_img a img {
+        width: 18px;
+    }
+    .eos_svg1_hover {
+        left: 77%;
+        top: -129px;
+    }
+    .en .eos_svg1_hover {
+        left: 73%;
+        top: -229px;
+    }
+}
+
+
+/*手机 728px分辨率*/
+
+@media screen and (max-width: 728px) {
+    .verifyImg {
+        width: 100%
+    }
+    //钱包 eos
+    .eos_right_one {
+        width: 100%;
+        margin-right: 0;
+    }
+    .wallen_eos_right {
+        width: 100%;
+    }
+    .wallen_eos_right p:nth-child(2) {
+        padding: 2px 30px;
+    }
+}
+
+
+/*手机 667px分辨率*/
+
+// 市场订单
+@media screen and (max-width: 833px) {
+    .target_form_all {
+        tr th:first-of-type,
+        tr td:first-of-type {
+            width: 10%;
+        }
+    }
+    // 问题反馈
+    .provided_data_box {
+        margin-bottom: 5%;
+        padding: 0;
+    }
+    .feedback_content {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 667px) {
+    .Data-trend {
+        float: left;
+    }
+    .small-screen {
+        float: right;
+        padding-left: 40px;
+    }
+    .sell-out {
+        padding: 0;
+    }
+}
+
+
+/*手机 640px分辨率*/
+
+@media screen and (max-width: 640px) {
+    // notify
+    .alert-extra {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    // 头部导航下拉
+    .navbar-nav .dropdown-menu>li>a,
+    .navbar-nav .open .dropdown-menu>li>a {
+        padding: 5px 8px;
+    }
+    // 账户页面导航栏
+    // notify
+    .alert-extra {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    // 实名认证
+    #isRealName .alert.has-icon>.alert-icon {
+        padding-left: 0;
+    }
+    .hold-sm-block {
+        width: 78%;
+    }
+    // 侧边栏
+    .content-left {
+        padding-bottom: 190px;
+    }
+    // 账户页面导航栏
+    #realform {
+        padding-left: 20px;
+        padding-top: 10px;
+    }
+    .personalCenter_nav {
+        display: none;
+    }
+    .panel .panel-heading {
+        padding: 15px;
+    }
+    .coin_money_Record-wrap .panel .panel-heading {
+        padding: 15px 30px;
+    }
+    .exchangeRate h1 {
+        font-size: 1.7rem;
+        line-height: 1.7rem;
+        margin: 1.2rem auto;
+    }
+    .exchangeRate h1:before {
+        height: 1.4rem;
+        vertical-align: -0.2rem;
+    }
+    .exchangeRate th {
+        padding: 1rem 0;
+    }
+    .exchangeRate td {
+        padding: 0.5rem 0;
+    }
+    .modal-header .modal-title {
+        font-size: 1.3rem;
+        line-height: 1.5;
+    }
+    .cancleStyle .alert {
+        margin: 25px 0.2rem 0.15rem 0.2rem;
+        padding: 0 0.8rem 25px 0.8rem
+    }
+    .cancleStyle .modal-footer {
+        padding-bottom: 0;
+    }
+    .small-screen {
+        padding-left: 6px !important;
+    }
+    .sixphone .saleIn,
+    .sixphone .sell-out {
+        width: auto !important;
+        float: none;
+    }
+    .smshow>.btn-group.bootstrap-select {
+        width: 100% !important;
+    }
+    .coinSlide .fabtc {
+        border: solid 5px $coinMoneyListBg;
+        background-color: $coinMoneyListBg;
+    }
+    .navbar-top .navbar-brand img {
+        margin-top: 3px;
+    }
+    #smrz .panel-heading {
+        position: relative;
+    }
+    #account .panel .panel-heading {
+        padding: 15px;
+    }
+    .target_panel_title[title='1'] .Name_status {
+        position: unset;
+    }
+    .target_panel_title .Name_status .Name_status2 {
+        padding-left: 0;
+    }
+    .target_panel_title .Name_status .Name_status2 svg {
+        font-size: 13px;
+    }
+    /* 导航 */
+    .en .home_nav.navbar-top .navbar-nav .fr,
+    .zoom-ordera .nav>li,
+    .zoom-todownb .nav>li {
+        margin-left: 0;
+    }
+    .smshow {
+        display: block;
+        border-radius: 15px;
+        @include gradient($buyList_backcolor);
+    }
+    .smshow button.dropdown-toggle,
+    .smshow .bootstrap-select.open button.dropdown-toggle:hover,
+    .smshow .bootstrap-select.open button.dropdown-toggle:focus,
+    .smshow .bootstrap-select.open button.dropdown-toggle:active {
+        color: #fff;
+    }
+    #SaleIn .BuyForm,
+    #SaleOut .BuyForm {
+        padding: 12px 15px;
+    }
+    #SaleIn .button-zoom button,
+    #SaleOut .button-zoom button {
+        margin-top: 0;
+    }
+    .target_panel_title>span {
+        margin-right: 10px;
+    }
+    #SaleIn .tipsWarm .lgNopadLeft,
+    #SaleOut .tipsWarm .lgNopadLeft,
+    #SaleIn .order-group,
+    #SaleOut .order-group,
+    #SaleIn .button-zoom p,
+    #SaleOut .button-zoom p {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .listOrder2 .saleIn th:first-of-type,
+    .listOrder2 .saleOut th:last-of-type {
+        width: 35%;
+    }
+    .listOrder2 .saleIn th:last-of-type,
+    .listOrder2 .saleOut th:first-of-type {
+        width: 25%;
+    }
+    .listOrder2 .saleOut .table-responsive {
+        float: right;
+        transform: rotateY(180deg);
+    }
+    .listOrder2 .saleOut .table-responsive td,
+    .listOrder2 .saleOut .table-responsive th {
+        transform: rotateY(-180deg);
+    }
+    .listOrder2 .saleOut .movements {
+        float: left !important;
+        transform: rotateY(0deg) !important;
+    }
+    #search.modal.fade.in,
+    #search.modal.container.fade.in,
+    #search.modal.modal-overflow.fade.in {
+        top: 10%;
+    }
+    .introjs-fixedTooltip {
+        z-index: 10000000;
+    }
+    .introjs-arrow.right {
+        border-color: transparent transparent transparent rgba(66, 66, 66, 1);
+    }
+    .table-responsive .tibi>thead>tr>th:nth-of-type(1),
+    .table-responsive .chongbi>thead>tr>th:nth-of-type(1) {
+        padding-left: 17px;
+    }
+    .cxlx {
+        display: none;
+    }
+    .order-wrap .area-issue-select .fa-angle-down {
+        right: -1px;
+        top: 10px;
+    }
+    .orderBook .area-issue-select {
+        top: 20px;
+        left: 80px;
+    }
+    //C2C订单管理 小于640分辨率
+    .order-wrap .upVipprofit {
+        padding-right: 0;
+    }
+    .order-wrap .upVipprofit.nav>li {
+        margin-left: 0;
+    }
+    .order-wrap .upVipprofit.nav-tabs.underline-tabs.primary-tabs>li.active>a {
+        margin: 0;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    .order-wrap .upVipprofit.nav-tabs.underline-tabs>li>a:nth-child(1) {
+        margin: 0;
+    }
+    .coin_money_address>.input-group>input,
+    .Withdraw_money_address>.input-group>input {
+        width: 65%;
+    }
+    //C2C发布交易订单按钮
+    .orderBook .order-wrap .zoom-ordera>.release-order {
+        margin-top: 0;
+    }
+    .wrap_saleIn-saleOut .orderBook .order-wrap .zoom-ordera>.have-dropdown {
+        margin-top: 2px;
+    }
+    //弹窗
+    .modalStyle {
+        .modal-body {
+            .alert {
+                margin-bottom: 20px;
+            }
+        }
+    }
+    .modalStyle {
+        .modal-body {
+            .c2c_info {
+                margin-bottom: 10px;
+                margin-top: 10px;
+            }
+        }
+    }
+    .issue .issue-item {
+        padding: 7px 0;
+    }
+    .websocketWarm p:nth-child(2) {
+        text-align: justify;
+    }
+    .the-email,
+    .the-callphone {
+        margin-bottom: 9px;
+    }
+    .feedback_control {
+        margin-left: 15px;
+        margin-bottom: 25px;
+    }
+    .alert.alert-info ol {
+        padding-left: 21px;
+    }
+    .alert.alert-info ol li p {
+        margin-left: 7px;
+    }
+    .personal-security {
+        padding-left: 8px;
+    }
+    .coin_money_address.two-content {
+        margin: 0;
+    }
+    .form-control.text-center.CoinNoConfirm.NoUrl.wallen-tibi {
+        max-width: 200px;
+    }
+}
+
+@media screen and (max-width: 640px) and (max-height:660px) {
+    .modalStyle .less-t-h .modal-body {
+        padding-top: 5px;
+    }
+    .modalStyle .less-t-h .modal-body .c2c_info {
+        margin-bottom: 5px;
+        margin-top: 10px;
+    }
+    .modalStyle .less-t-h .alert {
+        padding: 13px 15px;
+    }
+    .issue .less-t-h .issue-contain {
+        line-height: 20px;
+    }
+    .issue .less-t-h .issue-item {
+        padding: 4px 0;
+    }
+    .modalStyle .less-t-h .buttonArea button {
+        margin-top: 2px;
+        margin-bottom: 2px;
+    }
+}
+
+
+/*手机 628px分辨率*/
+
+@media screen and (max-width: 628px) {
+    .alert.alert-info ol li {
+        text-indent: -14px;
+    }
+    .panel.panel-default>.credit_card_title {
+        padding-left: 30px;
+    }
+    .en .changeAddress .issue-title.col-xs-12 {
+        width: 40%;
+    }
+    .en .changeAddress .issue-contain.col-xs-12 {
+        text-align: left;
+        width: 55.333333%;
+    }
+}
+
+
+/*手机 560px分辨率*/
+
+@media screen and (max-width: 560px) {
+    .en .changeAddress .issue-title.col-xs-12 {
+        width: auto;
+    }
+    .en .changeAddress .issue-contain.col-xs-12 {
+        width: auto;
+    }
+    .corirm_x {
+        padding-left: 0!important;
+    }
+    #account .panel .panel-body .forn_cont {
+        padding-left: 0;
+    }
+    .eos_svg1_hover {
+        left: 75%;
+        top: -128px;
+    }
+    .en .eos_svg1_hover {
+        top: -229px;
+    }
+}
+
+
+/*手机 480px分辨率*/
+
+@media screen and (max-width: 480px) {
+    //问题反馈
+    .time-on-submit {
+        display: block;
+        padding-top: 5px;
+    }
+    .the-qest-desrcibe {
+        padding-bottom: 5px;
+    }
+    .Coin_money_nav .coin_left_nav {
+        padding-bottom: 0;
+    }
+}
+
+
+/*手机 475px分辨率*/
+
+@media screen and (max-width: 475px) {
+    #realform .fileinput .form-control,
+    .btn-light-purple {
+        width: 32%;
+    }
+    .submit-block button {
+        width: 50%;
+    }
+    .lgNopadRight.passport-name {
+        padding-left: 0;
+    }
+}
+
+
+/*手机 450px分辨率*/
+
+@media screen and (max-width: 450px) {
+    .text-info {
+        display: block;
+    }
+    .sidebar-extra-scroller .panel-card .panel-footer {
+        background-color: $panel-footer-bg2;
+        border-top-color: $panel-footer-border;
+    }
+    .content-left .panel-card .panel-title {
+        font-size: 14px;
+        color: $panel-card-paneltitle;
+    }
+    /*平台首页确认收款*/
+    #payinfo.modal.fade.in,
+    #payinfo.modal.container.fade.in,
+    #payinfo.modal.modal-overflow.fade.in {
+        top: 10%;
+    }
+    #payinfo .modal-header,
+    #static1 .madal-header {
+        padding-bottom: 0;
+    }
+    #payinfo .modal-footer,
+    #static1 .modal-footer {
+        padding-top: 0;
+    }
+    //C2C 英文版市场订单
+    .target_panel_title>span {
+        margin-right: 0;
+    }
+    .question_title>span {
+        margin-right: 20px;
+    }
+    .target_panel_title_other>span {
+        margin-right: 5px;
+    }
+    /* 钱包 */
+    #tab-underline-profile4 .pull-right {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+    .coin_money_Record>.large-heading>.panel-title,
+    .Withdraw_money_Record>.large-heading>.panel-title {
+        padding-left: 3px;
+    }
+    .coin_money_address>label,
+    .Withdraw_money_address>label {
+        margin-left: 3px;
+    }
+    .coin_money_address>.input-group>input,
+    .Withdraw_money_address>.input-group>input {
+        padding-left: 3px;
+        width: 80%;
+    }
+    .panel-body .coin_money_content>h4 {
+        padding-left: 3px;
+        margin-bottom: 0;
+    }
+    .panel-body .coin_money_content .alert-info {
+        padding-left: 3px;
+        padding-bottom: 0;
+    }
+    .panel-body .coin_money_content .alert-info p {
+        margin-top: 15px;
+    }
+    .panel-body {
+        padding: 0;
+    }
+    .table-responsive .tibi thead tr>th:nth-of-type(1),
+    .table-responsive .chongbi thead tr>th:nth-of-type(1),
+    .table-responsive .tibi tbody tr>td:nth-of-type(1),
+    .table-responsive .chongbi tbody tr>td:nth-of-type(1) {
+        text-align: center;
+        padding-left: 0px;
+    }
+    .coin_money_Record .table-responsive,
+    .Withdraw_money_Record .table-responsive {
+        padding-left: 7px;
+    }
+    .modal.fade.in,
+    .modal.container.fade.in,
+    .modal.modal-overflow.fade.in {
+        top: 17%;
+    }
+    #orderDetail .col-lg-12,
+    .orderDetail .col-lg-12 {
+        padding: 0 15px;
+    }
+    #mention>.col-xs-3 {
+        width: 50%;
+    }
+    #mention>.col-xs-9 {
+        width: 100%;
+    }
+    //钱包
+    .coin_money_Record-wrap .panel .panel-heading {
+        padding: 15px 14px;
+    }
+    .Wallent_coin_title {
+        font-size: 18px;
+        padding-left: 0;
+    }
+    /* 账户 */
+    .smshow .dropdown a i {
+        width: 10px;
+    }
+    .alert-info-success {
+        padding-right: 35px;
+    }
+    .alert-info-fail {
+        padding-right: 150px;
+    }
+    .lgNopadRight {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .panel.panel-default>.credit_card_title>.panel-title {
+        font-size: 16px;
+    }
+    .input-group .wallen-tibi {
+        width: 100%;
+    }
+    #confirmBtn,
+    .tibiBtn,
+    .bindBtn,
+    #binding_email,
+    #moneypwdBtn,
+    #tokenUnBinding {
+        margin-top: 20px;
+    }
+    .Plat-charg {
+        margin-top: -1px;
+    }
+    .integral,
+    .honest_panel .panel-heading span.title,
+    .integral-details>.panel-heading>.panel-title,
+    .coin_money_address>.input-group,
+    .Withdraw_money_address>.input-group {
+        padding-left: 0;
+    }
+    .benefits .white_left th {
+        padding-left: 10px;
+    }
+    .target_panel_title>.integral-title-right {
+        position: absolute;
+        left: -2px;
+        top: 46px;
+        line-height: 28px;
+    }
+    .target_panel_title>.integral-title-right.CreditDetail {
+        left: 0;
+        width: 100%;
+        text-align: left
+    }
+    .select-log .target_panel_title>.integral-title-right {
+        top: 135px;
+    }
+}
+
+
+/*手机 414px分辨率*/
+
+@media screen and (max-width: 414px) {
+    .charing-num {
+        width: 75%;
+    }
+    .charging-msg {
+        padding-left: 13px;
+    }
+    #orderDetail h5,
+    .orderDetail h5 {
+        padding: 10px 30px 10px 18px!important;
+    }
+    .close-font {
+        margin-top: 12px!important;
+        margin-right: 15px!important;
+    }
+    .col-md-5.col-sm-12.col-xs-12.p-0 {
+        width: 104%;
+    }
+    .trad_coin_datablock {
+        padding-left: 10px !important;
+    }
+    .trad_coin_datablock .panel-title {
+        font-size: 16px !important;
+    }
+    #trad_coin_confirmOrder .trad_coin_wrap .panel-title .panel-tools .panel-action {
+        padding-right: 10px;
+    }
+    /*买入卖出tab切换按钮*/
+    .nav.nav-tabs.underline-tabs>.target_order_buse>a {
+        margin-top: 5px !important;
+        height: 22px;
+        line-height: 14px;
+    }
+    #buyList,
+    #sellOrder {
+        margin-top: 4px!important;
+    }
+    .my_order_target {
+        bottom: -6px;
+        height: 22px;
+    }
+    .nav.nav-tabs.feedback_control>.my_order_target {
+        height: 22px;
+    }
+    //P2P交易的市场订单
+
+    .PtwoP_order_li {
+        margin-right: 8px;
+    }
+    .PtwoP_order_li,
+    .tradcoin_order_li,
+    .tradcoin_ordername>span,
+    .GeRenXinXi,
+    #account .account-title {
+        font-size: 16px;
+    }
+    .order-wrap .panel-tools .tools-content {
+        padding-right: 0!important;
+    }
+    .sixphone .saleIn,
+    .sixphone .saleOut {
+        padding: 0 15px;
+    }
+    .PtwoP_market_order>#search_tab {
+        vertical-align: top;
+    }
+    //币种切换
+    .personalCenter_nav {
+        display: none;
+    }
+    //账户页面
+    .personal-info {
+        padding-left: 4px;
+    }
+    .panel.panel-default>.credit_card_title {
+        padding-left: 18px;
+    }
+    #account .panel .panel-body>p.forn_cont:nth-of-type(1) {
+        padding-left: 15px;
+    }
+    #account .panel .panel-body .forn_cont {
+        padding-left: 8px;
+    }
+    //信用评级
+    .bootstrap-select.btn-group .dropdown-menu.inner {
+        max-width: 115px;
+    }
+    #platCharge .panel-body .table-responsive .order.sortable-theme-bootstrap thead tr {
+        font-size: 13px;
+    }
+    div.panel-default div.large-heading div.panel-title,
+    .cxlx,
+    div.panel-default div.large-heading div.panel-title.cwls {
+        font-size: 15px;
+    }
+    .sub-P2P {
+        margin: 0px 0px 0 20px;
+    }
+    .small-screen {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+    }
+    .coin_money_control>.target_order_buse>a,
+    .coin_money_control>.target_order_buse>a {
+        margin-top: 2px!important;
+    }
+    .coin_money_control>.my_order_target {
+        bottom: -2px;
+    }
+    /* 分页 */
+    .sm-text-center {
+        text-align: center;
+        padding: 30px 0;
+    }
+    .bootstrap-select.btn-group .dropdown-menu li a {
+        font-size: 12px;
+        line-height: 17px;
+        padding: 4px;
+    }
+    #takecoin11.modal.fade.in,
+    #takecoin11.modal.container.fade.in,
+    #takecoin11.modal.modal-overflow.fade.in,
+    #takecoin12.modal.fade.in,
+    #takecoin12.modal.container.fade.in,
+    #takecoin12.modal.modal-overflow.fade.in,
+    #takecoin13.modal.fade.in,
+    #takecoin13.modal.container.fade.in,
+    #takecoin13.modal.modal-overflow.fade.in,
+    #pass_modify.modal.fade.in {
+        top: 16%
+    }
+    .bootstrap-select {
+        width: 100% !important;
+    }
+    .modal {
+        right: 5%;
+        left: 5%;
+    }
+    .modal-header {
+        padding: 5px 5px 0 5px;
+    }
+    .modal-header .close {
+        margin-top: 9px;
+    }
+    .modal-header .modal-title {
+        line-height: 2.5;
+        font-size: 16px;
+    }
+    .modal.fade.in.modalStyle.cancleStyle {
+        right: 10%;
+        left: 10%;
+    }
+    .alert {
+        margin-bottom: 10px;
+    }
+    .alert-info-fail {
+        padding-right: 35px;
+    }
+    .alert.alert-info.border-info.alert-extra.alert-dismissible {
+        right: 0 !important;
+    }
+    .modal-footer .mbhide {
+        margin-bottom: 15px !important;
+    }
+    .yxdz {
+        padding: 0 15px 4px 0 !important;
+    }
+    .modal-footer .mbhide .btn-confirm {
+        margin: 0;
+    }
+    .modal-body .form-group {
+        margin-bottom: 15px;
+    }
+    .shiming.alert.alert-info.border-info.alert-extra.alert-dismissible {
+        padding: 10px 15px 10px 15px;
+    }
+    .modal.fade.modalStyle.cancleStyle.walletcancle {
+        width: 80% !important;
+        left: 10%;
+    }
+    .modal-body {
+        padding: 6px 12px;
+    }
+    .modal-body .nomarBot .countdown {
+        padding: 0 !important;
+    }
+    .modal-footer {
+        padding: 0 13px 0 5px;
+    }
+    .modal-footer .btn+.btn {
+        margin-top: 7px;
+        margin-bottom: 0;
+    }
+    .btn-confirm {
+        margin-top: 17px;
+        margin-bottom: 11px;
+    }
+    #detail .modal-header {
+        padding: 5px 15px 0 15px;
+    }
+    #saveEmail {
+        margin-top: 17px;
+    }
+    .modal-body .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+        width: 257px;
+    }
+    .nofloat_auto .form-group-strength #strength-check {
+        top: 65px;
+        left: 62%;
+        width: 280px;
+    }
+    .record {
+        padding-right: 15px;
+    }
+    #phone_modify.modal.fade.in {
+        top: 11%;
+    }
+    .modalStyle .alert {
+        padding: 25px 15px;
+    }
+    #moneypwdBtn,
+    #tokenUnBinding,
+    #binding_email {
+        margin-top: 20px;
+    }
+    .delAddress_wrap .modal-body h5 {
+        margin-bottom: 0;
+    }
+    .changeModel .PtwoP_navbar>li>a>i {
+        margin-left: 0;
+    }
+    .navbg .navbar li>a {
+        padding-left: 3px;
+    }
+    .bank_card {
+        margin-bottom: 0;
+    }
+    .panel .panel-heading .panel-tools.panel-action.pull-right {
+        margin-top: 5px;
+    }
+    .dropdown_img {
+        padding: 8px 0px 10px;
+    }
+    #eos_modal .modal-body p:nth-child(2) {
+        padding: 20px 25px 20px;
+    }
+}
+
+
+/*手机 375px分辨率*/
+
+@media screen and (max-width: 375px) {
+    #orderDetail h5,
+    .orderDetail h5 {
+        padding: 10px 30px 10px 15px !important;
+    }
+    .close-font {
+        margin-top: 17px!important;
+        margin-right: 15px!important;
+    }
+    .sell-out {
+        padding: 0px 15px !important;
+    }
+    /* 钱包 */
+    .modal.fade.modalStyle.cancleStyle.walletcancle {
+        width: 80% !important;
+        left: 10%;
+    }
+    #static.modal.fade.in {
+        top: 8% !important;
+    }
+    .modal.fade.in,
+    .modal.container.fade.in,
+    .modal.modal-overflow.fade.in {
+        top: 18%;
+    }
+    .en .tipsWarm .lgNopadLeft .green.currency-1 {
+        width: 100%;
+        float: left;
+    }
+    /* 账户 */
+    #account .panel .panel-body .forn_cont>.font-group label {
+        font-size: 11px;
+    }
+    /* 分页 */
+    .pagation li {
+        padding: 0 5px;
+    }
+    .en .benefits .panel-tools .dropdown-menu {
+        left: 0px;
+    }
+    .nofloat_auto .form-group-strength #strength-check {
+        top: 40px;
+        width: 245px;
+    }
+    .passport-name {
+        margin-bottom: 25px;
+    }
+    .pr0 {
+        padding-right: 0;
+    }
+    #BCH-address .input-group input.wallen-tibi {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+
+/*手机 320px分辨率*/
+
+@media screen and (max-width: 320px) {
+    .panel .panel-heading .panel-tools.panel-action>.have-dropdown {
+        margin-left: 0px;
+    }
+    //.nav.nav-tabs.underline-tabs>.target_order_buse>a {
+    //    width: 77px;
+    //}
+    ul.nav .my_order_target {
+        width: 70px;
+        right: 1px;
+    }
+}
+
+
+/* 手机端  media 特定分辨率*/
+
+// media 特定 1200px--1620px
+@media screen and (min-width: 1200px) and (max-width: 1620px) {
+    .light-wrap,
+    .trad_coin_middlecontent {
+        width: 100%;
+    }
+    .light-wrap.col-md-8 {
+        margin-bottom: 0
+    }
+}
+
+//C2C订单管理  特定 1025--1177px
+@media screen and (min-width: 1025px) and (max-width: 1439px) {
+    .order-wrap .warmTips {
+        width: 100%;
+        text-align: left;
+        margin-left: 0;
+        margin-right: 0;
+        padding-top: 15px;
+    }
+    .orderCollect {
+        width: 100%;
+        height: auto;
+        border-right: none;
+    }
+    .C2C_isBlock {
+        display: block;
+    }
+    .C2C_notBlock {
+        display: none;
+    }
+    .TheOrderWrap {
+        width: 100%;
+    }
+}
+
+// media 特定 1024px--1195px
+@media screen and (min-width: 1024px) and (max-width: 1220px) {
+    .tibi,
+    .chongbi {
+        width: 130%;
+        max-width: 130%;
+    }
+    #tab-tradeing-all .table-responsive .sortable-theme-bootstrap {
+        width: 128%;
+        max-width: 128%;
+    }
+}
+
+// media 特定 1024px--1699px
+@media screen and (min-width: 1024px) and (max-width: 1699px) {
+    .en .tipsWarm .lgNopadLeft .green.currency-1 {
+        width: 100%;
+        float: left;
+    }
+}
+
+// media 特定 960px--979px
+@media screen and (min-width: 960px)and (max-width: 979px) {
+    #search.modal.fade.modalStyle.in {
+        width: 500px !important;
+        left: 26%;
+    }
+    .modal-scrollable .modal.fade.in,
+    #detail {
+        width: 550px !important;
+        left: 20%;
+    }
+    #static {
+        left: 30%;
+    }
+    .modal-scrollable .modal.fade.in {
+        top: 6%;
+    }
+    .col-md-5.col-sm-12.col-xs-12.p-0 {
+        width: 34%;
+    }
+}
+
+// media 特定 769px--812px
+@media screen and (min-width: 769px) and (max-width:812px) {
+    .left-logo {
+        width: 236px;
+    }
+    .navbg .navbar li>a {
+        padding-left: 4px;
+        padding-right: 4px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .provided_data_box {
+        padding: 0;
+    }
+    .the-describe-bottom {
+        padding-right: 0
+    }
+}
+
+// ---账户--- ipad // media 特定 768px--991px
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    #realform .fileinput .form-control {
+        width: 68%;
+    }
+    .btn-light-purple {
+        width: 14%;
+    }
+    .submit-block button {
+        width: 35%;
+    }
+}
+
+// media 特定 768px--852px
+@media screen and (min-width: 768px) and (max-width: 852px) {
+    .tibi,
+    .chongbi {
+        width: 113%;
+        max-width: 113%;
+    }
+    #tab-tradeing-all .table-responsive .sortable-theme-bootstrap {
+        width: 116%;
+        max-width: 116%;
+    }
+}
+
+
+/* Galaxy S5 横屏 */
+
+// media 特定 674px--642px
+@media screen and (max-width: 674px) and (max-height: 642px) {
+    .navbar-top>.container-fluid {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+// media 特定 641px--991px
+@media screen and (min-width: 641px) and (max-width: 991px) {
+    .visible-sm-block,
+    .visible-xs-block {
+        display: none !important;
+    }
+}
+
+// media 特定 641px--767px
+@media screen and (min-width: 641px) and (max-width:767px) {
+    .left-logo {
+        width: 236px;
+    }
+    .navbg .navbar li>a {
+        padding-left: 2px;
+        padding-right: 3px;
+    }
+    #realform .fileinput .form-control {
+        width: 68%;
+    }
+    .btn-light-purple {
+        width: 15%;
+    }
+}
+
+
+/*手机英文顶部导航*/ // media 特定 640px--650px
+@media screen and (min-width: 640px) and (max-width: 650px) {
+    .en .navbar-top .navbar-nav>li>a {
+        padding-left: 3px;
+        padding-right: 0;
+    }
+}
+
+// media 特定 640px--361px
+@media screen and (max-width: 640px) and (min-height: 361px) {
+    .nav li>a {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    .smhide {
+        display: none;
+    }
+    .smshow {
+        display: block;
+    }
+    .extra {
+        margin-bottom: 10px;
+    }
+    /*-------------------------- 导航 ---------------------------*/
+    body {
+        padding-top: 50px;
+    }
+    .phone.navbg {
+        visibility: hidden;
+    }
+    .navbg {
+        position: fixed;
+        top: 0;
+        z-index: 1034;
+        .container-fluid {
+            padding-right: 0px;
+            padding-left: 0px;
+        }
+        .navbar li>a {
+            padding-left: 4px;
+            padding-right: 4px;
+        }
+        .left-logo {
+            height: auto;
+            text-align: center;
+            width: 100%;
+            padding: 0;
+            position: relative;
+            .navbar-brand {
+                float: none;
+                height: auto;
+                padding: 1rem 0;
+                img {
+                    height: 35px;
+                }
+            }
+            .sidebar-toggle {
+                position: absolute;
+                width: 45px;
+                height: 100%;
+                padding: .8rem 13px;
+                margin-left: 0;
+                margin-top: 0;
+                transition: .3s all;
+                &:active,
+                &:hover,
+                &:focus {
+                    background: $navtab-button-actbg;
+                }
+            }
+            .sidebar-more {
+                display: block;
+                top: 0;
+                right: 0;
+            }
+        }
+    }
+    .navbg .navbar-top {
+        width: 100%;
+        height: auto;
+        min-height: auto;
+        position: absolute;
+        top: 0;
+        z-index: -1;
+        background: $sm-navtab-bg;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+        padding: 0;
+        transition: .4s all;
+        .navbar-header {
+            width: 100%;
+            margin: 10px 0;
+            text-align: center;
+        }
+        .navbar-nav>li {
+            position: relative;
+        }
+        .navbar-nav>li .dropdown-menu {
+            left: auto;
+            right: 0;
+            background: $black-bg;
+        }
+        .changeModel .navbar-nav>li .dropdown-menu {
+            left: -5px;
+            right: auto;
+        }
+        .PtwoP_navbar>li>a,
+        #TourBtn>button,
+        .dropdown .btn2 {
+            color: $content-left-color !important;
+        }
+    }
+    .aside {
+        top: 58px;
+    }
+    .content-right .panel-default>.panel-heading>.panel-action {
+        width: auto;
+    }
+    .content-wrapper {
+        padding-top: 0;
+    }
+    .content {
+        min-height: auto;
+    }
+    .userCenter .tab-content .alert,
+    #charge .form-content .form-group,
+    #charge .form-content .panel-default,
+    #takeMoney .marbot10,
+    #takeMoney .panel-default {
+        width: 100%;
+    }
+    /*平台首页*/
+    .table-responsive {
+        margin-bottom: 15px;
+    }
+    .pagination {
+        margin-top: 0;
+    }
+    #orderDetail,
+    .orderDetail {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    #static {
+        width: auto !important;
+    }
+    #static.modal.fade.in,
+    #static.modal.container.fade.in,
+    #static.modal.modal-overflow.fade.in {
+        top: 8%;
+    }
+    /*钱包*/
+    .modal.fade.in.cancleStyle {
+        top: 40%;
+        width: 80% !important;
+        left: 10%;
+    }
+    #takecoin11.modal.fade.in,
+    #takecoin11.modal.container.fade.in,
+    #takecoin11.modal.modal-overflow.fade.in,
+    #takecoin12.modal.fade.in,
+    #takecoin12.modal.container.fade.in,
+    #takecoin12.modal.modal-overflow.fade.in,
+    #takecoin13.modal.fade.in,
+    #takecoin13.modal.container.fade.in,
+    #takecoin13.modal.modal-overflow.fade.in {
+        top: 50px;
+    }
+    .modal.fade.in.cancleStyle[data-backdrop='static1'] {
+        top: 22%;
+    }
+    /*======================== 账户弹窗 ==========================*/
+    #Trapass_modify .modal-header,
+    #pass_modify .modal-header,
+    #Trapass_binding .modal-header {
+        padding-bottom: 0;
+    }
+    #Trapass_modify .modalStyle .alert,
+    #pass_modify .modalStyle .alert,
+    #Trapass_binding .modalStyle .alert {
+        font-size: 12px;
+    }
+    #Trapass_modify .modal-footer,
+    #pass_modify .modal-footer,
+    #Trapass_binding .modal-footer {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    #pass_modify.modal.fade.in,
+    #pass_modify.modal.container.fade.in,
+    #pass_modify.modal.modal-overflow.fade.in,
+    #Trapass_modify.modal.fade.in,
+    #Trapass_modify.modal.container.fade.in,
+    #Trapass_modify.modal.modal-overflow.fade.in,
+    #phone_modify.modal.fade.in,
+    #phone_modify.modal.container.fade.in,
+    #phone_modify.modal.modal-overflow.fade.in,
+    #Trapass_binding.modal.fade.in,
+    #Trapass_binding.modal.container.fade.in,
+    #Trapass_binding.modal.modal-overflow.fade.in {
+        top: 17%;
+    }
+    .navbar-brand {
+        padding-right: 0;
+    }
+    .nav>li {
+        margin-left: 0;
+    }
+    .navbar-top .navbar-nav>li>a {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+}
+
+// media 特定 497px--516px
+@media screen and (min-width: 497px) and (max-width: 516px) {
+    .PtwoP_market_order .my_order_target {
+        right: -3px;
+        bottom: 0px;
+    }
+}
+
+// ---账户--- 476px-640px
+@media screen and (min-width: 476px) and (max-width: 640px) {
+    #realform .fileinput .form-control {
+        width: 57%;
+    }
+    .btn-light-purple {
+        width: 20%;
+    }
+    .submit-block button {
+        width: 38%;
+    }
+}
+
+// media 特定 419px--629px
+@media (min-width:419px) and (max-width:629px) {
+    .modal.fade.in.modalStyle.cancleStyle {
+        left: 10%;
+    }
+}
+
+// media 特定 415px--516px
+@media screen and (min-width: 415px) and (max-width: 516px) {
+    .PtwoP_market_order .my_order_target {
+        right: -109px;
+        bottom: 21px;
+    }
+    #search_tab .search-box {
+        padding-right: 0px;
+    }
+}
+
+@media screen and (min-width: 375px) and (max-width: 767px) {
+    .lgNopadRight {
+        padding: 0;
+    }
+}

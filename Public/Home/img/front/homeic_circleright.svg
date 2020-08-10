@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="50px" height="50px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50 (54983) - http://www.bohemiancoding.com/sketch -->
+    <title>homeic_circleright</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="18.8674434%" y1="26.9232446%" x2="80.9085772%" y2="83.2564683%" id="linearGradient-1">
+            <stop stop-color="#2962F6" offset="0%"></stop>
+            <stop stop-color="#1999FE" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="BTCsale首页-2" transform="translate(-1089.000000, -5772.000000)">
+            <g id="4" transform="translate(117.000000, 5065.000000)">
+                <g id="文案" transform="translate(972.000000, 313.000000)">
+                    <g id="homeic_circleright" transform="translate(0.000000, 394.000000)">
+                        <circle id="Oval" fill="url(#linearGradient-1)" cx="25" cy="25" r="25"></circle>
+                        <path d="M22.1266051,30.1944215 L32.9088756,12.8245859 C33.7826971,11.416892 35.6322307,10.984103 37.0399246,11.8579245 C38.4476184,12.731746 38.8804075,14.5812796 38.006586,15.9889735 L24.937439,37.0428818 C23.8317034,38.8241806 21.2864076,38.9508003 20.0093417,37.2880377 L12.8749952,27.998991 C11.8657778,26.6849719 12.1128684,24.8016165 13.4268875,23.7923991 C14.7409066,22.7831817 16.624262,23.0302723 17.6334794,24.3442914 L22.1266051,30.1944215 Z" id="Path-11" fill="#FFFFFF" fill-rule="nonzero"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

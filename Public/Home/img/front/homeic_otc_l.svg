@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1536px" height="990px" viewBox="0 0 1536 990" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50 (54983) - http://www.bohemiancoding.com/sketch -->
+    <title>otc</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="107.763863%" y1="26.8814476%" x2="0%" y2="138.114836%" id="linearGradient-1">
+            <stop stop-color="#3567BA" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#2D62FD" stop-opacity="0.371291893" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="20.0110019%" y1="79.5197941%" x2="81.4272331%" y2="24.4617049%" id="linearGradient-2">
+            <stop stop-color="#509AEF" offset="0%"></stop>
+            <stop stop-color="#3C6AF0" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="119.341907%" y1="62.8647841%" x2="5.30583658%" y2="26.5245521%" id="linearGradient-3">
+            <stop stop-color="#7EBAFF" stop-opacity="0.402541893" offset="0%"></stop>
+            <stop stop-color="#6089FF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="0%" y1="38.9395502%" x2="72.3014543%" y2="93.9492583%" id="linearGradient-4">
+            <stop stop-color="#4694FD" offset="0%"></stop>
+            <stop stop-color="#3C6AF0" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="159.562741%" y1="129.601053%" x2="14.9290392%" y2="27.4311867%" id="linearGradient-5">
+            <stop stop-color="#3CD0FF" stop-opacity="0.620923913" offset="0%"></stop>
+            <stop stop-color="#3665ED" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="BTCsale首页-2" transform="translate(-326.000000, -6248.000000)">
+            <g id="otc" transform="translate(326.000000, 6248.000000)">
+                <polygon id="Fill-1" fill="url(#linearGradient-1)" opacity="0.8" points="681 420.045426 338.465599 619 250 567.954574 592.539711 369"></polygon>
+                <polygon id="Fill-11" fill="url(#linearGradient-1)" opacity="0.8" points="1216 456.74143 873.36395 656 699 555.261228 1041.63605 356"></polygon>
+                <polygon id="Fill-13" fill="url(#linearGradient-1)" opacity="0.8" points="1536 147.74143 1193.36395 347 1019 246.261228 1361.63871 47"></polygon>
+                <polygon id="Fill-17" fill="url(#linearGradient-1)" opacity="0.8" points="360.302244 793.421306 78.422956 957.350675 0 911.932252 281.879288 748"></polygon>
+                <polygon id="Fill-26" fill="url(#linearGradient-2)" opacity="0.712165179" points="638 291 553.277704 340 468 291 552.722296 242"></polygon>
+                <polygon id="Fill-28" fill="url(#linearGradient-3)" opacity="0.460100446" points="1133 50.9946845 1045.28025 102 957 51.0053155 1044.72241 0"></polygon>
+                <g id="Group-39" transform="translate(213.000000, 823.000000)">
+                    <path d="M90.2753188,136.818905 L176.227999,86.9960199 L89.7113807,37.1704809 L3.7587007,86.9960199 L90.2753188,136.818905 Z M89.6980803,35 L180,87.0066335 L90.3045798,139 L0,86.9960199 L89.6980803,35 Z" id="Fill-32" fill="url(#linearGradient-2)"></path>
+                    <polygon id="Fill-30" fill="url(#linearGradient-2)" opacity="0.712165179" points="178 115.996013 90.2789266 167 2 116.006645 89.7210734 65"></polygon>
+                    <g id="Group-10" transform="translate(66.000000, 0.000000)">
+                        <path d="M24.5,97.0902893 C8.16666667,57.7159748 0,33.5203654 0,24.5034609 C0,10.9711824 10.9658096,0 24.5,0 C38.0341904,0 49,10.9711824 49,24.5034609 C49,33.5203654 40.8333333,57.7159748 24.5,97.0902893 Z" id="Fill-38" fill="url(#linearGradient-4)"></path>
+                        <circle id="Oval-2" fill="#FFFFFF" cx="24.5" cy="24.5" r="12.5"></circle>
+                    </g>
+                </g>
+                <g id="Group-38" transform="translate(334.000000, 518.000000)">
+                    <polygon id="Fill-15" fill="url(#linearGradient-2)" opacity="0.71" points="402 123.595556 161.423469 264 0 170.404444 240.576531 30"></polygon>
+                    <polygon id="Fill-15" stroke="url(#linearGradient-5)" stroke-width="1.5" opacity="0.71" points="402 93.5955559 161.423469 234 0 140.404444 240.576531 0"></polygon>
+                    <g id="Group-10" transform="translate(159.000000, 9.000000)">
+                        <path d="M30,118.886068 C10,70.6726222 0,41.0453454 0,30.0042379 C0,13.4341009 13.4275219,0 30,0 C46.5724781,0 60,13.4341009 60,30.0042379 C60,41.0453454 50,70.6726222 30,118.886068 Z" id="Fill-38" fill="url(#linearGradient-4)"></path>
+                        <circle id="Oval-2" fill="#FFFFFF" cx="30" cy="30" r="15.3061224"></circle>
+                    </g>
+                </g>
+                <g id="Group-35" transform="translate(750.000000, 565.000000)">
+                    <path d="M90.3411207,323.824873 L488.250943,92.2429432 L401.658879,42.1751274 L3.75171208,273.757057 L90.3411207,323.824873 Z M401.645604,40 L492,92.2429432 L90.3543964,326 L0,273.757057 L401.645604,40 Z" id="Fill-9" fill="url(#linearGradient-2)"></path>
+                    <polygon id="Fill-7" fill="url(#linearGradient-2)" opacity="0.712165179" points="490 51.0062302 90.4286041 283 2 231.99377 401.571396 0"></polygon>
+                    <g id="Group-10" transform="translate(207.000000, 54.000000)">
+                        <path d="M24.5,97.0902893 C8.16666667,57.7159748 0,33.5203654 0,24.5034609 C0,10.9711824 10.9658096,0 24.5,0 C38.0341904,0 49,10.9711824 49,24.5034609 C49,33.5203654 40.8333333,57.7159748 24.5,97.0902893 Z" id="Fill-38" fill="url(#linearGradient-4)"></path>
+                        <circle id="Oval-2" fill="#FFFFFF" cx="24.5" cy="24.5" r="12.5"></circle>
+                    </g>
+                </g>
+                <g id="Group-36" transform="translate(753.000000, 164.000000)">
+                    <polygon id="Fill-3" fill="url(#linearGradient-2)" opacity="0.712165179" points="267 81.0326937 89.5329325 184 1 132.967306 178.467068 30"></polygon>
+                    <path d="M90.4689347,153.821851 L266.226361,52.0503465 L179.51245,2.16754994 L3.75768261,103.939054 L90.4689347,153.821851 Z M179.501812,0 L270,52.0609458 L90.5008471,156 L0,103.939054 L179.501812,0 Z" id="Fill-5" fill="url(#linearGradient-2)"></path>
+                    <g id="Group-10" transform="translate(109.000000, 0.000000)">
+                        <path d="M24.5,97.0902893 C8.16666667,57.7159748 0,33.5203654 0,24.5034609 C0,10.9711824 10.9658096,0 24.5,0 C38.0341904,0 49,10.9711824 49,24.5034609 C49,33.5203654 40.8333333,57.7159748 24.5,97.0902893 Z" id="Fill-38" fill="url(#linearGradient-4)"></path>
+                        <circle id="Oval-2" fill="#FFFFFF" cx="24.5" cy="24.5" r="12.5"></circle>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

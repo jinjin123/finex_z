@@ -1,0 +1,416 @@
+<include file="Public:Currencyheader" />
+<link rel="stylesheet" href="__HOME_CSS__/CurrencyTrading.css">
+<!--右边打竖第一块 k线图-->
+<div class="panel panel-default panel-chart">
+    <div class="panel-heading clearfix">
+        <div class='pull-left target_panel_title'>
+            <span>{$Think.lang._KLINE_}</span>
+            <a href="{:U('UserCenter/exchangeRate')}" class="rateDetail">{$Think.lang._HUILVXQ_}</a>
+        </div>
+        <!-- <div class="panel-tools panel-action text-right pull-right">
+            <button class="btn btn-min rippler"></button>
+            <button class="btn btn-expand rippler klineexpand"></button>
+        </div> -->
+    </div>
+    <div class="panel-body kline" style="height:385px!important">
+        <!--k线图在这里引入-->
+        <iframe id='kline_iframe' scrolling='no' allowTransparency="true" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" style="overflow: scroll; -webkit-overflow-scrolling: touch;border:0;width:100%;height:370px;" src="{:U('/TradingView/rawTrade',array('CoinType'=>$defaultCurrency))}"></iframe>
+    </div>
+</div>
+<div class="wrap-wrap clearfix">
+    <div class="light-wrap col-md-8" data-step="5" data-tooltipClass="step5" data-intro="<h4>{$Think.lang._SCGK_}</h4><p>{$Think.lang._WNBZDQSCZXDT_}</p>" data-position="right">
+        <div class="light-wrap col-md-6">
+            <!--右边打竖第二块  市场概况-->
+            <div class="panel panel-default  nopad trad_coin_middlecontent">
+                <div class="panel-heading trad_coin_datablock clearfix">
+                    <div class='target_panel_title pull-left'><span>{$Think.lang._MAIRU_}{$Think.lang._SCGK_}</span></div>
+                    <div class="panel-action text-right panel-tools pull-right">
+                        <button class="btn btn-min"></button>
+                    </div>
+                </div>
+                <div class="panel-body height277 listOrder2 sixphone">
+                    <!-- 买入 -->
+                    <div class="saleIn col-md-12 col-sm-12">
+                        <!-- 数据走势 -->
+                        <div class="movements col-md-5 col-xs-5 col-sm-5 nopad" style="margin-top: 49px;">
+                        </div>
+
+                        <!-- 表格 -->
+                        <div class="table-responsive small-screen col-md-7 col-xs-7 col-sm-7">
+                            <table class="table sortable-theme-bootstrap" data-sortable="" data-sortable-initialized="true">
+                                <thead>
+                                    <tr>
+                                        <th width="25%">{$Think.lang._SHULIANG_} <span class="Coin-mount">(LTC)</span></th>
+                                        <th width="35%">{$Think.lang._JIAE_} <span class="Coin-price">(BTC)</span></th>
+                                    </tr>
+                                </thead>
+                                <tbody id="borders_data"></tbody>
+                            </table>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="light-wrap col-md-6">
+            <div class="panel panel-default  nopad trad_coin_middlecontent">
+                <div class="panel-heading trad_coin_datablock clearfix">
+                    <div class='target_panel_title pull-left'><span>{$Think.lang._MAICHU_}{$Think.lang._SCGK_}</span></div>
+                    <div class="panel-action text-right panel-tools pull-right">
+                        <button class="btn btn-min"></button>
+                    </div>
+                </div>
+                <div class="panel-body height277 listOrder2 sixphone">
+                    <!-- 卖出 -->
+                    <div class="saleOut col-md-12 col-sm-12 sell-out">
+                        <!-- 数据走势 -->
+                        <div class="movements col-md-5 col-xs-5 nopad pull-left Data-trend" style="margin-top: 49px;"></div>
+                        <!-- 表格 -->
+                        <div class="table-responsive small-screen col-md-7 col-xs-7">
+                            <table class="table sortable-theme-bootstrap" data-sortable="" data-sortable-initialized="true">
+                                <thead>
+                                    <tr>
+                                        <th width="25%">{$Think.lang._SHULIANG_} <span class="Coin-mount">(LTC)</span></th>
+                                        <th width="25%">{$Think.lang._JIAE_} <span class="Coin-price">(BTC)</span></th>
+                                    </tr>
+                                </thead>
+                                <tbody id="sorders_data"></tbody>
+                            </table>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 订单 -->
+    <div class="light-wrap col-md-4">
+        <div class="panel panel-default nopad trad_coin_confirmOrder_buy trad_coin_middlecontent" id='trad_coin_confirmOrder' data-step="6" data-tooltipClass="step6" data-intro="<h4>{$Think.lang._QRDD_}</h4><p>{$Think.lang._NKYZCFBDDTGWTD_}</p>" data-position="right">
+            <div class="panel-heading trad_coin_wrap clearfix">
+                <div class='pull-left target_panel_title target_panel_title_other' style='margin-bottom: -2px;'><span>{$Think.lang._ORDERFORM_}</span></div>
+                <ul class="nav nav-tabs underline-tabs primary-tabs transactionType pull-left">
+                    <!--<li class='tradcoin_ordername'></li>-->
+                    <li class="active target_order_buse" id='transactionType-1'>
+                        <a href="#SaleIn" id="D2D_buy" data-toggle="tab" aria-expanded="true" class='transactionType_buy'>{$Think.lang._MAIRU_}</a>
+                    </li>
+                    <li class="target_order_buse" id='transactionType-2' style='margin-left: 0;'>
+                        <a href="#SaleOut" id="D2D_sell" data-toggle="tab" aria-expanded="false">
+							{$Think.lang._MAICHU_}
+						</a>
+                    </li>
+                    <li class='my_order_target'></li>
+                </ul>
+                <div class="panel-action text-right panel-tools pull-right">
+                    <button class="btn btn-min" id="zoom-Bia"></button>
+                </div>
+            </div>
+            <div class="panel-body height277" style="padding: 0px;position:relative;margin-top: 2px;">
+                <div class="tab-content">
+                    <!-- 买入 -->
+                    <div class="tab-pane fade active in" id="SaleIn">
+                        <div class="panel-body BuyForm">
+                            <!-- 手续费 -->
+                            <div class="tipsWarm">
+                                <div class="data padtop20 col-md-6 col-sm-6 col-xs-6 lgNopadLeft">
+                                    <span class='change-area '>BTC</span>{$Think.lang._YUE_}: <span class="green currency-1"> 0.00000000</span><br/>{$Think.lang._KEMAI_}<span class='Current-area'>ETH</span>:
+                                    <span class="orange currency-2">0.00000000</span>
+                                </div>
+                                <div class="form-group supportInput col-md-6 col-sm-6 col-xs-6 lgNopadRight">
+                                    <span>maker{$Think.lang._SXF_}：<span class='Service-1'></span>%</span><br/>
+                                    <span>taker{$Think.lang._SXF_}：<span class='Service-2'></span>%</span>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <!-- 委托类型 -->
+
+                            <div class="supportType text-center order-group BtoB_order_show">
+                                <div class="col-lg-6" style='padding:0'>
+                                    <label>{$Think.lang._WTLX_}：</label>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="group-right bootstrap-select " style='margin-top:5px'>
+                                        <select class="form-control selectpicker SaleType" id="SaleType1">
+											<option value="1">{$Think.lang._XJD_}</option>
+											<option value="2">{$Think.lang._SJD_}</option>
+										</select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="typebox BtoB_order_show">
+                                <!-- 市价单 -->
+                                <div class="market_sell">
+                                    <div class="order-group nopad">
+                                        <label for="SaleIn_mar_1" class='text-left'>{$Think.lang._MRJE_} (<span class="order-btc change-area">BTC</span>)：</label>
+                                        <div class="symbol group-right">
+                                            <input type="text" class="form-control input-sm Sale_clearjs" id="SaleIn_mar_1" placeholder="0.00000000" maxlength="20" />
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <!-- 买入金额 限制单 -->
+                                <div class="BuyMoney">
+                                    <!-- 买入价格数量 -->
+                                    <div class="BuyCount">
+                                        <div class="order-group nopad">
+                                            <label>{$Think.lang._JIAE_} (<span class="order-btc change-area">BTC</span>)：</label>
+                                            <div class="symbol group-right">
+                                                <input type="text" class="form-control input-sm pull-right text-right" id="SaleIn_count_1" placeholder="0.00000000" maxlength="20" />
+                                                <div class="clearfix"></div>
+                                            </div>
+                                        </div>
+                                        <div class="order-group nopad">
+                                            <label for="SaleIn_count_2">{$Think.lang._SHULIANG_} (<span class="order-btc Current-area">BTC</span>)：<span class="pull-right order-max supreme">Max</span></label>
+                                            <div class="symbol group-right">
+                                                <input type="text" class="form-control input-sm pull-right text-right Sale_clearjs" id="SaleIn_count_2" placeholder="0.00000000" autocomplete="off" maxlength="18" />
+                                                <div class="clearfix"></div>
+                                            </div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 按钮 -->
+                            <div class="form-group button-zoom text-center nofloat_auto clearfix BtoB_order_show">
+                                <div class="col-md-12 col-sm-12 col-xs-12 ZJE-btt1">
+                                    <p><label>{$Think.lang._ZJE_} (<span class="order-btc change-area">BTC</span>)：</label><span class='Total-amount pull-right'>0</span>&nbsp;&nbsp;</p>
+                                </div>
+                                <div class="col-md-12 col-sm-12 col-xs-12 ZJE-btt2" style='display: none;'>
+                                    <p><label>{$Think.lang._ZONGL_} (<span class="order-btc change-btc">BTC</span>)：</label><span class='Total-amount pull-right'>0</span>&nbsp;&nbsp;</p>
+                                </div>
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <button type="button" class="btn btn-success buyin gradual_change_green">{$Think.lang._MAIRU_}</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 卖出 -->
+                    <div class="tab-pane fade" id="SaleOut">
+                        <div class="panel-body BuyForm">
+                            <!-- 手续费 -->
+                            <div class="tipsWarm">
+                                <div class="data padtop20 col-md-6 col-sm-6 col-xs-6 lgNopadLeft">
+                                    <span class='Current-area'>BTC</span>{$Think.lang._YUE_}: <span class="green currency-4">0.00000000</span><br/>{$Think.lang._KEMAI_}<span class='change-area'>BTC</span>:
+                                    <span class="orange currency-5">0.00000000</span>
+                                </div>
+                                <div class="form-group supportInput col-md-6 col-sm-6 col-xs-6 lgNopadRight">
+                                    <span>maker{$Think.lang._SXF_}：<span class='Service-1'>-0.1</span>%</span><br/>
+                                    <span>taker{$Think.lang._SXF_}：<span class='Service-2'>0.1</span>%</span>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <!-- 委托类型 -->
+                            <div class="supportType text-center order-group BtoB_order_show">
+                                <div class="col-lg-6" style='padding:0'>
+                                    <label>{$Think.lang._WTLX_}：</label>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="group-right bootstrap-select " style='margin-top:5px'>
+                                        <select class="form-control selectpicker SaleType" id="SaleType2">
+											<option value="1">{$Think.lang._XJD_}</option>
+											<option value="2">{$Think.lang._SJD_}</option>
+										</select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="typebox BtoB_order_show">
+                                <!-- 市价单 -->
+                                <div class="market_sell">
+                                    <div class="order-group nopad">
+                                        <label for="SaleOut_mar_1" class="text-left">{$Think.lang._MCSL_} (<span class="order-btc change-btc">BTC</span>)：</label>
+                                        <div class="symbol group-right">
+                                            <input type="text" class="form-control input-sm Sale_clearjs" id="SaleOut_mar_1" placeholder="0.00000000" maxlength="20" />
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <!-- 买入金额 限制单 -->
+                                <div class="BuyMoney">
+                                    <!-- 买入价格数量 -->
+                                    <div class="BuyCount">
+                                        <div class="order-group nopad">
+                                            <label>{$Think.lang._JIAE_} (<span class="order-btc change-area">BTC</span>)：</label>
+                                            <div class="symbol group-right">
+                                                <input type="text" class="form-control input-sm" id="SaleOut_count_1" placeholder="0.00000000" maxlength="20" />
+                                                <div class="clearfix"></div>
+                                            </div>
+                                        </div>
+                                        <div class="order-group nopad">
+                                            <label for="SaleOut_count_2">{$Think.lang._SHULIANG_} (<span class="order-btc Current-area">BTC</span>)：<span class="pull-right order-max supreme">Max</span></label>
+                                            <div class="symbol group-right">
+                                                <input type="text" class="form-control input-sm Sale_clearjs" id="SaleOut_count_2" placeholder="0.00000000" autocomplete="off" maxlength="20" />
+                                                <div class="clearfix"></div>
+                                            </div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 按钮 -->
+                            <div class="form-group button-zoom text-center nofloat_auto BtoB_order_show">
+                                <div class="col-md-12 col-sm-12 col-xs-12 ZJE-btt3">
+                                    <p><label class='gross-con'>{$Think.lang._ZJE_} (<span class="order-btc change-area">BTC</span>)：</label><span class='Total-amount pull-right'>0</span>&nbsp;&nbsp;</p>
+                                </div>
+                                <div class="col-md-12 col-sm-12 col-xs-12 ZJE-btt4" style='display: none;'>
+                                    <p><label class='gross-con'>{$Think.lang._ZONGL_} (<span class="order-btc change-area">BTC</span>)：</label><span class='Total-amount pull-right'>0</span>&nbsp;&nbsp;</p>
+                                </div>
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <button type="button" class="btn btn-success sellin gradual_change_red">{$Think.lang._MAICHU_}</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='Confirmation' style='display:none'>
+                        <div class='Con-wrap '>
+                            <div class="order-group-border clearfix">
+                                <p class='Confirmation-con pull-left col-md-4'>{$Think.lang._ZJMIMA_}：</p>
+                                <input type="password" name="password" id="Confirmation-psd" value="" placeholder="{$Think.lang._QSRZJMM_}" maxlength="18" class='col-md-8' />
+                            </div>
+                            <button type='button' class='btn btn-success Return-Con gradual_change_Cquxiao'>{$Think.lang._CSFH_}</button>
+                            <button type='button' class='btn btn-success sub-Con'>{$Think.lang._TIJIAO_}</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+<!-- 订单管理 -->
+<div class="panel panel-default col-md-12 nopad" data-step='7' data-tooltipClass="orderManageIntro" data-intro="<h4>{$Think.lang._DDXX_}</h4><p>{$Think.lang._NDSYDDDJXSZGBKZ_}</p>" data-position="right">
+    <div class="panel-heading trad_coin_management_title clearfix">
+        <div class='pull-left target_panel_title'><span>{$Think.lang._DDXX_}</span></div>
+        <ul class="nav nav-tabs underline-tabs primary-tabs pull-left">
+            <!--<li class='tradcoin_order_li'><span class="title">{$Think.lang._DDXX_}</span></li>-->
+            <li class="active trad Return-layer" style="margin-left:6px;text-align: center; position: relative;" type='1'>
+                <a href="#tab-tradeing-all" class="target_Pattern_ordertwo0" data-toggle="tab" aria-expanded="true">
+					{$Think.lang._ZZJY_}
+				</a>
+            </li>
+            <li class="dropdown trad" type='2'>
+                <a href="#tab-tradeing-buy" class="target_Pattern_ordertwo0" data-toggle="tab" aria-expanded="false">
+					{$Think.lang._LSDD_}
+				</a>
+                <!--<ul class="dropdown-menu drop-down">
+						<li class="trad" type="2">
+							<a href="#tab-tradeing-buy" class="" data-toggle="tab" aria-expanded="false">
+								{$Think.lang._YCX_}
+							</a>
+						</li>
+						<li class="trad" type="3">
+							<a href="#tab-history-sale" data-toggle="tab">{$Think.lang._YWC_}</a>
+						</li>
+					</ul>-->
+            </li>
+        </ul>
+        <!-- /.panel-action -->
+        <div class="panel-title pull-right">
+            <div class="panel-tools panel-action">
+                <div class="tools-content panel-action text-right">
+                    <button class="btn btn-min" id="zoomBib"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel-body">
+        <div class="tab-content">
+            <!--正在交易订单—全部-->
+            <div class="tab-pane fade active in" id="tab-tradeing-all">
+                <div class="table-responsive">
+                    <table class="table order sortable-theme-bootstrap" data-sortable="" data-sortable-initialized="true">
+                        <thead>
+                            <tr>
+                                <th>{$Think.lang._LEIBIE_}</th>
+                                <th>{$Think.lang._MAI_}/{$Think.lang._MAII_}</th>
+                                <th>{$Think.lang._WTJG_}<span class="mainCoin"></span><span class='coin_trad_shuxian'>|</span>{$Think.lang._CJJJ_}<span class="mainCoin"></span></th>
+                                <th>{$Think.lang._WTSL_}<span class="slaveCoin"></span><span class='coin_trad_shuxian'>|</span>{$Think.lang._CJSL_}<span class="slaveCoin"></span></th>
+                                <th>{$Think.lang._WTZE_}<span class="mainCoin"></span><span class='coin_trad_shuxian'>|</span>{$Think.lang._CJZE_}<span class="mainCoin"></span></th>
+                                <!--<th>{$Think.lang._CJSL_}<span class="slaveCoin"></span></th>
+								<th>{$Think.lang._SWCJSL_}<span class="slaveCoin"></span></th>-->
+                                <th>{$Think.lang._SHIJIAN_}</th>
+                                <th>{$Think.lang._CAOZUO_}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+                <!--分页器-正在交易-->
+                <div class="text-right sm-text-center ttorder dataPage"></div>
+            </div>
+            <!--正在交易订单—已撤销-->
+            <div class="tab-pane fade" id="tab-tradeing-buy">
+                <div class="table-responsive">
+                    <table class="table table-bordered order sortable-theme-bootstrap" data-sortable="" data-sortable-initialized="true">
+                        <thead>
+                            <tr>
+                                <th>{$Think.lang._LEIBIE_}</th>
+                                <th>{$Think.lang._MAI_}/{$Think.lang._MAII_}</th>
+                                <th>{$Think.lang._WTJG_}<span class="mainCoin"></span><span class='coin_trad_shuxian'>|</span>{$Think.lang._CJJJ_}<span class="mainCoin"></span></th>
+                                <th>{$Think.lang._WTSL_}<span class="slaveCoin"></span><span class='coin_trad_shuxian'>|</span>{$Think.lang._CJSL_}<span class="slaveCoin"></span></th>
+                                <th>{$Think.lang._WTZE_}<span class="mainCoin"></span><span class='coin_trad_shuxian'>|</span>{$Think.lang._CJZE_}<span class="mainCoin"></span></th>
+                                <th>{$Think.lang._SHIJIAN_}</th>
+                                <th>{$Think.lang._DDZT_}</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+                <!--分页器-已撤销-->
+                <div class="text-right sm-text-center ttorder dataPage"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--弹窗七 撤销弹窗 -->
+<div class="modal fade modalStyle cancleStyle" id="cancel" data-width="380" style="display: none;">
+    <div class="modal-content">
+        <div class="modal-body m-top-10">
+            <div class="col-lg-11 nofloat_auto">
+                <!-- 标题 -->
+                <h5 class="text-center">{$Think.lang._QRCX_}?</h5>
+                <!-- 按钮 -->
+                <div class="buttonArea TwoButton m-bottom-10">
+                    <button type="button" data-dismiss="modal" class="btn gradual_change_Cqueding pull-left" id="revokeOrderById">{$Think.lang._QUEDING_}</button>
+                    <button type="button" data-dismiss="modal" class="btn gradual_change_Cquxiao pull-right">{$Think.lang._QUXIAO_}</button>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--/.panel-->
+
+<include file="Public:Currencyfooter" />
+<!-- 订单相关操作js -->
+<script type="text/javascript">
+    var isTour = "{$is_currency_tour}";
+    var nextStep = '{$Think.lang._XIAYB_}';
+    var beforeStep = '{$Think.lang._SYB_}';
+    var skipStep = '{$Think.lang._TIAOGUO_}';
+    var finishStep = '{$Think.lang._WCHENG_}';
+    var revokeTips = '{$Think.lang._CXCG_}';
+    var chexiaoTips = '{$Think.lang._CHEXIAO_}';
+    var _QTXSL_ = '{$Think.lang._QTXSL_}';
+    var _QTXMRJE_ = '{$Think.lang._QTXMRJE_}';
+    var _QTXMCJE_ = '{$Think.lang._QTXMCJE_}';
+    var userreal = '{$Think.lang._ZYSMQBNJXJYCZQW_}' + "<a href='/PersonalCenter/index' style='color:#00dcda'>" + '{$Think.lang._SMRZ_}' + "</a>";
+    var forbidOrder = '{$isMaintain.forbid_order}'; // 下单开关
+    var masterSwitch = '{$isMaintain.master_switch}'; // 币币模式总开关
+    var dealOrder = '{$isMaintain.deal_order}'; // 我的订单  开关
+    var listOrder = '{$isMaintain.list_order}'; //  市场订单列表开关
+    var BB_Maintain_Pattern = '{$Think.lang._BBMSWHZ_}'; //  币币模式维护
+    var BB_Maintain_order = '{$Think.lang._BBGRDDWHZ_}'; //  币币 个人订单信息维护
+    var BB_Maintain_Place = '{$Think.lang._BBXDWHZ_}'; //  币币 下单维护
+    var BB_Maintain_Marketorder = '{$Think.lang._BBSCDDWHZ_}'; //  币币 市场概况维护
+    var mountain_data = "{:U('CoinTradeInfo/getMarketList')}";
+    var table_data = "{:U('CurrencyTrading/getOrderList')}";
+</script>
+<!-- 币币交易js -->
+<script defer src="__HOME_JS__/currencyTrading/index.js" type="text/javascript"></script>
+<script defer src="__HOME_JS__/currencyTrading/currency_Effect.js" type="text/javascript"></script>

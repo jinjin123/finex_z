@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>通用接口目录</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../bt/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="../bt/assets/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+  	<div class="container">
+  		<div class="row" style="margin-top: 50px;">
+  			<div class="col-md-12">
+  				<div class="panel panel-info">
+  					<div class="panel-heading">
+  						<h3>通用接口目录</h3>
+  					</div>
+					<div class="panel-body">
+						<p><a href="index.html">0、目录页</a></p>
+						<p><a href="#001">1、强制更新</a></p>
+					</div>  					
+  				</div>
+  				
+  				
+  				<div class="panel panel-success">
+  					<div class="panel-heading">
+  						<h4><a name="001" id="001">1、强制更新</a></h4>
+  					</div>
+					<div class="panel-body">
+						<p>说明：</p>
+						<ul>
+							<p>口令APP: nat1.target.com/App/Update/index</p>
+							<p>target APP: nat1.target.com/AppTarget/Update/index</p>
+						</ul>
+						<pre>
+接口负责人：刘富国							
+请求方式：POST
+请求参数：Update/index
+
+POST到服务器的json数据：
+{
+	"app_platform": "app_watchword", //平台:app_watchword口令APP，app_target系统APP
+	"ver": "1.0.0",					// 版本号
+	"os_ver": "android9",			// 操作系统版本
+	"os": "android", 				//os操作系统：值:android | ios
+	"hash": "75MWHZrpRhnbLDRzM6m84aPQ9HxYvqpa",  // 加密hash
+	"token": ""  					// app端保存的token，可以为空
+	"phone_imei":"xxxxx"      		//设备imei ，可以为空
+}
+成功返回：
+							{
+    "data": {
+        "is_need_update": "1",  // 0-最新版本，1-有新版本更新，2-需强制更新
+        "update_link": "",
+        "call_ver": "1.0.1",  //当前版本
+        "last_ver": "2.0.0",  //最新版本
+        "update_tip": "手机绑定", // 更新提示
+        "token": "xxxxx"
+    },
+    "error": "0",
+    "msg": "success"
+}
+
+						</pre>
+					</div> 
+					<div class="panel-footer">
+						<p>补充:</p>
+					</div>  	 					
+  				</div>
+  				
+  				<div class="panel panel-success">
+  					<div class="panel-heading">
+  						<h4><a name="00" id="00"></a></h4>
+  					</div>
+					<div class="panel-body">
+						<p>说明：</p>
+						<ul>
+						</ul>
+						<pre>
+
+						</pre>
+					</div> 
+					<div class="panel-footer">
+						<p>补充:</p>
+					</div>  	 					
+  				</div>
+  				
+  			</div>
+  		</div>  	
+  	</div>
+
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../bt/dist/js/jquery.min.1.11.3.js"></script>
+    <script src="../bt/dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../bt/assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>

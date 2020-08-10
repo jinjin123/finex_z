@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>用户管理接口</title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="../bt/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../bt/dist/css/yangshi.css" rel="stylesheet" type="text/css">
+        <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+        <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+        <script src="../bt/assets/js/ie-emulation-modes-warning.js"></script>
+    
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="row" style="margin-top: 50px;">
+                <div class="col-md-12">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h4>用户管理接口</h4>
+                        </div>
+                        <div class="panel-body">
+                        <p><a href="index.html">0，总目录</a></p>
+						<p><a href="#person-user-finance">3， 财务总账</a></p>
+						<p><a href="#person-user-finance-type">4， 财务总账类型</a></p>
+						<p><a href="#person-user-user-bank-country">5， 银行卡管理 - 国家</a></p>
+						<p><a href="#person-user-user-bank-list">6，银行卡列表</a></p>
+						<p><a href="#person-user-user-bank-default">7， 银行卡设为默认</a></p>
+                        <p><a href="#person-user-bind-address">8， 地址绑定</a></p>
+                        <p><a href="#person-user-delete-address">9，地址删除</a></p>
+                        <p><a href="#10.1">10.1，信息箱接口</a></p>
+                        <p><a href="#10.2">10.2，信息箱接口详情</a></p>
+                        <p><a href="#10.3">10.3，删除信息箱消息</a></p>
+                        <p><a href="#10.4">10.4，删除全部信息箱消息</a></p>
+						<p><a href="#11">11，查询用户是否已实名认证</a></p>
+                        </div>                      
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <h4><a name="aperson-user-financepi" id="person-user-finance">3.财务总账接口</a></h4>
+                </div>
+                <div class="panel-body">
+                    <p>说明：</p>
+                    <ul>
+                    </ul>
+                    <div class="row"><div class="col-md-9">接口负责人：张锡文</div></div>
+                    <div class="row"><div class="col-md-9">请求方式：POST</div></div>
+
+                    请求示例：
+                    <pre>					{
+    "token": "xxxx",
+    "server": "GetUserFinance",
+    "ver": "1.0.0",
+    "data": {
+        "currency_id":1, // 1,2,3,4,5 对应不同币种  (可选)
+		"finance_type":1,//1-18分别对应不同状态  （可选）
+		"page":1,
+		"limit":10,
+    }
+}
+</pre>
+
+                    成功返回：
+                    <pre>{
+    "data": {
+        "total": "2",
+        "list": [
+            {
+                "content": "系统充值", //内容
+                "type": "1",//收入=1/支出=2
+                "money": "10000.0000",//价格
+                "add_time": "1510198149"//添加时间
+            },
+        ],
+        "pager": {
+            "current_page": "1",
+            "last_page": "",
+            "next_page": "",
+            "total_pages": "1"
+        }
+    },
+    "error": "0",
+    "msg": "success"
+}
+</pre>
+                    失败返回：（有多种情况）
+                    <pre>{
+    "data": {},
+    "error": "错误码",
+    "msg": "错误说明"
+}
+</pre>
+                </div>
+                <div class="panel-footer">
+                    <p>补充:</p>
+                </div>
+            </div>
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <h4><a name="person-user-finance-type" id="person-user-finance-type">4,财务总账类型,货币类型</a></h4>
+                </div>
+                <div class="panel-body">
+                    <p>说明：</p>
+                    <ul>
+                    </ul>
+                    <div class="row"><div class="col-md-9">接口负责人：张锡文</div></div>
+                    <div class="row"><div class="col-md-9">请求方式：POST</div></div>
+
+                    请求示例：
+                    <pre>{
+    "token": "xxxx",
+    "server": "GetUserFinanceType",
+    "ver": "1.0.0",
+    "data": {
+    }
+}
+</pre>
+
+                    成功返回：
+                    <pre>{
+    "data": {
+        "finance_type": [
+            {
+                "id": "1",
+                "name": "提币"
+            },
+            {
+                "id": "2",
+                "name": "充币"
+            },
+            {
+                "id": "3",
+                "name": "系统充值"
+            }
+        ],
+        "currency_type": [
+            {
+                "currency_id": "1",
+                "currency_name": "BTC"
+            },
+            {
+                "currency_id": "2",
+                "currency_name": "LTC"
+            },
+            {
+                "currency_id": "3",
+                "currency_name": "ETC"
+            }
+        ]
+    },
+    "error": "0",
+    "msg": "success"
+}
+</pre>
+                    失败返回：（有多种情况）
+                    <pre>{
+    "data": {},
+    "error": "错误码",
+    "msg": "错误说明"
+}
+</pre>
+                </div>
+                <div class="panel-footer">
+                    <p>补充:</p>
+                </div>
+            </div>
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <h4><a name="person-user-user-bank-country"
+                           id="person-user-user-bank-country">5, 银行卡管理 - 国家接口</a></h4>
+                </div>
+                <div class="panel-body">
+                    <p>说明：</p>
+                    <ul>
+                    </ul>
+                    <div class="row"><div class="col-md-9">接口负责人：张锡文</div></div>
+                    <div class="row"><div class="col-md-9">请求方式：POST</div></div>
+
+                    请求示例：
+                    <pre>{
+    "token": "xxxx",
+    "server": "GetCountryDropDown",
+    "ver": "1.0.0",
+    "data": {}
+}
+</pre>
+
+                    成功返回：
+                    <pre>{
+    "data": {
+        "list": {
+            "+86": "china",
+            "+852": "Hongkong",
+            "+886": "taiwan"
+        }
+    },
+    "error": "0",
+    "msg": "success"
+}
+</pre>
+                    失败返回：（有多种情况）
+                    <pre>{
+    "data": {},
+    "error": "错误码",
+    "msg": "错误说明"
+}
+</pre>
+                </div>
+                <div class="panel-footer">
+                    <p>补充:</p>
+                </div>
+            </div>	
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <h4><a name="person-user-user-bank-list"
+                           id="person-user-user-bank-list">6 , 银行卡列表接口</a></h4>
+                </div>
+                <div class="panel-body">
+                    <p>说明：</p>
+                    <ul>
+                    </ul>
+                    <div class="row"><div class="col-md-9">接口负责人：张锡文</div></div>
+                    <div class="row"><div class="col-md-9">请求方式：POST</div></div>
+
+                    请求示例：
+                    <pre>{
+    "token": "xxxx",
+    "server": "GetUserBank",
+    "ver": "1.0.0",
+    "data": {
+	"om":"+852", //+86 中国 ,+886 台湾 , +852 香港 
+    }
+}
+</pre>
+
+                    成功返回：
+                    <pre>{
+    "data": [
+        {
+            "country_code": "+86",
+            "bank_name": "工商银行",
+            "bank_num": "1231654541264231231",
+            "bank_address": "广州越秀支行",
+            "id": "163",  //用户银行ID
+            "bank_list_id": "5",  //银行ID
+            "default_status": "1", //是否是默认银行卡,1为默认
+            "bank_logo": "xxxx.png",  //银行图标
+            "bank_img": "xxxxx.png"     //银行背景图
+        }
+    ],
+    "error": "0",
+    "msg": "success"
+}
+</pre>
+                    失败返回：（有多种情况）
+                    <pre>{
+    "data": {},
+    "error": "错误码",
+    "msg": "错误说明"
+}
+</pre>
+                </div>
+                <div class="panel-footer">
+                    <p>补充:</p>
+                </div>
+            </div>	
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <h4><a name="person-user-user-bank-default"
+                           id="person-user-user-bank-default">7，银行卡设为默认</a></h4>
+                </div>
+                <div class="panel-body">
+                    <p>说明：</p>
+                    <ul>
+                    </ul>
+                    <div class="row"><div class="col-md-9">接口负责人：张锡文</div></div>
+                    <div class="row"><div class="col-md-9">请求方式：POST</div></div>
+
+                    请求示例：
+                    <pre>{
+    "token": "xxxx",
+    "server": "SetDefaultCard",
+    "ver": "1.0.0",
+    "data": {
+	"id":"3" 
+    }
+}
+</pre>
+
+                    成功返回：
+                    <pre>{
+    "data": "1",
+    "error": "0",
+    "msg": "success"
+}
+</pre>
+                    失败返回：（有多种情况）
+                    <pre>{
+    "data": {},
+    "error": "错误码",
+    "msg": "错误说明"
+}
+</pre>
+                </div>
+                <div class="panel-footer">
+                    <p>补充:</p>
+                </div>
+            </div>
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <h4><a name="person-user-bind-address"
+                           id="person-user-bind-address">8,地址绑定接口</a></h4>
+                </div>
+                <div class="panel-body">
+                    <p>说明：</p>
+                    <ul>
+                    </ul>
+                    <div class="row"><div class="col-md-9">接口负责人：张锡文</div></div>
+                    <div class="row"><div class="col-md-9">请求方式：POST</div></div>
+
+                    请求示例：
+                    <pre>{
+    "token": "xxxx",
+    "server": "BindAddress",
+    "ver": "1.0.0",
+    "data": {
+	    "addr_index":"1", //地址索引,1 第一个地址  2 第二个地址 3 第三个地址
+        "address":"XXXXXXXXXXXXXXXXXXXXXXXXXXXX", //地址
+		"currency_id":"1" // 1,2,3,4,5 种币种
+    }
+}
+</pre>
+
+                    成功返回：
+                    <pre>{
+    "data": {},
+    "error": "0",
+    "msg": "success"
+}
+</pre>
+                    失败返回：（有多种情况）
+                    <pre>{
+    "data": {},
+    "error": "错误码",
+    "msg": "错误说明"
+}
+</pre>
+                </div>
+                <div class="panel-footer">
+                    <p>补充:</p>
+                </div>
+            </div>
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <h4><a name="person-user-delete-address"
+                           id="person-user-delete-address">9,地址删除接口</a></h4>
+                </div>
+                <div class="panel-body">
+                    <p>说明：</p>
+                    <ul>
+                    </ul>
+                    <div class="row"><div class="col-md-9">接口负责人：张锡文</div></div>
+                    <div class="row"><div class="col-md-9">请求方式：POST</div></div>
+
+                    请求示例：
+                    <pre>{
+    "token": "xxxx",
+    "server": "DelAddress",
+    "ver": "1.0.0",
+    "data": {
+	    "addr_index":"1", //地址索引,1 第一个地址  2 第二个地址 3 第三个地址
+        'currency_id':1  // 币种id
+    }
+}
+</pre>
+
+                    成功返回：
+                    <pre>{
+    "data": {},
+    "error": "0",
+    "msg": "success"
+}
+</pre>
+                    失败返回：（有多种情况）
+                    <pre>{
+    "data": {},
+    "error": "错误码",
+    "msg": "错误说明"
+}
+</pre>
+                </div>
+                <div class="panel-footer">
+                    <p>补充:</p>
+                </div>
+            </div>
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <h4><a   id="10.1">10.1，信息箱消息列表</a></h4>
+                </div>
+                <div class="panel-body">
+                    <p>说明：</p>
+                    <ul>
+                    </ul>
+                    <div class="row"><div class="col-md-9">接口负责人：刘富国</div></div>
+                    <div class="row"><div class="col-md-9">请求方式：POST</div></div>
+
+                    请求示例：
+                    <pre>
+        {
+        "token": "xxxx",
+        "server": "GetMessage",
+        "ver": "1.0.0",
+        "data": {
+                "page":"1", //页数
+                'limit':20  // 每页行数
+                }
+        }
+</pre>
+
+                    成功返回：
+<pre>
+{
+    "data": {
+        "total": "9",
+        "list": [
+            {
+                "id": "226",   //消息ID
+                "title": "新订单请付款",
+                "content": "你有新订单，请尽快付款",
+                "add_time": "1522207033"
+            }
+        ],
+        "pager": {
+            "current_page": "1",
+            "last_page": "",
+            "next_page": "2",
+            "total_pages": "9"
+        }
+    },
+    "error": "0",
+    "msg": "success"
+}
+</pre>
+                    失败返回：（有多种情况）
+                    <pre>{
+    "data": {},
+    "error": "错误码",
+    "msg": "错误说明"
+}
+</pre>
+                </div>
+                <div class="panel-footer">
+                    <p>补充:</p>
+                </div>
+            </div>
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <h4><a   id="10.2">10.2，信息箱消息详情</a></h4>
+                </div>
+                <div class="panel-body">
+                    <p>说明：</p>
+                    <ul>
+                    </ul>
+                    <div class="row"><div class="col-md-9">接口负责人：刘富国</div></div>
+                    <div class="row"><div class="col-md-9">请求方式：POST</div></div>
+
+                    请求示例：
+                    <pre>
+        {
+        "token": "xxxx",
+        "server": "GetMessageDetail",
+        "ver": "1.0.0",
+        "data": {
+                "id":"226"  //消息ID
+                }
+        }
+</pre>
+
+                    成功返回：
+                    <pre>
+{
+    "data": {
+        "title": "新订单请付款",
+        "content": "你有新订单，请尽快付款",
+         "add_time": "0",//添加时间
+    },
+    "error": "0",
+    "msg": "success"
+}
+</pre>
+                    失败返回：（有多种情况）
+                    <pre>{
+    "data": {},
+    "error": "错误码",
+    "msg": "错误说明"
+}
+</pre>
+                </div>
+                <div class="panel-footer">
+                    <p>补充:</p>
+                </div>
+            </div>
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <h4><a   id="10.3">10.3，删除信息箱消息</a></h4>
+                </div>
+                <div class="panel-body">
+                    <p>说明：</p>
+                    <ul>
+                    </ul>
+                    <div class="row"><div class="col-md-9">接口负责人：刘富国</div></div>
+                    <div class="row"><div class="col-md-9">请求方式：POST</div></div>
+
+                    请求示例：
+                    <pre>
+        {
+        "token": "xxxx",
+        "server": "DelPushMsg",
+        "ver": "1.0.0",
+        "data": {
+                "id":"226"  //消息ID,可以是多个ID字符串，用英文逗号分隔："12,13,14"
+                }
+        }
+</pre>
+
+                    成功返回：
+                    <pre>
+{
+    "data": {
+        "is_del": "1"
+    },
+    "error": "0",
+    "msg": "success"
+}
+</pre>
+                    失败返回：（有多种情况）
+                    <pre>{
+    "data": {},
+    "error": "错误码",
+    "msg": "错误说明"
+}
+</pre>
+                </div>
+                <div class="panel-footer">
+                    <p>补充:</p>
+                </div>
+            </div>
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <h4><a   id="10.4">10.4，删除全部信息箱消息</a></h4>
+                </div>
+                <div class="panel-body">
+                    <p>说明：</p>
+                    <ul>
+                    </ul>
+                    <div class="row"><div class="col-md-9">接口负责人：刘富国</div></div>
+                    <div class="row"><div class="col-md-9">请求方式：POST</div></div>
+
+                    请求示例：
+                    <pre>
+        {
+        "token": "xxxx",
+        "server": "DelAllPushMsg",
+        "ver": "1.0.0",
+        "data": {}
+        }
+</pre>
+
+                    成功返回：
+                    <pre>
+{
+    "data": {
+        "is_del": "1"
+    },
+    "error": "0",
+    "msg": "success"
+}
+</pre>
+                    失败返回：（有多种情况）
+                    <pre>{
+    "data": {},
+    "error": "错误码",
+    "msg": "错误说明"
+}
+</pre>
+                </div>
+                <div class="panel-footer">
+                    <p>补充:</p>
+                </div>
+            </div>
+			 <div class="panel panel-success">
+                <div class="panel-heading">
+                    <h4><a   id="11">11 查询用户是否已实名认证</a></h4>
+                </div>
+                <div class="panel-body">
+                    <p>说明：</p>
+                    <ul>
+                    </ul>
+                    <div class="row"><div class="col-md-9">接口负责人：张锡文</div></div>
+                    <div class="row"><div class="col-md-9">请求方式：POST</div></div>
+
+                    请求示例：
+                    <pre>
+        {
+        "token": "xxxx",
+        "server": "CheckIsUserReal",
+        "ver": "1.0.0",
+        "data": {}
+        }
+</pre>
+
+                    成功返回：
+                    <pre>
+{
+    "data": {
+        "is_real": "1" // 已实名认证
+    },
+    "error": "0",
+    "msg": "success"
+}
+</pre>
+                    失败返回：（有多种情况）
+                    <pre>{
+    "data": {},
+    "error": "错误码",
+    "msg": "错误说明"
+}
+</pre>
+                </div>
+                <div class="panel-footer">
+                    <p>补充:</p>
+                </div>
+            </div>
+        </div>
+
+          
+    </body>
+    </html>
+
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../bt/dist/js/jquery.min.1.11.3.js"></script>
+    <script src="../bt/dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../bt/assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="../bt/dist/js/yangshi.js"></script>
+  </body>
+</html>

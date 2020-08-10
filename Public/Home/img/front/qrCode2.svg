@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="23px" height="23px" viewBox="0 0 23 23" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50 (54983) - http://www.bohemiancoding.com/sketch -->
+    <title>su_icon_qrcode</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="1.signin" transform="translate(-1356.000000, -216.000000)">
+            <g id="注册内容" transform="translate(350.625000, 121.875000)">
+                <g id="right" transform="translate(577.500000, 37.500000)">
+                    <g id="su_icon_qrcode" transform="translate(429.000000, 58.000000)">
+                        <rect id="Rectangle" stroke="#0F1E40" stroke-linecap="round" stroke-linejoin="round" x="0" y="0" width="8.82" height="8.82"></rect>
+                        <rect id="Rectangle" stroke="#0F1E40" stroke-linecap="round" stroke-linejoin="round" x="0" y="11.76" width="8.82" height="8.82"></rect>
+                        <rect id="Rectangle" stroke="#0F1E40" stroke-linecap="round" stroke-linejoin="round" x="11.76" y="0" width="8.82" height="8.82"></rect>
+                        <rect id="Rectangle" fill="#0F1E40" x="1.995" y="1.995" width="4.83" height="4.83"></rect>
+                        <polyline id="Path-4" stroke="#0F1E40" stroke-linecap="round" stroke-linejoin="round" points="11.76 20.475 11.76 16.7798902 16.5193072 16.7798902 16.5193072 11.76 20.4534494 11.76"></polyline>
+                        <polyline id="Path-4" stroke="#0F1E40" stroke-linecap="round" stroke-linejoin="round" points="15.3741125 20.58 20.5954425 20.58 20.5954425 15.0727902"></polyline>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

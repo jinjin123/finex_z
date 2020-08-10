@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="15px" height="12px" viewBox="0 0 15 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50 (54983) - http://www.bohemiancoding.com/sketch -->
+    <title>icon_ver</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="注册登录流程[图文]" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="1.signup" transform="translate(-929.000000, -566.000000)" stroke="#2E3031">
+            <g id="注册内容" transform="translate(350.625000, 125.875000)">
+                <g id="right" transform="translate(577.500000, 33.500000)">
+                    <g id="验证码" transform="translate(0.000000, 375.000000)">
+                        <g id="icon_ver" transform="translate(2.000000, 33.000000)">
+                            <polygon id="Path" points="0 9.83436853 13.1017081 9.83436853 13.1017081 0 2.65190482 0 0 3.23919513"></polygon>
+                            <path d="M0.350172925,3.64060758 L3.15155632,3.64060758 L3.15155632,0.330964326" id="Fill-7828"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

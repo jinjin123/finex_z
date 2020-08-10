@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>币币交易订单接口</title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="../bt/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../bt/dist/css/yangshi.css" rel="stylesheet" type="text/css">
+        <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+        <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+        <script src="../bt/assets/js/ie-emulation-modes-warning.js"></script>
+    
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="row" style="margin-top: 50px;">
+                <div class="col-md-12">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h4>币币交易订单接口目录</h4>
+                        </div>
+                        <div class="panel-body">
+                            <p><a href="index.html">0、目录页</a></p>
+                            <p><a href="#api1">1、获取交易区和委托类型</a></p>
+                            <p><a href="#api1.1">1.1、获取交易区</a></p>
+                            <p><a href="#api1.2">1.2、获取交易区的委托类型</a></p>
+                            <p><a href="#api3">3、获取系价格类型，交易类型</a></p>
+                            <p><a href="#api4">4、订单查询</a></p>
+                            <p><a href="#api5">5、买单/卖单</a></p>
+                            <p><a href="#api6">6、撤销订单</a></p>
+                            <p><a href="#api7">7、获取购买数量</a></p>
+                            <p><a href="#api8">8、交易订单列表</a></p>
+                            <p><a href="#api9">9、获取用户的币种数量</a></p>
+                        </div>                      
+                    </div>
+                    <div class="panel panel-success">
+    <div class="panel-heading">
+        <h4><a name="api1" id="api1">1、获取交易区和交易货币类别</a></h4>
+    </div>
+    <div class="panel-body">
+        <p>说明：</p>
+        <ul>
+        </ul>
+<div class="row"><div class="col-md-9">接口负责人：刘富国</div></div>
+<div class="row"><div class="col-md-9">请求方式：POST</div></div>
+
+请求示例：
+<pre>
+{
+    "ver": "1.0.0",
+    "token": "xxx",
+    "server": "GetTradeArea"
+     "data": {
+    "first_entrust_info":"1"  //只显示一个交易货币类别：0，显示全部，1：只显示第一个
+    }
+}
+</pre>
+
+成功返回：
+<pre>
+{
+    "data": [
+         {
+            "area_name": "BTC", //BTC 交易区
+            "area_id": "1",     //交易区ID
+            "child_info": [
+                {
+                    "entrust_type": "1",  //交易货币类别ID
+                    "coin_str": "LTC/BTC" //交易货币类别名称
+                    "entrust_type": "1",    //委托类型ID
+                    "coin_str": "LTC/BTC",  //委托类型名称
+                    "high": "0.01959128",   //最高价
+                    "low": "0.01661228",    //最低价
+                    "vol": "519731.93921170", //成交量(最近的24小时)
+                    "rtq": "0.01917554",    //最后成交价
+                    "p_currency_id": "1",     //主货币类型
+                    "p_currency_name": "BTC",     //主货币名称
+                    "currency_id": "2",     //目标货币类型
+                    "currency_name": "LTC",     //目标货币类型
+                    "rate": "0.17%",        //每日涨跌比例
+                    "perc_status": "1"      //涨跌标识  1 涨 -1跌
+                    "sell": "0.01863345",   //卖出价
+                    "sell_fee": "0.0010",   //卖出手续费
+                    "buy": "0.01863344",    //买入价
+                    "buy_fee": "0.0010"     //买入手续费
+                    "float_price_rate": "0.1000"  //限价单：委托价格价格浮动上限,如果是0或者是空，则不限制
+                }
+            ]
+        },
+    ],
+    "error": "0",
+    "msg": "success"
+}
+</pre>
+失败返回：（有多种情况）
+<pre>
+{
+    "data": {},
+    "error": "错误码",
+    "msg": "错误说明"
+}
+</pre>
+    </div> 
+    <div class="panel-footer">
+        <p>补充:</p>
+    </div>                          
+</div>
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            <h4><a name="api1.1" id="api1.1">1.1、获取交易区</a></h4>
+                        </div>
+                        <div class="panel-body">
+                            <p>说明：</p>
+                            <ul>
+                            </ul>
+                            <div class="row"><div class="col-md-9">接口负责人：刘富国</div></div>
+                            <div class="row"><div class="col-md-9">请求方式：POST</div></div>
+
+                            请求示例：
+                            <pre>
+{
+    "ver": "1.0.0",
+    "token": "xxx",
+    "server": "GetTradeAreaList"
+}
+</pre>
+
+                            成功返回：
+                            <pre>
+{
+    "data": [
+         {
+            "area_name": "BTC", //BTC 交易区
+            "area_id": "1",     //交易区ID
+        }
+    ],
+    "error": "0",
+    "msg": "success"
+}
+</pre>
+                            失败返回：（有多种情况）
+                            <pre>
+{
+    "data": {},
+    "error": "错误码",
+    "msg": "错误说明"
+}
+</pre>
+                        </div>
+                        <div class="panel-footer">
+                            <p>补充:</p>
+                        </div>
+                    </div>
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            <h4><a name="api1.2" id="api1.2">1.2、获取交易区的委托类型</a></h4>
+                        </div>
+                        <div class="panel-body">
+                            <p>说明：</p>
+                            <ul>
+                            </ul>
+                            <div class="row"><div class="col-md-9">接口负责人：刘富国</div></div>
+                            <div class="row"><div class="col-md-9">请求方式：POST</div></div>
+
+                            请求示例：
+                            <pre>
+{
+    "ver": "1.0.0",
+    "token": "xxx",
+    "server": "GetTradeAreaForEntrustTypeList"
+    "data": { "area_id":"1"}
+}
+</pre>
+
+                            成功返回：
+                            <pre>
+{
+    "data": [
+         {
+                    "entrust_type": "1",  //交易货币类别ID
+                    "coin_str": "LTC/BTC" //交易货币类别名称
+                    "entrust_type": "1",    //委托类型ID
+                    "coin_str": "LTC/BTC",  //委托类型名称
+                    "high": "0.01959128",   //最高价
+                    "low": "0.01661228",    //最低价
+                    "vol": "519731.93921170", //成交量(最近的24小时)
+                    "rtq": "0.01917554",    //最后成交价
+                    "p_currency_id": "1",     //主货币类型
+                    "p_currency_name": "BTC",     //主货币名称
+                    "currency_id": "2",     //目标货币类型
+                    "currency_name": "LTC",     //目标货币类型
+                    "rate": "0.17%",        //每日涨跌比例
+                    "perc_status": "1"      //涨跌标识  1 涨 -1跌
+                    "sell": "0.01863345",   //卖出价
+                    "sell_fee": "0.0010",   //卖出手续费
+                    "buy": "0.01863344",    //买入价
+                    "buy_fee": "0.0010"     //买入手续费
+                    "float_price_rate": "0.1000"  //限价单：委托价格价格浮动上限,如果是0或者是空，则不限制
+                    "app_index_log": "http://www.target2.com/Public/AppTrade/price_index/bch.png", 
+                    "app_pull_checked_log": "http://www.target2.com/Public/AppTrade/price_index/bch.png",
+                    "app_pull_nochecked_log": "http://www.target2.com/Public/AppTrade/pull/bch.png"
+        },
+    ],
+    "error": "0",
+    "msg": "success"
+}
+</pre>
+                            失败返回：（有多种情况）
+                            <pre>
+{
+    "data": {},
+    "error": "错误码",
+    "msg": "错误说明"
+}
+</pre>
+                        </div>
+                        <div class="panel-footer">
+                            <p>补充:</p>
+                        </div>
+                    </div>
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            <h4><a name="api3" id="api3">3、获取系价格类型，交易类型 基本配置</a></h4>
+                        </div>
+                        <div class="panel-body">
+                            <p>说明：</p>
+                            <ul>
+                            </ul>
+                            <div class="row"><div class="col-md-9">接口负责人：刘富国</div></div>
+                            <div class="row"><div class="col-md-9">请求方式：POST</div></div>
+
+                            请求示例：
+                            <pre>
+{
+    "ver": "1.0.0",
+    "token": "xxxxx",
+    "data": {},
+    "server": "GetCurrencyTradeConfigType"
+}
+</pre>
+
+                            成功返回：
+                            <pre>
+{
+    "data": {
+        // 订单价格类型，1表示限价单，2表示市价单
+        "price_type": {
+            "limit_order": "1",
+            "market_order": "2"
+        },
+         // 订单交易类型，1表示买入，2表示卖出
+        "transaction_type": {
+            "buy_order": "1",
+            "sell_order": "2"
+        }
+    },
+    "error": "0",
+    "msg": "success"
+}
+</pre>
+                            失败返回：（有多种情况）
+                            <pre>
+{
+    "data": {},
+    "error": "错误码",
+    "msg": "错误说明"
+}
+</pre>
+                        </div>
+                        <div class="panel-footer">
+                            <p>补充:</p>
+                        </div>
+                    </div>
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            <h4><a name="api4" id="api4">4、订单查询</a></h4>
+                        </div>
+                        <div class="panel-body">
+                            <p>说明：</p>
+                            <ul>
+                            </ul>
+                            <div class="row"><div class="col-md-9">接口负责人：刘富国</div></div>
+                            <div class="row"><div class="col-md-9">请求方式：POST</div></div>
+
+                            请求示例：
+                            <pre>
+{
+    "ver": "1.0.0",
+    "token": "xxxx",
+    "data": {
+        "area_id":1,    //交易区ID
+        "type":1,       //1表示正在交易,2表示撤销/已完成订单
+        "entrust_type":2    //委托类别 (可选)
+        "page": "1",  //页数
+        "limit": "10"  // 每页显示行数
+    },
+    "server": "GetCurrencyTradingOrderList"
+}
+</pre>
+
+                            成功返回：
+                            <pre>
+{
+    "data": {
+        "total": "1",
+        "list": [
+             {
+                "order_id": "66",           //订单ID
+                "entrust_type": "4",        //委托类别
+                "coin": "BCH/BTC",          //委托类别名称,
+                "transaction_type": "2",    //1为买，2为卖
+                "entrust_num": "1.00000000",  //委托数量
+                "entrust_price": "0.11550000", //委托单价
+                "entrust_money": "0.11550000", //委托总额： 委托数量*委托单价
+                "avg_price": "0.1155",         //成交均价,
+                "success_num": "1.00000000",   //成交数量
+                "sum_money": "0.11550000"      //成交总额
+                "status_str": "已完成",        //订单状态
+                "update_time": "1530093882",   //撤销时间或完成时间
+                "add_time": "1530093682"
+            }
+        ],
+        "pager": {
+            "current_page": "1",
+            "last_page": "",
+            "next_page": "",
+            "total_pages": "1"
+        }
+    },
+    "error": "0",
+    "msg": "success"
+}
+</pre>
+                            失败返回：（有多种情况）
+                            <pre>
+{
+    "data": {},
+    "error": "错误码",
+    "msg": "错误说明"
+}
+</pre>
+                        </div>
+                        <div class="panel-footer">
+                            <p>补充:</p>
+                        </div>
+                    </div>
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            <h4><a name="api5" id="api5">5、买单/卖单</a></h4>
+                        </div>
+                        <div class="panel-body">
+                            <p>说明：</p>
+                            <ul>
+                            </ul>
+                            <div class="row"><div class="col-md-9">接口负责人：刘富国</div></div>
+                            <div class="row"><div class="col-md-9">请求方式：POST</div></div>
+
+                            请求示例：
+                            <pre>
+{
+    "ver": "1.0.0",
+    "token": "xxxx",
+    "data": {
+        "area_id":1,    //交易区ID
+        "price_type":2,    // 价格类型，1表示限价单，2表示市价单
+        "entrust_type":2 ,   //委托类别
+        "transaction_type": "2", // 交易类型，1表示买入，2表示卖出
+        "entrust_price": "0.01417069", //委托单价
+        "total_price": "50", //选择市价单时买入/卖出总数量
+        "leave_num": "50",  //选择限价时候的买入/卖出数量
+        "trade_pwd": "xxx", //资金密码
+    },
+    "server": "ProcessTradeInfo"
+}
+</pre>
+
+                            成功返回：
+                            <pre>
+                                最后一条未完成的订单信息
+                              {
+    "data": {
+        "order_id": "181",  //订单ID
+        "entrust_type": "1",  //委托类别
+        "coin": "LTC/BTC"  ,//委托类别名称
+        "entrust_num": "10.00000000", //委托数量
+        "entrust_price": "0.01811191",//单价价格
+        "entrust_money": "0.18111910", //总价（参考价）
+        "success_num": "0.00000000", // 成交数量
+        "leave_num": "10.00000000",  //未成交数量
+        "add_time": "1514367264", //添加时间
+        "transaction_type": "2" //1为买，2为卖
+    },
+    "error": "0",
+    "msg": "success"
+}
+                                或者：
+                                匹配完毕
+{
+    "data": {
+       "is_success": "1"
+    },
+    "error": "0",
+    "msg": "success"
+}
+</pre>
+                            失败返回：（有多种情况）
+                            <pre>
+{
+    "data": {},
+    "error": "错误码",
+    "msg": "错误说明"
+}
+</pre>
+                        </div>
+                        <div class="panel-footer">
+                            <p>补充:</p>
+                        </div>
+                    </div>
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            <h4><a name="api6" id="api6">6、撤销订单</a></h4>
+                        </div>
+                        <div class="panel-body">
+                            <p>说明：</p>
+                            <ul>
+                            </ul>
+                            <div class="row"><div class="col-md-9">接口负责人：刘富国</div></div>
+                            <div class="row"><div class="col-md-9">请求方式：POST</div></div>
+
+                            请求示例：
+                            <pre>
+{
+    "ver": "1.0.0",
+    "token": "xxxx",
+    "data": {
+        "area_id":1,    //交易区ID
+        "order_id":168    // 订单ID
+    },
+    "server": "RevokeOrderCurrencyTrading"
+}
+</pre>
+
+                            成功返回：
+                            <pre>
+{
+    "data": {
+        "is_success": "1"
+    },
+    "error": "0",
+    "msg": "success"
+}
+</pre>
+                            失败返回：（有多种情况）
+                            <pre>
+{
+    "data": {},
+    "error": "错误码",
+    "msg": "错误说明"
+}
+</pre>
+                        </div>
+                        <div class="panel-footer">
+                            <p>补充:</p>
+                        </div>
+                    </div>
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            <h4><a name="api7" id="api7">7、获取购买数量</a></h4>
+                        </div>
+                        <div class="panel-body">
+                            <p>说明：</p>
+                            <ul>
+                            </ul>
+                            <div class="row"><div class="col-md-9">接口负责人：刘富国</div></div>
+                            <div class="row"><div class="col-md-9">请求方式：POST</div></div>
+
+                            请求示例：
+                            <pre>
+{
+    "ver": "1.0.0",
+    "token": "xxxx",
+    "data": {
+        "type":1,    // 1表示相乘，2表示相除
+        "num":20,    // 数量
+        "price":1400,    // 单价
+    },
+    "server": "GetBuyNumByPriceAndNum"
+}
+</pre>
+
+                            成功返回：
+                            <pre>
+{
+    "data": {
+        "num": "28000"
+    },
+    "error": "0",
+    "msg": "success"
+}
+</pre>
+                            失败返回：（有多种情况）
+                            <pre>
+{
+    "data": {},
+    "error": "错误码",
+    "msg": "错误说明"
+}
+</pre>
+                        </div>
+                        <div class="panel-footer">
+                            <p>补充:</p>
+                        </div>
+                    </div>
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            <h4><a name="api8" id="api8">8、交易订单列表</a></h4>
+                        </div>
+                        <div class="panel-body">
+                            <p>说明：</p>
+                            <ul>
+                            </ul>
+                            <div class="row"><div class="col-md-9">接口负责人：刘富国</div></div>
+                            <div class="row"><div class="col-md-9">请求方式：POST</div></div>
+
+                            请求示例：
+                            <pre>
+{
+    "ver": "1.0.0",
+    "token": "xxxx",
+    "data": {
+        "area_id":1,    // 交易区
+        "entrust_type":20,    // 委托类别
+        "limit":5,    //显示数量，如为空，系统默认为5条
+    },
+    "server": "GetMarketList"
+}
+</pre>
+
+                            成功返回：
+                            <pre>
+{
+	"data": {
+       // 卖单列表
+		"sell": [{
+				"price": "0.01751400",  //单价
+				"ctd": "12.00000000",   //数量
+			}
+		],
+       // 买单列表
+		"buy": [{
+				"price": "0.01751400",  //单价
+				"ctd": "585.16615279",  //数量
+			}
+		]
+	},
+	"error": "0",
+	"msg": "success"
+}
+</pre>
+                            失败返回：（有多种情况）
+                            <pre>
+{
+    "data": {},
+    "error": "错误码",
+    "msg": "错误说明"
+}
+</pre>
+                        </div>
+                        <div class="panel-footer">
+                            <p>补充:</p>
+                        </div>
+                    </div>
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            <h4><a name="api9" id="api9">9、获取用户的币种数量</a></h4>
+                        </div>
+                        <div class="panel-body">
+                            <p>说明：</p>
+                            <ul>
+                            </ul>
+                            <div class="row"><div class="col-md-9">接口负责人：刘富国</div></div>
+                            <div class="row"><div class="col-md-9">请求方式：POST</div></div>
+
+                            请求示例：
+                            <pre>
+{
+    "ver": "1.0.0",
+    "token": "xxxx",
+    "data": {
+	    "area_id": "1", //交易区
+	 "entrust_type": "2"  //委托类型
+     },
+    "server": "GetUserCurrency"
+}
+</pre>
+
+                            成功返回：
+                            <pre>
+{
+    "data": {
+        "p_coin_name": "BTC",  //主币名称
+        "p_num": "191.88639033", //主币数量
+        "coin_name": "ETC", //委托币名称
+        "num": "218.78100000"  //委托币数量
+        "msg": "您的證件信息已過期" //用户权限校验说明
+        "code": "30017",  // //用户权限校验错误码
+    },
+    "error": "0",
+    "msg": "success"
+}
+</pre>
+                            失败返回：（有多种情况）
+                            <pre>
+{
+    "data": {},
+    "error": "错误码",
+    "msg": "错误说明"
+}
+</pre>
+                        </div>
+                        <div class="panel-footer">
+                            <p>补充:</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+          
+    </body>
+    </html>
+
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../bt/dist/js/jquery.min.1.11.3.js"></script>
+    <script src="../bt/dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../bt/assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="../bt/dist/js/yangshi.js"></script>
+  </body>
+</html>

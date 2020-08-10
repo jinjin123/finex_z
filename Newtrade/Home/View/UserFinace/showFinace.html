@@ -1,0 +1,126 @@
+<include file="Public:PersonalCenterHeader" />
+<link id="showFinace" href="__HOME_CSS__/showFinace_purple.css" rel="stylesheet" type="text/css" data-depStyle="depStyle">
+
+<!--右边打竖第一块 财务总账-->
+<div class="col-lg-12 col-md-12 col-sm-12">
+    <div class="panel-heading large-heading clearfix">
+        <div class="panel-action pull-left">
+            <!-- 左边币种tab切换 -->
+            <ul class="nav nav-tabs  underline-tabs coinType_tab nav-stacked personalCenter_nav solid-tabs nav-stacked" id="tab-ctlmenu">
+                <foreach name='currency' item='vo'>
+                    <li currency_type="{$vo[id]} " <if condition="$vo.id eq 1 ">class="active"</if>>
+                        <a>
+                            <svg class="icon icon_norepeat" aria-hidden="true" style='font-size: 14px;'>
+								<use xlink:href="#icon-{$vo.currency_name}1"></use>
+							</svg> {$vo.currency_name}
+                        </a>
+                    </li>
+                </foreach>
+            </ul>
+
+            <!-- 手机端时的tab切换 -->
+            <div class="smshow visible-sm-block visible-xs-block">
+                <div class="btn-group bootstrap-select">
+                    <select class="selectpicker" tabindex="-98">
+						<option value="0"><i class="fa fa-chevron-circle-down m-right-5"></i>{$Think.lang._XZBZ_} </option>
+						<foreach name='currency' item='vo'>
+							<option currency_type="{$vo[id]}">
+								 {$vo.currency_name}
+							</option>
+						</foreach>
+					</select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/.panel-->
+</div>
+<!--右边打竖第二块 查询类型-->
+<div class="col-lg-12 col-md-12 col-sm-12 select-log">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="col-lg-2 col-md-3 col-sm-3 col-xs-4 cxlx text-left target_panel_title">
+                <span>{$Think.lang._CKLX_}</span>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 cxlx-selected">
+                <div class="bootstrap-selected ">
+                    <select id='finacetype' class="form-control selectpicker text-center" name="finance_type" data-size="10">
+						<option value="">{$Think.lang._QXZRZLX_}</option>
+						<volist name="finance_type_list" id="vo">
+							<if condition="$finance_type eq $vo['id']">
+								<option value="{$vo['id']}" selected="true">{$vo['name']}</option>
+								<else/>
+								<option value="{$vo['id']}">{$vo['name']}</option>
+							</if>
+						</volist>
+					</select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- TableList -->
+    <div class="panel panel-default">
+        <div class="panel-heading large-heading clearfix">
+            <div class="target_panel_title pull-left">
+                <span>{$Think.lang._CWLS_}</span>
+                <span class='integral-title-right'>{$Think.lang._JBLZJYGYLSJL_}</span>
+            </div>
+            <div class="panel-action text-right pull-right">
+                <button class="btn btn-min"></button>
+            </div>
+
+        </div>
+        <div class="panel-body">
+            <!-- table内容 -->
+            <div class="table-responsive">
+                <table class="table order sortable-theme-bootstrap">
+                    <thead>
+                        <tr>
+                            <th class="text-center">{$Think.lang._RZLX_}</th>
+                            <th class="text-center">{$Think.lang._LXZCSR_}</th>
+                            <th class="text-center">{$Think.lang._SHULIANG_}</th>
+                            <th class="text-center">{$Think.lang._YUE_}</th>
+                            <th class="text-center">{$Think.lang._SHIJIAN_}</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="log_area">
+                        <foreach name="finance_list" item="vo">
+                            <tr>
+                                <td>{$vo.finance_type|formatFinanceType=###}</td>
+                                <td>{$vo.type|formatMoneyZhengFu=###}</td>
+                                <td class="money">
+                                    <if condition="$vo['type'] eq 1">
+                                        <span style="color:#65D8C1">+{$vo['money']}</span>
+                                        <else/>
+                                        <span style="color:#FF5F5F">-{$vo['money']}</span>
+                                    </if>
+                                </td>
+                                <td class="money">
+                                    <if condition="$vo.after_money gt 0">
+                                        <span style="color:#65D8C1">+{$vo.after_money}</span>
+                                        <else/>
+                                        <span style="color:#FF5F5F">-{$vo.after_money}</span>
+                                    </if>
+                                </td>
+                                <td>{$vo.add_time|date="Y-m-d H:i:s",###}</td>
+                            </tr>
+                        </foreach>
+                    </tbody>
+                </table>
+            </div>
+            <!-- page分页 -->
+            <div class="text-right sm-text-center dataPage" id="dataPage">
+                {$page}
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- FOOTER STARTS -->
+<include file="Public:PersonalCenterFooter" />
+<script type="text/javascript">
+    var showfinace = '{:U("UserFinace/showFinace")}';
+</script>
+<script src="__HOME_JS__/showfinance/showfinance.js"></script>

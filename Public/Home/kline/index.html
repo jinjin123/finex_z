@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./assets/jquery.min.js"></script>
+    <script src="./assets/echarts.min.js"></script>
+    <script src="./assets/kline.min.js"></script>
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body style="padding: 0; margin: 0;">
+
+<div style="width: 100%; height: 100%; display: block;">
+    <div class="col-12" id="chainChart" style="width: 100%; height: 100%;"></div>
+</div>
+
+<script>
+
+    let tradesJson = './json/ETH.json';
+    getTrade();
+
+    function getTrade() {
+        $.getJSON(tradesJson, function (Json) {
+            if (Json.status == 'ok') {
+                let tradeArr = [];
+                $.each(Json.data, function (index, item) {
+                    $.each(item.data, function (tempIndex, tempTrade) {
+                        tradeArr.push(tempTrade);
+                    })
+                })
+            }
+        })
+    }
+
+    let kChart = echarts.init(document.getElementById('chainChart'));
+    getKLine();
+
+    function getKLine(lineType) {
+        if (lineType == '' || lineType == undefined || lineType == 'undefined') {
+            lineType = localStorage.lineType;
+        }
+        if (lineType == '' || lineType == undefined || lineType == 'undefined') {
+            lineType = '1min';
+        }
+        localStorage.lineType = lineType;
+
+        let granularitys = {
+            '1min': '60',
+            // '3min': '180',
+            '5min': '300',
+            '15min': '900',
+            '30min': '1800',
+            '1hour': '3600',
+            '4hour': '14400',
+            '1day': '86400',
+            '1week': '604800'
+        };
+
+        let name = getQueryString('symbol');
+
+        if (!name) return;
+
+        $.ajax({
+            url: '/TradingView/getCandles',
+            data: {
+                symbol: name.toUpperCase() + '-USDT',
+                granularity: granularitys[lineType]
+            },
+            dataType: 'JSON',
+            type: 'GET',
+            success: function (resp) {
+                if (resp.code == 0) {
+                    let tempData = [];
+                    $.each(resp.data, function (index, item) {
+                        if (index < resp.data.length && index > resp.data.length - 70) {
+                            // 原来：开收低高，现在：1开2高3低4收
+                            tempData.push([utc2beijing(item[0]), item[1], item[4], item[3], item[2], item[5]])
+                        }
+                    });
+                    kChart.setOption(initKOption(tempData));
+                }
+            }
+        });
+
+        // $.ajax({
+        //     url: './json/ETH.1min.json',
+        //     dataType: 'JSON',
+        //     type: 'GET',
+        //     success: function (resp) {
+        //         let tempData = [];
+        //         $.each(resp.data, function (index, item) {
+        //             if(index < resp.data.length && index > resp.data.length - 70){
+        //                 // 原来：开收低高，现在：1开2高3低4收
+        //                 // tempData.push([utc2beijing(item[0]), item[1], item[4], item[3], item[2], item[5]])
+        //                 tempData.push([item['id'], item['open'], item['close'], item['low'], item['high'], item['vol']])
+        //             }
+        //         });
+        //         tempData = tempData.reverse();
+        //         kChart.setOption(initKOption(tempData));
+        //     }
+        // });
+    }
+
+    function utc2beijing(utc_datetime) {
+        // 转为正常的时间格式 年-月-日 时:分:秒
+        var T_pos = utc_datetime.indexOf('T');
+        var Z_pos = utc_datetime.indexOf('Z');
+        var year_month_day = utc_datetime.substr(0, T_pos);
+        var hour_minute_second = utc_datetime.substr(T_pos + 1, Z_pos - T_pos - 1);
+        var new_datetime = year_month_day + " " + hour_minute_second; // 2017-03-31 08:02:06
+
+        // 处理成为时间戳
+        timestamp = new Date(Date.parse(new_datetime));
+        timestamp = timestamp.getTime();
+        timestamp = timestamp / 1000;
+
+        // 增加8个小时，北京时间比utc时间多八个时区
+        var timestamp = timestamp + 8 * 60 * 60;
+
+        // 时间戳转为时间
+        return timestamp;
+    }
+
+    function getQueryString(name) {
+        var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) {
+            return unescape(r[2]);
+        }
+        return null;
+    }
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="7px" height="11px" viewBox="0 0 7 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.1 (67048) - http://www.bohemiancoding.com/sketch -->
+    <title>icon_ques_back_white</title>
+    <desc>Created with Sketch.</desc>
+    <g id="6.账户" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="light-账户-问题列表-已解决-查看-copy" transform="translate(-397.000000, -249.000000)" fill="#FFFFFF" fill-rule="nonzero">
+            <g id="nav" transform="translate(395.000000, 194.000000)">
+                <g id="返回问题列表" transform="translate(2.000000, 50.000000)">
+                    <path d="M6.55882353,5.98941799 L2,10.5 L6.55882353,15.010582 L5.55882353,16 L0,10.5 L5.55882353,5 L6.55882353,5.98941799 Z" id="icon_ques_back_white"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

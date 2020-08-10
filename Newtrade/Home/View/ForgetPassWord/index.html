@@ -1,0 +1,207 @@
+<include file="Public:header1" />
+<link rel="stylesheet" href="__HOME_CSS__/front/input-strength.css">
+<link rel="stylesheet" href="__HOME_CSS__/front/resetPass.css">
+
+<!-- 注册 start -->
+<div id="register">
+    <div class="container registerCon">
+        <div class="row">
+            <div class="well wide">
+                <div class="registration_form_div">
+                    <form method="post" id="registration_form" name="registration_form" action="">
+                        <h3 class="widgettitle">{$Think.lang._CZMM_}</h3>
+                        <div class="reg-error error"></div>
+                        <!--上边-->
+
+                        <!-- 重置密码第一步 -->
+                        <div class="reset_step1" id="reset_step1" style="display: block;padding: 0 34px;">
+                            <!-- 用户名 -->
+                            <div class="register-right col-md-12 col-sm-12">
+                                <div class="mar5">
+                                    <svg class="icon" aria-hidden="true">
+                                        <use xlink:href="#icon-zhanghuxingming"></use>
+                                    </svg>
+                                    <div class="form-group">
+                                        <!--用户名输入框-->
+                                        <input class="form-control" type="text" name="username" id="username" maxlength="18" placeholder="{$Think.lang._YHM_}" style="padding:0 18px" />
+                                    </div>
+                                </div>
+                                <div class="clear"></div>
+                                <!--手机号码输入框-->
+                                <div class="mar5 mar">
+                                    <svg class="icon" aria-hidden="true">
+                                        <use xlink:href="#icon-shouji"></use>
+                                    </svg>
+                                    <div class="form-group form-group-strength">
+                                        <input type="text" class="form-control" maxlength="11" name="phone" id="phone" placeholder="{$Think.lang._mobile_}" style="padding:0 18px" />
+                                    </div>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="register-left col-md-12 col-sm-12">
+                                <!--您的用户名错误-->
+                                <div class="warmingbox">
+                                    <div class="warming" style="display: none">
+
+                                        <p class="feedback"></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                            <!-- 提交 -->
+                            <div class="reg_foot">
+                                <div class=" text-center">
+                                    <div class="form-group">
+                                        <!--id="sweetalert-success"-->
+                                        <button name="register" type="button" id="ResBtn1" class="btn btn-primary smfullBtn">{$Think.lang._QRTJ_}</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="bottomdiv">
+                                <span class="logo"><img src="__HOME_IMG__/front/web_logo.png" alt="" width="142px"></span>
+                                <a class="back" href="{:U('Index/index')}" id="next1">{$Think.lang._DENGLU_}</a>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="clear"></div>
+
+
+                        <!--重置密码第二步 ——输入动态命令-->
+
+                        <div class="reset_step2" id="reset_step2" style="display: none;">
+                            <div class="register-right col-md-12 col-sm-12">
+                                <div class="has-error">
+                                    <div class="help-block">{$Think.lang._DKSJDTMLSRLWDTZL_}</div>
+                                </div>
+
+                                <!--<label>{$Think.lang._DTML_}</label>-->
+
+                                <!--动态密令输入框-->
+                                <div class="mar5">
+                                    <svg class="icon" aria-hidden="true">
+                                        <use xlink:href="#icon-dongtaikouling"></use>
+                                    </svg>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" maxlength="6" name="token" id="token" placeholder="{$Think.lang._DTML_}" style="padding:0 18px" onInput="value=value.replace(/[^\d\a-\z\A-\Z]/g,'')"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+
+                            <div class="register-left col-md-12 col-sm-12">
+                                <!--您的用户名错误-->
+                                <div class="warmingbox">
+                                    <div class="warming" style="display: none">
+                                        <p class="feedback"></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+
+                            <!-- 提交 -->
+                            <div class="reg_foot">
+                                <div class="text-center">
+                                    <div class="form-group" style="margin-bottom: 0;">
+                                        <button name="register" type="button" class="btn btn-primary smfullBtn" id="next">{$Think.lang._XIAYB_}</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="bottomdiv">
+                                <span class="logo"><img src="__HOME_IMG__/front/web_logo.png" alt="" width="142px"></span>
+                                <a class="back" href="{:U('Index/index')}" id="next1">{$Think.lang._DENGLU_}</a>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="clear"></div>
+                        <!-- 重置密码第三步 -->
+
+                        <div class="reset_step3" id="reset_step3" style="display: none;">
+                            <div class="register-right col-md-12 col-sm-12">
+
+
+                                <div class="has-error">
+                                    <div class="help-block">{$Think.lang._ZSXCD_}</div>
+                                </div>
+                                <div class="mar5">
+                                    <svg class="icon" aria-hidden="true">
+                                        <use xlink:href="#icon-mima1"></use>
+                                    </svg>
+                                    <div class="form-group form-group-strength">
+                                        <!--<label>{$Think.lang._XDLMM_}</label>-->
+                                        <!--新登录密码输入框-->
+                                        <input type="Password" class="form-control" name="newpwd" maxlength="18" placeholder="{$Think.lang._MIMA_}" data-strength="focusout" style="padding:0 18px" />
+                                    </div>
+                                </div>
+
+                                <div class="mar5">
+                                    <svg class="icon" aria-hidden="true">
+                                        <use xlink:href="#icon-querenmima"></use>
+                                    </svg>
+                                    <div class="form-group">
+                                        <!--<label>{$Think.lang._CFXDLMM_}</label>-->
+                                        <!--重复新登录输入框-->
+                                        <input type="Password" class="form-control" name="repeatpwd" maxlength="18" placeholder="{$Think.lang._MIMA_}" style="padding:0 18px" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                            <div class="register-left col-md-12 col-sm-12">
+                                <!--您的用户名错误-->
+                                <div class="warmingbox">
+                                    <div class="warming">
+                                        <p class="feedback"></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                            <!-- 提交 -->
+                            <div class="reg_foot">
+                                <!--提交输入框-->
+                                <div class="text-center">
+                                    <div class="form-group">
+                                        <button name="register" type="button" id="reset_submitBut" class="btn btn-primary smfullBtn">{$Think.lang._TIJIAO_}</button>
+                                    </div>
+                                    <!--旋转-->
+                                    <!-- <div class="load-container load3">
+                                        <div class="loader"></div>
+                                    </div>-->
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                            <div class="bottomdiv">
+                                <span class="logo"><img src="__HOME_IMG__/front/web_logo.png" alt="" width="142px"></span>
+                                <a class="back" href="{:U('Index/index')}" id="next1">{$Think.lang._DENGLU_}</a>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- 注册 end -->
+<script>
+    //    var verifyUrl = "{:U('CheckVerify/getVerify')}";
+    var subForgetPassWorld = "{:U('ForgetPassWord/subForgetPassWord')}";
+    var verifyUrl = "{:U('CheckVerify/getVerify')}";
+    var checkTokenUrl = "{:U('ForgetPassWord/checkToken')}";
+    var subSetPassWordUrl = "{:U('ForgetPassWord/subSetPassWord')}";
+    var homeUrl = "{:U('Index/index')}";
+    var uid = 0;
+    var tijiao = "{$Think.lang._TIJIAO_}";
+    var strengthTitle1 = "{$Think.lang._NDMMBXBH_}";
+    var strengthTips1 = "{$Think.lang._ZSLW_}";
+    var strengthTips2 = "{$Think.lang._SZMDX_}";
+    var strengthTips3 = "{$Think.lang._ZSTZFLZYSZH_}";
+    var strengthTitle2 = "{$Think.lang._MMQD_}";
+    var strengthWarming = "{$Think.lang._BMSYQTWZMMBAQ_}";
+</script>
+<include file="Public:footer1" />
+<script src="__HOME_JS__/resetpwd/resetpwd.js"></script>
+<!-- iconfont -->
+<script src="__HOME_CSS__/fonts/iconfont/js/iconfont.js"></script>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>夺标网代码规范说明</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./bt/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./bt/dist/css/yangshi.css" rel="stylesheet" type="text/css">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="./bt/assets/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+        .code {background-color: #000; color:#fff; width: 70%; margin:auto; text-align: left; padding-left: 10px;}
+    </style>
+  </head>
+
+  <body>
+  	<div class="container">
+  		<div class="row" style="margin-top: 50px;">
+  			<div class="col-md-12">
+  				<div class="panel panel-info">
+  					<div class="panel-heading">
+  						<h3>夺标网代码规范说明</h3>
+  					</div>
+					<div class="panel-body">					
+						<p><a href="./index.html">0、总接口目录页</a></p>
+						<p><a href="#001">1、接口数据规范</a></p>
+						<p><a href="#002">2、配置说明</a></p>
+						<p><a href="#003">3、控制器、模块、Common/function.php说明</a></p>
+						<p><a href="#004">4、新接口</a></p>
+					</div>  					
+  				</div>
+  				
+  				
+  					<div class="panel panel-success">
+  					<div class="panel-heading">
+  						<h4><a name="001" id="001">1、接口数据规范</a></h4>
+  					</div>
+					<div class="panel-body">
+						<p>说明：</p>
+						<ul>
+						</ul>
+						<pre>
+范例：
+接口负责人：XXX							
+请求方式：POST
+请求参数：Controller/method       // 控制器/方法
+POST到服务器的json数据：
+{
+	"token":"xxxxxxxxxx",          // 字段说明
+	"key":"value"                  // 
+}
+成功返回：
+{
+    "data": {
+        "list": [
+            {
+                "item_key1": "value1",                 // 字段说明
+                "item_key2": "value2",                 // 字段说明
+                "item_key3": "value3",                 // 字段说明
+            },
+            ...
+        ],
+        "empty_list": [],                              // 空列表
+        "other_key":"other_value",                     // 其他键值对数据
+        "pager": {                                     // 分页信息
+            "current_page": "1",                       // 当前页
+            "last_page": "",                           // 上一页
+            "next_page": "1",                          // 下一页
+            "total_pages": "1"                        // 总页数
+        } 
+    },
+    "error": "0",
+    "msg": "success"
+}
+或者返回空数组：
+{
+    "data": [],      // 当返回的数据只是数组时
+    "error": "0",
+    "msg": "success"
+}
+或者返回空对象：
+{
+    "data": {},      // 返回的数据key-value
+    "error": "0",
+    "msg": "success"
+}
+
+错误数据
+失败返回：
+{
+    "data": {},                       // 空对象                 
+    "error": "10000",                 // 错误代号
+    "msg": "错误信息"                 // 错误信息
+}
+
+
+不规范示例：
+成功返回：
+{
+    "data": {
+        "list1": {
+            "1": "value1",     // key不能为数字，且变动（错误）
+            "2": "value2",
+            "3": "value3"
+        },
+        "list2": [
+            "val4",           // 没有key,（不规范）
+            "val5"
+        ]
+    },
+    "error": "0",
+    "msg": "success"
+}
+或：
+{
+    "data": "测试文字",       // 不规范，data最好不为数据的key
+    "error": "0",
+    "msg": "success"
+}
+
+						</pre>
+					</div> 
+					<div class="panel-footer">
+						<p>补充:</p>
+						<p>1、当是key-value键值对时，key不能是数字，必须是非数字开头的字符；</p>
+						<p>2、返回的所有数据值（value）必须是字符串；</p>
+						<p>3、尽量减少嵌套数据；</p>
+						<p>4、返回的时间全是时间戳，让app去做转换；</p>
+						<p>5、返回的图片等，都必须是全路径</p>
+						<p>6、返回的数据必须是键值对（数组列外），最好不只传一个字符串给outPut函数，只传一个值的是作为错误信息给app</p>
+					</div>  	 					
+  				</div>
+  				
+  					<div class="panel panel-success">
+  					<div class="panel-heading">
+  						<h4><a name="002" id="002">2、配置说明</a></h4>
+  					</div>
+					<div class="panel-body">
+						<p>说明：</p>
+						<ul>
+							<li>1、区分惯例配置和模块配置</li>
+							<li>2、配置key命名为大写，下划线隔开；数组内的配置key统一大写或小写，下划线隔开</li>
+							<li>3、命名最有是有意义的英文单词或缩写，有类似的配置要加注释</li>
+						</ul>
+						</div>
+  				</div>
+  				
+  					<div class="panel panel-success">
+  					<div class="panel-heading">
+  						<h4><a name="003" id="003">3、控制器、模块、common/function.php说明</a></h4>
+  					</div>
+					<div class="panel-body">
+						<p>说明：</p>
+						<ul>
+							<li>1、参数判断都在控制器内做判断，业务逻辑代码基本不在控制器类写</li>
+							<li>2、业务逻辑代码基本写在逻辑类或模块类里面，基本不再做参数入库的判断</li>
+							<li>3、在控制器内做事务处理，不在模块类或逻辑类做，防止事务嵌套</li>
+							<li>4、Common/function.php,这个文件基本不要有数据的读写，部分特殊的例外，如post_log这里的日志</li>
+							<li>5、写funtion时要初略已有的fun函数和框架提供的函数，不要重复造轮子，fun命名要有意义的英文单词或缩写，不能中英文结合</li>
+							<li>6、fun，类和方法，要写注释和作者</li>
+						</ul>
+						</div>
+  				</div>
+  				
+  				
+  					<div class="panel panel-success">
+  					<div class="panel-heading">
+  						<h4><a name="004" id="004">4、新接口</a></h4>
+  					</div>
+					<div class="panel-body">
+						<p>说明：</p>
+						<ul>
+						</ul>
+						<pre>
+                        ### 层次结构
+                        App请求Api入口Controller
+                        Controller根据映射调用Service
+                        Service调用Logic处理逻辑
+                        Logic调用Model查询数据。
+                        
+                        ### App调用接口规则：
+                        URL：[HOST]/app/api
+                        POST:
+                            {
+                                "server":"CreateWatchwordToken", // 调用的Service，根据配置映射到具体的Service类和方法
+                                "token":"xxx",
+                                "ver":"1.0.0", // 版本号
+                                "data":{ // 业务数据
+                                    "uid":"1"
+                                }
+                            }
+                        
+                        ### 定义Api映射
+                        App/Route/conf 目录下定义各个版本的Api映射，文件名命名规则是route[版本号].php。如：
+                        1.0.0版本对应的文件名是route100.php
+                        
+                        Api映射是一个数组，其中键名是App请求的server参数值，键值是一个数组，定义要调用的Service
+<pre class="code">
+return array(
+  'CreateWatchwordToken' => [
+        'Server' => 'V100\\Token',  // Service类名
+        'Method' => 'createWatchwordToken'  // Service的方法
+    ],
+
+);
+</pre>
+                        Api映射中定义的Service类命名空间相对于App\Service，并且不带Service后缀。例如：
+                        'V100\\Token' 对应的类为App\Service\V100\TokenService
+						</pre>
+					</div> 
+					<div class="panel-footer">
+						<p>补充:</p>
+					</div>  	 					
+  				</div>
+  				
+  			</div>
+  		</div>  	
+  	</div>
+    <div class="to_top_btn">
+    </div>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="./bt/dist/js/jquery.min.1.11.3.js"></script>
+    <script src="./bt/dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="./bt/assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="./bt/dist/js/yangshi.js"></script>
+  </body>
+</html>

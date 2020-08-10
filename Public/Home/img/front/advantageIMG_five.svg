@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="99px" height="111px" viewBox="0 0 99 111" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50 (54983) - http://www.bohemiancoding.com/sketch -->
+    <title>homeic_ad_five</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="-58.3206838%" y1="-28.2906928%" x2="72.3014543%" y2="93.9492583%" id="linearGradient-1">
+            <stop stop-color="#4694FD" offset="0%"></stop>
+            <stop stop-color="#3C6AF0" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="195.534688%" y1="121.994108%" x2="5.30583658%" y2="26.5245521%" id="linearGradient-2">
+            <stop stop-color="#509AEF" stop-opacity="0.402541893" offset="0%"></stop>
+            <stop stop-color="#3C6AF0" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="126.228017%" y1="159.313291%" x2="14.9290392%" y2="27.4311867%" id="linearGradient-3">
+            <stop stop-color="#3CD0FF" stop-opacity="0.620923913" offset="0%"></stop>
+            <stop stop-color="#3665ED" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="BTCsale首页-2" transform="translate(-1079.000000, -4557.000000)">
+            <g id="3" transform="translate(120.000000, 3796.000000)">
+                <g id="Group-11" transform="translate(30.000000, 239.000000)">
+                    <g id="5" transform="translate(898.000000, 497.000000)">
+                        <g id="Group-9">
+                            <g id="homeic_ad_five" transform="translate(31.000000, 25.000000)">
+                                <polygon id="Stroke-8" stroke="url(#linearGradient-1)" points="93.7078125 80.3073958 93.7078125 29.6230208 49.8130208 4.28135417 5.9203125 29.6230208 5.9203125 80.3073958 49.8130208 105.650104"></polygon>
+                                <path d="M49.8133333,4.28104167 L49.8133333,105.649792" id="Stroke-10" stroke="url(#linearGradient-1)"></path>
+                                <path d="M5.9840625,29.5114583 L93.6423958,80.4197917" id="Stroke-12" stroke="url(#linearGradient-1)"></path>
+                                <path d="M6.075625,80.5755208 L93.5527083,29.3557292" id="Stroke-14" stroke="url(#linearGradient-1)"></path>
+                                <path d="M10.7010417,80.85 C10.7010417,83.5291667 8.52916667,85.7 5.85104167,85.7 C3.17083333,85.7 1,83.5291667 1,80.85 C1,78.1708333 3.17083333,76 5.85104167,76 C8.52916667,76 10.7010417,78.1708333 10.7010417,80.85" id="Fill-4" fill="url(#linearGradient-2)"></path>
+                                <path d="M54.7010417,105.85 C54.7010417,108.529167 52.5302083,110.7 49.8510417,110.7 C47.171875,110.7 45,108.529167 45,105.85 C45,103.170833 47.171875,101 49.8510417,101 C52.5302083,101 54.7010417,103.170833 54.7010417,105.85" id="Fill-6" fill="url(#linearGradient-2)"></path>
+                                <path d="M98.7010417,79.85 C98.7010417,82.5291667 96.5302083,84.7 93.8510417,84.7 C91.171875,84.7 89,82.5291667 89,79.85 C89,77.1708333 91.171875,75 93.8510417,75 C96.5302083,75 98.7010417,77.1708333 98.7010417,79.85" id="Fill-6-Copy" fill="url(#linearGradient-2)"></path>
+                                <path d="M49.0653695,0 L0,28.5133225 L49.3455348,57.0037318 L98.4109043,28.4893678 L49.0653695,0 Z M16.6234847,28.4893678 L49.0789091,9.62872726 L81.7874196,28.5133225 L49.3330367,47.3729215 L16.6234847,28.4893678 Z" id="Fill-1" fill="url(#linearGradient-3)"></path>
+                                <polygon id="Fill-2" fill="url(#linearGradient-3)" points="57 60.391 57.093 72 57.094 72 65.926 66.9 65.834 55.291"></polygon>
+                                <polygon id="Fill-3" fill="url(#linearGradient-3)" points="82.926 55.9 74.092 61.001 74 49.391 82.834 44.291"></polygon>
+                                <polygon id="Fill-4" fill="url(#linearGradient-3)" points="30 66.9 38.833 72 38.834 72 38.926 60.391 30.093 55.291"></polygon>
+                                <polygon id="Fill-5" fill="url(#linearGradient-3)" points="13 55.9 21.834 61.001 21.926 49.391 13.092 44.291"></polygon>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

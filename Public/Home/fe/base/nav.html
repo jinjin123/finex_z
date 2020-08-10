@@ -1,0 +1,84 @@
+<header class="site-header header-style-one">
+    <div class="site-navigation style-one">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-12">
+                    <div class="navbar navbar-expand-lg navigation-area">
+                        <div class="site-branding">
+                            <a class="site-logo" href="/index">
+                                <img src="__HOME__/fe/static/picture/logo.png" alt="Site Logo"/>
+                            </a>
+                        </div>
+                        <div class="mainmenu-area">
+                            <nav class="menu">
+                                <ul id="nav">
+                                    <li><a href="/index">Home</a></li>
+                                    <li><a href="/index#exchange">Exchange</a></li>
+                                    <li><a href="/index/about">About</a></li>
+                                    <li><a href="/index/terms">Terms</a></li>
+                                    <li><a href="/index/news">News</a></li>
+				    <li><a href="https://www.uxmex.com">Contract</a></li>
+                                    <li class="dropdown-trigger">
+                                        <a href="/UserCenter/index">User</a>
+                                        <ul class="dropdown-content">
+                                            <if condition="!$user">
+                                                <li><a href="/login/showLogin">Sign In</a></li>
+                                                <li><a href="/register/index">Sign Up</a></li>
+                                                <else/>
+                                                <li><a href="/UserCenter/index">User Panel</a></li>
+                                                <li><a href="/UserCenter/myChain">My Chain</a></li>
+                                                <li><a href="javascript:void(0);" onclick="logout()">Sign Out</a></li>
+
+                                            </if>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mobile-menu-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="mobile-menu">
+                        <a class="mobile-logo" href="./index.html">
+                            <img src="__HOME__/fe/static/picture/logo2.png" alt="logo">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<script>
+    function logout() {
+        layer.closeAll();
+        layer.load(2, {
+            shade: [0.3, '#666']
+        });
+        $.ajax({
+            url: '/Login/LoginOut',
+            type: 'POST',
+            success: function (resp) {
+                layer.closeAll();
+                if (resp.status) {
+                    layer.msg('sign out success', {
+                        shade: [0.3, '#666']
+                    });
+                    location.href = '/';
+                    return;
+                }
+                layer.msg('sign out fail');
+            },
+            error: function (error) {
+                layer.msg('sign out fail');
+            }
+        });
+    }
+</script>

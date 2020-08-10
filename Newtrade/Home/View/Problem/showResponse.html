@@ -1,0 +1,158 @@
+<include file="Public:PersonalCenterHeader" />
+<link id="Problem" href="__HOME_CSS__/Problem_purple.css" rel="stylesheet" type="text/css" data-depStyle="depStyle">
+
+<!--右边打竖第一块-->
+<div class="col-lg-12 col-md-12 col-sm-12 clearfix">
+    <div class="panel-heading large-heading clearfix">
+        <div class="panel-action pull-left">
+            <!-- 左边币种tab切换 -->
+            <ul class="nav nav-tabs solid-tabs nav-stacked  underline-tabs personalCenter_nav">
+                <li>
+                    <a href="{:U('PersonalCenter/index')}">{$Think.lang._ZHANGHU_}</a>
+                </li>
+                <li>
+                    <a href="{:U('PersonalCenter/showBankCardBind')}">{$Think.lang._YHKBD_}</a>
+                </li>
+                <li>
+                    <a href="{:U('PersonalCenter/integrityScore')}">{$Think.lang._XYPJ_}</a>
+                </li>
+                <li>
+                    <a href="{:U('PersonalCenter/historyLoad')}">{$Think.lang._LSJL_}</a>
+                </li>
+                <li class="active">
+                    <a href="{:U('Problem/showProblem')}">{$Think.lang._WTFK_}</a>
+                </li>
+            </ul>
+
+            <!-- 手机端时的tab切换 -->
+            <div class="smshow smshow-account visible-xs-block">
+                <div class="btn-group bootstrap-select">
+                    <select class="selectpicker" tabindex="-98">
+						<option value="0">{$Think.lang._ZHANGHU_}</option>
+						<option value="1">{$Think.lang._YHKBD_}</option>
+						<option value="2">{$Think.lang._XYPJ_}</option>
+						<option value="3">{$Think.lang._LSJL_}</option>
+						<option value="4" selected>{$Think.lang._WTFK_}</option>
+					</select>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-lg-12 col-md-12 col-sm-12">
+    <div class='panel panel-default'>
+        <div class="panel-heading clearfix">
+            <div class="pull-left target_panel_title">
+                <span>{$data_original.first_name}-{$data_original.last_name}</span>
+            </div>
+            <div class="panel-tools panel-action text-right pull-right">
+                <button class="btn btn-min"></button>
+                <!--<button class="btn btn-expand"></button>-->
+            </div>
+        </div>
+        <div class='panel-title clearfix feedback_control'>
+            <a class="pull-left Customer_progress issues_back" href="{:U('Problem/ProblemList')}">{$Think.lang._CSFH_}<span class=" "> {$Think.lang._WTLB_}</span></a>
+            <p class='pull-left Customer_progress'>{$Think.lang._WTJD_}: <span>{$Think.lang._YJJ_}</span></p>
+            <p class='pull-left Customer_progress'>{$Think.lang._WTBH_}：{$data_original.id}</p>
+            <if condition="$data_original.order_num neq null">
+            <p class='pull-left Customer_progress'>{$Think.lang._DDHM_}：{$data_original.order_num}</p>
+            </if>
+            <p class='pull-left Customer_progress'>{$Think.lang._TJSJ_}：{$data_original.add_time|date="Y-m-d H:i:s",###}</p>
+        </div>
+        <div class='panel-body problem-wrap'>
+            <!--原始问题-->
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bank_card List_problems showbink_select clearfix Customer_service_Reply">
+                <div class='pull-left col-lg-1 Customer_service_portrait'>
+                    <img src="__HOME_IMG__/userpic.svg" />
+                    <p class='m-top-10'>{$data_original.username}</p>
+                    <!--	<p class='Customer_service_data'>{$data_original.add_time|date="Y-m-d H:i:s",###}</p>-->
+                </div>
+                <div class="pull-left col-lg-10 bank_city text-left feedback_Inquiries pull-left p-left-25">
+                    <p class='Customer_service_data p-bottom-5'>{$data_original.add_time|date="Y-m-d H:i:s",###}</p>
+                    <p class="feedback_resolved_p">{$Think.lang._mobile_}: <span class='m-left-5'>{$data_original.ex_phone}</span></p>
+                    <p class="feedback_resolved_p">{$Think.lang._EMAIL_}: <span class='m-left-5'>{$data_original.ex_email}</span></p>
+                    <p class="feedback_resolved_p p-top-5 m-bottom-0">{$data_original.describe}</p>
+                    <foreach name="data_original.img_list" item="vol" key="j">
+                    <div class="feedback_resolved_p image_mess">{$Think.lang._FJ_}{$j+1}:
+                        <a target="_blank" href="{$vol.img_url}">{$vol.img_name}</a>
+                    </div>
+                    </foreach>
+                </div>
+            </div>
+
+            <foreach name="data" item="vo">
+                <if condition="$vo.type eq 2">
+                    <!--客户追问-->
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bank_card List_problems showbink_select clearfix Customer_service_Reply">
+                        <div class='pull-left col-lg-1 Customer_service_portrait'>
+                            <img src="__HOME_IMG__/userpic.svg" />
+                            <p class='m-top-10'>{$data_original.username}</p>
+                            <!--<p class='Customer_service_data'>{$vo.add_time|date="Y-m-d H:i:s",###}</p>-->
+                        </div>
+                        <div class="pull-left col-lg-10 bank_city text-left feedback_Inquiries pull-left p-left-25">
+                            <p class='Customer_service_data p-bottom-5'>{$vo.add_time|date="Y-m-d H:i:s",###}</p>
+                            <div class="changhtml">{$vo.answer}</div>
+                            <if condition="$vo.img_arr">
+                                <foreach name="vo.img_arr" item="vol" key="j">
+                                    <div class="feedback_resolved_p image_mess">{$Think.lang._FJ_}{$j+1}:
+                                        <a target="_blank" href="{$vol.img_url}">{$vol.img_name}</a>
+                                    </div>
+                                </foreach>
+                            </if>
+                        </div>
+                    </div>
+                    <else />
+                    <!--客服答复-->
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bank_card List_problems showbink_select clearfix Customer_service_Reply">
+                        <div class='pull-right col-lg-1 Customer_service_portrait'>
+                            <img src="__HOME_IMG__/btcspic.svg" />
+                            <p class='m-top-10'>{$Think.lang._KFHF_}</p>
+                            <!--<p class='Customer_service_data'>{$list_admin[0]['add_time'|date="Y-m-d H:i:s",###]}</p>-->
+                        </div>
+                        <div class="pull-right col-lg-10 bank_city text-right Customer_service p-right-25">
+                            <div class="customer_services_answer">
+                                <p class='Customer_service_data'>{$vo.add_time|date="Y-m-d H:i:s",###}</p>
+                                <div class="changhtml">{$vo.answer}</div>
+                            </div>
+                        </div>
+                    </div>
+                </if>
+            </foreach>
+        </div>
+    </div>
+</div>
+<include file="Public:PersonalCenterFooter" />
+<script type="text/javascript">
+    (function() {
+        //问题【已解决】查看问题时再点击多语言要附带2个参数
+        var theid = window.location.href.split("?")[1];
+        var and = window.location.href.split("&")[1];
+        var findDIV = document.getElementsByClassName("langCheck")[0].getElementsByTagName("div")[0];
+        var findLI = findDIV.getElementsByTagName("a");
+        if (typeof(theid) != "undefined") {
+            if (and) {
+                for (var i = 0; i < findLI.length; i++) {
+                    var index = findLI[i].getAttribute("href");
+                    findLI[i].setAttribute("data-href", index + "&" + and);
+                }
+            } else {
+                for (var i = 0; i < findLI.length; i++) {
+                    var index = findLI[i].getAttribute("href");
+                    findLI[i].setAttribute("data-href", index + "&" + theid);
+                }
+            }
+
+        }
+        // 点击多语言时
+        $(".dropdown_img_icon").click(function() {
+            var _this = $(this);
+            var _thisAttr = $(this).attr("data-href");
+            if (_this) {
+                _this.attr("href", _thisAttr);
+            } else {
+                return false;
+            }
+        })
+    })()
+</script>
+<script src="__HOME_JS__/Problem/showResponse.js"></script>

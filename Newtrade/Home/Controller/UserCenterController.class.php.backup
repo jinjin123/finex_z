@@ -1,0 +1,346 @@
+<?php
+
+namespace Home\Controller;
+
+use Home\Logics\CommonController;
+use Home\Model\UserModel;
+
+class UserCenterController extends CommonController
+{
+    public $tmpl = '../../../Public/Home/fe';
+    protected $userobj;
+    private $areaArr = array(
+        '+86' => 3,// 大陆
+        // '+886' => 2,//台湾
+        '+852' => 1,//香港
+    );// 获取默认地区
+
+    private $areaName = array(
+        1 => 'HK',
+        // 2 => 'TW',
+        3 => 'CN',
+    );
+    public function __construct()
+    {
+        parent::__construct();
+        $this->userobj =  M('User')->where(['uid' => getUserId()])->find();
+    }
+
+    public function index()
+    {
+        $uid = getUserId();
+
+        $table = getTbl('UserLog', $uid);
+        $log = M($table)->where([
+            'uid' => $uid,
+            'type' => 1
+        ])->order('add_time desc')->find();
+
+        $userCurrency = M('UserCurrency')->alias('uc')->join('trade_currency AS c ON c.id = uc.currency_id')->where([
+            'uc.uid' => $uid,
+            'c.currency_name' => ['IN', ['BTC', 'ETH']]
+        ])->field([
+            'c.currency_name', 'uc.num'
+        ])->select();
+        foreach ($userCurrency as $k => $v) {
+            $userCurrency[$v['currency_name']] = $v;
+            unset($userCurrency[$k]);
+        }
+        $userCurrency['USDT'] = [
+            'currency_name' => 'USDT', 'num' => '0.00000000'
+        ];
+
+        $this->assign('currency', $userCurrency);
+        $this->assign('user', getUserInfo());
+        $this->assign('real',checkRealName());
+        $this->assign('log', $log);
+        $this->display($this->tmpl . '/User');
+    }
+
+//	public function index(){
+//		$defaultArra   = $this->areaArr[$this->userInfo['om']];// 根据用户注册地区，获取默认地区银行
+//		$defaultArra   = !empty($defaultArra) ? $defaultArra : 1;// 如果用户非大陆，台湾，香港用户，则默认为香港
+//		$BankListModel = new BankListModel();
+//		$bankList      = $BankListModel->getBankListName();
+//		$userReal      = M('UserReal')->where(['uid'=> getUserId()])->find();
+//		$configModel   = new ConfigModel();
+//		$configList    = $configModel->getConfigList();
+//		$isMaintain    =  $this->getWebMaiantainInfo(Maintain::P2P);
+//
+//		$this->assign('isMaintain', $isMaintain);
+//		$this->assign('configList', $configList);
+//        $this->assign('userReal',$userReal);
+//		$this->assign('areaName', $this->areaName[$defaultArra]);
+//        $this->assign('defaultArra', $defaultArra);
+//        $this->assign('isTour', 0);
+//        $this->assign('is_p2p_tour', $this->userInfo['is_p2p_tour']);
+//		$this->display();
+//	}
+
+//    public function deposit()
+//    {
+//        $this->display($this->tmpl . '/User_Chain_Deposit_History');
+//    }
+//
+//    public function withdraw()
+//    {
+//        $this->display($this->tmpl . '/User_Chain_Withdraw_History');
+//    }
+//
+//    public function exchange()
+//    {
+//        $this->display($this->tmpl . '/User_Chain_Exchange_History');
+//    }
+
+    /**
+     * 获取用户绑定的银卡卡信息
+     * @return [type] [description]
+     * @author lirunqing 2017-11-06T14:20:54+0800
+     */
+    public function getUserBindBank()
+    {
+
+        $userId = getUserId();
+        $areaArr = array_flip($this->areaArr);
+        $areaId = (int)I('post.areaId');
+        $countryCode = $areaArr[$areaId];
+        $where['a.uid'] = $userId;
+        $where['a.status'] = 1;
+        $where['b.country_code'] = $countryCode;
+        $field = 'a.id,a.bank_num,a.default_status,b.bank_name,a.bank_list_id';
+        $res = M('userBank')->alias('a')->field($field)->join('__BANK_LIST__ b ON b.id= a.bank_list_id')->where($where)->select();
+
+        foreach ($res as $key => $value) {
+            $value['bank_name'] = formatBankType($value['bank_list_id']);
+            unset($value['bank_list_id']);
+            $value['bank_num'] = substr_replace($value['bank_num'], '**** **** **** ', 0, -4);
+            $res[$key] = $value;
+        }
+
+        $this->ajaxReturn($res);
+    }
+
+    /**
+     * 根据地区获取银行相关信息
+     * @return [type] [description]
+     * @author 2017-11-08T18:07:27+0800
+     */
+    public function getBankInfoByArea()
+    {
+
+        $arr = array(
+            1 => L('_ZGXG_'),
+            2 => L('_ZGTW_'),
+            3 => L('_ZGDL_')
+        );
+        $areaArr = array_flip($this->areaArr);
+        $areaId = (int)I('post.areaId');
+        $countryCode = $areaArr[$areaId];
+        $where['country_code'] = $countryCode;
+        $bankInfo = M('BankList')->where($where)->select();
+
+        $area = '';
+        if (!empty($bankInfo)) {
+            $area = $arr[$areaId];
+        }
+
+        foreach ($bankInfo as $key => $value) {
+            $value['bank_name'] = formatBankType($value['id']);
+            unset($value['country_code']);
+            $bankInfo[$key] = $value;
+        }
+
+        $allAreaBank = array(
+            "id" => "0",
+            "bank_name" => L('_QUANBU_')
+        );
+
+        array_unshift($bankInfo, $allAreaBank);
+
+        $data = array(
+            'area' => $area,
+            'bankInfo' => $bankInfo
+        );
+
+        $this->ajaxReturn($data);
+    }
+
+    /**
+     * 检测用户是否绑定银行卡
+     * @return [type] [description]
+     * @author lirunqing 2017-11-16T10:51:40+0800
+     */
+    public function checkUserBindBank()
+    {
+        $res = array(
+            'msg' => '',
+            'code' => 201,
+            'data' => array(),
+        );
+
+        $userId = getUserId();
+        if (!checkUserBindBank($userId)) {
+            $res['msg'] = L('_ZHUYI_') . L('_QXJX_') . L('_GJYDQ_') . '<a href="/PersonalCenter/showBankCardBind" style="color:#00dcda;">' . L('_BDYHK_') . '</a>' . L('_ZJXMCCZ_');
+            $this->ajaxReturn($res);
+        }
+
+        $res['code'] = 200;
+        $this->ajaxReturn($res);
+    }
+
+    /**
+     * 汇率前台显示
+     * @author fuwen
+     * @date 2018年3月6日10:51:45
+     */
+    public function exchangeRate()
+    {
+        $rate_list = M('Rate')
+            ->order('add_time desc')
+            ->limit(10)
+            ->select();
+        foreach ($rate_list as $k => $v) {
+            if ($rate_list[$k]['rate_avg'] == 0) {
+                $rate_list[$k]['rate_avg'] = '-';
+            }
+        }
+        $this->assign('rate_list', $rate_list);
+        $this->display();
+    }
+
+    /**
+     * 修改密码
+     */
+    public function changePass(){
+        if(IS_AJAX){
+            $data = I('');
+            $key = ($this->userobj)['email'] . '_change_email_code';
+            $redis = RedisIndex::getInstance();
+            $rcode = $redis->getSessionValue($key);
+            $msg = $this->checkPass($data,$rcode);
+            $redis->delSessionRedis($key);
+            if($msg) $this->ajaxReturn(['code'=>201,'msg'=>$msg]);
+            //插入数据表
+            $ret = M('User')
+                ->where(['uid'=>getUserId()])
+                ->save(['pwd'=>passwordEncryption(trim($data['password']))]);
+            if($ret) $this->ajaxReturn(['code'=>202,'msg'=>'Modify the failure']);
+            $this->ajaxReturn(['code'=>200,'msg'=>'Modify the success']);
+        }else{
+            $this->assign('user', getUserId());
+            $this->assign('email',$this->userobj['email']);
+            $this->display($this->tmpl.'/changePass');
+        }
+
+    }
+
+    //获取参数
+    public function getParams(){
+        $data = I('get.');
+        $list = (new UserModel())->getList($data['type'],$data['num'],$data['username']);
+    }
+    protected function checkPass($data,$rcode){
+        $msg = '';
+        if(!$data['code'] || !data['password'] || !$data['rpassword']){
+            $msg = 'Incorrect input information';
+        }
+        if(trim($data['password']) != trim($data['rpassword'])){
+            $msg = 'The password is inconsistent between the two entries';
+        }
+        if(trim($data['code']) != $rcode){
+            $msg = 'Email verification code error';
+        }
+        return $msg;
+    }
+
+    public function sendEmail()
+    {
+        $code = rand(100000, 999999);
+        //判断邮箱是否存在
+        $userInfo = $this->userobj;
+        if(empty($userInfo))  $this->ajaxReturn(['msg' => 'The user not exist']);
+        $redis = RedisIndex::getInstance();
+        $redis->setSessionRedis($userInfo['email'] . '_change_email_code', $code);
+        $status = sendEmail([
+            'emailHost' => 'smtp.gmail.com',
+            'emailPassWord' => 'Xiongmao88',
+            'emailUserName' => 'SpaceFinEX@gmail.com',
+            'formName' => 'SpaceFinEX'
+        ], $email, 'Verification code', $code);
+        $this->ajaxReturn(['msg' => 'send' . ($status ? 'successful' : 'failure')]);
+    }
+    //我的莲
+    public function myChain(){
+        $this->assign('user', getUserId());
+        $this->assign('real', checkRealName());
+        $this->display($this->tmpl.'/User_Chain');
+    }
+    //实名认证
+    public function realName(){
+        $this->display($this->tmpl.'/real');
+    }
+
+    public function subRealName(){
+        $data = I("POST.");
+        $firstName   = trim($data['FirstName']);
+        $LastName    = trim($data['LastName']);
+        $IDCard      = trim($data['IDCard']);
+        $IDCardPhoto = trim($data['IDCardPhoto']);
+        $msg = $this->checkData($firstName,$LastName,$IDCard,$IDCardPhoto);
+        if($msg)return $this->error($msg);
+        $newData = [];
+        $newData['card_name'] = $firstName.$LastName;
+        $newData['card_num'] = $IDCard;
+        $newData['up_img'] = $IDCardPhoto;
+        $newData['uid'] = getUserId();
+        $newData['add_time'] = time();
+        $newData['check_time'] = time();
+        $newData['status'] = 1;
+        $rst = M('UserReal')->add($newData);
+        if(!$rst) return $this->error('Real-name authentication failed');
+        if(!$rst) return $this->success('Real-name authentication passed','index');
+    }
+
+    protected function checkData($data){
+        $msg = '';
+        if(empty($data['firstName'])){
+            $msg = 'firstName is empty';
+        }
+        if(empty($data['lastName'])){
+            $msg = 'lastName is empty';
+        }
+        if(empty($data['IDCard'])){
+            $msg = 'IDCard is empty';
+        }
+        if(empty($data['IDCardPhoto'])){
+            $msg = 'IDCardPhoto is empty';
+        }
+        return $msg;
+    }
+
+    /**
+     * 文件上传类
+     * @author yangpeng 2017-10-11
+     * @param string $name 传入图片的name
+     * @return array
+     */
+    public function uploadOne()
+    {
+        /*1、实例化上传类并初始化相关值*/
+        $upload = new \Think\Upload();// 实例化上传类
+        $upload->maxSize = 312312*1024*1024;// 设置附件上传大小3M
+        $upload->exts = array('jpg', 'gif', 'png', 'jpeg');// 设置附件上传类型
+        $upload->rootPath = './Upload/Home/realname/'; // 设置附件上传根目录
+        $upload->saveName = time() . '_' . rand(100000, 999999);
+        /*2、上传单个文件，正确返回图片路径，错误返回错误信息*/
+//                $info   =   $upload->uploadOne($_FILES[$name]);
+        $info = $upload->uploadOne($_FILES['files']);
+        if (!$info) {// 上传错误提示错误信息
+            $this->error($upload->getError());
+        } else {// 上传成功 获取上传文件信息
+            $result['imgurl'] = '/Upload/Home/realname/' . $info['savepath'] . $info['savename'];
+            $result['code'] = 200;
+            $this->ajaxReturn($result);
+        }
+    }
+}

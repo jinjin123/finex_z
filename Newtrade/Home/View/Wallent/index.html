@@ -1,0 +1,234 @@
+<include file="Public:PersonalCenterHeader" />
+<link id="Wallent" href="__HOME_CSS__/Wallent_purple.css" rel="stylesheet" type="text/css" data-depStyle="depStyle">
+<!--右边打竖第一块 钱包-->
+<div class="col-lg-12 col-md-12 col-sm-12">
+    <div class="panel-heading large-heading clearfix Coin_money_nav">
+        <div class="panel-action pull-left coin_left_nav">
+            <!-- 币种tab切换 -->
+            <ul class="nav nav-tabs underline-tabs personalCenter_nav coinType_tab"></ul>
+            <!-- 手机端时的tab切换 -->
+            <div class="smshow visible-sm-block visible-xs-block" style="display: block">
+                <div class="btn-group bootstrap-select">
+                    <select class="selectpicker coinType_select_tab" id="coin_select"><option value="1">BTC</option></select>
+                </div>
+            </div>
+        </div>
+
+        <!-- 提充币切换 -->
+        <div class="panel-title pull-right">
+            <div class="panel-tools">
+                <div class="tools-content">
+                    <ul class="nav nav-tabs underline-tabs info-tabs clearfix coin_money_control solid-tabs nav-stacked">
+                        <li class="active target_order_buse">
+                            <a href="{:U('Wallent/index')}" id='charge_money' class='wallent_lg_buse'>{$Think.lang._CHONGBI_}</a>
+                        </li>
+                        <li class="target_order_buse">
+                            <a href="{:U('Wallent/transferPage')}" id='withdraw_money' class='wallent_lg_buse'>{$Think.lang._TIBI_}</a>
+                        </li>
+                        <li class='my_order_target'></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-lg-12 col-md-12 col-sm-12">
+    <!-- 充币模块 -->
+    <div class='coin_charge_money coinType_coin_change'>
+        <!-- 标题文字 -->
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <!-- currency_name为动态切换数据 -->
+                <div class="tab-content tab-pane fade in coin_money_content text-left">
+                    <h4>{$Think.lang._CHONGBI_} <span class="currency_name"></span></h4>
+                    <div class="alert alert-info">
+                        <p>1. {$Think.lang._QINGJIANG_}<span class="currency_name"></span>{$Think.lang._FSDXMXSDDZJRNDZZ_}</p>
+                        <p>2. {$Think.lang._YHKYDJ_}<svg class="icon input-icon icon-bz" aria-hidden="true"><use xlink:href="#icon-ic_wallet_copy"></use></svg>{$Think.lang._ANFZCBDZFBJL_}</p>
+                        <p>3. {$Think.lang._YHKYDJ_}<svg class="icon input-icon icon-bz" aria-hidden="true"><use xlink:href="#icon-ic_wallet_re"></use></svg> {$Think.lang._ANSCXDYKDZ_}</p>
+                        <p>4. {$Think.lang._RHF_} <span class="currency_name"></span> {$Think.lang._ZCCRF_} <span class="currency_name"></span>{$Think.lang._DZHWFZH_}</p>
+                    </div>
+                </div>
+                <!-- EOS单独提示 -->
+                <div class='tab-content tab-pane fade in coin_money_content text-left' id="EOS-info" style="display: none">
+                    <h4 class='text-left'>{$Think.lang._CHONGBI_} <span class="currency_name"></span></h4>
+                    <div class="alert alert-info text-left">
+                        <p>1. {$Think.lang._QINGJIANG_}<span class="currency_name"></span>{$Think.lang._FSDXMXSDDZJRNDZZ_}</p>
+                        <p>2. {$Think.lang._YHKYDJ_}<svg class="icon input-icon icon-bz" aria-hidden="true"><use xlink:href="#icon-ic_wallet_copy"></use></svg>{$Think.lang._ANFZCBDZFBJL_}</p>
+                        <p>3. {$Think.lang._YHKYDJ_}<svg class="icon input-icon icon-bz" aria-hidden="true"><use xlink:href="#icon-ic_wallet_re"></use></svg> {$Think.lang._ANSCXDYKDZ_}</p>
+                        <p>4. {$Think.lang._RHF_} <span class="currency_name"></span> {$Think.lang._ZCCRF_} <span class="currency_name"></span>{$Think.lang._DZHWFZH_}</p>
+                        <p>5. {$Think.lang._QJEOSCSZXFCZDZMEMO_}</p>
+                        <p>6. {$Think.lang._CZEOSTSXYYGMEMO_}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 地址栏 -->
+        <div class='panel panel-default'>
+            <div class='panel-body'>
+                <div class='tab-content coin_money_address default_address text-left'>
+                    <label for="address">{$Think.lang._JYPTCZDZ_}</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control text-center CoinNoConfirm disUrl wallen-tibi" id="address" value="" readonly />
+                        <div class="form-control text-center CoinNoConfirm NoUrl wallen-tibi">
+                            {$Think.lang._YHKYDJ_}
+                            <svg class="icon icon_norepeat" aria-hidden="true"><use xlink:href="#icon-ic_binding"></use></svg> {$Think.lang._ANHQCZDZ_}
+                        </div>
+                        <span class="input-group-btn disbutton">
+                            <button type="button" id="copy"  class="btn btn-green copyBtn" data-clipboard-action="copy" data-clipboard-target="#address"><svg class="icon input-icon icon-bz" aria-hidden="true"><use xlink:href="#icon-ic_wallet_copy"></use></svg></button>
+                            <button type="button" id="fresh" class="btn btn-green getUrl"><svg class="icon input-icon icon-bz" aria-hidden="true"><use xlink:href="#icon-ic_wallet_re"></use></svg></button>
+                            <button type="button" id="sign"  class="btn btn-green getUrl"><svg class="icon icon_norepeat" aria-hidden="true"><use xlink:href="#icon-ic_binding"></use></svg></button>
+                        </span>
+                    </div>
+                </div>
+                <!-- EOS地址栏 -->
+                <div class='tab-content coin_money_address text-left' id="EOS-address" style="display: none">
+                    <label for="address">{$Think.lang._JYPTCZDZ_}</label>
+                    <div class="two-content clearfix">
+                        <div class="address-group pull-left">
+                            <div class="input-group">
+                                <div class='bch_left pull-left eos_patent_top text-right'>
+                                    <span class="text-right">MEMO</span>
+                                    <!-- 提示 -->
+                                    <svg class="icon input-icon icon-bz" aria-hidden="true">
+                                        <use xlink:href="#icon-ic_notice" style='margin-top:2px;'></use>
+                                    </svg>
+                                    <div class='eos_svg1_hover text-left'>
+                                        <p><svg class="icon input-icon icon-bz" aria-hidden="true">
+                                            <use xlink:href="#icon-tips_notice1"></use></svg>{$Think.lang._GYMEMO_}</p>
+                                        <p>{$Think.lang._MEMODZYSQBNDCBDZWYX_}</p>
+                                    </div>
+                                    <span>：</span>
+                                </div>
+                                <input type="text" class="form-control text-center CoinNoConfirm disUrl wallen-tibi" id="address2" value="" readonly />
+                                <div class="form-control text-center CoinNoConfirm NoUrl wallen-tibi">
+                                    {$Think.lang._YHKYDJ_}
+                                    <svg class="icon icon_norepeat" aria-hidden="true"><use xlink:href="#icon-ic_binding"></use></svg> {$Think.lang._ANHQCZDZ_}
+                                </div>
+                                <span class="input-group-btn disbutton">
+                                    <button type="button" id="copy1"  class="btn btn-green copyBtn" data-clipboard-action="copy" data-clipboard-target="#address2"><svg class="icon input-icon icon-bz" aria-hidden="true"><use xlink:href="#icon-ic_wallet_copy"></use></svg></button>
+                                    <button type="button" id="fresh2" class="btn btn-green getUrl"><svg class="icon input-icon icon-bz" aria-hidden="true"><use xlink:href="#icon-ic_wallet_re"></use></svg></button>
+                                    <button type="button" id="sign2"  class="btn btn-green getUrl"><svg class="icon icon_norepeat" aria-hidden="true"><use xlink:href="#icon-ic_binding"></use></svg></button>
+                                </span>
+                            </div>
+                            <div class="input-group">
+                                <div class='bch_left pull-left eos_patent_bottom text-right'>
+                                    <span class="text-right">{$Think.lang._CBDZ_} :&nbsp;&nbsp;</span>
+                                </div>
+                                <input type="text" class="form-control text-center CoinNoConfirm disUrl wallen-tibi" id="address3" value="" readonly />
+                                <div class="form-control text-center CoinNoConfirm NoUrl wallen-tibi">
+                                    {$Think.lang._YHKYDJ_}
+                                    <svg class="icon icon_norepeat" aria-hidden="true"><use xlink:href="#icon-ic_binding"></use></svg> {$Think.lang._ANHQCZDZ_}
+                                </div>
+                                <span class="input-group-btn disbutton"><button type="button" id="copy2"  class="btn btn-green copyBtn" data-clipboard-action="copy" data-clipboard-target="#address3"><svg class="icon input-icon icon-bz" aria-hidden="true"><use xlink:href="#icon-ic_wallet_copy"></use></svg></button></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- BCH\BSV地址栏 -->
+                <div class='tab-content coin_money_address text-left' id="BCH-address" style="display: none">
+                    <label for="address">{$Think.lang._JYPTCZDZ_}</label>
+                    <div class="two-content clearfix">
+                        <div class="address-group pull-left">
+                            <div class="input-group">
+                                <div class='bch_left pull-left text-right'><span>Cash Address：</span></div>
+                                <input type="text" class="form-control text-center CoinNoConfirm disUrl wallen-tibi" id="address4" value="" readonly />
+                                <div class="form-control text-center CoinNoConfirm NoUrl wallen-tibi">
+                                    {$Think.lang._YHKYDJ_}
+                                    <svg class="icon icon_norepeat" aria-hidden="true"><use xlink:href="#icon-ic_binding"></use></svg> {$Think.lang._ANHQCZDZ_}
+                                </div>
+                                <span class="input-group-btn disbutton"><button type="button" id="copy3"  class="btn btn-green copyBtn" data-clipboard-action="copy" data-clipboard-target="#address4"><svg class="icon input-icon icon-bz" aria-hidden="true"><use xlink:href="#icon-ic_wallet_copy"></use></svg></button>
+                            </span>
+                            </div>
+                            <div class="input-group">
+                                <div class='bch_left pull-left text-right'><span>Legacy：</span></div>
+                                <input type="text" class="form-control text-center CoinNoConfirm disUrl wallen-tibi" id="address5" value="" readonly />
+                                <div class="form-control text-center CoinNoConfirm NoUrl wallen-tibi">
+                                    {$Think.lang._YHKYDJ_}
+                                    <svg class="icon icon_norepeat" aria-hidden="true"><use xlink:href="#icon-ic_binding"></use></svg> {$Think.lang._ANHQCZDZ_}
+                                </div>
+                                <span class="input-group-btn disbutton"><button type="button" id="copy4"  class="btn btn-green copyBtn" data-clipboard-action="copy" data-clipboard-target="#address5"><svg class="icon input-icon icon-bz" aria-hidden="true"><use xlink:href="#icon-ic_wallet_copy"></use></svg></button>
+                            </span>
+                            </div>
+                        </div>
+                        <div class="input-group-btn2 pull-left">
+                            <button type="button" id="fresh3" class="btn btn-gradient getUrl"><svg class="icon input-icon icon-bz" aria-hidden="true"><use xlink:href="#icon-ic_wallet_re"></use></svg> {$Think.lang._GENGXIN_}</button>
+                            <button type="button" id="sign3" class="btn btn-gradient getUrl"><svg class="icon icon_norepeat" aria-hidden="true"><use xlink:href="#icon-ic_binding"></use></svg> {$Think.lang._HUOQU_}</button>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 表格记录 -->
+        <div class='coin_money_Record-wrap'>
+            <div class="panel panel-default coin_money_Record">
+                <div class="panel-heading large-heading">
+                    <div class="panel-title"><span class='Wallent_coin_title'>{$Think.lang._CBJL_}</span></div>
+                    <div class="panel-action text-right">
+                        <button class="btn btn-min"></button>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <!-- table内容 -->
+                    <div class="table-responsive">
+                        <table class="table order sortable-theme-bootstrap">
+                            <thead>
+                                <tr>
+                                    <th>{$Think.lang._JLID_}</th>
+                                    <th>{$Think.lang._ZRQBDZ_}</th>
+                                    <th>{$Think.lang._SHULIANG_}</th>
+                                    <th>{$Think.lang._SHIJJDZ_}</th>
+                                    <th>{$Think.lang._FSSJ_}</th>
+                                    <th>{$Think.lang._ZHUANGTAI_}</th>
+                                </tr>
+                            </thead>
+                            <tbody id="list_body"></tbody>
+                        </table>
+                    </div>
+                    <!-- page分页 -->
+                    <div class="text-right sm-text-center dataPage" id="dataPage"></div>
+                    <!-- /.page -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- EOS弹窗 -->
+    <div class="modal fade modalStyle" id="eos_modal" data-width="400" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-body">
+                <p class="text-center"><img src="__HOME_IMG__/tc_notice.svg" alt=""></p>
+                <p>{$Think.lang._CZEOSTSXYYGCZDZMEMO_}<br>{$Think.lang._JFRWZQZSEOSCZGCZCDS_}</p>
+            </div>
+            <div class="modal-footer">
+                <div class="text-center">
+                    <button type="button" data-dismiss="modal" data-dismiss="modal" class="btn btn-default gradual_change_blue">{$Think.lang._WMBQRSY_}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<include file="Public:PersonalCenterFooter" />
+<script>
+    var user_real_code = "{$user_real_code}";
+
+    var getChongbiPageUrl1 = "{:U('Wallent/getAjaxPageData')}";
+    var getTibiPageUrl1 = "{:U('Wallent/getAjaxPageData1')}";
+    var graphiccodenotnull = '{$Think.lang._TXYZMBNWK_}';
+    var tibinumbernotnull = '{$Think.lang._TBSLBNWK_}';
+    var phonecodenotnull = '{$Think.lang._SJYZMBNWK_}';
+    var tradepwdnotnull = '{$Think.lang._ZJMMBNWK_}';
+    var tibinumberbig = '{$Think.lang._SRTBZJCGXZ_}';
+    var tibinumbernotnull = '{$Think.lang._TBSLBNWK_}';
+    var collierfeeerror = "{$Think.lang._KGFTXCW_}";
+    var collierfeeegt = "{$Think.lang._KGFBNXY_}";
+    var chongbiUrlmsgErr = '{$Think.lang._CSCW_}';
+    var FZCG = '{$Think.lang._FZCG_}';
+    var FZSB = '{$Think.lang._FZSBNDLLQBZC_}';
+    var bzwh = '{$Think.lang._BZWHZBZBYXCZ_}';
+    var _PTJWNDCZDZTGCLGS_ = '{$Think.lang._PTJWNDCZDZTGCLGS_}';
+</script>
+<!-- copyjs 顺序优先加载  -->
+<script src="__HOME_JS__/clipboard.min.js"></script>
+<!-- 充币地址  -->
+<script src="__HOME_JS__/wallent/wallent_index.js" type="text/javascript" charset="utf-8"></script>

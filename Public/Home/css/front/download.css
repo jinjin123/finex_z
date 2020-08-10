@@ -1,0 +1,881 @@
+/*start */
+
+/* -------------------------------------------------------*/
+.animationBody, .footer_animationBody{
+    display: none;
+}
+body{
+    background-image: none;
+}
+
+/* -----------------------------  ---------------------------*/
+/*.target-nav>div>ul>li>a,.target-nav>div>ul>li{
+    color: #66688F !important;
+}*/
+.nav_srcoll .target-nav>div>ul>li>a,.nav_srcoll .target-nav>div>ul>li{
+    color: #fff !important;
+}
+/* --------------------------------------------------------*/
+
+.white_bg{
+    position: relative;
+}
+/* .white_bg:before{
+    content: '';
+    background-color: #fff;
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+} */
+.download_bg{
+    /* background: url("../../img/front/download_bg.svg") no-repeat top ; */
+    background-size: cover;
+    background-position: 100% 33%;
+}
+/* --------------------------------------------------------*/
+.container{
+    width: auto;
+    padding-left: 15%;
+    padding-right: 15%;
+}
+.padLeft10{
+    padding-left: 10%;
+}
+.padRight10{
+    padding-right: 10%;
+}
+.box{
+    padding: 5% 0 7%;
+}
+.box .down_tit{
+    margin-bottom: 7%;
+    display: inline-block;
+}
+.box .down_tit img{
+    width: 160px;
+}
+.box .down_tit2{
+    font-size: 3.2rem;
+    line-height: 5rem;
+    margin-bottom: 12px;
+}
+.box .down_tit2.en{
+    text-align: left;
+    margin-left: 11%;
+}
+.box.row:nth-of-type(odd) .down_tit2 span{
+    margin-right: 2rem;
+}
+.box.row:nth-of-type(even) .down_tit2 span{
+    margin-left: 2rem;
+}
+.box .font{
+    padding-top: 31%;
+    font-family: "PingFangSC-Regular";
+}
+.box .font.en{
+    width: 82%;
+}
+.font-second.en{
+    margin-left: -2%;
+    text-align: right;
+}
+.box .font-second .down_tit2.en{
+    margin-left: 0;
+    text-align: right;
+}
+
+.box .font,.box .font p{
+    color: #ffffff;
+    display: inline-block;
+}
+
+.box .font p{
+    font-size: 1.4rem;
+}
+.box .font p.en{
+    font-size: 1.6rem;
+    margin-left: 12%;
+    text-align: left;
+    width: 100%;
+}
+.box .font-second  p.en{
+    margin-left: 0%;
+    text-align: right;
+}
+.box.row:nth-of-type(even) .font-second .down_tit2 span{
+    margin-left: 3.1rem;
+}
+
+
+
+/* --------------------------------------------------------*/
+.downloadh3{
+    color: white;
+    margin-bottom: 30px;
+    font-size: 4rem;
+    font-family: "Avenir-Medium";
+}
+
+.des_title {
+    margin-bottom: 2%;
+    line-height: 30px;
+}
+
+.des_title .underline {
+    text-decoration: underline;
+    color: #fff;
+    margin-top: 10px;
+    display: inline-block;
+    font-size: 15px;
+}
+.download_bg_color .box{
+    padding: 6% 0 8% 0 ;
+}
+
+/* --------------------------------------------------------*/
+.GoDownload {
+    padding-top: 1rem;
+}
+
+.GoDownload a{
+    margin: 2% 0;
+}
+
+.GoDownload .btnStyle {
+    height: 44px;
+    line-height: 32px;
+    background: linear-gradient(51deg, #3165F9 0%, #509AEF 100%);
+    background: -webkit-gradient(51deg, #3165F9 0%, #509AEF 100%);
+    background: -moz-linear-gradient(51deg, #3165F9 0%, #509AEF 100%);
+    background: -ms-linear-gradient(51deg, #3165F9 0%, #509AEF 100%);
+    border-radius: 5px;
+    border: none;
+    width: 38%;
+    transition: .5s all;
+    color: #fff;
+    font-family: "Avenir-Medium";
+}
+
+.GoDownload .btnStyle:hover {
+    background: linear-gradient(51deg, #509AEF 0%, #3165F9 100%);
+    background: -webkit-gradient(51deg, #509AEF 0%, #3165F9 100%);
+    background: -moz-linear-gradient(51deg, #509AEF 0%, #3165F9 100%);
+    background: -ms-linear-gradient(51deg, #509AEF 0%, #3165F9 100%);
+    box-shadow: 3px 5px 7px 2px rgba(35, 35, 35, 0.54);
+}
+
+.GoDownload .take-up {
+    display: none;
+}
+
+.GoDownload .btnStyle svg {
+    color: white;
+    font-size: 23px;
+}
+.GoDownload .btnStyle[data-title=iPhone] svg , .GoDownload .btnStyle[data-title=Android] svg{
+    vertical-align: -3px;
+}
+/* 新增样式 */
+.T_R_img{
+    width: 100%;
+    position: absolute;   
+    top: -8%;
+    right: 0;
+    z-index: -1;
+    text-align: right;
+}
+.T_R_img img{
+    width: 85%;
+}
+.B_L_img img{
+    width: 85%;
+    transform: translateY(10%);
+}
+.B_L_img{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    text-align: left;
+    overflow: hidden;
+}
+.topWrap_box{
+    background-image: url(../../img/dl_line.png);
+    background-repeat: no-repeat;
+    background-position: 56% 5%;
+    background-size: 79% 35%;
+}
+.header-content{
+    text-align: center;
+    width: 549px;
+    margin: 0 auto;
+}
+.logo_size{
+    width: 30%;
+    padding: 9% 0 13% 0; 
+}
+.twoPhone_box{
+    margin-bottom: 5px;
+}
+.twoPhone_box .btnStyle:nth-of-type(1){
+    float: left;
+}
+.twoPhone_box .btnStyle:nth-last-of-type(1){
+    float: right;
+}
+.twoPhone_box .btnStyle{
+    width: 42%;
+}
+.dynamic_box{
+    font-family: "PingFangSC-Regular";
+}
+.dynamic_box .btnStyle{
+    width: 54%;
+    font-size: 18px;
+}
+.twoPhone_box .btnStyle span{
+    font-size: 18px;
+}
+.beauty{
+    position: relative;
+}
+.beauty::after{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 4px;
+    margin-top: 10px;
+}
+.beauty.bleft::after{
+    background: linear-gradient(to left ,rgba(44,98,255,0.00), #4393FF);
+    margin-right: auto;
+}
+.beauty.bright::after{
+    background: linear-gradient(to right ,rgba(44,98,255,0.00), #4393FF);
+    margin-left: auto;
+}
+.twoPhone_box .btnStyle span{
+        font-size: 18px;
+    }
+
+
+
+
+
+/* --------------------------------------------------------*/
+.white_bg .instruction_box:nth-of-type(1){
+    background: url(../../img/dl_one.svg) no-repeat;
+    background-position: -4% 11%;
+    background-size: 67%;
+    transform: translate(0px,-60px);
+    margin-bottom: 8%;
+}
+
+.white_bg .instruction_box:nth-of-type(1) .box.row .font{
+    padding-top: 165%;
+    padding-bottom: 74%;
+}
+.white_bg .instruction_box:nth-of-type(2){
+    background: url(../../img/dl_two.svg) no-repeat;
+    background-position: 100% 0;
+    background-size: 63%;
+    margin-bottom: 0;
+}
+.white_bg .instruction_box:nth-of-type(2) .box.row .font{
+    padding-top: 44%;
+    padding-bottom: 103%;
+}
+.white_bg .instruction_box:nth-of-type(3){
+    background: url(../../img/dl_three.svg) no-repeat;
+    background-position: 0% 0%;
+    background-size: 63%;
+    margin-bottom: 22%;
+    margin-bottom: 3%;
+}
+.white_bg .instruction_box:nth-of-type(3) .box.row .font{
+    padding-top: 83%;
+    padding-bottom: 72%;
+}
+.white_bg .box.en:nth-of-type(3){
+    background-position: 17% 63%;
+}
+.des_detail{
+    padding-top: 8%;
+    width: 94%;
+    float: right;
+}
+.des_detail ul>li {
+    position: relative;
+    padding-left: 11px;
+    margin-bottom: 35px;
+    width: 74%;
+}
+
+.des_detail ul>li:first-of-type{
+    float: right;
+}
+
+.des_detail ul>li>b {
+    width: 3px;
+    height: 89%;
+    background: #3C6BF0;
+    position: absolute;
+    left: -.1%;
+    top: 4px;
+}
+
+.des_detail .des_detail_function {
+    margin-bottom: 12px;
+}
+
+.des_detail .des_detail_function span:nth-of-type(1) {
+    color: #fff;
+    font-size: 18.5px;
+    margin-bottom: 10px;
+}
+
+
+.header-content .Functional-specifications {
+    font-size: 1.6rem;
+    color: #fff;
+    font-family: PingFangSC-Regular;
+    margin-bottom: 30px;
+    font-weight: 100;
+    padding: 0 9%;
+    line-height: 26px;
+}
+
+
+/* ----------------------- Media ----------------------- */
+@media screen and (min-width: 2560px) {
+    .topWrap_box{
+        background-position: 56% 7%;
+        background-size:82% 38%;
+    }
+    .logo_size{
+        width: 38%;
+        padding: 9% 0 17% 0;
+    }
+    .box .down_tit2{
+        font-size: 3.6rem;
+    }
+    .box .font p{
+        font-size: 2rem;
+    }
+    .white_bg .instruction_box:nth-of-type(1) .box.row .font{
+        padding-top: 162%;
+        padding-bottom: 72%;
+    }
+    .white_bg .instruction_box:nth-of-type(2) .box.row .font{
+        padding-top: 46%;
+        padding-bottom: 101%;
+    }
+    .white_bg .instruction_box:nth-of-type(3) .box.row .font{
+        padding-top: 90%;
+        padding-bottom: 61%;
+    }
+}
+@media screen and (min-width: 2200px) {
+    .B_L_img img{
+        transform: translateY(20%);
+    }
+    .header-content{
+        width: 600px;
+    }
+    .topWrap_box{
+        background-position: 56% 16%;
+        background-size:89% 38%;
+    }
+    .logo_size{
+        width: 40%;
+        padding: 30% 0 14% 0;
+    }
+    .downloadh3{
+        font-size: 4.5rem;
+    }
+    .box .down_tit2{
+        font-size: 4rem;
+        margin-bottom: 20px;
+    }
+    .box .font p{
+        font-size: 2rem;
+    }
+    .header-content .Functional-specifications{
+        font-size: 1.8rem;
+    }
+    .white_bg .instruction_box:nth-of-type(2n+1) .box.row .font{
+        margin-left: -15%;
+    }
+    .white_bg .instruction_box:nth-of-type(2n) .box.row .font{
+        margin-right: -15%;
+    }
+    
+}
+@media screen and (max-width: 1600px) {
+    .box.row:nth-of-type(even) .font{
+        padding-left: 5%;
+        text-align: right;
+    }
+    .box.row:nth-of-type(3) .col-lg-6:last-of-type{
+        text-align: center;
+    }
+    .box.row:nth-of-type(3) .font{
+        padding-right: 5%;
+    }
+    .des_detail{
+        width: 100%;
+    }
+    .des_detail ul>li{
+        width: 80%;
+    }
+    .box .down_tit2{
+        font-size: 2.5rem;
+    }
+    .box .imgbox img{
+        margin-top:0;
+    }
+    .box.row:nth-of-type(3) .font{
+        padding-top: 23%;
+        padding-bottom: 32%;
+    }
+    .download_bg{
+        background-position: 100% 53%;
+    }
+    .white_bg .box:nth-of-type(1) {
+        background-position: 11% 33%;
+        background-size: 23%;
+    }
+    .white_bg .box:nth-of-type(2) {
+        background-position: 84% 30%;
+        background-size: 23%;
+    }
+    .white_bg .box:nth-of-type(3) {
+        background-position: 9% 43%;
+        background-size: 23%;
+    }
+    .en .white_bg .instruction_box:nth-of-type(2) .box.row .font>.down_tit2{
+        line-height: 3rem;
+    }
+}
+@media screen and (min-width: 1281px) and (max-width: 1440px){
+    .topWrap_box{
+        background-position: 56% 9%;
+        background-size: 91% 34%;
+    }
+    .logo_size{
+        width: 29%;
+        padding: 13% 0 9% 0;
+    }
+    
+}
+@media screen and (max-width: 1280px) {
+    .topWrap_box{
+        background-position: 56% 14%;
+        background-size: 91% 31%;
+    }
+    .logo_size{
+        width: 27%;
+        padding: 13% 0 10% 0;
+    }
+    .downloadh3{
+        font-size: 4.6rem;
+    }
+    .box .down_tit2{
+        font-size: 2.3rem;
+    }
+    .box .font p{
+        font-size: 1.5rem;
+    }
+}
+@media screen and (max-width:1200px){
+    .white_bg .instruction_box:nth-of-type(1){
+        transform: translate(0px,-35px)
+    }
+    .white_bg .instruction_box:nth-of-type(1) .box.row .font{
+        padding-top: 102%;
+        padding-bottom: 43%;
+    }
+    .white_bg .instruction_box:nth-of-type(2){
+        background-position: 100% 0%;
+    }
+    .white_bg .instruction_box:nth-of-type(2) .box.row .font{
+        padding-top: 25%;
+        padding-bottom: 63%;
+    }
+    .white_bg .instruction_box:nth-of-type(3) .box.row .font{
+        padding-top: 77%;
+        padding-bottom: 48%;
+    }
+    .en .white_bg .instruction_box:nth-of-type(2) .box.row .font{
+        padding-top: 25%;
+        padding-bottom: 63%;
+    }
+}
+@media screen and (min-width:1125px) and (max-width:1200px){
+    .white_bg .instruction_box:nth-of-type(1) .box.row .font{
+        padding-top: 115%;
+        padding-bottom: 42%;
+    }
+    .white_bg .instruction_box:nth-of-type(2) .box.row .font{
+        padding-top: 25%;
+        padding-bottom: 64%;
+    }
+    .white_bg .instruction_box:nth-of-type(3) .box.row .font{
+        padding-top: 74%;
+        padding-bottom: 45%;
+    }
+    .box .down_tit2{
+        margin-bottom: 2px;
+    }
+}
+@media screen  and (max-width:1124px){
+    
+    .white_bg .instruction_box:nth-of-type(1) .box.row .font{
+        padding-top: 107%;
+        padding-bottom: 42%;
+    }
+    .white_bg .instruction_box:nth-of-type(2) .box.row .font{
+        padding-top: 25%;
+        padding-bottom: 57%;
+    }
+    .white_bg .instruction_box:nth-of-type(3) .box.row .font{
+        padding-top: 72%;
+        padding-bottom: 37%;
+    }
+    .box .down_tit2{
+        margin-bottom: 2px;
+    }
+}
+@media screen and (min-width:1025px) and (max-width:1200px){
+    .en .white_bg .instruction_box:nth-of-type(2){
+        background-size: 76%;
+    }
+    .en .white_bg .instruction_box:nth-of-type(1) .box.row .font{
+        padding-top: 98%;
+        padding-bottom: 0;
+    }
+    .en .white_bg .instruction_box:nth-of-type(2) .box.row .font{
+        padding-top: 76%;
+        padding-bottom: 8%;
+    }
+    .en .white_bg .instruction_box:nth-of-type(3) .box.row .font{
+        padding-top: 64%;
+        padding-bottom: 12%;
+    }
+}
+@media screen and (min-width:1025px) and (max-width:1090px){
+    .white_bg .instruction_box:nth-of-type(1) .box.row .font{
+        padding-top: 99%;
+        padding-bottom: 42%;
+    }
+    .white_bg .instruction_box:nth-of-type(2) .box.row .font{
+        padding-top: 22%;
+        padding-bottom: 52%;
+    }
+    .white_bg .instruction_box:nth-of-type(3) .box.row .font{
+        padding-top: 66%;
+        padding-bottom: 34%;
+    }
+    
+}
+@media screen and (max-width: 1024px) {
+    .box{
+        padding-bottom: 3%;
+    }
+    .topWrap_box{
+        /* background-position: 55% 21%; */
+        background-size: 88% 29%;
+    }
+    .logo_size{
+        width: 25%;
+        padding: 13% 0 14% 0;
+    }
+    .downloadh3{
+        font-size: 4.1rem;
+    }
+    .header-content .Functional-specifications{
+        font-size: 1.6rem;
+    }
+
+    .white_bg .instruction_box:nth-of-type(2n+1) .col-lg-4{
+        float: left !important;
+    }
+    .white_bg .instruction_box:nth-of-type(2n) .col-lg-4{
+        float: right !important;
+    }
+    .white_bg .instruction_box:nth-of-type(1){
+        transform: translate(0px,35px);
+        background: url("../../img/dl_one_ipad.png");
+        background-repeat: no-repeat;
+        margin-bottom: 15%;
+    }
+    .en .white_bg .instruction_box:nth-of-type(1){
+        margin-bottom: 24%;
+    }
+    .white_bg .instruction_box:nth-of-type(2n+1) .col-lg-4{
+        float: left !important;
+    }
+    .white_bg .instruction_box:nth-of-type(1) .box.row .font{
+        padding-top: 187%;
+        padding-bottom: 0;
+    }
+    .white_bg .instruction_box:nth-of-type(2) .box.row .font{
+        padding-top: 145%;
+        padding-bottom: 6%;
+    }
+    .white_bg .instruction_box:nth-of-type(3) .box.row .font{
+        padding-top: 238%;
+        padding-bottom: 28%;
+    }
+    .white_bg .instruction_box:nth-of-type(1),
+    .white_bg .instruction_box:nth-of-type(2),
+    .white_bg .instruction_box:nth-of-type(3){
+        background-size: 100%;
+    }
+    .en .white_bg .instruction_box:nth-of-type(1) .box.row .font{
+        padding-top: 109%;
+    }
+    .en .white_bg .instruction_box:nth-of-type(2) .box.row .font{
+        padding-top: 90%;
+        padding-bottom: 28%;
+    }
+    .en .white_bg .instruction_box:nth-of-type(3) .box.row .font{
+        padding-top: 108%;
+        padding-bottom: 18%;
+    }
+    .en .white_bg .instruction_box:nth-of-type(2) .box.row .font>.down_tit2{
+        line-height: 5rem;
+    }
+}
+@media screen and (max-width: 768px) {
+    .topWrap_box{
+        background-position:56% 16%;
+        background-size:86% 27%;
+    }
+    .header-content{
+        width: 100%;
+    }
+    .logo_size{
+        width: 23%;
+        padding: 13% 0 15% 0;
+    }
+    .downloadh3{
+        font-size: 3.8rem;
+    }
+    .header-content .Functional-specifications{
+        font-size: 1.4rem;
+    }
+
+    .box .down_tit2{
+        font-size: 2rem;
+    }
+    .box .font p{
+        font-size: 1.2rem;
+    }
+    .white_bg .instruction_box:nth-of-type(1) .box.row .font{
+        padding-top: 165%;
+        padding-bottom: 0;
+    }
+    .white_bg .instruction_box:nth-of-type(2) .box.row .font{
+        padding-top: 130%;
+        padding-bottom: 5%;
+    }
+    .white_bg .instruction_box:nth-of-type(3) .box.row .font{
+        padding-top: 189%;
+        padding-bottom: 20%;
+    }
+    .en .white_bg .instruction_box:nth-of-type(1) .box.row .font{
+        padding-top: 97%;
+        padding-bottom: 0;
+    }
+    .en .white_bg .instruction_box:nth-of-type(2) .box.row .font{
+        padding-top: 83%;
+        padding-bottom: 20%;
+    }
+    .en .white_bg .instruction_box:nth-of-type(3) .box.row .font{
+        padding-top: 100%;
+        padding-bottom: 14%;
+    }
+}
+@media screen and (max-width: 640px) {
+    
+    .topWrap_box{
+        background-position:49% 26%;
+        background-size:90% 22%;
+    }
+    .logo_size{
+        width: 28%;
+        padding:19% 0 12% 0;
+    }
+    .downloadh3{
+        font-size: 3.2rem;
+        margin-bottom: 20px;
+    }
+    .header-content .Functional-specifications{
+        font-size: 1.2rem;
+        line-height: 20px;
+        margin-bottom: 15px;
+    }
+    .white_bg .instruction_box:nth-of-type(1) .box.row .font{
+        padding-top: 136%;
+        padding-bottom: 0;
+    }
+    .white_bg .instruction_box:nth-of-type(2) .box.row .font{
+        padding-top: 101%;
+        padding-bottom: 0;
+    }
+    .white_bg .instruction_box:nth-of-type(3) .box.row .font{
+        padding-top: 156%;
+        padding-bottom: 0;
+    }
+    .en .white_bg .instruction_box:nth-of-type(2) .box.row .font>.down_tit2{
+        line-height: 3rem;
+    }
+}
+@media screen and (min-width: 461px) and (max-width: 560px){
+    .white_bg .instruction_box:nth-of-type(1) .box.row .font{
+        padding-top: 100%;
+    }
+    .white_bg .instruction_box:nth-of-type(2) .box.row .font{
+        padding-top: 60%;
+    }
+    .white_bg .instruction_box:nth-of-type(3) .box.row .font{
+        padding-top: 96%;
+    }
+}
+@media screen and (max-width: 460px) {
+    .topWrap_box{
+        background: url("../../img/dl_line_phone.png");
+        background-repeat: no-repeat;
+        background-position:42% 24%;
+        background-size:99% 17%;
+        margin-bottom: 12%;
+    }
+    .logo_size{
+        width: 30%;
+        padding:21% 0 13% 0;
+    }
+    .box .down_tit2{
+        font-size: 1.8rem;
+        line-height: 3rem;
+    }
+    .downloadh3{
+        font-size: 2.2rem;
+        margin-bottom:25px;
+    }
+    .twoPhone_box .btnStyle , .dynamic_box .btnStyle{
+        width: 100%;
+    }
+    .header-content .Functional-specifications{
+        font-size: 1.2rem;
+    }
+    .twoPhone_box .btnStyle:nth-of-type(1){
+        margin-left: 3%;
+    }
+    .twoPhone_box .btnStyle:nth-of-type(2){
+        margin-right: 3%;
+    }
+    .container{
+        padding-left: 9%;
+        padding-right: 9%;
+    }
+    .twoPhone_box .btnStyle{
+        width: 44%;
+    }
+    .T_R_img,.B_L_img{
+        width: 100%;
+    }
+    .download_bg_color .box{
+        padding-bottom: 15%;
+    }
+    .GoDownload{
+        padding-top: 2rem;
+    }
+    .dynamic_box .btnStyle{
+        width: 60%;
+        font-size: 17px;
+    }
+    .white_bg .instruction_box{
+        margin-bottom: 13% !important;
+    }
+    .white_bg .instruction_box:nth-of-type(1){
+        background: url(../../img/dl_one_phone.png) no-repeat;
+        background-size: 100%;
+        transform: translate(0px,0px);
+    }
+    .white_bg .instruction_box:nth-of-type(1) .box.row .font{
+        padding-top: 79%;
+        padding-bottom: 12%;
+    }
+    .white_bg .instruction_box:nth-of-type(2){
+        background: url(../../img/dl_two_phone.png) no-repeat;
+        background-size: 100%;
+    }
+    .white_bg .instruction_box:nth-of-type(2) .box.row .font{
+        padding-top: 83%;
+        padding-bottom: 0%;
+    }
+    .white_bg .instruction_box:nth-of-type(3){
+        background: url(../../img/dl_three_phone.png) no-repeat;
+        background-size: 100%;
+    }
+    .white_bg .instruction_box:nth-of-type(3) .box.row .font{
+        padding-top: 95%;
+        padding-bottom: 25%;
+    }
+    .white_bg .instruction_box:nth-of-type(2n+1) .col-lg-4{
+        float: unset !important;
+        text-align: center;
+    }
+    .en .white_bg .instruction_box:nth-of-type(2n+1) .col-lg-4{
+        text-align: left;
+    }
+    .en .white_bg .instruction_box:nth-of-type(1) .box.row .font{
+        padding-top: 80%;
+    }
+    .en .white_bg .instruction_box:nth-of-type(2) .box.row .font{
+        padding-top: 80%;
+        padding-bottom: 2%;
+    }
+    .en .white_bg .instruction_box:nth-of-type(3) .box.row .font{
+        padding-top: 90%;
+        padding-bottom: 10%;
+    }
+    .GoDownload .btnStyle[data-title=iPhone] svg{
+        vertical-align: -3px;
+    }
+    .GoDownload .btnStyle svg{
+        font-size: 20px;
+    }
+    .twoPhone_box .btnStyle span{
+        font-size: 16px;
+    }
+    .beauty::after{
+        margin-top: 8px;
+    }
+}
+@media screen and (max-width: 375px) {
+    .topWrap_box{
+        background-position: 42% 21%;
+        margin-bottom: 0;
+    }
+    .GoDownload .btnStyle{
+        height: 40px;
+        line-height: 28px;
+    }
+    .instruction_box .container .box .col-lg-4{
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    .white_bg .instruction_box:nth-of-type(1) .box.row .font{
+        padding-top: 76%;
+    }
+    .white_bg .instruction_box:nth-of-type(3) .box.row .font{
+        padding-top: 89%;
+    }
+    
+}
+/* end

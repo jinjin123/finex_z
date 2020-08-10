@@ -1,0 +1,340 @@
+<include file="Public:PersonalCenterHeader" />
+<!--右边打竖第一块 钱包-->
+<div class="col-lg-12 col-md-12 col-sm-12">
+    <div class="panel-heading large-heading clearfix Coin_money_nav">
+        <div class="panel-action pull-left coin_left_nav">
+            <!-- 币种tab切换 -->
+            <ul class="nav nav-tabs underline-tabs personalCenter_nav coinType_tab"></ul>
+            <!-- 手机端时的tab切换 -->
+            <div class="smshow visible-sm-block visible-xs-block">
+                <div class="btn-group bootstrap-select">
+                    <select class="selectpicker coinType_select_tab" id="coin_select"></select>
+                </div>
+            </div>
+        </div>
+
+        <!-- 提充币切换 -->
+        <div class="panel-title pull-right">
+            <div class="panel-tools">
+                <div class="tools-content">
+                    <ul class="nav nav-tabs underline-tabs info-tabs clearfix coin_money_control solid-tabs nav-stacked">
+                        <li class="target_order_buse">
+                            <a href="{:U('Wallent/index')}" id='charge_money' class='wallent_lg_buse'>{$Think.lang._CHONGBI_}</a>
+                        </li>
+                        <li class="target_order_buse active">
+                            <a href="{:U('Wallent/transferPage')}" id='withdraw_money' class='wallent_lg_buse'>{$Think.lang._TIBI_}</a>
+                        </li>
+                        <li class='my_order_target'></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-lg-12 col-md-12 col-sm-12">
+    <!-- 提币模块 -->
+    <div class="coin_withdraw_money coinType_coin_change">
+        <!-- 标题文字 -->
+        <div class='panel panel-default'>
+            <div class='panel-body'>
+                <div class='tab-content tab-pane fade in coin_money_content text-left'>
+                    <h4>{$Think.lang._TIBI_} <span class="currency_name"></span></h4>
+                    <div class="alert alert-info">
+                        <p>1. {$Think.lang._TBCZZQBXJXSMRZBDDZ_}</p>
+                        <p>2. {$Think.lang._YHXZJTXKGFBN_}</p>
+                        <p>3. {$Think.lang._PTHZYTNSHTBQQZLBZCK_}</p>
+                        <p>4. {$Think.lang._TBDZXGHYTNBNJXCZ_}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 地址 -->
+        <div class='panel panel-default'>
+            <div class='panel-body'>
+                <div class='tab-content'>
+                    <div class='Withdraw_money_address text-left'>
+                        <label><span class="currency_name"></span>{$Think.lang._TBDZ_}</label>
+                        <!-- 提币地址1 -->
+                        <div class="input-group marbot10">
+                            <input type="text" class="form-control" id="address1" placeholder="{$Think.lang._QXJXDZBD_}" readonly>
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-green btn-chain" id="btn-chain1" data-toggle="modal" data-target="#changeAddress">
+                                    <svg class="icon icon_norepeat" aria-hidden="true"><use xlink:href="#icon-ic_binding"></use></svg>
+                                </button>
+                                <button type="button" class="btn btn-green btn-take" id="btn-take1" data-toggle="modal" data-target="#takecoin">
+                                    <svg class="icon icon_norepeat" aria-hidden="true"><use xlink:href="#icon-ic_tixian1"></use></svg>
+                                </button>
+                                <button type="button" class="btn btn-green btn-delete" id="btn-delete1" data-toggle="modal" data-target="#delAddress">
+                                    <svg class="icon icon_norepeat" aria-hidden="true"><use xlink:href="#icon-ic_delect"></use></svg>
+                                </button>
+                            </span>
+                        </div>
+                        <!-- 提币地址2 -->
+                        <div class="input-group marbot10">
+                            <input type="text" class="form-control" id="address2" placeholder="{$Think.lang._QXJXDZBD_}" readonly>
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-green btn-chain" id="btn-chain2" data-toggle="modal" data-target="#changeAddress">
+                                    <svg class="icon icon_norepeat" aria-hidden="true"><use xlink:href="#icon-ic_binding"></use></svg>
+                                </button>
+                                <button type="button" class="btn btn-green btn-take" id="btn-take2" data-toggle="modal" data-target="#takecoin">
+                                    <svg class="icon icon_norepeat" aria-hidden="true"><use xlink:href="#icon-ic_tixian1"></use></svg>
+                                </button>
+                                <button type="button" class="btn btn-green btn-delete" id="btn-delete2" data-toggle="modal" data-target="#delAddress">
+                                    <svg class="icon icon_norepeat" aria-hidden="true"><use xlink:href="#icon-ic_delect"></use></svg>
+                                </button>
+                            </span>
+                        </div>
+                        <!-- 提币地址3 -->
+                        <div class="input-group marbot10">
+                            <input type="text" class="form-control" id="address3" placeholder="{$Think.lang._QXJXDZBD_}" readonly>
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-green btn-chain" id="btn-chain3" data-toggle="modal" data-target="#changeAddress">
+                                    <svg class="icon icon_norepeat" aria-hidden="true"><use xlink:href="#icon-ic_binding"></use></svg>
+                                </button>
+                                <button type="button" class="btn btn-green btn-take" id="btn-take3" data-toggle="modal" data-target="#takecoin">
+                                    <svg class="icon icon_norepeat" aria-hidden="true"><use xlink:href="#icon-ic_tixian1"></use></svg>
+                                </button>
+                                <button type="button" class="btn btn-green btn-delete" id="btn-delete3" data-toggle="modal" data-target="#delAddress">
+                                    <svg class="icon icon_norepeat" aria-hidden="true"><use xlink:href="#icon-ic_delect"></use></svg>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 记录表格 -->
+        <div class='panel panel-default'>
+            <div class="panel panel-default Withdraw_money_Record">
+                <div class="panel-heading large-heading">
+                    <div class="panel-title"><span class="Wallent_coin_title">{$Think.lang._TBJL_}</span></div>
+                    <div class="panel-action text-right">
+                        <button class="btn btn-min"></button>
+                        <!--<button class="btn btn-expand"></button>-->
+                    </div>
+                </div>
+
+                <div class="panel-body">
+                    <!-- Table内容 -->
+                    <div class="table-responsive">
+                        <table class="table order sortable-theme-bootstrap tibi">
+                            <thead>
+                                <tr>
+                                    <th>{$Think.lang._JLID_}</th>
+                                    <th>{$Think.lang._ZRQBDZ_}</th>
+                                    <th>{$Think.lang._SHULIANG_}</th>
+                                    <th>{$Think.lang._FSSJ_}</th>
+                                    <th>{$Think.lang._KUANGGF_}</th>
+                                    <th>{$Think.lang._SHIJJDZ_}</th>
+                                    <th>{$Think.lang._ZHUANGTAI_}</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="list_body"></tbody>
+                        </table>
+                    </div>
+
+                    <!-- page分页 -->
+                    <div class="text-right sm-text-center dataPage" id="dataPage"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--提幣彈窗-->
+<div class="modal fade modalStyle issue" id="takecoin" data-width="480" style="display: none;">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title">{$Think.lang._TBXQ_}<button type="button" class="close" data-dismiss="modal">×</button></h4>
+        </div>
+        <!-- .modal-header -->
+        <div class="modal-body">
+            <!--表单-->
+            <div class="col-lg-11 nofloat_auto">
+                <!-- 转出数量 -->
+                <div class="row issue-item item-border">
+                    <div class="col-cs-12 issue-title">
+                        <label for="sellVerifyImg">{$Think.lang._ZCSL_}</label>
+                    </div>
+                    <div class="issue-containAuto">
+                        <div class="col-xs-9 nopad">
+                            <input type="text" class="form-control number input-text-left" id="tibi_num" value="" maxlength="18" placeholder="{$Think.lang._SDHZDBW_}">
+                        </div>
+                        <div class="col-xs-3 nopad text-right">
+                            <span id="Maxnum" class="maxButton blueButton">Max</span>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+
+                <!-- 矿工费用 -->
+                <div class="row issue-item item-border">
+                    <div class="col-xs-5 issue-title">
+                        <label for="collier_fee">{$Think.lang._KUANGGF_}</label>
+                    </div>
+                    <div class="col-xs-7 issue-contain">
+                        <input type="text" class="form-control" id="collier_fee" name="collier_fee" value="" maxlength="18" placeholder="0">
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+
+                <!-- 资金密码 -->
+                <div class="row issue-item item-border">
+                    <div class="col-xs-5 issue-title">
+                        <label for="trade_pwd">{$Think.lang._ZJMIMA_}</label>
+                    </div>
+                    <div class="col-xs-7 issue-contain">
+                        <input type="password" class="form-control" maxlength="18" id="trade_pwd" placeholder="{$Think.lang._QSRZJMM_}">
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+
+                <!-- 图形验证码 -->
+                <div class="row issue-item item-border">
+                    <div class="col-cs-12 issue-title">
+                        <label for="sellVerifyImg">{$Think.lang._YZM_}</label>
+                    </div>
+                    <div class="issue-containAuto">
+                        <div class="col-xs-9 nopad">
+                            <input type="text" class="form-control sellVerifyImg input-text-left" maxlength="4" id="sellVerifyImg" placeholder="{$Think.lang._TXTXYZM_}">
+                        </div>
+                        <div class="col-xs-3 nopad text-right">
+                            <img class="verifyImg" src="{:U('CheckVerify/getVerify')}" />
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+
+                <!-- 手机验证码 -->
+                <div class="row issue-item item-border">
+                    <div class="col-cs-12 issue-title">
+                        <label for="phone_code">{$Think.lang._SJYZM_}</label>
+                    </div>
+                    <div class="issue-containAuto">
+                        <div class="col-xs-9 nopad">
+                            <input type="text" class="form-control phonecall input-text-left" maxlength="6" id="phone_code" placeholder="{$Think.lang._QSRSJYZM_}">
+                        </div>
+                        <div class="col-xs-3 nopad text-right">
+                            <button class="countdown">{$Think.lang._HUOQU_}</button>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+
+                <!-- 提交 -->
+                <div class="form-group row issue-item buttonArea">
+                    <button type="button" class="btn gradual_change_blue tibiBtn" id="tibi">{$Think.lang._QRZC_}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--提幣彈窗结束-->
+
+<!--删除地址确认弹窗1 -->
+<div class="modal fade modalStyle cancleStyle delAddress_wrap" id="delAddress" data-width="380" style="display: none;">
+    <div class="modal-content">
+        <div class="modal-body m-top-10">
+            <div class="col-lg-11 nofloat_auto">
+                <!-- 标题 -->
+                <h5 class="text-center">{$Think.lang._QRSCM_}?</h5>
+                <!-- 按钮 -->
+                <div class="buttonArea TwoButton m-bottom-10">
+                    <button type="button" data-dismiss="modal" class="btn gradual_change_Cqueding pull-left delAddressOk" id="delAddressOk">{$Think.lang._QUEDING_}</button>
+                    <button type="button" data-dismiss="modal" class="btn gradual_change_Cquxiao pull-right">{$Think.lang._QUXIAO_}</button>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!--绑定地址弹窗 开始-->
+<div class="modal fade modalStyle issue" id="changeAddress" data-width="480" style="display: none;">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title">{$Think.lang._BDTBDZ_}<button type="button" class="close" data-dismiss="modal">×</button></h4>
+        </div>
+        <!-- .modal-header -->
+
+        <div class="modal-body">
+            <!-- 提示 -->
+            <div class="col-lg-11 nofloat_auto">
+                <div class="alert alert-info icon-info">
+                    <p class="p-left-25">
+                        <svg class="icon icon_norepeat" aria-hidden="true"><use xlink:href="#icon-ic_warn1"></use></svg> <span>{$Think.lang._TBDZXGHYTNBNJXCZ_}</span>
+                    </p>
+                </div>
+            </div>
+            <!--表单-->
+            <div class="col-lg-11 nofloat_auto">
+                <div class="row issue-item item-border changeAddress defaultBind">
+                    <div class="col-lg-12 col-md-12 issue-title">
+                        <label for="newAddress" class="control-label">{$Think.lang._TBDZ_}:</label>
+                    </div>
+                    <div class="col-lg-12 col-md-12 issue-contain p-left-0">
+                        <input type="text" class="form-control bindBtn_input p-all-0" placeholder="{$Think.lang._QSRDZ_}" minlength="15" maxlength="80" id="newAddress">
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <!-- EOS 地址绑定 -->
+                <div id="EOS_Memo" class="defaultBind" style="display: none">
+                    <div class="row issue-item item-border changeAddress">
+                        <div class="col-lg-12 col-md-12 issue-title">
+                            <label for="newAddress" class="control-label">{$Think.lang._TBDZ_}:</label>
+                        </div>
+                        <div class="col-lg-12 col-md-12 issue-contain p-left-0">
+                            <input type="text" class="form-control bindBtn_input p-all-0" placeholder="{$Think.lang._QSRDZ_}" maxlength="12" id="EOSnewAddress">
+                        </div>
+                    </div>
+                    <div class="row issue-item item-border changeAddress">
+                        <div class="clearfix"></div>
+                        <div class="col-lg-12 col-md-12 issue-title">
+                            <label for="newAddress" class="control-label">Memo:</label>
+                        </div>
+                        <div class="col-lg-12 col-md-12 issue-contain p-left-0">
+                            <input type="text" class="form-control bindBtn_input p-all-0" placeholder="{$Think.lang._QSRMEMODZ_}" minlength="1" maxlength="128" id="memoAddress">
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                <div class="form-group row issue-item buttonArea">
+                    <button type="button" class="btn gradual_change_blue bindBtn " id="bindBtn">{$Think.lang._QRBD_}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--绑定地址弹窗 结束-->
+<include file="Public:PersonalCenterFooter" />
+<script>
+    var user_real_code = "{$user_real_code}";
+    var getChongbiPageUrl1 = "{:U('Wallent/getAjaxPageData')}";
+    var getTibiPageUrl1 = "{:U('Wallent/getAjaxPageData1')}";
+    var graphiccodenotnull = '{$Think.lang._TXYZMBNWK_}';
+    var bddzbnwk = '{$Think.lang._BDDZBNWK_}';
+    var memobddzbnwk = '{$Think.lang._MEMOBDDZBNWK_}';
+    var tibinumbernotnull = '{$Think.lang._TBSLBNWK_}';
+    var phonecodenotnull = '{$Think.lang._SJYZMBNWK_}';
+    var tradepwdnotnull = '{$Think.lang._ZJMMBNWK_}';
+    var tibinumberbig = '{$Think.lang._SRTBZJCGXZ_}';
+    var tibinumbermin = '{$Think.lang._SRTBZJSYTBS_}';
+    var tibinumbernotnull = '{$Think.lang._TBSLBNWK_}';
+    var collierfeeerror = "{$Think.lang._KGFTXCW_}";
+    var collierfeeegt = "{$Think.lang._KGFBNXY_}";
+    var chongbiUrlmsgErr = '{$Think.lang._CSCW_}';
+    var FZCG = '{$Think.lang._FZCG_}';
+    var FZSB = '{$Think.lang._FZSBNDLLQBZC_}';
+    var bzwh = '{$Think.lang._BZWHZBZBYXCZ_}';
+    var dbzx = '{$Think.lang._DBTBZXSL_}';
+    var checkUserReal = '{$Think.lang._SMRZSHZQDD_}'; //等待实名认证
+    var userRealFailed = '{$Think.lang._ZYSMQBNJXJYCZQW_}' + "&nbsp;<a href='/PersonalCenter/index'>{$Think.lang._SMRZ_}</a>"; //失败
+    var _EOSDZCDTS_ = '{$Think.lang._EOSDZCDTS_}';
+    var _EOSMEMODZCDTS_ = '{$Think.lang._EOSMEMODZCDTS_}';
+    var _XYHXBDTBDZCNJXTBCZ_ = '{$Think.lang._XYHXBDTBDZCNJXTBCZ_}';
+</script>
+<!-- 提币  -->
+<script src="__HOME_JS__/wallent/wallent_tibi.js" type="text/javascript" charset="utf-8"></script>

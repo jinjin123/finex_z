@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="371px" height="428px" viewBox="0 0 371 428" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.1 (67048) - http://www.bohemiancoding.com/sketch -->
+    <title>dl_one_bg</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="28.0455821%" y1="-16.4141547%" x2="82.1996859%" y2="76.4197877%" id="linearGradient-1">
+            <stop stop-color="#3567BA" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#2D62FD" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="改版-下载及教程" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="下载页" transform="translate(-315.000000, -777.000000)">
+            <g id="01" transform="translate(315.000000, 752.000000)" opacity="0.5">
+                <g id="分组" transform="translate(0.000000, 25.000000)">
+                    <g id="dl_one_bg" transform="translate(185.000000, 214.000000) rotate(180.000000) translate(-185.000000, -214.000000) ">
+                        <polygon id="Stroke-8" stroke="#66688F" points="369.5 285.1 369.5 143.1 246.5 72 123.5 143.1 123.5 285.1 246.5 356.2"></polygon>
+                        <polygon id="Stroke-9" stroke="#66688F" points="246.5 356.2 246.5 214.1 123.5 143.1 0.4 214.1 0.4 356.2 123.5 427.2"></polygon>
+                        <polyline id="Stroke-10" stroke="#66688F" points="246.5 72 246.5 214.1 369.5 285.1"></polyline>
+                        <polyline id="Stroke-11" stroke="#66688F" points="369.5 143.1 246.5 214.1 246.5 356.2"></polyline>
+                        <polyline id="Stroke-12" stroke="#66688F" points="123.5 427.2 123.5 285.1 0.4 214.1"></polyline>
+                        <polyline id="Stroke-13" stroke="#66688F" points="369.5 285.1 246.5 214.1 123.5 285.1 123.5 427.2"></polyline>
+                        <polyline id="Stroke-14" stroke="#66688F" points="246.5 356.2 123.5 285.1 0.4 356.2"></polyline>
+                        <polygon id="Path_3_" fill="url(#linearGradient-1)" opacity="0.4" points="0 71.4 123.3 0 370 142.4 246.7 213.7"></polygon>
+                    </g>
+                </g>
+            </g>
+            <g id="页面"></g>
+        </g>
+    </g>
+</svg>

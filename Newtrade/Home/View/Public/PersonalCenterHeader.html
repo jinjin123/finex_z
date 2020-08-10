@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="ie-comp">
+    <meta name="format-detection" content="telephone=no">
+    <title>BTCS</title>
+
+    <link rel="shortcut icon" href="__HOME_IMG__/front/favicon2.ico" rel='preload'>
+    <!-- REQUIRED STYLES -->
+    <!-- font-style-css -->
+    <link href="__HOME_CSS__/Open+Sans-font.css" type="text/css" rel='preload' as="style">
+    <link rel="stylesheet" href="__HOME_CSS__/fonts/iconfont/css/iconfont.css" rel='preload' as="style">
+    <!-- bootstrap.css -->
+    <link href="__HOME_CSS__/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <!--========== bootstrap-select ==========-->
+    <link rel="stylesheet" href="__HOME_PLUG__/bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet" type="text/css">
+    <!-- REQUIRED PLUGINS -->
+    <!-- font-awesome -->
+    <link href="__HOME_PLUG__/fontawesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" as="style">
+    <!-- tab切换下拉菜单 tab-drop -->
+    <link href="__HOME_PLUG__/bootstrap-tabdrop/css/tabdrop.css" rel="stylesheet" type="text/css">
+    <!-- checkbox-plugin icheck -->
+    <link href="__HOME_PLUG__/icheck/css/skins/all.css" rel="stylesheet" type="text/css">
+    <!-- 国旗样式 flags -->
+    <link href="__HOME_PLUG__/flag-css/css/flag-css.min.css" rel="stylesheet" type="text/css">
+    <!-- 表格插件 datatables -->
+    <link href="__HOME_PLUG__/datatables/css/dataTables.min.css" rel="preload" type="text/css" as="style">
+    <!-- 用途未明 -->
+    <!-- main.min.css - WISEBOARD CORE CSS -->
+    <link href="__HOME_CSS__/main.min.css" rel="stylesheet" type="text/css">
+    <!-- admin.min.css - ADMIN LAYOUT  -->
+    <link href="__HOME_CSS__/admin.min.css" rel="stylesheet" type="text/css">
+    <!-- theme-default.min.css - 默认主题css -->
+    <link href="__HOME_CSS__/themes/theme-default.min.css" rel="stylesheet" type="text/css">
+    <!-- ============== modal style ============== -->
+    <link href="__HOME_PLUG__/bootstrap-modal/css/bootstrap-modal-bs3patch.css" rel="stylesheet" as="style" type="text/css">
+    <link href="__HOME_PLUG__/bootstrap-modal/css/bootstrap-modal.css" rel="stylesheet" as="style" type="text/css">
+    <!-- ============== upload style ============== -->
+    <link href="__HOME_PLUG__/jasny-bootstrap/css/jasny-bootstrap.min.css" rel="stylesheet" as="style" type="text/css">
+    <!-- ============== notify style ============== -->
+    <link href="__HOME_PLUG__/animate.css/css/animate.min.css" rel="stylesheet" as="style" type="text/css">
+    <!-- 兼容IE promise用法 ajax -->
+    <script type="text/javascript" src="__HOME_JS__/polyfill.min.js"></script>
+    <script type="text/babel" src="__HOME_JS__/browser.min.js"></script>
+
+
+    <!-- ============== my style ============== -->
+    <link href="__HOME_CSS__/iconsize.css" rel="stylesheet">
+    <link href="__HOME_CSS__/Platform_purple.css" rel="stylesheet" type="text/css" class="themStyle" data-them="purple">
+
+    <style>
+        input::input-placeholder {
+            color: #A8A8BC !important;
+            font-family: PingFangSC-Regular !important;
+            font-weight: 100;
+        }
+        /* 有些资料显示需要写，有些显示不需要，但是在编辑器webstorm中该属性不被识别 */
+        
+        input::-webkit-input-placeholder {
+            /* WebKit browsers */
+            color: #A8A8BC !important;
+            font-family: PingFangSC-Regular !important;
+            font-weight: 100;
+        }
+        
+        input:-moz-placeholder {
+            /* Mozilla Firefox 4 to 18 */
+            color: #A8A8BC !important;
+            font-family: PingFangSC-Regular !important;
+            font-weight: 100;
+        }
+        
+        input::-moz-placeholder {
+            /* Mozilla Firefox 19+ */
+            color: #A8A8BC !important;
+            font-family: PingFangSC-Regular !important;
+            font-weight: 100;
+        }
+        
+        input:-ms-input-placeholder {
+            /* Internet Explorer 10+ */
+            color: #A8A8BC !important;
+            font-family: PingFangSC-Regular !important;
+            font-weight: 100;
+        }
+        
+        html {
+            -ms-overflow-style: none;
+            /*overflow:-moz-scrollbars-none;*/
+        }
+        
+        html::-webkit-scrollbar {
+            width: 0px
+        }
+    </style>
+    <!-- <script>
+        window.onload = function () {
+            dropdown_btn(document.getElementsByClassName("dropdown_img_icon"))
+        }
+    </script> -->
+</head>
+
+<body class="page-dashboard">
+    <!-- 导航栏 -->
+    <div class="col-lg-12 col-md-12 col-xs-12 nopad navbg">
+        <!-- logo -->
+        <div class="left-logo">
+            <button type="button" class="sidebar-toggle sidebar-left"><i class="fa fa-navicon"></i></button>
+            <a class="navbar-brand" href="{$centerurl}">
+                <img src="__HOME_IMG__/front/web_logo.svg">
+            </a>
+            <button type="button" class="sidebar-toggle sidebar-more"><i class="fa fa-ellipsis-v"></i></button>
+            <div class="clearfix"></div>
+        </div>
+        <nav class="navbar navbar-top">
+            <div class="container-fluid">
+                <!-- <div class="navlist navbar-left changeModel" style="display: none">
+                    <ul class="nav navbar-nav PtwoP_navbar">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    {$Think.lang._PTPJY_}
+                                    <i class="fa fa-angle-down"></i>
+                                </a>
+                        </li>
+                    </ul>
+                </div> -->
+                <!-- <if condition="$is_show_change_trade neq 1 ">
+                </if> -->
+                <ul class="nav navbar-nav navbar-right PtwoP_navbar">
+                    <!-- 语言 -->
+                    <li class="dropdown fr lang lang_icon langCheck">
+                        <div class="dropdown_img">
+                            <a href="?l=zh-tw" class="dropdown_img_icon"><img src="__HOME_IMG__/front/flag_hk_fang.svg" alt=""></a>
+                            <a href="?l=en-us" class="dropdown_img_icon"><img src="__HOME_IMG__/front/flag_us_fang.svg" alt=""></a>
+                        </div>
+                    </li>
+                    <!-- 切换皮肤 -->
+                    <li class="dropdown fr ColorPick">
+                        <a href="javascript:void(0)" data-toggle="dropdown">
+                            <svg class="icon icon_norepeat" aria-hidden="true">
+                                <use xlink:href="#icon-ic_night"></use>
+                            </svg>
+                            <span class='ColorPick_day $is_show_change_trade neq 1 ' type='0'>{$Think.lang._RJMS_} </span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-profile ColorPick_ul" style='display: none;'>
+                            <li>
+                                <a href="#">
+                                    <svg class="icon icon_norepeat" aria-hidden="true">
+                                        <use xlink:href="#icon-ic_light_cir"></use>
+                                    </svg>
+                                    <span class='ColorPick_night'>{$Think.lang._YJMS_}</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- 账户 -->
+                    <li class="dropdown fr">
+                        <a href="#" class="dropdown-toggle user_icon" data-toggle="dropdown">
+                            <svg class="icon icon_norepeat" aria-hidden="true">
+									<use xlink:href="#icon-ic_nav_user"></use>
+								</svg>
+                            <span>{$userName}</span>
+                            <i class="fa fa-angle-down"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-profile">
+                            <li>
+                                <a href="{:U('PersonalCenter/index')}">
+										{$Think.lang._ZHANGHU_}
+									</a>
+                            </li>
+                            <li>
+                                <a href="{:U('PersonalCenter/showBankCardBind')}">
+										{$Think.lang._YHKBD_}
+									</a>
+                            </li>
+                            <li>
+                                <a href="{:U('PersonalCenter/integrityScore')}">
+										{$Think.lang._XYPJ_}
+									</a>
+                            </li>
+                            <li>
+                                <a href="{:U('PersonalCenter/historyLoad')}">
+										{$Think.lang._LSJL_}
+									</a>
+                            </li>
+                            <li>
+                                <a href="{:U('Problem/showProblem')}">
+										{$Think.lang._WTFK_}
+									</a>
+                            </li>
+                            <li>
+                                <a href="{:U('Login/LoginOut')}">
+										{$Think.lang._DENGCHU_}
+									</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- FAQ -->
+                    <li class="dropdown fr Faq_li">
+                        <a href="{:U('Question/index')}">
+                            <svg class="icon icon_norepeat" aria-hidden="true">
+									<use xlink:href="#icon-ic_nav_faq"></use>
+								</svg>
+                            <span>{$Think.lang._FAQ_}</span>
+                        </a>
+                    </li>
+                    <!-- 新闻 -->
+                    <li class="dropdown fr Notice_li">
+                        <a href="#" class="dropdown-toggle news_icon" data-toggle="dropdown">
+                            <!-- <img src="__HOME_IMG__/front/ld.png" alt=""> -->
+                            <!-- <span class="label circle"></span> -->
+                            <svg class="icon icon_norepeat" aria-hidden="true">
+									<use xlink:href="#icon-ic_nav_notice"></use>
+								</svg>
+                            <span>{$Think.lang._GONGGAO_}</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <!-- /.下拉框头部 -->
+                            <!-- <ul class="list-dropdown-content list-dropdown-notifications"> -->
+                            <volist name="notice" id="vo">
+                                <li>
+                                    <a href="{$vo.url}">News - {$vo.title}.</a>
+                                </li>
+                            </volist>
+                            <!-- </ul> -->
+                        </ul>
+                        <!-- /.下拉框菜单 -->
+                    </li>
+                    <!-- /.下拉框 -->
+
+                    <!-- 财务总账 -->
+                    <li class="dropdown fr">
+                        <a href="{:U('UserFinace/showFinace')}" class="finace_icon">
+                            <svg class="icon icon_norepeat" aria-hidden="true">
+									<use xlink:href="#icon-ic_nav_finance"></use>
+								</svg>
+                            <span style="margin-left: 1px;">{$Think.lang._CWZZ_}</span>
+                        </a>
+                    </li>
+
+                    <!-- 钱包 -->
+                    <li class="dropdown fr">
+                        <a href="{:U('Wallent/index')}" class="wallet_icon">
+                            <svg class="icon icon_norepeat" aria-hidden="true">
+									<use xlink:href="#icon-ic_nav_wallet"></use>
+								</svg>
+                            <span>{$Think.lang._QIANBAO_}</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <div class="clearfix"></div>
+    <!-- 侧边栏 -->
+    <div class="aside">
+        <div class="content-left">
+            <!--侧边栏弹窗-->
+            <div class="coinSlide no-detailCoin" data-tooltipClass="coinMoneyListIntro" data-step="1" data-intro="<h4>{$Think.lang._JYMSQH_}</h4><p>{$Think.lang._DJCXBZLBQHSXBZ_}</p>" data-position="bottom">
+                <ul class="">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle coinSelect" data-toggle="dropdown">
+                            <svg class="icon icon_norepeat" aria-hidden="true">
+									<use xlink:href="#icon-BTC1"></use>
+								</svg> BTC <i class="fa fa-angle-down"></i>
+                        </a>
+                        <ul class="dropdown-menu" id="coinMoneyList">
+                            <!-- 此列表循环时请赋予currency_id币种id防止谷歌浏览器读不了 -->
+                            <volist name="currencyList" id="vo">
+                                <li currency-id="{$vo.id}" currency-name="{$vo.currency_name}" class="coinName">
+                                    <a href="javascript:void(0)">
+                                        <!--<img src="{$vo.currency_logo}"/>-->
+                                        <svg class="icon icon_norepeat" aria-hidden="true">
+												<use xlink:href="#icon-{$vo.currency_name}1"></use>
+											</svg> {$vo.currency_name}
+                                    </a>
+                                </li>
+                            </volist>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <!--打竖第一块-->
+            <div class="panel panel-default panel-card" data-tooltipClass="step2" data-step="2" data-intro="<h4>{$Think.lang._SSJG_}</h4><p>{$Think.lang._CKSXBZDSSSJ_}</p>" data-position="right">
+                <div class="panel-body">
+                    <div class="border-bottom">
+                        <p>HIGH <span id="coinHeighMoney">0.0000</span></p>
+                        <p>LOW <span id="coinLowMoney">0.0000</span></p>
+                        <p>RTQ <span id="coinRtqMoney">0.0000</span></p>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <div class="panel-title"><span style="font-size: 12px;">{$Think.lang._GQYTCJZE_}:</span> <span class="label" id="coinTotalMoney">0.0000</span></div>
+                </div>
+                <div class='panel-body'>
+                    <div class='aside_top_CurrencyList clearfix'>
+                        <div class="col-lg-5 pull-left text-left"><span class='aside_Currency_content'>BTC</span>{$Think.lang._YUE_}</div>
+                        <div class="col-lg-7 pull-right text-right"><span class='aside_Currency_balance'>0.00000000</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!--打竖第二块 牌价-->
+            <div class="panel panel-default quoteprice" data-step="3" data-intro="<h4>{$Think.lang._PAIJIA_}</h4><p>{$Think.lang._CKPTSYJYBZDSQ_} <svg collection-status='0' aria-hidden='true' class='tag02 myCollection icon icon_norepeat' data-currency-id='2'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='#icon-tag'></use></svg> {$Think.lang._YSCNSGZDBZ_}</p>"
+                data-position="right">
+                <div class="panel-heading">
+                    <!--<span class="title">{$Think.lang._PAIJIA_}</span>-->
+                    <div class="tools-content Quoteprice-con">
+                        <ul class="nav nav-tabs primary-tabs">
+                            <li class="active">
+                                <a href="#tab-underline-home3" id="allCurrencyList" data-toggle="tab" aria-expanded="true">{$Think.lang._JIAOYI_}</a>
+                            </li>
+                            <li class="" data-step="4" data-intro="<h4>{$Think.lang._SHOUCLB_}</h4><p>{$Think.lang._DJSCLBJSCKNSCZXDT_}</p>" data-position="right">
+                                <a href="#tab-underline-profile3" id="getMyCurrencyList" data-toggle="tab" aria-expanded="false">
+                                    <!-- <img src="__HOME_IMG__/bq-16b.png" alt="" id="bq1" height=""> -->
+                                    {$Think.lang._SHOUCANG_}
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="panel-body" style="padding: 0px;">
+                    <div class="tab-content">
+                        <div class="tab-pane fade active in" id="tab-underline-home3">
+                            <div class="panel-body">
+
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="tab-underline-profile3">
+                            <div class="panel-body">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--打竖第三块 余额-->
+            <div class="panel panel-default remaining">
+                <div class="panel-heading">
+                    <div class="panel-title"><svg class="icon icon_norepeat" aria-hidden="true" style='font-size: 14px;'>
+							<use xlink:href="#icon-ic_nav_wallet"></use>
+						</svg>&nbsp;&nbsp;{$Think.lang._ZHANGHU_}</div>
+                </div>
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table class="table sortable-theme-bootstrap" data-sortable="" data-sortable-initialized="true">
+                            <thead>
+                                <tr>
+                                    <th>{$Think.lang._BIZHONG_}</th>
+                                    <th class="text-right">{$Think.lang._YUE_}</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="myCurrencyList">
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- Header End -->
+    </div>
+
+    <!-- 右边内容 -->
+    <div class="text-center content-right clearfix">
+        <div class="col-lg-12 col-md-12 col-xs-12 pbmin lgNopadRight">
+
+            <!-- 实名认证信息notify -->
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-left" id="isRealName">
+                <include file="Public:userRealAlert" />
+                <!-- /.alert -->
+            </div>
+
+            <div class="clearfix"></div>

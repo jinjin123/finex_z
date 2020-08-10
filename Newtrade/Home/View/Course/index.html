@@ -1,0 +1,203 @@
+<include file="Public:header1" />
+<!-- swiper -->
+<link rel="stylesheet" href="__HOME_PLUG__/swiper4.0.7/swiper.min.css">
+<!-- mycss -->
+<link rel="stylesheet" href="__HOME_CSS__/tutorial.css" />
+
+<!-- 网页背景图片 黑色三角形贴网页左上角 -->
+<div class="T_L_img">
+    <img src="__HOME_IMG__/tech_bg_course.png">
+</div>
+<!-- 整个教程页面div -->
+<div class="CourseCenter registerFlex clearfix">
+    <!-- 教程头部标题 -->
+    <div class="CourseTop">
+        <div class="container">
+            <div class="row">
+                <div class="CourseTop1 col-xs-12 col-sm-12">
+                    <!--绑定教程介绍-->
+                    <div class="CourseTop_logo text-center">
+                        <p class="bangding wow fadeIn" data-wow-duration="1.5s" data-wow-delay=".6">BS-PASS <span>{$Think.lang._XSJC_}</span></p>
+                        <p class="bangdingshuoming wow fadeIn" data-wow-duration="1.5s" data-wow-delay="1s">
+                            {$Think.lang._HYSYWMDAQML_}{$Think.lang._JQXSZZCAQXT_}{$Think.lang._JDFDTSAQSCBZ_}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Swiper动画 共四个步骤-->
+    <div class="swiper_box wow fadeIn" data-wow-duration="1.5s" data-wow-delay="1s">
+        <div class="container">
+            <div class="row">
+                <div class="swiperW clearfix ">
+                    <!-- swiper 左边div -->
+                    <div class="OneRight col-xs-12 wow fadeIn" data-wow-duration="1.5s" data-wow-delay="1.6s">
+                        <!-- swiper 左边div 第一步说明-->
+                        <div class="StepWrap">
+                            <div class="StepWrap_head">
+                                <p class="Step-Number">step1.</p>
+                                <h3 class="Step-shuoming">{$Think.lang._ZHDL_}</h3>
+                            </div>
+                            <div class="StepWrap_details clearfix">
+                                <p class="validation">{$Think.lang._SRYHMHDLMMBYZ_}</p>
+                                <p class="internet">
+                                    *&nbsp;{$Think.lang._YHXXGWZC_}<br />
+                                    <a href="../Register/index.html">www.BTCsale.com</a>
+                                </p>
+                            </div>
+                        </div>
+                        <!-- swiper 左边div 第二步说明-->
+                        <div class="StepWrap">
+                            <div class="StepWrap_head">
+                                <p class="Step-Number">step2.</p>
+                                <h3 class="Step-shuoming">{$Think.lang._DXYZ_}</h3>
+                            </div>
+                            <div class="StepWrap_details clearfix">
+                                <p class="validation col-md-11">
+                                    {$Think.lang._JSDDXAQMTJSRBTJYZ_}({$Think.lang._GSWSDAQMQCXFS_})
+                                </p>
+                            </div>
+                        </div>
+                        <!-- swiper 左边div 第三步说明-->
+                        <div class="StepWrap">
+                            <div class="StepWrap_head">
+                                <p class="Step-Number">step3.</p>
+                                <h3 class="Step-shuoming">{$Think.lang._BDCG_}</h3>
+                            </div>
+                            <div class="StepWrap_details clearfix">
+                                <p class="validation col-md-11">
+                                    {$Think.lang._QBGHLPXLHHMY_}{$Think.lang._RSYGCZDSBDDT_}{$Think.lang._NKYSYZLCXBDBXECRZ_}
+                                </p>
+                            </div>
+                        </div>
+                        <!-- swiper 左边div 第四步说明-->
+                        <div class="StepWrap">
+                            <div class="StepWrap_head">
+                                <p class="Step-Number">step4.</p>
+                                <h3 class="Step-shuoming">{$Think.lang._SCDTML_}</h3>
+                            </div>
+                            <div class="StepWrap_details clearfix">
+                                <p class="validation col-md-11">
+                                    {$Think.lang._YHBDCGHJSSHQDTML_}{$Think.lang._YHJDTMLSRDDLXGYZJK_}({$Think.lang._RWNZCHSDJAS_})
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- swiper 右边手机div-->
+                    <div class="divswiper wow fadeIn" data-wow-duration="1.5s" data-wow-delay="1.6s">
+                        <img src="__HOME_IMG__/iPhone.svg" />
+                        <div class="lunbo clearfix">
+                            <div class="swiper-container">
+                                <div class="swiper-wrapper">
+                                    <!--slide1-->
+                                    <div class="swiper-slide">
+                                        <div id="step1"></div>
+                                    </div>
+                                    <!--slide2-->
+                                    <div class="swiper-slide">
+                                        <div id="step2"></div>
+                                    </div>
+                                    <!--slide3-->
+                                    <div class="swiper-slide">
+                                        <div id="step3"></div>
+                                    </div>
+                                    <!--slide4-->
+                                    <div class="swiper-slide">
+                                        <div id="step4"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                    <!-- 分页按钮 -->
+                    <div class="swiper_btn_box">
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 底部步骤的动画 -->
+    <div class="The-progress clearfix">
+        <div class="container">
+            <div class="row">
+                <div class="progress_postion clearfix">
+                    <!--第一步-->
+                    <div class="progress-wrap col-xs-3 col-sm-3">
+                        <div class="progress_number">
+                            <div class="number">1</div>
+                            <div class="number-down">1</div>
+                        </div>
+                        <div class="progress_icon-wrap text-center bg-icon-sel">
+                            <div class="bg-icon "></div>
+                            <span class="icon-name">{$Think.lang._ZHDL_}</span>
+                        </div>
+                    </div>
+                    <!--第二步-->
+                    <div class="progress-wrap col-xs-3 col-sm-3">
+                        <div class="progress_number">
+                            <div class="number">2</div>
+                            <div class="number-down">2</div>
+                        </div>
+                        <div class="progress_icon-wrap text-center">
+                            <div class="bg-icon"></div>
+                            <span class="icon-name">{$Think.lang._DXYZ_}</span>
+                        </div>
+                    </div>
+                    <!--第三步-->
+                    <div class="progress-wrap col-xs-3 col-sm-3">
+                        <div class="progress_number">
+                            <div class="number">3</div>
+                            <div class="number-down">3</div>
+                        </div>
+                        <div class="progress_icon-wrap text-center">
+                            <div class="bg-icon"></div>
+                            <span class="icon-name">{$Think.lang._BDCG_}</span>
+                        </div>
+                    </div>
+                    <!--第四步-->
+                    <div class="progress-wrap col-xs-3 col-sm-3">
+                        <div class="progress_number">
+                            <div class="number">4</div>
+                            <div class="number-down">4</div>
+                        </div>
+                        <div class="progress_icon-wrap text-center">
+                            <div class="bg-icon"></div>
+                            <span class="icon-name">{$Think.lang._SCDTML_}</span>
+                        </div>
+                    </div>
+                    <div class="through-line"></div>
+                    <i class="fa fa-angle-right"></i>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="__HOME_PLUG__/swiper4.0.7/swiper.min.js"></script>
+<include file="Public:footer1" />
+<!-- my js -->
+<script type="text/javascript">
+    // bodymovin的更换步骤的函数
+    function bodymovin1(stepNum, infinite, play) {
+        bodymovin.loadAnimation({
+            path: '__HOME_JS__/bodymovin/step' + stepNum + '.json',
+            loop: infinite,
+            autoplay: play,
+            renderer: 'svg',
+            container: document.querySelector('#step' + stepNum + '')
+        })
+    }
+    // 页面开始实例第一个步骤
+    bodymovin.loadAnimation({
+        path: '__HOME_JS__/bodymovin/step1.json', //json文件路径
+        loop: true,
+        autoplay: true,
+        renderer: 'svg', //渲染方式，有"html"、"canvas"和"svg"三种
+        container: document.querySelector('#step1')
+    });
+</script>
+<script type="text/javascript" src="__HOME_JS__/Course/course.js"></script>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="2317px" height="2770px" viewBox="0 0 2317 2770" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.1 (67048) - http://www.bohemiancoding.com/sketch -->
+    <title>dl_bg_btm</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="103.083171%" y1="82.3166607%" x2="38.4970772%" y2="32.8800865%" id="linearGradient-1">
+            <stop stop-color="#141633" offset="0%"></stop>
+            <stop stop-color="#1C1E35" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="改版二-下载及教程" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.9">
+        <g id="下载页-新-copy-2" transform="translate(0.000000, -2734.000000)" fill="url(#linearGradient-1)" fill-rule="nonzero">
+            <g id="背景">
+                <g id="dl_bg" transform="translate(0.000000, 15.000000)">
+                    <polygon id="dl_bg_btm" transform="translate(1158.322286, 4103.550215) scale(-1, 1) translate(-1158.322286, -4103.550215) " points="2316.64457 2719 0 4100.72461 2316.64457 5488.10043 2316.64457 4919.12859"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

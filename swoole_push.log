@@ -1,0 +1,13 @@
+4.4.6 onStart
+4.4.6 onStart
+[2020-04-22 11:33:59 #32277.1]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2020-04-22 11:33:59 #32277.1]	INFO	Server is shutdown now
+Ö¢îµÂe’`ªÚ’ﬂŒ¥∂®¡x:serv
+FILE: /var/www/target/Newtrade/Runtime/common~runtime.php(1)
+#0 /var/www/target/Newtrade/Runtime/common~runtime.php(1): E('\xE5\x8F\x83\xE6\x95\xB8\xE9\x8C\xAF\xE8\xAA\xA4\xE6\x88\x96...')
+#1 /var/www/target/Newtrade/Runtime/common~runtime.php(1): Think\App::invokeAction(Object(SwooleCommand\Controller\ServerPushController), 'onStart')
+#2 /var/www/target/Newtrade/Runtime/common~runtime.php(1): Think\App::exec()
+#3 /var/www/target/ThinkPHP/Library/Think/Think.class.php(120): Think\App::run()
+#4 /var/www/target/ThinkPHP/ThinkPHP.php(97): Think\Think::start()
+#5 /var/www/target/cli.php(25): require('/var/www/target...')
+#6 {main}

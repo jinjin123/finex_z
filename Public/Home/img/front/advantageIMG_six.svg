@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="98px" height="104px" viewBox="0 0 98 104" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50 (54983) - http://www.bohemiancoding.com/sketch -->
+    <title>homeic_ad_six</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="81.4272344%" y1="80.8235754%" x2="81.4272331%" y2="24.4617049%" id="linearGradient-1">
+            <stop stop-color="#509AEF" offset="0%"></stop>
+            <stop stop-color="#3C6AF0" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="92.3804012%" y1="93.3247579%" x2="14.9290392%" y2="27.4311867%" id="linearGradient-2">
+            <stop stop-color="#6BC0FB" offset="0%"></stop>
+            <stop stop-color="#3665ED" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="-58.3206838%" y1="-28.2906928%" x2="72.3014543%" y2="93.9492583%" id="linearGradient-3">
+            <stop stop-color="#4694FD" offset="0%"></stop>
+            <stop stop-color="#3C6AF0" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="195.534688%" y1="121.994108%" x2="5.30583658%" y2="26.5245521%" id="linearGradient-4">
+            <stop stop-color="#509AEF" stop-opacity="0.402541893" offset="0%"></stop>
+            <stop stop-color="#3C6AF0" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="BTCsale首页-2" transform="translate(-1076.000000, -4814.000000)">
+            <g id="3" transform="translate(120.000000, 3796.000000)">
+                <g id="Group-11" transform="translate(30.000000, 239.000000)">
+                    <g id="6" transform="translate(898.000000, 750.000000)">
+                        <g id="Group-9">
+                            <g id="homeic_ad_six" transform="translate(80.000000, 80.000000) scale(-1, 1) translate(-80.000000, -80.000000) ">
+                                <path d="M113.533109,79.1973373 L98.6173617,87.5562451 L91.0782169,83.3589078 L105.995055,75 L113.533109,79.1973373 Z M91,102.800259 L91.0785441,83.3610117 L98.6220525,87.5604529 L98.5435084,106.9997 L91,102.800259 Z" id="Combined-Shape-Copy" fill="url(#linearGradient-1)" transform="translate(102.266554, 90.999850) scale(-1, -1) translate(-102.266554, -90.999850) "></path>
+                                <path d="M43.1187551,36 L43,80.1686379 L79.4758614,101.22813 L79.5946165,57.0594923 L43.1187551,36 Z M50.6003278,48.997673 L72.0671953,61.3917994 L71.9950403,88.2297055 L50.5274212,75.8355791 L50.6003278,48.997673 Z" id="Fill-2" fill="url(#linearGradient-2)" transform="translate(61.297308, 68.614065) scale(-1, 1) translate(-61.297308, -68.614065) "></path>
+                                <polygon id="Stroke-8" stroke="url(#linearGradient-3)" points="126.707812 106.307396 126.707812 55.6230208 82.8130208 30.2813542 38.9203125 55.6230208 38.9203125 106.307396 82.8130208 131.650104"></polygon>
+                                <path d="M82.8133333,30.2810417 L82.8133333,131.649792" id="Stroke-10" stroke="url(#linearGradient-3)"></path>
+                                <path d="M38.9840625,55.5114583 L126.642396,106.419792" id="Stroke-12" stroke="url(#linearGradient-3)"></path>
+                                <path d="M39.075625,106.575521 L126.552708,55.3557292" id="Stroke-14" stroke="url(#linearGradient-3)"></path>
+                                <path d="M131.701042,54.85 C131.701042,57.5291667 129.529167,59.7 126.851042,59.7 C124.170833,59.7 122,57.5291667 122,54.85 C122,52.1708333 124.170833,50 126.851042,50 C129.529167,50 131.701042,52.1708333 131.701042,54.85" id="Fill-4" fill="url(#linearGradient-4)"></path>
+                                <path d="M43.7010417,105.85 C43.7010417,108.529167 41.5302083,110.7 38.8510417,110.7 C36.171875,110.7 34,108.529167 34,105.85 C34,103.170833 36.171875,101 38.8510417,101 C41.5302083,101 43.7010417,103.170833 43.7010417,105.85" id="Fill-6" fill="url(#linearGradient-4)"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

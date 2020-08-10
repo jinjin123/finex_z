@@ -1,0 +1,183 @@
+@charset "utf-8";
+
+@import "PlatBlack";
+
+/* ---------------------- 信用评级 --------------------- */
+
+.vip-img .integrityScore_paddingleft img {
+    width: 53px;
+}
+
+.integral_num {
+    margin-left: 60px;
+}
+
+.progress_box {
+    margin-top: 20px;
+}
+
+.honest_panel .integral_num span {
+    font-style: italic;
+}
+
+.integrityScore_paddingleft {
+    padding-left: 8px;
+}
+
+.vip-img #dataTable>tr>td>img,
+.vip-img ul>li>img,
+.vip-img .pro_tit>span>img {
+    width: 36px;
+}
+.pro_con {
+    padding-right: 4rem;
+}
+
+.progress {
+    overflow: visible;
+    height: 15px;
+    /*background-color: $progressBg;*/
+    background: rgba($progressBg, .5);
+    border-radius: 8px;
+}
+
+.progress .progress-bar {
+    position: relative;
+    background: $submit-gradient;
+    border-radius: 8px;
+}
+
+.progress .progress-bar span {
+    position: absolute;
+    bottom: -24px;
+    right: -23px;
+    padding: 6px 10px;
+    line-height: 3px;
+    border-radius: 2px;
+    border: none;
+    background: #393e4d;
+    box-shadow: 0px 0px 10px rgba(31, 31, 31, 0.6);
+}
+
+.progress .progress-bar span:after {
+    content: '';
+    width: 0;
+    height: 0;
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    border-style: solid;
+    border-width: 0 5px 5px 5px;
+    border-color: transparent transparent #393e4d transparent;
+}
+
+.progress-left {
+    position: absolute;
+    left: 12px;
+    top: -1px;
+    z-index: 1;
+    font-size: 12px;
+    color: $white;
+}
+
+.progress-right {
+    position: absolute;
+    right: 61px;
+    top: -1px;
+    font-size: 12px;
+    color: $PtwoP_KXT_content_spancolor;
+    z-index: 2;
+}
+
+.progress-right span {
+    font-weight: 600;
+}
+.pointadd {
+    color: $pointaddBg;
+}
+
+.dropdown_menu_p {
+    left: -60px;
+}
+
+.dropdown_menu_p2 {
+    left: -8px;
+}
+
+.Name_status1 {
+    vertical-align: middle;
+    padding-left: 10px;
+    font-size: 14px;
+    color: $Name_status1Color;
+}
+#bangding>tr>td {
+    padding: 1px;
+}
+
+//升级vip好处
+.honest_panel .panel-heading span.title {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.honest_panel .panel-body .table-responsive tbody tr td:nth-child(1) {
+    width: 12%;
+}
+
+.honest_panel .panel-body .table-responsive tbody tr td:nth-child(2) {
+    width: 34%;
+}
+
+.honest_panel .panel-body .table-responsive tbody tr td:nth-child(3) {
+    width: 26%;
+}
+
+.honest_panel .panel-body .table-responsive tbody tr td:nth-child(4) {
+    width: 26%;
+}
+
+.honest_panel .white_left th {
+    color: $panel-title-font;
+    padding-left: 43px;
+}
+
+.integral-details .panel-body .table-responsive tbody tr th,
+.integral-details .panel-body .table-responsive tbody tr td {
+    text-align: center;
+}
+
+.integral-details .panel-body .table-responsive tbody tr td:nth-child(1) {
+    width: 10%;
+}
+
+.integral-details .panel-body .table-responsive tbody tr td:nth-child(2) {
+    width: 34%;
+}
+
+.integral-details .panel-body .table-responsive tbody tr td:nth-child(3) {
+    width: 25%;
+}
+
+.integral-details .panel-body .table-responsive tbody tr td:nth-child(4) {
+    width: 26%;
+}
+
+@media screen and (max-width: 1048px) {
+    .integral-details .panel-body .table-responsive tbody tr td:nth-child(1){
+        width: 30%;
+    }
+}
+
+
+@media screen and (max-width: 640px) {
+    .pro_con {
+        padding-right: 0;
+    }
+    .honest_panel .panel-heading {
+        padding-bottom: 30px;
+    }
+    .integral_num{
+        float: right !important;
+        margin: 0;
+    }
+}

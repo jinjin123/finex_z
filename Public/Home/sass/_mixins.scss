@@ -1,0 +1,51 @@
+@charset "utf-8";
+@mixin dropmenuBoxshadow($offset){
+    -webkit-box-shadow:$offset;
+    -moz-box-shadow: $offset;
+    box-shadow: $offset;
+}
+
+@mixin trans{
+    -webkit-transition:all 0.3s;
+    -moz-transition:all 0.3s;
+    -o-transition:all 0.3s;
+    transition:all 0.3s;
+}
+
+@mixin navShowAnimate{
+    animation: navShow 0.8s;
+    -moz-animation: navShow 0.8s;	/* Firefox */
+    -webkit-animation: navShow 0.8s;	/* Safari 和 Chrome */
+    -o-animation: navShow 0.8s;	/* Opera */
+}
+
+@mixin gradient($color){
+    background: -webkit-linear-gradient($color);
+    background: -o-linear-gradient($color);
+    background: -moz-linear-gradient($color);
+    background: -ms-linear-gradient($color);
+}
+ 
+@keyframes navShow
+{
+    from {transform: translateY(-10px);opacity: 0;}
+    to {transform: translateY(0px);opacity: 1;}
+}
+
+@-moz-keyframes navShow /* Firefox */
+{
+    from {-moz-transform: translateY(-10px);opacity: 0;}
+    to {-moz-transform: translateY(0px);opacity: 1;}
+}
+
+@-webkit-keyframes navShow /* Safari 和 Chrome */
+{
+    from {-webkit-transform: translateY(-10px);opacity: 0;}
+    to {-webkit-transform: translateY(0px);opacity: 1;}
+}
+
+@-o-keyframes navShow /* Opera */
+{
+    from {-o-transform: translateY(-10px);opacity: 0;}
+    to {-o-transform: translateY(0px);opacity: 1;}
+}

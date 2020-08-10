@@ -1,0 +1,149 @@
+/*
+* MOON - Absolute Coming Soon Template
+* Release Date: June 2017
+* Last Update: June 2017
+* Author: Madeon08
+* Copyright (C) 2017 Madeon08
+* This is a premium product available exclusively here : http://themeforest.net/user/Madeon08/portfolio
+*/
+
+// Duration.
+$fast-transition: 0.2s;
+$slow-transition: 0.3s;
+$smooth-transition: 0.4s;
+$average-transition: 0.6s;
+
+// Font family
+@font-face {
+	font-family: 'CenturyGothic';
+	src: url(../fonts/CenturyGothic.eot),
+	url(../fonts/CenturyGothic.woff2) format('woff2'),
+	url(../fonts/CenturyGothic.woff) format('woff'),
+	url(../fonts/CenturyGothic.TTF) format('truetype'),
+	url(../fonts/CenturyGothic.svg) format('svg');
+}
+
+@font-face {
+	font-family: 'iconfont';
+	src: url(../fonts/iconfont.eot),
+	url(../fonts/iconfont.woff2) format('woff2'),
+	url(../fonts/iconfont.woff) format('woff'),
+	url(../fonts/iconfont.TTF) format('truetype'),
+	url(../fonts/iconfont.svg) format('svg');
+}
+
+$CenturyGothic-family: CenturyGothic,'Helvetica Neue', 'Lucida Grande', Arial, Verdana, sans-serif;
+$raleway-font: Raleway, 'Helvetica Neue', 'Lucida Grande', Arial, Verdana, sans-serif;
+$open-family: 'Open Sans', 'Helvetica Neue', 'Lucida Grande', Arial, Verdana, sans-serif;
+$montserrat-font: Montserrat, 'Helvetica Neue', 'Lucida Grande', Arial, Verdana, sans-serif;
+$lora-family: Lora, 'Helvetica Neue', 'Lucida Grande', Arial, Verdana, sans-serif;
+$default-family: Arial, Verdana, sans-serif;
+$sans-family: sans-serif;
+$open-family: 'Open Sans', sans-serif;
+
+// Font weight
+$light: 300;
+$normal: 400;
+$medium: 500;
+$semi-bold: 600;
+$bold: 700;
+
+// Color version
+$color-1: #263248;
+$color-2: #EFC94C;
+$color-3: #DF5A49;
+
+// Loading
+$left             	  :left;
+$right             	  :right;
+$Tcenter              :center;
+
+$containerWidth 	  :1200px;
+$xxs-width			  :400px;
+$xs-width			  :640px;
+$sm-width			  :800px;
+$md-width			  :1024px;
+$lg-width			  :1200px;
+$iphone6p             :414px;
+$iphone6              :375px;
+$iphone5              :320px;
+$Nexus6p              :412px;
+$Galaxys5             :360px;
+
+
+$size				  :12px;
+$fontS12			  :12px;
+$fontS13			  :13px;
+$fontS14			  :14px;
+$fontS16			  :16px;
+$fontS18			  :18px;
+$fontS20			  :20px;
+$fontS27			  :27px;
+$fontS60			  :60px;
+
+$time: 0.5;
+$arrowsInner: 6;
+
+// Secondary colors
+$danger-red:#ea7979;
+$faqbbg:#efefef;
+$navbd:#1a1a1a;
+$regBlockbd:#f6f6f6;
+$grey:#444;
+$greyWhite:#ddd;
+$greybg:#f2f2f2;
+$fontgrey:#878e93;
+$fontgrey2:#767676;
+$fontgrey3:#c6c6c6;
+$white: #FFFFFF;
+$black: #000000;
+$blackbg: #333;
+$gdbg: #1a1a1a;
+$shark: #2B2D35;
+$gallery: #EFEFEF;
+$ebony-clay: #20232D;
+$tuna : #1F222E;
+$kind-shark : #2d3138;
+$cod-gray: #191c27;
+$orange:#f9672d;
+$green:#45b450;
+$blue :#3B8EDE;
+$blue1 :#549CF0;
+$blue2 :#9aefee;
+$bluebg :#f4f7f9;
+
+
+$pad10: 10px;
+$pad12: 12px;
+$pad20: 20px;
+$pad30: 30px;
+$pad40: 40px;
+$pad50: 50px;
+$px5  : 5px;
+$px9  : 9px;
+$rem9: 9rem;
+$rem8: 8rem;
+$rem7: 7rem;
+$rem6: 6rem;
+$rem5: 5rem;
+$rem4: 4rem;
+$rem3: 3rem;
+$rem2: 2rem;
+$rem1: 1rem;
+
+$deg30 :30deg;
+
+$navHeight:60px;
+
+$loginBoxPad:8px;
+$loginBoxW:396px;
+$loginBoxH:450px;
+
+
+
+@mixin trans{
+	-webkit-transition:all 0.3s;
+	-moz-transition:all 0.3s;
+	-o-transition:all 0.3s;
+	transition:all 0.3s;
+}

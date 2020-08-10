@@ -1,0 +1,661 @@
+<include file="Public:PersonalCenterHeader" />
+<link id="PersonalCenter" href="__HOME_CSS__/PersonalCenter_purple.css" rel="stylesheet" type="text/css" data-depStyle="depStyle">
+<!--datepicker css-->
+<link rel="stylesheet" href="__HOME_PLUG__/bootstrap-datepicker/css/bootstrap-datepicker3.css">
+<!-- 图片查看器 -->
+<link rel="stylesheet" href="__HOME_PLUG__/lightbox/lightbox.min.css" />
+<!-- 密码提示样式 -->
+<link href="__HOME_CSS__/front/input-strength.css" rel="stylesheet" type="text/css">
+
+<div class="col-lg-12 col-md-12 col-sm-12">
+    <div class="panel-heading large-heading clearfix">
+        <!-- 导航tab切换 -->
+        <div class="panel-action pull-left">
+            <ul class="nav nav-tabs solid-tabs nav-stacked underline-tabs personalCenter_nav">
+                <li class="active">
+                    <a href="#account" data-toggle="tab">{$Think.lang._ZHANGHU_}</a>
+                </li>
+                <li>
+                    <a href="{:U('PersonalCenter/showBankCardBind')}">{$Think.lang._YHKBD_}</a>
+                </li>
+                <li>
+                    <a href="{:U('PersonalCenter/integrityScore')}">{$Think.lang._XYPJ_}</a>
+                </li>
+                <li>
+                    <a href="{:U('PersonalCenter/historyLoad')}">{$Think.lang._LSJL_}</a>
+                </li>
+                <li>
+                    <a href="{:U('Problem/showProblem')}">{$Think.lang._WTFK_}</a>
+                </li>
+            </ul>
+            <!-- 手机端时的tab切换 -->
+            <div class="smshow smshow-account visible-xs-block">
+                <div class="btn-group bootstrap-select">
+                    <select class="selectpicker" tabindex="-98">
+                        <option value="0" selected>{$Think.lang._ZHANGHU_}</option>
+                        <option value="1">{$Think.lang._YHKBD_}</option>
+                        <option value="2">{$Think.lang._XYPJ_}</option>
+                        <option value="3">{$Think.lang._LSJL_}</option>
+                        <option value="4">{$Think.lang._WTFK_}</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</div>
+
+<!-- 账户资料 -->
+<div class="col-lg-12 col-md-12 col-sm-12 personal-info text-left">
+    <div class="target_panel_title"><span>{$Think.lang._GEXXI_} </span></div>
+    <div class="form-content">
+        <!-- 个人信息 -->
+        <div class="font_cont">
+            <div class="font-group">
+                <!-- 用户名 -->
+                <label class="col-sm-3 col-xs-5">{$Think.lang._YHM_}</label>
+                <label class="col-sm-9 col-xs-7">{$user.username}</label>
+                <div class="clearfix"></div>
+            </div>
+            <div class="font-group">
+                <!-- 电话 -->
+                <label class="col-sm-3 col-xs-5">{$Think.lang._DIANHUA_}</label>
+                <label class="col-sm-9 col-xs-7">{$user.phone}</label>
+                <div class="clearfix"></div>
+            </div>
+            <div class="font-group">
+                <!-- 注册时间 -->
+                <label class="col-sm-3 col-xs-5">{$Think.lang._ZCSJ_}</label>
+                <label class="col-sm-9 col-xs-7">{$user.reg_time|date='Y-m-d',###}</label>
+                <div class="clearfix"></div>
+            </div>
+            <div class="font-group">
+                <!-- 账户状态 -->
+                <label class="col-sm-3 col-xs-5">{$Think.lang._ZHZT_}</label>
+                <label class="col-sm-9 col-xs-7">
+                    <if condition="$user.status eq 1 ">{$Think.lang._QIYONG_}
+                        <else /> {$Think.lang._TINGYONG_}
+                    </if></label>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--右边打竖第二块 -->
+<div class="col-lg-12 col-md-12 col-sm-12 text-left personal-security">
+    <div class="tab-content setting-tabs">
+        <div class="tab-pane active in" id="account">
+            <div class="form-content">
+                <!-- 实名认证 -->
+                <div class="panel panel-default" id="smrz">
+                    <div class="panel-heading clearfix">
+                        <div class="pull-left target_panel_title hold-sm-block">
+                            <span>{$Think.lang._SMRZ_}</span>
+                            <!-- 实名认证审核通过后显示 -->
+                            <switch name="realInfo['status']">
+                                <case value="1">
+                                    <span class="Name_status"><i class="iconfont icon-cg" style="margin-right: 4px;font-size: 14px;"></i>{$realInfo['word']}</span>
+                                </case>
+                                <case value="-1">
+                                    <span class="Name_status orange"><i class="iconfont  Name_status2"><svg class="icon icon_norepeat" aria-hidden="true"><use xlink:href="#icon-ic_warn1"></use></svg></i> {$realInfo['word']}</span>
+                                </case>
+                                <case value="200">
+                                    <span class="Name_status orange"><i class="iconfont  Name_status2"><svg class="icon icon_norepeat" aria-hidden="true"><use xlink:href="#icon-ic_warn1"></use></svg></i> {$realInfo['word']}</span>
+                                </case>
+                            </switch>
+                            <!-- 认证通过 -->
+
+                            <!-- 实名认证审核通过后显示结束 -->
+                        </div>
+                        <div class="panel-tools panel-action text-right pull-right">
+                            <!-- 实名认证审核通过后不显示这两个按钮 -->
+                            <if condition="($realInfo['status'] eq -1)  or ($realInfo['status'] eq 200)">
+                                <!-- 认证不通过 -->
+                                <button class="btn btn-min"></button>
+                            </if>
+                        </div>
+                        <!-- /.panel-tools -->
+                        <switch name="realInfo['status']">
+                            <case value="1">
+                                <span class="Name_status pull-left"><i class="iconfont icon-cg" style="margin-right: 4px;font-size: 14px;"></i>{$realInfo['word']}</span>
+                            </case>
+                            <case value="-1">
+                                <span class="Name_status orange pull-left"><i class="iconfont  Name_status2"><svg class="icon icon_norepeat" aria-hidden="true"><use xlink:href="#icon-ic_warn1"></use></svg></i> {$realInfo['word']}</span>
+                            </case>
+                            <case value="200">
+                                <span class="Name_status orange pull-left"><i class="iconfont  Name_status2"><svg class="icon icon_norepeat" aria-hidden="true"><use xlink:href="#icon-ic_warn1"></use></svg></i> {$realInfo['word']}</span>
+                            </case>
+                        </switch>
+                        <div class="Name_status_not" style="display: inline-block;">
+                            <!-- 实名认证审核中(提交之后不显示表单，只显示文字) -->
+                            <if condition="$realInfo['status'] eq 0">
+                                <span class="Name_status  pull-left forn_cont"> {$realInfo['word']}</span>
+                            </if>
+                        </div>
+                    </div>
+                    <!-- /.panel-heading -->
+
+                    <if condition="$realInfo['status'] eq -1 or  $realInfo['status'] eq 200 ">
+                        <div class="panel-body" style="display: none;">
+                            <!-- 实名认证前(显示表单) -->
+                            <form id='realform' enctype="multipart/form-data">
+                                <!--证件类型-->
+                                <div class="form-group showbank_bottom">
+                                    <label class="control-label">{$Think.lang._ZJLX_}</label>
+                                    <input type="text" name='idtype' class="form-control" id="idtype" disabled="disabled" value="{$Think.lang._HUZHAO_}">
+                                </div>
+                                <input type="hidden" name="real_name_token" value="<?php echo createRealNameToken($_SESSION['str_LOGIN_INFO']['USER_KEY_ID'])?>">
+                                <!--证件姓名-->
+                                <div class="form-group">
+                                    <!-- 姓 -->
+                                    <div class="col-xs-6 lgNopadLeft certificate-surname showbank_bottom">
+                                        <label class="control-label">{$Think.lang._XING_}&nbsp;&nbsp;<a href="__HOME_IMG__/name.png" style="font-size: 12px;" data-title="{$Think.lang._XING_}" data-lightbox="xing" positionFormTop="150">({$Think.lang._SHILI_})</a></label>
+                                        <input type="text" placeholder="eg.ZHANG"<if condition="$realInfo['is_change'] eq -1"> disabled="disabled"</if>
+                                       value="{$realInfo['first_name']}" class="form-control" id="inputName1" name="idname1" maxlength="18" />
+                    </div>
+                    <!-- 名 -->
+                    <div class="col-xs-6 lgNopadRight certificate-name showbank_bottom">
+                        <label class="control-label">{$Think.lang._MING_}&nbsp;&nbsp;<a href="__HOME_IMG__/Lastname.png" style="font-size: 12px;" data-title="{$Think.lang._MING_}" data-lightbox="name">({$Think.lang._SHILI_})</a></label>
+                        <input type="text" placeholder="eg.SAN" <if condition="$realInfo['is_change'] eq -1"> disabled="disabled"</if>
+                        value="{$realInfo['last_name']}" class="form-control" id="inputName2" name="idname2" maxlength="18" />
+                    </div>
+                    <div class="clearfix"></div>
+                    </div>
+
+                    <div class="form-group showbank_bottom">
+                        <!--银行卡开户人姓名-->
+                        <label class="control-label">{$Think.lang._YHKKHRXM_}&nbsp;&nbsp;<a href="__HOME_IMG__/fullname.png" data-title="{$Think.lang._YHKKHRXM_}" style="font-size: 12px;" data-lightbox="allname">({$Think.lang._SHILI_})</a></label>
+                        <input type="text" placeholder="eg.ZhangSan" <if condition="$realInfo['is_change'] eq -1"> disabled="disabled"</if>
+                        value="{$realInfo['bank_name']}" name='bank_name' id="openAccount" class="form-control" value="" maxlength="20">
+                        <p class="bindCardWarn">
+                            {$Think.lang._WXTS_} : {$Think.lang._QQRTXDXMYNYHKXMYZ_}{$Think.lang._PUNCTUATION_}
+                        </p>
+                    </div>
+
+                    <div class="form-group">
+                        <!--护照号码-->
+                        <div class="col-xs-12 col-sm-6 lgNopadLeft passport-name showbank_bottom">
+                            <label class="control-label">{$Think.lang._HZHM_}&nbsp;&nbsp;<a href="__HOME_IMG__/passport_number.png" data-title="{$Think.lang._HZHM_}" style="font-size: 12px;" data-lightbox="passnumber">({$Think.lang._SHILI_})</a></label>
+                            <input type="text" placeholder="eg:E35978175" name='idnum' class="form-control" id="idnum" value="" maxlength="15">
+                        </div>
+                        <!--证件有效期-->
+                        <div class="col-xs-12 col-sm-6 lgNopadRight certificate-validity showbank_bottom">
+                            <label class="control-label">{$Think.lang._HZYXQ_}</label>
+                            <div class="bootstrap-timepicker">
+                                <input type="text" placeholder="eg:2020-9-20" class="form-control" size="16" name='date' id="expTime" readonly="">
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+
+                    <!-- 上传证件正面照 -->
+                    <div class="form-group showbank_bottom PersonalCenter_uploading">
+                        <label class="control-label">{$Think.lang._SCHZGRXXY_}&nbsp;&nbsp;<a href="__HOME_IMG__/passportInfo.png" class="for-example" data-title="{$Think.lang._HZGRXXY_}" style="font-size: 12px;" data-lightbox="one">({$Think.lang._SHILI_})</a></label>
+                        <!-- 上传input框 -->
+                        <div class="fileinput fileinput-new" data-provides="fileinput">
+                            <div class="form-control" data-trigger="fileinput">
+                                <span class="fileinput-filename"></span>
+                            </div>
+                            <span class=" btn btn-light-purple btn-file">
+                                        <span class="fileinput-new">{$Think.lang._SELECTFILE_}</span>
+                            <span class="fileinput-exists">{$Think.lang._REFRESH_}</span>
+                            <input type="hidden"><input type="file" id='up_img' name="up_img">
+                            </span>
+                            <a href="#" class="btn btn-light-purple fileinput-exists" data-dismiss="fileinput">{$Think.lang._REMOVE_}</a>
+                        </div>
+                    </div>
+
+                    <!-- 上传证件手持合照图片 -->
+                    <div class="form-group showbank_bottom PersonalCenter_uploading">
+                        <label class="control-label">{$Think.lang._SCSCHZGRXXYHZ_}&nbsp;&nbsp;<a href="__HOME_IMG__/passportInfo1.png" class="for-example" data-title="{$Think.lang._SCHZGRXXYHZ_}" style="font-size: 12px;" data-lightbox="two">({$Think.lang._SHILI_})</a></label>
+                        <!-- 上传input框 -->
+                        <div class="fileinput fileinput-new" data-provides="fileinput">
+                            <div class="form-control" data-trigger="fileinput">
+                                <span class="fileinput-filename"></span>
+                            </div>
+                            <span class=" btn btn-light-purple btn-file">
+                                        <span class="fileinput-new">{$Think.lang._SELECTFILE_}</span>
+                            <span class="fileinput-exists">{$Think.lang._REFRESH_}</span>
+                            <input type="hidden"><input type="file" id='all_img' name="all_img">
+                            </span>
+                            <a href="#" class=" btn btn-light-purple fileinput-exists" data-dismiss="fileinput">{$Think.lang._REMOVE_}</a>
+                        </div>
+                    </div>
+                    <!-- 提交按钮 -->
+                    <div class="submit-block text-center">
+                        <switch name="realInfo['status']">
+                            <case value="1"><button type="button" id="bton-yy" disabled="disabled" class="btn btn-submit-gradient ">{$Think.lang._YRZ_}</button></case>
+                            <case value="0"><button type="button" id="bton-yy" disabled="disabled" class="btn btn-submit-gradient ">{$Think.lang._ZZSH_}</button></case>
+                            <default /><button type="button" id="bton-yy" class="btn btn-submit-gradient ">{$Think.lang._TIJIAO_}</button>
+                        </switch>
+                    </div>
+                    </form>
+                    <!-- 实名认证前结束 -->
+
+
+                    <!-- 实名认证审核中结束 -->
+                    <!-- 实名认证审核通过(审核成功后不显示任何东西) -->
+                    </div>
+                    </if>
+                    <!-- /.panel-body -->
+                </div>
+
+                <!-- 安全信息 -->
+                <div class="panel panel-default">
+                    <!-- 安全头部 -->
+                    <div class="panel-heading clearfix">
+                        <div class="pull-left target_panel_title"><span>{$Think.lang._ANQUAN_}</span></div>
+                        <div class="panel-tools panel-action text-right pull-right">
+                            <button class="btn btn-min"></button>
+                        </div>
+                        <!-- /.panel-tools -->
+                    </div>
+                    <!-- /.panel-heading -->
+
+                    <div class="panel-body">
+                        <div class="forn_cont">
+                            <div class="font-group">
+                                <!-- 安全信息密码 -->
+                                <label class="col-sm-3 col-xs-4">{$Think.lang._MIMA_}：</label>
+                                <label class="col-sm-6 col-xs-5">**********</label>
+                                <label class="col-sm-3 col-xs-3"><a href="" data-toggle="modal" data-target="#pass_modify">{$Think.lang._GENGGAI_}</a></label>
+                                <div class="clearfix"></div>
+                            </div>
+
+                            <!-- 账号密码 -->
+                            <div class="font-group">
+                                <label class="col-sm-3 col-xs-4">{$Think.lang._ZJMIMA_}：</label>
+                                <empty name="user.trade_pwd">
+                                    <label class="col-sm-6 col-xs-5">{$Think.lang._ZWBD_}</label>
+                                    <label class="col-sm-3 col-xs-3"><a href="#" data-toggle="modal" data-target="#Trapass_binding">{$Think.lang._BANGD_}</a></label>
+                                    <else />
+                                    <label class="col-sm-6 col-xs-5">**********</label>
+                                    <label class="col-sm-3 col-xs-3"><a href="#"  data-toggle="modal" data-target="#Trapass_modify">{$Think.lang._GENGGAI_}</a></label>
+                                </empty>
+                                <div class="clearfix"></div>
+                            </div>
+
+                            <!-- 资金密码 -->
+                            <div class="font-group">
+                                <label class="col-sm-3 col-xs-4">{$Think.lang._DZYXDZ_}：</label>
+                                <empty name="user['email']"> <label class="col-sm-6 col-xs-5">{$Think.lang._ZWBD_}</label>
+                                    <!--绑定前引用-->
+                                    <label class="col-sm-3 col-xs-3"><a href="" data-toggle="modal" data-target="#Email_binding">{$Think.lang._BANGD_}</a></label>
+                                    <else />
+                                    <label class="col-sm-6 col-xs-5">{$user.email}</label>
+                                    <label class="col-sm-3 col-xs-3"><a href="" data-toggle="modal" data-target="#Email_modify">{$Think.lang._GENGGAI_}</a></label>
+                                </empty>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                </div>
+
+                <!-- 手机密令 -->
+                <div class="panel panel-default">
+                    <div class="panel-heading clearfix">
+                        <div class="pull-left target_panel_title"><span>{$Think.lang._SJML_}</span></div>
+                        <div class="panel-tools panel-action text-right pull-right">
+                            <button class="btn btn-min"></button>
+                        </div>
+                        <!-- /.panel-tools -->
+                    </div>
+                    <!-- /.panel-heading -->
+
+                    <div class="panel-body">
+                        <div class="forn_cont">
+                            <div class="font-group">
+                                <label class="col-sm-3 col-xs-5 pr0">{$Think.lang._LPXLHM_}:</label>
+                                <label class="col-sm-6 col-xs-5"><empty name="userToken">{$Think.lang._ZWBD_} <else />{$userToken}</empty></label>
+                                <notempty name="userToken"><label class="col-sm-3 col-xs-2">
+									<a href="" data-toggle="modal" data-target="#phone_modify">{$Think.lang._JIEBANG_}</a></label></notempty>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.tab-pane -->
+    </div>
+    <!-- /.tab-content -->
+</div>
+<!-- /.end -->
+
+<!-- 更改密码弹窗 -->
+<div class="modal fade modalStyle issue" data-width="480" id="pass_modify" style="display: none;">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title">{$Think.lang._XIUGAIMM_}<button type="button" class="close" data-dismiss="modal">×</button></h5>
+        </div>
+        <!-- /.更改密码弹窗-头部 -->
+
+        <div class="modal-body">
+            <!-- 提示 -->
+            <div class="col-lg-11 nofloat_auto">
+                <div class="alert alert-info">
+                    <p class="alert-title">{$Think.lang._ZYSX_}</p>
+                    <p class="p-left-15"><i class="fa fa-circle"></i>{$Think.lang._XGMMGGTT_}</p>
+                    <p class="p-left-15"><i class="fa fa-circle"></i>{$Think.lang._XGDLMMTS_}</p>
+                </div>
+            </div>
+
+            <!-- 主体内容 -->
+            <div class="col-lg-11 nofloat_auto ">
+                <!-- 新密码 -->
+                <div class="row issue-item item-border">
+                    <div class="col-xs-5 issue-title"><label for="inputIconLeftExample">{$Think.lang._XDLMM_}</label></div>
+                    <div class="col-xs-7 issue-contain ">
+                        <div class="form-group-strength"><input type="password" class="form-control" id="inputIconLeftExample" name="revisepwd" maxlength="18" data-strength="focusout" placeholder="{$Think.lang._QTXXDLMM_}"></div>
+                    </div>
+                </div>
+                <!-- 重复密码 -->
+                <div class="row issue-item item-border">
+                    <div class="col-xs-5 issue-title"><label for="inputIconLeftExample1">{$Think.lang._CFXDLMM_}</label></div>
+                    <div class="col-xs-7 issue-contain"><input type="password" class="form-control" id="inputIconLeftExample1" name="repeatpwd" maxlength="18" placeholder="{$Think.lang._QCFTXXDLMM_}"></div>
+                </div>
+                <!-- 动态口令 -->
+                <div class="row issue-item item-border">
+                    <div class="col-xs-5 issue-title"><label for="inputIconLeftExample2">{$Think.lang._DTML_}</label></div>
+                    <div class="col-xs-7 issue-contain"><input type="text" class="form-control" id="inputIconLeftExample2" name="token" maxlength="6" placeholder="{$Think.lang._QTXDTKL_}" onInput="value=value.replace(/[^\d\a-\z\A-\Z]/g,'')"></div>
+                </div>
+                <!--提交按钮-->
+                <div class="form-group row issue-item buttonArea">
+                    <button type="button" class="btn btn-confirm gradual_change_blue " id="confirmBtn">{$Think.lang._QRXG_}</button>
+                </div>
+            </div>
+        </div>
+        <!-- /.更改密码弹窗-底部 -->
+    </div>
+</div>
+<!-- 更改密码弹窗结束 -->
+
+<!-- 绑定资金密码弹窗 -->
+<div class="modal fade modalStyle issue" data-width="480" id="Trapass_binding" style="display: none;">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title">{$Think.lang._BDZJMM_}<button type="button" class="close" data-dismiss="modal">×</button></h5>
+        </div>
+        <!-- /.绑定资金密码弹窗-头部 -->
+
+        <div class="modal-body">
+            <!-- 提示 -->
+            <div class="col-lg-11 nofloat_auto">
+                <div class="alert alert-info">
+                    <p class="alert-title">{$Think.lang._WXTS_}：</p>
+                    <p class="p-left-15"><i class="fa fa-circle"></i> {$Think.lang._XGMMGGTT_}</p>
+                </div>
+            </div>
+            <!-- 主体内容 -->
+            <div class="col-lg-11 nofloat_auto ">
+                <!-- 资金密码 -->
+                <div class="row issue-item item-border">
+                    <div class="col-xs-5 issue-title"><label for="trapass">{$Think.lang._ZJMIMA_}</label></div>
+                    <div class="col-xs-7 issue-contain ">
+                        <div class="form-group-strength"><input type="password" id="trapass" class="form-control" maxlength="18" data-strength="focusout" placeholder="{$Think.lang._QTXXZJMM_}" /></div>
+                    </div>
+                </div>
+                <!-- 重复资金密码 -->
+                <div class="row issue-item item-border">
+                    <div class="col-xs-5 issue-title"><label for="repTrapass">{$Think.lang._CFXZJMM_}</label></div>
+                    <div class="col-xs-7 issue-contain"><input type="password" id="repTrapass" class="form-control" maxlength="18" placeholder="{$Think.lang._QCFTXXZJMM_}" /></div>
+                </div>
+                <!-- 手机密令 -->
+                <div class="row issue-item item-border">
+                    <div class="col-xs-5 issue-title"><label for="token">{$Think.lang._DTML_}</label></div>
+                    <div class="col-xs-7 issue-contain"><input type="text" id="token" class="form-control" maxlength="6" placeholder="{$Think.lang._QTXDTKL_}" onInput="value=value.replace(/[^\d\a-\z\A-\Z]/g,'')" /></div>
+                </div>
+                <!--提交按钮-->
+                <div class="form-group row issue-item buttonArea">
+                    <button type="button" class="btn btn-confirm gradual_change_blue" id="Trapass_bindingBtn">{$Think.lang._QRBANGD_}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 绑定资金密码弹窗结束 -->
+
+<!-- 更改资金密码弹窗 -->
+<div class="modal fade modalStyle issue" data-width="480" id="Trapass_modify" style="display: none;">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title">{$Think.lang._XGZJMM_}<button type="button" class="close" data-dismiss="modal">×</button></h5>
+        </div>
+        <!-- /.modal-header -->
+        <div class="modal-body">
+            <!-- 提示 -->
+            <div class="col-lg-11 nofloat_auto">
+                <div class="alert alert-info">
+                    <p class="alert-title">{$Think.lang._ZYSX_}</p>
+                    <p class="p-left-15"><i class="fa fa-circle"></i> {$Think.lang._XGMMGGTT_}</p>
+                    <p class="p-left-15"><i class="fa fa-circle"></i> {$Think.lang._XGZJMMTS_}</p>
+                </div>
+            </div>
+
+            <!-- 主体内容 -->
+            <div class="col-lg-11 nofloat_auto ">
+                <!-- 资金密码 -->
+                <div class="row issue-item item-border">
+                    <div class="col-xs-5 issue-title"><label for="inputIconLeftExample3">{$Think.lang._XINZJMM_}</label></div>
+                    <div class="col-xs-7 issue-contain">
+                        <div class="form-group-strength"><input type="password" class="form-control" id="inputIconLeftExample3" name="Trapass1" maxlength="18" data-strength="focusout" placeholder="{$Think.lang._QTXXZJMM_}"></div>
+                    </div>
+                </div>
+                <!-- 重复资金密码 -->
+                <div class="row issue-item item-border">
+                    <div class="col-xs-5 issue-title"><label for="inputIconLeftExample4">{$Think.lang._CFXZJMM_}</label></div>
+                    <div class="col-xs-7 issue-contain"><input type="password" class="form-control" id="inputIconLeftExample4" name="Trapass2" maxlength="18" placeholder="{$Think.lang._QCFTXXZJMM_}"></div>
+                </div>
+                <!-- 手机密令 -->
+                <div class="row issue-item item-border">
+                    <div class="col-xs-5 issue-title"><label for="inputIconLeftExample5">{$Think.lang._DTML_}</label></div>
+                    <div class="col-xs-7 issue-contain"><input type="text" class="form-control" id="inputIconLeftExample5" name="Trapass3" maxlength="6" placeholder="{$Think.lang._QTXDTKL_}" onInput="value=value.replace(/[^\d\a-\z\A-\Z]/g,'')"></div>
+                </div>
+                <!--提交按钮-->
+                <div class="form-group row issue-item buttonArea">
+                    <button type="button" class="btn btn-confirm gradual_change_blue " id="moneypwdBtn">{$Think.lang._QRXG_}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 更改资金密码弹窗结束 -->
+
+<!--绑定邮箱弹窗-->
+<div class="modal fade modalStyle issue" data-width="480" id="Email_binding" style="display: none;">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title">{$Think.lang._BDDZYX_}<button type="button" class="close" data-dismiss="modal">×</button></h5>
+        </div>
+        <div class="modal-body">
+            <!-- 提示 -->
+            <!--<div class="col-lg-11 nofloat_auto">-->
+            <!--<div class="alert alert-info">-->
+            <!--<p class="alert-title">{$Think.lang._ZYSX_}</p>-->
+            <!--<p class="p-left-15"><i class="fa fa-circle"></i> {$Think.lang._ZHXGYJTZ_}</p>-->
+            <!--<p class="p-left-15"><i class="fa fa-circle"></i> {$Think.lang._ZHZTBHTZ_}</p>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!-- 主体内容 -->
+            <div class="col-lg-11 nofloat_auto">
+                <!-- 邮箱地址 -->
+                <div class="row issue-item item-border">
+                    <div class="col-xs-5 issue-title"><label for="addonLeftExample2">{$Think.lang._YXDZ_}</label></div>
+                    <div class="col-xs-7 issue-contain"><input type="text" class="form-control " id="addonLeftExample2" maxlength="60" placeholder="{$Think.lang._QTXYX_}"></div>
+                </div>
+                <!--提交按钮-->
+                <div class="form-group row issue-item buttonArea">
+                    <button type="button" class="btn btn-confirm gradual_change_blue " id="binding_email">
+                        {$Think.lang._QRBANGD_}
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--绑定邮箱弹窗结束-->
+
+<!-- 更改电子邮箱弹窗 -->
+<div class="modal fade modalStyle issue" data-width="480" id="Email_modify" style="display: none;">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title">{$Think.lang._XGDZYX_}<button type="button" class="close" data-dismiss="modal">×</button></h5>
+        </div>
+        <div class="modal-body">
+            <!-- 提示 -->
+            <!--<div class="col-lg-11 nofloat_auto">-->
+            <!--<div class="alert alert-info">-->
+            <!--<p class="alert-title">{$Think.lang._ZYSX_}</p>-->
+            <!--<p class="p-left-15"><i class="fa fa-circle"></i> {$Think.lang._ZHXGYJTZ_}</p>-->
+            <!--<p class="p-left-15"><i class="fa fa-circle"></i> {$Think.lang._ZHZTBHTZ_}</p>-->
+            <!--</div>-->
+            <!--</div>-->
+
+            <!-- 主体内容 -->
+            <div class="col-lg-11 nofloat_auto ">
+                <!-- 更改邮箱弹窗 -->
+                <div class="row issue-item item-border">
+                    <div class="col-xs-6 issue-title"><label for="email1">{$Think.lang._YDZYX_}</label></div>
+                    <div class="col-xs-6 issue-contain"><input type="text" class="form-control" id="email1" value="{$user['email']}" readonly="readonly" maxlength="60" /></div>
+                </div>
+                <!-- 新电子邮箱 -->
+                <div class="row issue-item item-border">
+                    <div class="col-xs-5 issue-title"><label for="email2">{$Think.lang._XINDZYX_}</label></div>
+                    <div class="col-xs-7 issue-contain"><input type="email" class="form-control" id="email2" placeholder="{$Think.lang._QTXYX_}" maxlength="60" /></div>
+                </div>
+                <!--提交按钮-->
+                <div class="form-group row issue-item buttonArea">
+                    <button type="button" class="btn gradual_change_blue " id="saveEmail">{$Think.lang._QRXG_}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 更改电子邮箱弹窗结束 -->
+
+<!-- 解绑手机弹窗 -->
+<div class="modal fade modalStyle issue" data-width="480" id="phone_modify" style="display: none;">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title">{$Think.lang._JBSJLP_}<button type="button" class="close" data-dismiss="modal">×</button></h5>
+        </div>
+        <!-- /.modal-header -->
+        <div class="modal-body">
+            <!-- 提示 -->
+            <div class="col-lg-11 nofloat_auto">
+                <div class="alert alert-info">
+                    <p class="alert-title">{$Think.lang._ZYSX_}</p>
+                    <p class="p-left-15"><i class="fa fa-circle"></i> {$Think.lang._JBLPTS1_}</p>
+                    <p class="p-left-15"><i class="fa fa-circle"></i> {$Think.lang._JBLPTS2_}</p>
+                </div>
+            </div>
+            <!-- 主体内容 -->
+            <div class="col-lg-11 nofloat_auto ">
+                <!-- 令牌序列号 -->
+                <div class="row issue-item item-border">
+                    <div class="col-xs-4 issue-title"><label for="token1">{$Think.lang._LPXLHAO_}</label></div>
+                    <div class="col-xs-8 issue-contain"><input type="text" class="form-control" id="token1" maxlength="19" style='text-transform:uppercase' placeholder="{$Think.lang._QTXLPXL_}"></div>
+                </div>
+                <!-- 令牌秘钥 -->
+                <div class="row issue-item item-border">
+                    <div class="col-xs-4 issue-title"><label for="token2">{$Think.lang._LPMY_}</label></div>
+                    <div class="col-xs-8 issue-contain"><input type="text" class="form-control" id="token2" maxlength="15" style='text-transform:uppercase' placeholder="{$Think.lang._QTXLPMY_}"></div>
+                </div>
+                <!-- 图形验证码 -->
+                <div class="row issue-item item-border">
+                    <div class="col-cs-12 issue-title">
+                        <label for="inputIconLeftExample1">{$Think.lang._YZM_}</label>
+                    </div>
+                    <div class="issue-containAuto">
+                        <div class="col-xs-9 nopad">
+                            <input type="text" class="form-control input-text-left" maxlength="4" id="sellVerifyImg1" placeholder="{$Think.lang._TXTXYZM_}">
+                        </div>
+                        <div class="col-xs-3 nopad text-right">
+                            <img class="verifyImg" src="{:U('CheckVerify/getVerify')}" />
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <!-- 手机验证码 -->
+                <div class="row issue-item item-border">
+                    <div class="col-cs-12 issue-title">
+                        <label for="mobile_vercode" class="control-label">{$Think.lang._SJYZM_}</label>
+                    </div>
+                    <div class="issue-containAuto">
+                        <div class="col-xs-9 nopad">
+                            <input type="text" class="form-control phonecall input-text-left" maxlength="6" id="mobile_vercode" placeholder="{$Think.lang._QSRSJYZM_}">
+                        </div>
+                        <div class="col-xs-3 nopad text-right">
+                            <button id="getCode" class="countdown">{$Think.lang._HUOQU_}</button>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <!--提交按钮-->
+                <div class="form-group row issue-item buttonArea">
+                    <button type="button" class="btn btn-confirm gradual_change_blue " id="tokenUnBinding">
+                        {$Think.lang._JIEBANG_}
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- /.modal-body -->
+    </div>
+</div>
+<!-- 解绑手机弹窗结束 -->
+<script>
+    var verifyUrl = "{:U('CheckVerify/getVerify')}";
+    var subsetNewPassword = "{:U('PersonalCenter/setNewPassword')}";
+    var subSetTradePassword = "{:U('PersonalCenter/setNewTradePassword')}";
+    var subSetEmailAdress = "{:U('PersonalCenter/bindEmailAdress')}";
+    var subModifyEmailAdress = "{:U('PersonalCenter/modifyEmailAdress')}";
+    var subUnbundingToken = "{:U('PersonalCenter/unBundingToken')}";
+    var sendSmsUrl = "{:U('PersonalCenter/unBundingTokenSmsSend')}";
+    var checkVerCodeUrl = "{:U('PersonalCenter/checkVerCode')}";
+    var loginoutUrl = "{:U('Login/LoginOut')}";
+    var isReal = "{$realInfo['is_real']}";
+    var isEmail = "{$isEmail}";
+    var isBindTradePwd = "{$isTradeBind}";
+    var realTips = "{$realInfo['tips']}";
+    var realok = '{$Think.lang._SMRZTG_}';
+    var needinfo = '{$Think.lang._QSRWZDRZXX_}';
+    //增加语言提示
+    //护照姓名输入应都为纯英文
+    var tips1 = "{$Think.lang._HZXMSRYWCYW_}";
+    //护照姓和名输入都应为1-18位
+    var tips2 = "{$Think.lang._HZXHMSRYWXW_}";
+    //证件号输入应由数字和英文组成
+    var tips3 = "{$Think.lang._ZJHSRWSZJYW_}";
+    //证件号输入应为6-15位
+    var tips4 = "{$Think.lang._ZJHSRWXW_}";
+    //银行卡开户人姓名应为中文或英文组成
+    var tips5 = "{$Think.lang._YHKKHXMYWZWHYWZH_}";
+    //银行卡开户人姓名输入应为2-22位
+    var tips6 = "{$Think.lang._YHKKHRXMWXW_}";
+    var tips7 = "{$Think.lang._HZYXQBNWK_}";
+    var gsbzq = "{$Think.lang._GSBZQ_}";
+    var tpgd = "{$Think.lang._TPGD_}";
+    var bindtradepwdok = "{$Think.lang._ZJMMBDCGZJJF_}";
+    var binemaildok = "{$Think.lang._YXBDCGZJJF_}";
+    var strengthTitle1 = "{$Think.lang._NDMMBXBH_}";
+    var strengthTips1 = "{$Think.lang._ZSLW_}";
+    var strengthTips2 = "{$Think.lang._SZMDX_}";
+    var strengthTips3 = "{$Think.lang._ZSTZFLZYSZH_}";
+    var strengthTitle2 = "{$Think.lang._MMQD_}";
+    var strengthWarming = "{$Think.lang._BMSYQTWZMMBAQ_}";
+    var target_datepicker = "{$time}";
+    var userreal = '{$Think.lang._SMRZ_}';
+    var nouserreal = '{$Think.lang._ZYSMQBNJXJYCZQW_}' + "<a href='/PersonalCenter/index' style='color:#00dcda'>" + userreal + "</a>";
+    var subIdentify = "{:U('PersonalCenter/subIdentify')}"
+        // var throb = "{:U('PersonalCenter/subIdentify')}"
+</script>
+<!-- 图片查看器 -->
+<script src="__HOME_PLUG__/lightbox/lightbox-plus-jquery.min.js"></script>
+<!-- Timepicker -->
+<script src='__HOME_PLUG__/bootstrap-datepicker/js/bootstrap-datepicker.js'></script>
+<!-- 文件上传 -->
+<script src='__HOME_JS__/personalcenter/indentify.js'></script>
+<include file="Public:PersonalCenterFooter" />

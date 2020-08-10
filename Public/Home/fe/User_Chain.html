@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="zxx">
+<include file="./Public/Home/fe/base/head.html"/>
+    <link
+        href="__HOME__/fe/staticcss?family=Josefin+Sans:300,400,600,700%7COpen+Sans:300,400,600,700&display=swap"
+        rel="stylesheet">
+
+
+<body>
+<include file="./Public/Home/fe/base/loader.html"/>
+
+    <div class="site-content">
+        <include file="./Public/Home/fe/base/nav.html"/>
+        <div id="sticky-header"></div>
+        <div class="page-title-area bg-primary" style="background-image: url('__HOME__/fe/staticimages/shape/shape-dot1.png')">
+            <div class="shape-group">
+                <div class="shape"></div>
+                <div class="shape"></div>
+                <div class="shape"></div>
+                <div class="shape"></div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="page-header-content text-center">
+                            <div class="page-header-caption">
+                                <h2 class="page-title">My Chains</h2>
+                            </div>
+                            <div class="breadcrumb-area">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="{:U('UserCenter/index')}">Home</a></li>
+                                    <li class="breadcrumb-item active">My Chains</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="dashboard-page-block ptb-120">
+            <div class="container">
+                <div class="row flex-wrap-reverse">
+                    <div class="col-lg-9">
+                        <div class="dashboard-page-main">
+
+                            <div class="row pricing-table-list">
+                                <div class="col-lg-6">
+                                    <div class="pricing-box pricing-green" data-animate="hg-fadeInUp">
+                                        <div class="text-center">
+                                            <img src="__HOME__/fe/static/picture/USDT.png" width="100"
+                                                class="rounded-circle mb-4" />
+                                        </div>
+                                        <!--
+                                            <div class="pricing-icon icon-default icon-green">
+                                                <div class="shape-icon"></div>
+                                                <div class="icon">
+                                                    <span class="flaticon-profit"></span>
+                                                </div>
+                                            </div>
+                                            -->
+                                        <div class="package-price">
+                                            <div class="pricing">USDT</div>
+                                            <div></div>
+                                            <div class="divider"></div>
+                                        </div>
+                                        <div class="pricing-content">
+                                            <ul class="list">
+                                                <li>{$currency['USDT']['usdt_num']}</li>
+                                            </ul>
+                                        </div>
+                                        <div class="pricing-footer text-center">
+                                            <a href="{:U('Wallent/depositUstd')}" class="btn btn-success">Deposit</a>
+                                            <a href="{:U('Wallent/showWithDraw',array('currencyId'=>8,'currencyName'=>'USDT'))}" class="btn btn-danger">Withdraw</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="pricing-box pricing-green" data-animate="hg-fadeInUp">
+                                        <div class="text-center">
+                                            <img src="__HOME__/fe/static/picture/btc.png" width="100"
+                                                class="rounded-circle mb-4" />
+                                        </div>
+                                        <!--
+                                            <div class="pricing-icon icon-default icon-green">
+                                                <div class="shape-icon"></div>
+                                                <div class="icon">
+                                                    <span class="flaticon-profit"></span>
+                                                </div>
+                                            </div>
+                                            -->
+                                        <div class="package-price">
+                                            <div class="pricing">BTC</div>
+                                            <div></div>
+                                            <div class="divider"></div>
+                                        </div>
+                                        <div class="pricing-content">
+                                            <ul class="list">
+                                                <li>{$currency['BTC']['num']}</li>
+                                            </ul>
+                                        </div>
+                                        <div class="pricing-footer text-center">
+                                            <a href="{:U('Wallent/depositIcon',array('currencyName'=>btc))}" class="btn btn-success">Deposit</a>
+                                            <a href="{:U('Wallent/showWithDraw',array('currencyId'=>1,'currencyName'=>'BTC'))}" class="btn btn-danger">Withdraw</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="pricing-box pricing-green" data-animate="hg-fadeInUp">
+                                        <div class="text-center">
+                                            <img src="__HOME__/fe/static/picture/eth.png" width="100"
+                                                class="rounded-circle mb-4" />
+                                        </div>
+                                        <!--
+                                            <div class="pricing-icon icon-default icon-green">
+                                                <div class="shape-icon"></div>
+                                                <div class="icon">
+                                                    <span class="flaticon-profit"></span>
+                                                </div>
+                                            </div>
+                                            -->
+                                        <div class="package-price">
+                                            <div class="pricing">ETH</div>
+                                            <div></div>
+                                            <div class="divider"></div>
+                                        </div>
+                                        <div class="pricing-content">
+                                            <ul class="list">
+                                                <li>{$currency['ETH']['num']}</li>
+                                            </ul>
+                                        </div>
+                                        <div class="pricing-footer text-center">
+                                            <a href="{:U('Wallent/depositIcon',array('currencyName'=>eth))}" class="btn btn-success">Deposit</a>
+                                            <a href="{:U('Wallent/showWithDraw',array('currencyId'=>4,'currencyName'=>'ETH'))}" class="btn btn-danger">Withdraw</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="pricing-box pricing-green" data-animate="hg-fadeInUp">
+                                        <div class="text-center">
+                                            <img src="__HOME__/fe/static/picture/bdv.png" width="100"
+                                                class="rounded-circle mb-4" />
+                                        </div>
+                                        <!--
+                                            <div class="pricing-icon icon-default icon-green">
+                                                <div class="shape-icon"></div>
+                                                <div class="icon">
+                                                    <span class="flaticon-profit"></span>
+                                                </div>
+                                            </div>
+                                            -->
+                                        <div class="package-price">
+                                            <div class="pricing">FEC</div>
+                                            <div></div>
+                                            <div class="divider"></div>
+                                        </div>
+                                        <div class="pricing-content">
+                                            <ul class="list">
+                                                <li>{$currency['FEC']['num']}</li>
+                                            </ul>
+                                        </div>
+                                        <div class="pricing-footer text-center">
+                                            <a href="javascript:void(0);" onclick="waite()" class="btn btn-success">Deposit</a>
+                                            <a href="javascript:void(0);" onclick="waite()" class="btn btn-danger">Withdraw</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <div class="dashboard-menu-area md-mrb-60">
+                            <ul class="dashboard-menu">
+                                <li><a href="index.html">User Panel</a></li>
+                                <if condition="$real eq 2 ">
+                                    <li><a href="{:U('UserCenter/realName')}">Authenticate</a></li>
+                                </if>
+                                <li><a href="{:U('Wallent/iconRecord',array('type'=>1))}">Deposit History</a></li>
+                                <li><a href="{:U('Wallent/iconRecord',array('type'=>2))}">Withdraw History</a></li>
+                                <li><a href="{:U('Wallent/iconChangeRecord')}">Exchange History</a></li>
+                                <li><a href="{:U('UserCenter/changePass')}">Change Password</a></li>
+                                <li><a href="/Login/LoginOut">Sign Out</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <include file="./Public/Home/fe/base/footer.html"/>
+    </div>
+</body>
+<script>
+    function waite() {
+        layer.msg('Coming Soon!')
+    }
+</script>
+</html>

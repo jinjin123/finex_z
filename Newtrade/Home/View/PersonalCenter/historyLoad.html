@@ -1,0 +1,117 @@
+<include file="Public:PersonalCenterHeader" />
+<link id="historyLoad" href="__HOME_CSS__/historyLoad_purple.css" rel="stylesheet" type="text/css" data-depStyle="depStyle">
+
+<!-- 右边打竖第一块 -->
+<div class="col-lg-12 col-md-12 col-sm-12 clearfix">
+	<div class="panel-heading large-heading clearfix">
+		<div class="panel-action pull-left">
+			<!-- 左边币种tab切换 -->
+			<ul class="nav nav-tabs solid-tabs nav-stacked underline-tabs personalCenter_nav">
+				<li>
+					<a href="{:U('PersonalCenter/index')}">{$Think.lang._ZHANGHU_}</a>
+				</li>
+				<li>
+					<a href="{:U('PersonalCenter/showBankCardBind')}">{$Think.lang._YHKBD_}</a>
+				</li>
+				<li>
+					<a href="{:U('PersonalCenter/integrityScore')}">{$Think.lang._XYPJ_}</a>
+				</li>
+				<li class="active">
+					<a href="{:U('PersonalCenter/historyLoad')}">{$Think.lang._LSJL_}</a>
+				</li>
+				<li>
+					<a href="{:U('Problem/showProblem')}">{$Think.lang._WTFK_}</a>
+				</li>
+			</ul>
+
+			<!-- 手机端时的tab切换 -->
+			<div class="smshow smshow-account visible-xs-block">
+				<div class="btn-group bootstrap-select">
+					<select class="selectpicker" tabindex="-98">
+						<option value="0">&nbsp;&nbsp;{$Think.lang._ZHANGHU_}</option>
+						<option value="1">&nbsp;&nbsp;{$Think.lang._YHKBD_}</option>
+						<option value="2">&nbsp;&nbsp;{$Think.lang._XYPJ_}</option>
+						<option value="3" selected>&nbsp;&nbsp;{$Think.lang._LSJL_}</option>
+						<option value="4">&nbsp;&nbsp;{$Think.lang._WTFK_}</option>
+					</select>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class='col-lg-12 col-md-12 col-sm-12 '>
+
+	<div class="panel panel-default">
+		<div class='panel-heading clearfix'>
+			<div class='pull-left target_panel_title'>
+				<span>{$Think.lang._LSJL_}</span>
+				<span class='integral-title-right'>{$Think.lang._JBLZJYGYLSJL_}</span>
+			</div>
+		</div>
+		<div class="panel-body">
+			<div class="tab-pane active in" id="login_history">
+				<!-- 历史登录记录 -->
+				<div class="table-responsive m-bottom-10">
+					<table class="table text-center table-bordered text-left">
+						<thead>
+							<tr>
+								<th>ID</th>
+								<th>{$Think.lang._LEIXING_}</th>
+								<th>{$Think.lang._SHIJIAN_}</th>
+							</tr>
+						</thead>
+
+						<tbody class='text-left' id="dataTable">
+							<volist name="list" id="vo">
+								<tr>
+									<td>{$vo.id}</td>
+									<td>{$vo.type|formatLogType=###}</td>
+									<td>{$vo.add_time|date="Y-m-d H:i:s",###}</td>
+								</tr>
+							</volist>
+						</tbody>
+					</table>
+				</div>
+
+				<!-- /.table-responsive -->
+
+				<!-- page分页 -->
+				<div class="text-right sm-text-center clearfix dataPage" id="dataPage">
+					{$page}
+				</div>
+			</div>
+		</div>
+		<!-- /.panel-body -->
+	</div>
+</div>
+<script>
+	var verifyUrl = "{:U('CheckVerify/getVerify')}";
+	var subsetNewPassword = "{:U('PersonalCenter/setNewPassword')}";
+	var subSetTradePassword = "{:U('PersonalCenter/setNewTradePassword')}";
+	var subSetEmailAdress = "{:U('PersonalCenter/bindEmailAdress')}";
+	var subModifyEmailAdress = "{:U('PersonalCenter/modifyEmailAdress')}";
+    </script>
+    <script>
+       var getDataUrl = "{:U('PersonalCenter/getData')}";
+      function getData(pageNum){
+        $.get(getDataUrl,{'p':pageNum},function(result){
+        var html = "";
+        for(i=0;i<result.data.length;i++ ){
+            html +='<tr>';
+            html +='<td>'+result['data'][i]['id']+'</td>';
+            html +='<td>'+result['data'][i]['type']+'</td>';
+            html +='<td>'+result['data'][i]['add_time']+'</td>';
+            html +='</tr>';
+        }
+        $('#dataTable').html(html);
+        $('#dataPage').html(result.page);
+    });
+      }  
+      //getData(1);
+    </script>
+<include file="Public:PersonalCenterFooter" />
+
+<!-- Timepicker -->
+<script src="__HOME_PLUG__/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js" type="text/javascript" charset="utf-8"></script>
+<script src="__HOME_PLUG__/bootstrap-datepicker/js/bootstrap-datepicker.js" type="text/javascript" charset="utf-8"></script>

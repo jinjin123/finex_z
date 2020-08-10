@@ -1,0 +1,19 @@
+/*整体背景颜色*/
+body,.tv-side-toolbar,.chart-controls-bar,#footer-chart-panel{
+	background: #262A34 !important;
+}
+/*第一个toolbar按钮颜色*/
+.favored-list-container span{
+	background: #262A34;
+}
+
+/*其他toolbar按钮颜色*/
+.header-chart-panel .button{
+	background: #262A34;
+}
+.on-widget .getimage .icon{
+	fill: #ffffff;
+}
+#loading-indicator{
+	background: #262A34;
+}

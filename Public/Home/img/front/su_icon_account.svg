@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="13px" height="16px" viewBox="0 0 13 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50 (54983) - http://www.bohemiancoding.com/sketch -->
+    <title>icon_account</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="注册登录流程[图文]" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="1.signup" transform="translate(-931.000000, -227.000000)" stroke="#2E3031">
+            <g id="注册内容" transform="translate(350.625000, 125.875000)">
+                <g id="right" transform="translate(577.500000, 33.500000)">
+                    <g id="账户名" transform="translate(0.000000, 37.500000)">
+                        <g id="icon_account" transform="translate(3.000000, 31.000000)">
+                            <path d="M11.4985581,14.2515528 C11.4942388,14.2515528 11.4976708,14.2479502 11.4976708,14.2257653 C11.4976708,14.2192446 11.4972026,14.2157485 11.499844,14.2243274 L11.477755,14.0841722 C11.4244503,10.2640075 9.29204328,7.8757764 5.98935226,7.8757764 C2.64278724,7.8757764 0.5,10.3262963 0.5,14.2257653 C0.5,14.2479502 0.503431964,14.2515528 0.499112689,14.2515528 L11.4985581,14.2515528 Z" id="Path"></path>
+                            <path d="M5.98935226,5.82209406 C7.35619171,5.82209406 8.48402839,4.63023013 8.48402839,3.16104703 C8.48402839,1.69053207 7.35693393,0.5 5.98935226,0.5 C4.6211439,0.5 3.49467613,1.69014395 3.49467613,3.16104703 C3.49467613,4.63061841 4.62188597,5.82209406 5.98935226,5.82209406 Z" id="Path"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

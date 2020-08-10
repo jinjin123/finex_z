@@ -1,0 +1,12 @@
+body,.tv-side-toolbar,.chart-controls-bar,#footer-chart-panel{
+	background: #fff !important;
+}
+/*第一个toolbar按钮颜色*/
+.favored-list-container span{
+	background: #fff;
+}
+
+/*其他toolbar按钮颜色*/
+.header-chart-panel .button{
+	background: #fff;
+}

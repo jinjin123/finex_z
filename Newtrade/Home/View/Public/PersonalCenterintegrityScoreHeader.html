@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <title>BTCS</title>
+    <!-- REQUIRED STYLES -->
+    <!-- font-style-css -->
+    <link href="__HOME_CSS__/Open+Sans-font.css" type="text/css">
+    <!-- bootstrap.css -->
+    <link href="__HOME_CSS__/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <!-- REQUIRED PLUGINS -->
+    <!-- font-awesome -->
+    <link href="__HOME_PLUG__/fontawesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!-- 开关按钮 switch -->
+    <link href="__HOME_PLUG__/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css">
+    <!-- 下拉菜单 dropdown -->
+    <link href="__HOME_PLUG__/select2/css/select2.min.css" rel="stylesheet" type="text/css">
+    <link href="__HOME_PLUG__/select2/select2-bootstrap-theme/css/select2-bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="__HOME_PLUG__/bootstrap-datepicker/css/bootstrap-datepicker3.css" />
+    <link rel="stylesheet" type="text/css" href="__HOME_PLUG__/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css" />
+    <!-- tab切换下拉菜单 tab-drop -->
+    <link href="__HOME_PLUG__/bootstrap-tabdrop/css/tabdrop.css" rel="stylesheet" type="text/css">
+    <!-- 国旗样式 flags -->
+    <link href="__HOME_PLUG__/flag-css/css/flag-css.min.css" rel="stylesheet" type="text/css">
+    <!-- 日历插件 fullcalendar -->
+    <link href="__HOME_PLUG__/fullcalendar/css/fullcalendar.min.css" rel="stylesheet" type="text/css">
+    <!-- 表格插件 datatables -->
+    <link href="__HOME_PLUG__/datatables/css/dataTables.min.css" rel="stylesheet" type="text/css">
+    <!-- main.min.css - WISEBOARD CORE CSS -->
+    <link href="__HOME_CSS__/main.min.css" rel="stylesheet" type="text/css">
+    <!-- admin.min.css - ADMIN LAYOUT  -->
+    <link href="__HOME_CSS__/admin.min.css" rel="stylesheet" type="text/css">
+    <!-- theme-default.min.css - 默认主题css -->
+    <link href="__HOME_CSS__/themes/theme-default.min.css" rel="stylesheet" type="text/css">
+    <!-- Dashboard css 待弃用 -->
+    <link href="__HOME_CSS__/page-dashboard1.min.css" rel="stylesheet" type="text/css">
+
+    <!--Introjs.css-->
+    <link rel="stylesheet" type="text/css" href="__HOME_PLUG__/introJS/introjs.min.css" />
+    <!--Introjs-theme-->
+    <link rel="stylesheet" type="text/css" href="__HOME_PLUG__/introJS/themes/introjs-modern.css" />
+
+    <!-- ============== notify style ============== -->
+    <link href="__HOME_PLUG__/animate.css/css/animate.min.css" rel="stylesheet" type="text/css">
+
+    <!-- ============== modal style ============== -->
+    <link href="__HOME_PLUG__/bootstrap-modal/css/bootstrap-modal-bs3patch.css" rel="stylesheet" type="text/css">
+    <link href="__HOME_PLUG__/bootstrap-modal/css/bootstrap-modal.css" rel="stylesheet" type="text/css">
+
+    <!-- ============== upload style ============== -->
+    <link rel="stylesheet" type="text/css" href="__HOME_PLUG__/jasny-bootstrap/css/jasny-bootstrap.min.css" />
+    <link rel="stylesheet" href="__HOME_CSS__/front/user_info.css">
+
+    <!-- ============== my style ============== -->
+    <link href="__HOME_CSS__/Platform_black.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="page-dashboard">
+    <!-- 头部导航 STARTS -->
+    <nav class="navbar navbar-fixed-top navbar-top">
+        <div class="container-fluid col-sm-12">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="{:U('UserCenter/index')}">
+                    <img src="__HOME_IMG__/logo.png" alt="logo">
+                </a>
+                <button type="button" class="sidebar-toggle">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+            </div>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown" style="margin-top: 18px;">
+                    <if condition="$isTour eq 1 ">
+                        <button style="background: transparent;padding: 2px 8px;font-size: 12px;" type="button" class="btn btn-info-outline rippler tour">TOUR</button>
+                    </if>
+                </li>
+                <li class="dropdown">
+                    <a href="{:U('Wallent/index')}">{$Think.lang._QIANBAO_}</a>
+                </li>
+
+                <li class="dropdown">
+                    <a href="{:U('UserFinace/showFinace')}">{$Think.lang._CWZZ_}</a>
+                </li>
+
+                <!-- 新闻 -->
+                <li class="dropdown<br />">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <img src="__HOME_IMG__/front/ld.png" alt="">
+                        <span class="label circle"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-header">
+                            You have {$noticeCount}
+                            <a href="javascript:void(0);">notifications.</a>
+                        </li>
+                        <!-- /.下拉框头部 -->
+                        <li>
+                            <ul class="list-dropdown-content list-dropdown-notifications">
+                                <volist name="notice" id="vo">
+                                    <li>
+                                        <a href="{$vo.url}">News - {$vo.title}.</a>
+                                    </li>
+                                </volist>
+                            </ul>
+                        </li>
+                    </ul>
+                    <!-- /.下拉框菜单 -->
+                </li>
+
+                <!-- 账户 -->
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <img src="__HOME_IMG__/front/yh.png" alt="">
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-profile">
+                        <li class="dropdown-header">Account Details</li>
+
+                        <li>
+                            <a href="{:U('PersonalCenter/index')}">
+                                <i class="fa fa-paper-plane-o"></i> {$Think.lang._ZHANGHU_}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{:U('PersonalCenter/showBankCardBind')}">
+                                <i class="fa fa-calendar-check-o"></i> {$Think.lang._BDYHKQBXSMRZ_}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{:U('PersonalCenter/integrityScore')}">
+                                <i class="fa fa-calendar-check-o"></i>{$Think.lang._WDJF_}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{:U('PersonalCenter/historyLoad')}">
+                                <i class="fa fa-calendar-check-o"></i> {$Think.lang._LSJL_}
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <!-- 皮肤 -->
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <img src="__HOME_IMG__/front/zt.png" alt="">
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-profile ColorPick" style="width:auto;">
+                        <li>
+                            <a href="javascript:void(0)">
+							浅色
+						</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">
+							深色
+						</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <!-- 语言 -->
+                <li class="dropdown lang langCheck" style="margin-top: 18px;margin-right: 10px;">
+                    <button style="background: transparent;padding: 2px 7px;font-size: 12px;border-radius: 3px;" class="dropdown-toggle btn btn-info-outline rippler btn2" data-toggle="dropdown">
+					{$Think.lang._YUYAN_}
+				</button>
+                    <ul class="dropdown-menu dropdown-menu-profile" style="width:auto;">
+                        <li>
+                            <a href="">
+							ENGLISH
+						</a>
+                        </li>
+                        <li>
+                            <a href="">
+							中文简体
+						</a>
+                        </li>
+                        <li>
+                            <a href="u">
+							中文繁體
+						</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- /.导航栏-nav -->
+        </div>
+    </nav>

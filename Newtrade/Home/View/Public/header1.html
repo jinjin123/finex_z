@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>BTCS</title>
+    <meta name="description" content="The description should optimally be between 150-160 characters.">
+    <meta name="viewport" content="width=device-width">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="author" content="Target">
+
+    <!-- ================= Favicon ================== -->
+    <!-- Standard -->
+    <link rel="shortcut icon" href="__HOME_IMG__/front/favicon2.ico">
+    <!-- ============== iconfont ============== -->
+    <link rel="stylesheet" href="__HOME_CSS__/fonts/iconfont/css/iconfont.css" />
+    <!-- ============== bootstrap style ============== -->
+    <link rel="stylesheet" href="__HOME_CSS__/bootstrap.min.css" />
+    <!-- ============== animate css ============== -->
+    <link href="__HOME_PLUG__/animate.css/css/animate.min.css" rel="stylesheet" type="text/css">
+    <!-- ============== my style ============== -->
+    <link rel="stylesheet" href="__HOME_CSS__/front/style.css" />
+    <style>
+        input::input-placeholder {
+            color: #A8A8BC !important;
+            font-family: PingFangSC-Regular !important;
+            font-weight: 100;
+        }
+        /* 有些资料显示需要写，有些显示不需要，但是在编辑器webstorm中该属性不被识别 */
+        
+        input::-webkit-input-placeholder {
+            /* WebKit browsers */
+            color: #A8A8BC !important;
+            font-family: PingFangSC-Regular !important;
+            font-weight: 100;
+        }
+        
+        input:-moz-placeholder {
+            /* Mozilla Firefox 4 to 18 */
+            color: #A8A8BC !important;
+            font-family: PingFangSC-Regular !important;
+            font-weight: 100;
+        }
+        
+        input::-moz-placeholder {
+            /* Mozilla Firefox 19+ */
+            color: #A8A8BC !important;
+            font-family: PingFangSC-Regular !important;
+            font-weight: 100;
+        }
+        
+        input:-ms-input-placeholder {
+            /* Internet Explorer 10+ */
+            color: #A8A8BC !important;
+            font-family: PingFangSC-Regular !important;
+            font-weight: 100;
+        }
+        
+        html {
+            /*-ms-overflow-style:none;*/
+            /*overflow:-moz-scrollbars-none;*/
+        }
+        /*html::-webkit-scrollbar{width:0px}*/
+    </style>
+
+</head>
+
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top navbarWrap">
+        <div class="navbar-header">
+            <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+		          <span class="icon-bar"></span>
+		          <span class="little-long-icon-bar"></span>
+			      <span class="icon-bar"></span>
+			      <span class="short-icon-bar"></span>
+		        </button>
+            <div class="navbarWrap_img clearfix">
+                <a href="{:U('Index/index')}" class="navbar-brand"><img src="__HOME_IMG__/front/web_logo.svg" /></a>
+            </div>
+
+        </div>
+        <div class="navbar-collapse collapse target-nav" role="navigation">
+            <div class="navlist navbar-right">
+                <ul class="nav navbar-nav text-right">
+                    <li class=""><a href="{:U('Index/index')}">{$Think.lang._TURNHOME_}</a></li>
+                    <li class=""><a href="{:U('Question/index')}">{$Think.lang._FAQ_}</a></li>
+                    <li class=""><a href="{:U('DownloadApp/index')}">BS-PASS</a></li>
+                    <li class=""><a href="{:U('Login/showLogin')}" style="display: inline-block;">{$Think.lang._DENGLU_}</a><b>|</b><a href="{:U('register/index')}" style="display: inline-block;">{$Think.lang._ZHUCE_}</a></li>
+                    <li class="dropdown">
+                        <div class="dropdown_img">
+                            <a href="?l=zh-tw" class="dropdown_img_icon"><img src="__HOME_IMG__/front/flag_hk_fang.svg" alt=""></a>
+                            <a href="?l=en-us" class="dropdown_img_icon"><img src="__HOME_IMG__/front/flag_us_fang.svg" alt=""></a>
+                        </div>
+
+                        <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{$Think.lang._YUYAN_}<svg class="icon" aria-hidden="true"><use xlink:href="#icon-nav_icon_tog"></use></svg>-->
+                        <!--</a>-->
+                        <!--<ul class="dropdown-menu Lange-select">-->
+                        <!--<li><a href="?l=en-us">English</a></li>-->
+                        <!--<li><a href="?l=zh-cn">中文简体</a></li>-->
+                        <!--<li><a href="?l=zh-tw">中文繁体</a></li>-->
+                        <!--</ul>-->
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>

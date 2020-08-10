@@ -1,0 +1,259 @@
+@charset "utf-8";
+
+/*市场订单*/
+
+.panel-default>.panel-heading>.panel-action .search-box button,.search-box span{
+    width: auto;
+    height: auto;
+    padding: 3px 12px;
+    margin: 0 9px 0 0;
+    font-size: 12px;
+    font-weight: lighter;
+    background-position: 0;
+    border: none;
+    line-height: 17px;
+    float: right;
+}
+
+
+.search-box span i{
+    font-style: normal;
+}
+
+/* 卖出订单 */
+.rtp{
+    padding-top: 2rem;
+}
+
+.rtp>div>p:last-of-type{
+    font-size: 20px;
+}
+
+.confirmOrderForm{
+    padding: 2rem 10px 1rem 10px;
+}
+
+.confirmOrderForm .issue-item{
+    padding: 0;
+}
+
+/*确认汇款信息*/
+
+#static1 a.pull-right {
+    display: block;
+    height: 28px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-right: 20px;
+    margin-left: 18px;
+    position: relative;
+    text-decoration: none;
+}
+
+#static1 a.pull-right i {
+    transition: 0.5s;
+    position: absolute;
+    right: 0;
+    top: 22%;
+}
+
+/*卖出订单模块*/
+#tab-underline-profile4 .bootstrap-select.btn-group .dropdown-toggle .filter-option.pull-left {
+    text-align: right;
+}
+#tab-underline-profile4 .panel {
+    border: none;
+    box-shadow: none;
+    margin-bottom: 15px;
+}
+
+#tab-underline-profile4 .panel .panel-body {
+    padding: 0 14px;
+}
+
+#tab-underline-profile4 .panel-heading {
+    border-bottom: none;
+    padding-left: 0px;
+}
+
+
+#tab-underline-profile4 .col-md-3,
+#tab-underline-profile4 .col-md-4,
+#tab-underline-profile4 .col-md-6,
+#tab-underline-profile4 .col-md-8,
+#tab-underline-profile4 .col-md-12,
+#tab-underline-profile4 .col-lg-6 {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#tab-underline-profile4 label,
+#tab-underline-profile4 .form-control {
+    font-size: 12px;
+}
+
+#tab-underline-profile4 .form-group,
+#tab-underline-profile4 p {
+    margin-bottom: 0;
+}
+
+#tab-underline-profile4 label {
+    text-align: left;
+    height: 35px;
+    margin-bottom: 0;
+    padding-top: 11px;
+}
+
+#tab-underline-profile4 .form-control-static {
+    padding-top: 11px;
+    padding-bottom: 0;
+    word-break: break-all;
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+}
+
+#tab-underline-profile4 .col-md-3.saleout-part {
+    padding: 5px 20px;
+}
+
+#tab-underline-profile4 .col-md-3.saleout-part:nth-of-type(2) {
+    padding: 5px 30px;
+}
+
+#tab-underline-profile4 .saleout-part-border {
+    border-bottom: 1px solid #b1c4f9;
+}
+
+#tab-underline-profile4 .saleout-part {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+#tab-underline-profile4 .panel-title {
+    font-size: 1.3rem;
+    padding-left: 8px;
+}
+
+
+
+// 市场订单
+#tab-underline-home4 {
+    tr td:first-of-type,
+    tr th:first-of-type {
+        width: 8%;
+    }
+}
+
+
+/*p2p*/
+
+#pendingOrder>tr>td.active {
+    background: inherit;
+}
+/*手机 1640px分辨率*/
+
+@media screen and (max-width: 1640px) {
+    #tab-underline-profile4 .col-md-3.saleout-part:nth-of-type(2) {
+        padding: 5px 10px;
+    }
+    #tab-underline-profile4 .col-md-3.saleout-part {
+        padding: 5px 8px;
+    }
+}
+@media screen and (max-width: 1500px) {
+    #tab-underline-home4 {
+        tr td:first-of-type,
+        tr th:first-of-type {
+            width: 11%;
+        }
+    }
+}
+
+/*手机 1218px分辨率*/
+
+@media screen and (max-width: 1218px) {
+    #tab-underline-home4 {
+        tr td:first-of-type,
+        tr th:first-of-type {
+            width: 15%;
+        }
+    }
+}
+/*手机 1200px分辨率*/
+@media screen and (max-width: 1200px) {
+    #tab-underline-home4 {
+        tr td:first-of-type,
+        tr th:first-of-type {
+            width: 12%;
+        }
+    }
+}
+@media screen and (max-width: 833px) {
+    #tab-underline-home4 {
+        tr td:first-of-type,
+        tr th:first-of-type {
+            width: 14%;
+        }
+    }
+}
+/*手机 979px分辨率*/
+@media screen and (max-width: 979px) {
+    #tab-underline-home4 {
+        tr td:first-of-type,
+        tr th:first-of-type {
+            width: 13%;
+        }
+    }
+}
+/*手机 768px分辨率*/
+
+@media screen and (max-width: 768px) {
+    #tab-underline-profile4 .saleout-part {
+        border: none;
+    }
+    .search-box {
+        margin-top: -3px;
+    }
+    #sell.modal.fade.in{
+        top: 15%;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .search-box > span {
+        margin-right: 10px;
+    }
+    .rtp{
+        padding-top: 1rem;
+    }
+    .rtp>div>p:last-of-type{
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 414px) {
+    #static1 a.pull-right {
+        margin-top: 17px;
+        margin-bottom: 11px;
+    }
+    .panel-default>.panel-heading>.panel-action .search-box button,.search-box span {
+        padding-left: 7px;
+        padding-right: 7px;
+    }
+    .search-box {
+        margin-top: 0;
+    }
+    .panel-default>.panel-heading>.panel-action .search-box button:first-of-type{
+        margin-right: 0px;
+        margin-left: 0;
+    }
+}
+
+
+
+// media 特定 415px--516px
+@media screen and (min-width: 415px) and (max-width: 516px) {
+    #search_tab .search-box {
+        padding-right: 0px;
+    }
+}

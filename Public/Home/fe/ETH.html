@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="zxx">
+<include file="./Public/Home/fe/base/head.html"/>
+
+<body>
+<include file="./Public/Home/fe/base/loader.html"/>
+
+<div class="site-content">
+
+    <include file="./Public/Home/fe/base/nav.html"/>
+
+    <div id="sticky-header"></div>
+    <div class="page-title-area bg-black"
+         style="background-image: url('static/images/shape-dot1.png');padding-top:220px;padding-bottom:50px;">
+        <div class="shape-group">
+            <div class="shape"></div>
+            <div class="shape"></div>
+            <div class="shape"></div>
+            <div class="shape"></div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="page-header-content text-center">
+                        <div class="page-header-caption">
+                            <h2 class="page-title">ETH</h2>
+                        </div>
+                        <div class="breadcrumb-area">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"></li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container pd-t-50">
+            <div class="row">
+                <div class="col-6 col-lg-2">Now : <h4 class="price_Close"></h4></div>
+                <div class="col-6 col-lg-2">change : <h4 class="price_Change"></h4></div>
+                <div class="col-6 col-lg-2">open : <h4 class="price_Open text-white"></h4></div>
+                <div class="col-6 col-lg-2">high : <h4 class="price_High text-white"></h4></div>
+                <div class="col-6 col-lg-2">low : <h4 class="price_Low text-white"></h4></div>
+                <div class="col-6 col-lg-2">
+                    <div class="form-group faqs-form-area">
+                        <select id="lineType" class="form-controller">
+                            <option value="1min">1min</option>
+                            <option value="5min">5min</option>
+                            <option value="15min">15min</option>
+                            <option value="30min">30min</option>
+                            <option value="60min">1hour</option>
+                            <option value="4hour">4hour</option>
+                            <option value="1day">1day</option>
+                            <option value="1week">1week</option>
+                            <option value="1mon">1month</option>
+                            <option value="1year">1year</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12" id="chainChart" style="height:600px;"></div>
+            </div>
+            <div class="row">
+                <div class="col-12"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="contact-form-block pd-b-120 pd-t-120">
+        <div class="container">
+            <div class="row align-content-center">
+                <div class="col-lg-4">
+                    <table class="table trades">
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-lg-8">
+                    <div class="contact-form-area">
+                        <h2 class="section-heading" data-animate="hg-fadeInUp">Please</h2>
+                        <div class="row">
+                            <div class="col-12"><a class="btn btn-block btn-primary" href="./userLogin.html">Login</a>
+                            </div>
+                            <div class="col-12 text-center">or</div>
+                            <div class="col-12"><a class="btn btn-block btn-primary"
+                                                   href="./userRegister.html">Register</a></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.col-lg-6 -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </div>
+    <script src="static/js/echarts.min.js"></script>
+    <script src="static/js/kline.js"></script>
+    <script>
+        getPrice();
+
+        function getPrice() {
+            $.getJSON('dataTemp/Json/IndexPrice/Now.json', function (Json) {
+
+                if (Json.code == 0) {
+                    $.each(Json.data, function (index, item) {
+                        if (item.symbol == 'ethusdt') {
+                            let change = ((item.close - item.open) / item.open * 100).toFixed(4);
+                            let changeStyle = 'text-danger';
+                            if (change > 0) {
+                                changeStyle = 'text-success';
+                            } else {
+                                changeStyle = 'text-danger';
+                            }
+                            let tempHtml = 'Now : <strong class="' + changeStyle + '">' + item.close + '</strong>';
+                            $('.price_Close').html(item.close).removeClass('text-danger,text-success').addClass(changeStyle);
+                            tempHtml += '　　Open : ' + item.open;
+                            $('.price_Open').html(item.open);
+                            tempHtml += '　　High : ' + item.high;
+                            $('.price_High').html(item.high);
+                            tempHtml += '　　Low : ' + item.low;
+                            $('.price_Low').html(item.low);
+                            tempHtml += '　　Change : <span class="' + changeStyle + '">' + change + '%</span>';
+                            $('.price_Change').html(change + '%').removeClass('text-danger,text-success').addClass(changeStyle);
+                            $('.chainPriceInfo').html(tempHtml);
+                            $('.span_chainChange').html(change + '%').removeClass('text-success,text-danger').addClass(changeStyle);
+                        }
+                    })
+                }
+            });
+        }
+
+        let tradesJson = 'dataTemp/Json/Chain/Trades/ETH.json';
+        getTrade();
+
+        function getTrade() {
+            $.getJSON(tradesJson, function (Json) {
+                if (Json.status == 'ok') {
+                    let tradeArr = [];
+                    $.each(Json.data, function (index, item) {
+                        $.each(item.data, function (tempIndex, tempTrade) {
+                            tradeArr.push(tempTrade);
+                        })
+                    })
+                    // console.log(tradeArr);
+                    showTrade(tradeArr, 0);
+                }
+            })
+        }
+
+        function showTrade(tradeData, beginTrade) {
+            let step = beginTrade + 6;
+            if (step >= tradeData.length) {
+                getTrade();
+            } else {
+                let tempHtml = '';
+                let tradeStyle = 'text-success';
+
+                for (let i = beginTrade; i < step; i++) {
+                    if (tradeData[i].direction == 'buy') {
+                        tradeStyle = 'text-success';
+                    } else {
+                        tradeStyle = 'text-danger';
+                    }
+                    tempHtml += '<tr class="' + tradeStyle + ' border-0">';
+                    tempHtml += '<td>';
+                    tempHtml += tradeData[i].price.toFixed(4);
+                    tempHtml += '</td>';
+                    tempHtml += '<td class="text-right">';
+                    tempHtml += tradeData[i].amount.toFixed(4);
+                    tempHtml += '</td>';
+                    tempHtml += '</tr>';
+                }
+                $('.trades tbody').html(tempHtml);
+                setTimeout(function () {
+                    showTrade(tradeData, step)
+                }, 1000);
+            }
+        }
+
+        let kChart = echarts.init(document.getElementById('chainChart'));
+        getKLine();
+        $('#lineType').on('change', function () {
+            getKLine($('#lineType').val());
+        })
+
+        function getKLine(lineType) {
+            if (lineType == '' || lineType == undefined || lineType == 'undefined') {
+                lineType = localStorage.lineType;
+            }
+            if (lineType == '' || lineType == undefined || lineType == 'undefined') {
+                lineType = '1min';
+            }
+            $('.lineType').html(lineType);
+            localStorage.lineType = lineType;
+            $.getJSON('dataTemp/Json/Chain/Line/' + lineType + '/ETH.json', function (Json) {
+                if (Json.status == 'ok') {
+                    let tempData = [];
+                    $.each(Json.data, function (index, item) {
+                        tempData.push([item['id'], item['open'], item['close'], item['low'], item['high'], item['vol']])
+                    });
+                    tempData = tempData.reverse();
+                    kChart.setOption(initKOption(tempData));
+                }
+            });
+        }
+
+        formatBuyData();
+        formatSellData();
+
+        $('#BuyChainForm .SellChainQuantity').on('change keyup', function () {
+            formatBuyData();
+        })
+
+        $('#SellChainForm .SellChainQuantity').on('change keyup', function () {
+            formatSellData();
+        })
+
+        function formatBuyData() {
+            $.getJSON('dataTemp/Json/IndexPrice/Now.json', function (Json) {
+                if (Json.code == 0) {
+                    $.each(Json.data, function (index, item) {
+                        if (item.symbol == 'ethusdt') {
+                            $('.BuyChainPrice').attr('placeholder', item.close + ' USDT');
+                            let canBuyQuantity = ($('#BuyChainForm .SellChainQuantity').val() / item.close).toFixed(8);
+                            $('#BuyChainForm .BuyChainQuantity').attr('placeholder', '≈ ' + canBuyQuantity + ' ETH');
+                        }
+                    })
+                }
+            })
+        }
+
+        function formatSellData() {
+            $.getJSON('dataTemp/Json/IndexPrice/Now.json', function (Json) {
+                if (Json.code == 0) {
+                    $.each(Json.data, function (index, item) {
+                        if (item.symbol == 'ethusdt') {
+                            $('.BuyChainPrice').attr('placeholder', item.close + ' USDT');
+                            let canBuyQuantity = $('#SellChainForm .SellChainQuantity').val() * item.close;
+                            $('#SellChainForm .BuyChainQuantity').attr('placeholder', '≈ ' + canBuyQuantity + ' USDT');
+                        }
+                    })
+                }
+            })
+        }
+    </script>
+
+    <include file="./Public/Home/fe/base/footer.html"/>
+
+</div>
+</body>
+</html>

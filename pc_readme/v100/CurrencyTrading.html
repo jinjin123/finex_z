@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>币币交易模式</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../bt/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../bt/dist/css/yangshi.css" rel="stylesheet" type="text/css">
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]>
+    <script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="../bt/assets/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+<div class="container">
+    <div class="row" style="margin-top: 50px;">
+        <div class="col-md-12">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h4>通用 币币交易目录</h4>
+                </div>
+                <div class="panel-body">
+                    <p><a href="index.html">0、目录页</a></p>
+                    <p><a href="#api1">1、总需求说明</a></p>
+                    <p><a href="#api2">2、用户下单</a></p>
+                    <p><a href="#api3">3、用户撤销订单</a></p>
+                </div>
+            </div>
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <h4><a name="001" id="001">1、总需求说明</a></h4>
+                </div>
+                <div class="panel-body">
+                    <p>说明：</p>
+                    <ul>
+                        <li>1、xxx</li>
+                    </ul>
+                </div>
+            </div>    
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <h4><a name="api2" id="api2">2、用户下单</a></h4>
+                </div>
+                <div class="panel-body">
+                    <p>说明：用户挂单</p>
+                    <ul></ul>
+                    <div class="row">
+                        <div class="col-md-9">接口负责人：李润清</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-9">请求方式：POST</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-9">接口地址：nat1.target.com/CurrencyTrading/getUserMainOrderList</div>
+                    </div>
+                    请求示例：
+                    <pre>
+                        {
+                            "tradeType" : "1", // 交易区,1表示btc交易区，2表示VP交易区
+                            "priceType" : "1", // 价格类型，1表示限价单，2表示市价单
+                            "transactionType" : "1", // 交易类型，1表示买入，2表示卖出
+                            "entrustType" : "1",  // 委托类别;例如：1表示ltc/btc 2表示etc/btc 3表示eth/btc 4表示bcc/btc
+                            <!-- "totalPrice" : "1", // 选择市价单时买入/卖出金额 -->
+                            "entrustPrice" : "0.01632682", // 单价
+                            "leaveNum" : "1", // 数量
+                            "tradePwd" : "123456" // 资金密码
+                        }
+                    </pre>
+                    成功：
+                    <pre>
+                        {
+                            "code": 200,
+                            "msg": "",
+                            "data": []
+                        }
+                    </pre>
+                    失败返回：
+                    <pre>
+                        {
+                            "code": 201,
+                            "msg": "xxxx",
+                            "data": []
+                        }
+                    </pre>
+                </div>
+                <div class="panel-footer">
+                    <p>补充:</p>
+                </div>
+            </div>  
+
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <h4><a name="api2" id="api3">3、用户撤销订单</a></h4>
+                </div>
+                <div class="panel-body">
+                    <p>说明：用户撤销订单</p>
+                    <ul></ul>
+                    <div class="row">
+                        <div class="col-md-9">接口负责人：李润清</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-9">请求方式：POST</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-9">接口地址：nat1.target.com/CurrencyTrading/revokeOrder</div>
+                    </div>
+                    请求示例：
+                    <pre>
+                        {
+                            "tradeArea" : 1, // 订单id
+                            "order_id" : 192 // 交易区id 1表示btc交易区；2表示bch交易区
+                        }
+                    </pre>
+                    成功：
+                    <pre>
+                        {
+                            "code": 200,
+                            "msg": "",
+                            "data": []
+                        }
+                    </pre>
+                    失败返回：
+                    <pre>
+                        {
+                            "code": 201,
+                            "msg": "xxxx",
+                            "data": []
+                        }
+                    </pre>
+                </div>
+                <div class="panel-footer">
+                    <p>补充:</p>
+                </div>
+            </div> 
+
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="../bt/dist/js/jquery.min.1.11.3.js"></script>
+<script src="../bt/dist/js/bootstrap.min.js"></script>
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="../bt/assets/js/ie10-viewport-bug-workaround.js"></script>
+<script src="../bt/dist/js/yangshi.js"></script>
+</body>
+</html>

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>夺标网代码规范说明</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./bt/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./bt/dist/css/yangshi.css" rel="stylesheet" type="text/css">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="./bt/assets/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+        .code {background-color: #000; color:#fff; width: 70%; margin:auto; text-align: left; padding-left: 10px;}
+    </style>
+  </head>
+
+  <body>
+  	<div class="container">
+  		<div class="row" style="margin-top: 50px;">
+  			<div class="col-md-12">
+			<div class="panel panel-info">
+                <div class="panel-heading">
+                    <h4>P2P接口</h4>
+                </div>
+                <div class="panel-body">
+                    <p><a href="#1">1.买入</a></p>
+                    <p><a href="#2">2.卖出</a></p>
+                    <p><a href="#3">3.撤销</a></p>
+					<p><a href="#4">4.确认打款</a></p>
+					<p><a href="#5">5.确认收款</a></p>
+                </div>
+            </div>
+			
+  				<div class="panel panel-success">
+                <div class="panel-heading">
+                    <h4><a name="1" id="1">1.买入</a></h4>
+                </div>
+                <div class="panel-body">
+                    <p>说明：买入接口</p>
+
+                    <ul>
+                    </ul>
+                    <div class="row">
+                        <div class="col-md-9">接口负责人：张锡文</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-9">请求方式：POST</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-9">接口地址：http://nat1.target.com/OffTrading/buying</div>
+                    </div>
+                    请求示例：
+                    <div style="margin-bottom:15px"></div>
+                    <pre>请求参数 
+{    
+        "orderId":xxxxx      //订单ID
+	"bankId":1                     //银行ID
+	"currencyId":1        //币种ID
+	"tradePwd":xxxxxx          //交易密码
+}
+
+</pre>
+                    <pre>{
+ code: 200,
+ msg: "买入成功"
+ }
+</pre>
+
+<pre>
+{
+ code: 201,
+ msg: "xxxxxx"
+ }
+</pre>
+                </div>
+                <div class="panel-footer">
+                    <p style="color:red">
+                    </p><pre>补充: 状态码code 只有200的时候为成功
+其他状态一律是失败  并且会返回对应的错误信息
+        </pre>
+                    <p></p>
+                </div>
+            </div>
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        <h4><a name="2" id="2">2.卖出</a></h4>
+                    </div>
+                    <div class="panel-body">
+                        <p>说明：卖出接口</p>
+
+                        <ul>
+                        </ul>
+                        <div class="row">
+                            <div class="col-md-9">接口负责人：李江</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-9">请求方式：POST</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-9">接口地址：nat1.target.com/OffTrading/selling</div>
+                        </div>
+                        请求示例：
+                        <div style="margin-bottom:15px"></div>
+                        <pre>请求参数
+{
+    "userArea":1,           //地区id
+	"currencyId":1   ,      //卖出币种id
+	"coinPrice":"1234",     //卖出单价
+	"coinNum":12,           //卖出数量
+	"userBankId":1,         //银行卡id
+	"transpwd":"132456",    //交易密码
+	"verifyCode":  1,       //图片验证码
+}
+
+</pre>
+                        <pre>{
+ code: 200,
+ msg: "卖出成功",
+}
+</pre>
+                        失败返回：（有多种情况）
+                        <pre>{
+	"code": 201,
+	"msg": "xxxx",
+	"data": []
+}
+</pre>
+                    </div>
+                    <div class="panel-footer">
+                        <p style="color:red">
+                        </p><pre>补充: 状态码code 只有200的时候为成功
+其他状态一律是失败  并且会返回对应的错误信息
+        </pre>
+                        <p></p>
+                    </div>
+                </div>
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        <h4><a name="3" id="3">3.撤销</a></h4>
+                    </div>
+                    <div class="panel-body">
+                        <p>说明：撤销订单</p>
+
+                        <ul>
+                        </ul>
+                        <div class="row">
+                            <div class="col-md-9">接口负责人：李江</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-9">请求方式：POST</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-9">接口地址：nat1.target.com/OffTrading/revokeOrder</div>
+                        </div>
+                        请求示例：
+                        <div style="margin-bottom:15px"></div>
+                        <pre>请求参数
+{
+    "order_id":1,           //订单id
+}
+
+</pre>
+                        <pre>{
+ code: 200,
+ msg: "操作成功",
+}
+</pre>
+                        失败返回：（有多种情况）
+                        <pre>{
+	"code": 201,
+	"msg": "xxxx",
+	"data": []
+}
+</pre>
+                    </div>
+                    <div class="panel-footer">
+                        <p style="color:red">
+                        </p><pre>补充: 状态码code 只有200的时候为成功
+其他状态一律是失败  并且会返回对应的错误信息
+        </pre>
+                        <p></p>
+                    </div>
+                </div>
+				               <div class="panel panel-success">
+                    <div class="panel-heading">
+                        <h4><a name="4" id="4">4.确认打款</a></h4>
+                    </div>
+                    <div class="panel-body">
+                        <p>说明：确认打款</p>
+
+                        <ul>
+                        </ul>
+                        <div class="row">
+                            <div class="col-md-9">接口负责人：张锡文</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-9">请求方式：POST</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-9">接口地址：http://nat1.target.com/OffTrading/confirmOrderPaidOrOrderAccept</div>
+                        </div>
+                        请求示例：
+                        <div style="margin-bottom:15px"></div>
+                        <pre>请求参数
+{
+    "order_id":1,           //订单id
+}
+
+</pre>
+                        <pre>{
+ code: 200,
+ msg: "操作成功",
+}
+</pre>
+                        失败返回：（有多种情况）
+                        <pre>{
+	"code": 201,
+	"msg": "xxxx",
+	"data": []
+}
+</pre>
+                    </div>
+                    <div class="panel-footer">
+                        <p style="color:red">
+                        </p><pre>补充: 状态码code 只有200的时候为成功
+其他状态一律是失败  并且会返回对应的错误信息
+        </pre>
+                        <p></p>
+                    </div>
+                </div>
+								               <div class="panel panel-success">
+                    <div class="panel-heading">
+                        <h4><a name="5" id="5">5.确认收款</a></h4>
+                    </div>
+                    <div class="panel-body">
+                        <p>说明：确认收款</p>
+
+                        <ul>
+                        </ul>
+                        <div class="row">
+                            <div class="col-md-9">接口负责人：张锡文</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-9">请求方式：POST</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-9">接口地址：http://nat1.target.com/OffTrading/confirmOrderPaidOrOrderAccept</div>
+                        </div>
+                        请求示例：
+                        <div style="margin-bottom:15px"></div>
+                        <pre>请求参数
+{
+    "order_id":1,           //订单id
+}
+
+</pre>
+                        <pre>{
+ code: 200,
+ msg: "操作成功",
+}
+</pre>
+                        失败返回：（有多种情况）
+                        <pre>{
+	"code": 201,
+	"msg": "xxxx",
+	"data": []
+}
+</pre>
+                    </div>
+                    <div class="panel-footer">
+                        <p style="color:red">
+                        </p><pre>补充: 状态码code 只有200的时候为成功
+其他状态一律是失败  并且会返回对应的错误信息
+        </pre>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+  			</div>
+  		</div>  	
+  	</div>
+    <div class="to_top_btn">
+    </div>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="./bt/dist/js/jquery.min.1.11.3.js"></script>
+    <script src="./bt/dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="./bt/assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="./bt/dist/js/yangshi.js"></script>
+  </body>
+</html>

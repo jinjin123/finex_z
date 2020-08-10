@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <title>Websocket + PHP + Swoole + Redis 第三方实时推送 - Swoole</title>
+    <meta name="Keywords" content="PHP实时消息服务器推送技术,Websocket实时消息服务器推送技术,Swoole实时消息服务器推送技术">
+    <meta name="Description" content="Swoole+PHP实时消息服务器推送技术,Websocket实时消息服务器推送技术,Swoole实时消息服务器推送技术...等">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link href="css/main_zh_CN.css?v=0.10.80" rel="stylesheet" type="text/css"/> -->
+    <!-- <script src="js/jquery.min.js"></script> -->
+    <style>
+        .overlay{
+            position: fixed;
+            _position:absolute;
+            z-index: 1000;
+            width: 100%;
+            height: 100%;
+            _height: 1000px;
+            top: 0;
+            left: 0;
+            filter: alpha(opacity=80);
+            opacity: 0.8;
+            overflow: hidden;
+            background-color: #000;
+        }
+        #loading{
+            z-index: 9999;
+            position:fixed;
+            _position:absolute;
+            top:50%;
+            _top:50%;
+            left:50%;
+        }
+    </style>    
+    <!-- <script src="js/news.js"></script> -->
+</head>
+<body>
+<div class="overlay" style="display: none;"></div>
+<div id="loading"></div>
+<div class="container">
+    <div class="content">
+        <div class="exchange-rate">
+            <h2 style="text-align: center;font-weight: normal;">币种价格牌</h2>
+            <!-- <div id="description">
+                <p>主要运用技术：Websocket + PHP + Swoole + Redis，我们强烈建议您在多个浏览器或多个设备上感受Swoole示例（例如: iphone, ipad, PC），您会发现您的所有操作都会神奇的实时同步展现在所有其他浏览器或设备上！</p>
+            </div> -->
+            <div id="container"></div>
+        </div>
+    </div>
+    <!-- <div class="cb"></div>
+    <div class="footer">
+        &copy; 2015-2017 Kevin, All Rights Reserved  <span style="margin-left: 10px;">Em<span  style="display: none;">e</span>ail:<span>841694874@qq.com</span>
+    </div> -->
+</div>
+</body>
+</html>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="__HOME_JS__/jquery.min.js"></script>
+<script type="text/javascript" charset="utf-8">
+    var msg;
+    var ws = {};
+// client_id 作为 user id 测试
+var client_id = Date.parse(new Date());
+var config = {
+    'server' : 'ws://47.57.131.217:9502',
+    'flash_websocket' : true
+}	
+function hideOverlay(){
+    $(".overlay").hide();
+    $("#loading").html('');
+}
+
+$(document).ready(function () {
+    //使用原生WebSocket
+//  if (window.WebSocket || window.MozWebSocket)
+//  {
+//      ws = new WebSocket(config.server);
+//  }
+//  //使用flash websocket
+//  else if (config.flash_websocket)
+//  {
+//      // WEB_SOCKET_SWF_LOCATION = "./flash-websocket/WebSocketMain.swf";
+//      // $.getScript("./flash-websocket/swfobject.js", function () {
+//      //     $.getScript("./flash-websocket/web_socket.js", function () {
+//      //         ws = new WebSocket(config.server);
+//      //     });
+//      // });
+//  }
+//  //使用http xhr长轮循
+//  else
+//  {
+//      ws = new Comet(config.server);
+//  }
+    listenEvent();
+});
+
+//发送数据 onpen公共
+function target_web(type,data,num,service_name){
+    msg = {"method":type,"uid":data,"hobby":num,"service_name":service_name};
+    ws.send(JSON.stringify(msg));	
+}
+function listenEvent() {
+    /**
+     * 连接建立时触发
+     */
+    ws.onopen = function (e) {
+        target_web('join',client_id,1,'pcCoinInfoList')
+    };
+
+    ws.onmessage = function (e) {
+        var message = eval('('+ e.data +')');
+        var cmd = message.data.method;
+        var service_name = message.data.service_name;
+        console.log(message);
+        if (cmd == 'connection')
+        {
+            if(message.data.status == 1) 
+            {
+             console.log('connection ok');
+            }
+        }
+
+        if (cmd == 'push' && service_name == 'pcCoinInfoList')
+        {
+            var server_data = message.data.data;
+            var html = '';
+            for (x in server_data){
+                html +=server_data[x].coin_name+'价格:'+server_data[x].last_price + "<br/>"
+                $("#container").html(html);
+            }
+            
+        }
+    };
+
+    /**
+     * 连接关闭事件
+     */
+//    ws.onclose = disConnect;
+     ws.onclose = function (e) {
+         console.log('22')
+     };
+
+    /**
+     * 异常事件
+     */
+    ws.onerror = function (e) {
+        $(".pubArea").hide();
+    };
+}
+
+/**
+ *   重连
+ */
+function reconnect (){
+	//如果已连接则不重连,return 跳出函数, 清除定时
+
+	if(ws.readyState==1){
+		clearInterval(disConnect);
+		return;
+	}
+    // 断开连接则重新连接并执行操作
+    ws = new WebSocket('ws://47.57.131.217:9502');
+    listenEvent();
+}
+
+/**
+*   连接关闭时执行
+*/
+var disConnect = setInterval(function(){
+    //console.log(1)
+    reconnect();
+},3000);
+</script>

@@ -1,0 +1,69 @@
+@charset "utf-8";
+
+@import "PlatBlack";
+.icon {
+    overflow: hidden;
+    left: 0;
+    top: 8px;
+    width: 1em;
+    height: 1em;
+    margin-bottom: 2px;
+    vertical-align: middle;
+    fill: currentColor;
+}
+.modal-scrollable .icon {
+    position: absolute;
+    left: 10px;
+    top: 8.5px;
+}
+#formControl .icon_pwdrepeat {
+    top: 7px;
+}
+.issue-buy .icon,
+.issue-sell .icon {
+    left: -21px;
+    top: 1.5px !important;
+}
+.icon_norepeat {
+    font-size: 16px;
+}
+
+#tab-underline-home3 tr td .icon-Custyle,
+#myCollectionList tr td .icon-Custyle,
+#getMyCurrencyList tr td .icon-Custyle,
+#getImgicon .icon-Custyle {
+    vertical-align: middle;
+    width: 13px;
+    height: 13px;
+    display: inline-block;
+    background-size: auto 100%;
+}
+.content-left .icon{
+    font-size: 19px;
+}
+.content-left .quoteprice #allCoin .icon{
+    width: 1.3rem;
+    height: 1.3rem;
+}
+#allCoin .icon {
+    width: 1.3rem;
+    height: 1.3rem;
+}
+.alert-info .icon_norepeat {
+    font-size: 16px;
+    position: static;
+    margin-right: 5px;
+}
+.modal-scrollable #order-issue .icon {
+    top: 7.5px;
+}
+.nav.nav-tabs.personalCenter_nav>li svg {
+    font-size: 14px;
+}
+.navbar-top .navbar-nav .fr .icon {
+    width: 0.8em;
+    height: 0.9em;
+}
+.icon.CollectStar{
+    margin-bottom: 5px
+}

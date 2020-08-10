@@ -1,0 +1,1375 @@
+html {
+    scrollbar-base-color: #fff;
+    scrollbar-base-color: #fff;
+    scrollbar-3dlight-color: #fff;
+    scrollbar-highlight-color: #fff;
+    scrollbar-track-color: #fff;
+    scrollbar-arrow-color: #fff;
+    scrollbar-shadow-color: #fff;
+    scrollbar-dark-shadow-color: #fff
+}
+
+body {
+    background-image: url('../../img/front/login_bg.svg')
+}
+
+#register a,
+span {
+    margin-left: 15px;
+    font-size: 13px
+}
+
+.form-control {
+    font-size: 13px
+}
+
+.well .intl-tel-input {
+    position: relative;
+    display: inline-block;
+    width: 100%
+}
+
+.well .intl-tel-input * {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box
+}
+
+.well .intl-tel-input .hide {
+    display: none
+}
+
+.well .intl-tel-input .v-hide {
+    visibility: hidden
+}
+
+.well .intl-tel-input input {
+    position: relative;
+    z-index: 0;
+    margin-top: 0!important;
+    margin-bottom: 0!important
+}
+
+.well .intl-tel-input .flag-dropdown {
+    position: absolute;
+    top: 1px;
+    bottom: 0
+}
+
+.well .intl-tel-input .flag-dropdown:hover {
+    cursor: pointer
+}
+
+.well .intl-tel-input input[disabled]+.flag-dropdown:hover {
+    cursor: default
+}
+
+.well .intl-tel-input input[disabled]+.flag-dropdown:hover .selected-flag {
+    background-color: transparent
+}
+
+.well .intl-tel-input .selected-flag {
+    z-index: 1;
+    position: relative;
+    width: 75px;
+    height: 85%
+}
+
+.well .intl-tel-input .selected-flag .flag {
+    position: absolute;
+    top: 15%;
+    margin-top: -5px;
+    width: 80%;
+    color: #2e3031;
+    padding-left: 15px
+}
+
+.well .intl-tel-input .selected-flag i {
+    left: auto;
+    right: -14px;
+    width: auto;
+    height: auto;
+    bottom: 6px;
+    font-weight: 600
+}
+
+.well .intl-tel-input .selected-flag .arrow.up {
+    border-top: 0;
+    border-bottom: 4px solid #555
+}
+
+.well .intl-tel-input .country-list {
+    list-style: none;
+    position: absolute;
+    z-index: 2;
+    padding: 0 10px 5px 0;
+    margin: 0 0 0 -1px;
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.08);
+    background-color: #fff;
+    width: 320px;
+    max-height: 200px;
+    overflow-y: scroll;
+    color: #ccc
+}
+
+::-webkit-scrollbar {
+    width: 0
+}
+
+.well .intl-tel-input .country-list .flag {
+    display: inline-block
+}
+
+.well .intl-tel-input .country-list .divider {
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #ccc;
+    display: none
+}
+
+.well .intl-tel-input .country-list .country {
+    line-height: 11px;
+    padding: 9px 10px;
+    position: relative
+}
+
+.well .intl-tel-input .country-list .country .dial-code {
+    color: #002257;
+    float: right
+}
+
+.well .intl-tel-input .country-list .country.highlight .country-name {
+    color: #3c6bf0
+}
+
+.well .intl-tel-input .country-list .country.active::after {
+    width: 4px;
+    height: 100%;
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #3c6bf0
+}
+
+.well .intl-tel-input .country-list .flag,
+.well .intl-tel-input .country-list .country-name {
+    margin-left: 5px;
+    color: #002257;
+    display: inline-block;
+    width: 74%
+}
+
+.well .intl-tel-input.inside .flag-dropdown {
+    padding: 1px 1px 1px 21px
+}
+
+.well .intl-tel-input.inside input[type="text"],
+.well .intl-tel-input.inside input[type="tel"] {
+    padding-left: 44px;
+    margin-left: 0
+}
+
+.well .intl-tel-input.outside input[type="text"],
+.well .intl-tel-input.outside input[type="tel"] {
+    border: 0;
+    margin-left: 38px
+}
+
+.regsuccess {
+    width: 28%;
+    min-width: 300px;
+    max-width: 500px;
+    background: #282828;
+    height: 275px;
+    border-radius: 10px;
+    display: none;
+    z-index: 1002;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: 10% auto
+}
+
+.intro {
+    font-size: 13px;
+    margin-bottom: 3%;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-weight: bold;
+    font-family: "微软雅黑"
+}
+
+.regP {
+    font-size: 14px;
+    margin-bottom: 3%
+}
+
+.regsuccess .close {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: normal;
+    box-shadow: none
+}
+
+.regsuccess .foot {
+    font-size: 12px;
+    background: #323232;
+    height: 50px;
+    border-radius: 5px;
+    position: absolute;
+    line-height: 50px;
+    bottom: 0;
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px
+}
+
+.regsuccess .foot a {
+    color: #5099ef
+}
+
+.regsuccess a {
+    text-decoration: underline;
+    font-style: italic;
+    font-family: "Microsoft YaHei UI";
+    font-size: 12px;
+    line-height: 50px
+}
+
+.regsuccess h2 {
+    margin-top: 5%;
+    font-size: 40px;
+    margin-bottom: 20px
+}
+
+.mask {
+    width: 100%;
+    height: 100%;
+    background: rgba(13, 13, 13, 0.81);
+    display: none;
+    z-index: 1000;
+    position: absolute
+}
+
+.regsuccess btn {
+    margin-bottom: 0
+}
+
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+@keyframes rotatePlaceholder {
+    0% {
+        transform: rotate(-45deg)
+    }
+    5% {
+        transform: rotate(-45deg)
+    }
+    12% {
+        transform: rotate(-405deg)
+    }
+    100% {
+        transform: rotate(-405deg)
+    }
+}
+
+@keyframes animateSuccessTip {
+    0% {
+        width: 0;
+        left: 1px;
+        top: 19px
+    }
+    54% {
+        width: 0;
+        left: 1px;
+        top: 19px
+    }
+    70% {
+        width: 50px;
+        left: -8px;
+        top: 37px
+    }
+    84% {
+        width: 17px;
+        left: 21px;
+        top: 48px
+    }
+    100% {
+        width: 25px;
+        left: 14px;
+        top: 45px
+    }
+}
+
+@keyframes animateSuccessLong {
+    0% {
+        width: 0;
+        right: 46px;
+        top: 54px
+    }
+    65% {
+        width: 0;
+        right: 46px;
+        top: 54px
+    }
+    84% {
+        width: 55px;
+        right: 0;
+        top: 35px
+    }
+    100% {
+        width: 47px;
+        right: 8px;
+        top: 38px
+    }
+}
+
+.sweet-alert .sa-icon.sa-success .sa-line.sa-long {
+    width: 47px;
+    right: 8px;
+    top: 38px;
+    transform: rotate(-45deg)
+}
+
+.animateSuccessLong {
+    animation: animateSuccessLong .75s
+}
+
+.sweet-alert {
+    text-align: center;
+    overflow: hidden;
+    height: 90px
+}
+
+.sa-icon.sa-success.animate::after {
+    animation: rotatePlaceholder 4.25s ease-in
+}
+
+.sweet-alert .sa-icon.sa-success::after {
+    border-radius: 0 120px 120px 0;
+    top: -11px;
+    left: 30px;
+    transform-origin: 0 60px
+}
+
+.sweet-alert .sa-icon.sa-success::before {
+    border-radius: 120px 0 0 120px;
+    top: -7px;
+    left: -33px;
+    transform: rotate(-45deg);
+    transform-origin: 60px 60px
+}
+
+.sweet-alert .sa-icon {
+    width: 80px;
+    height: 80px;
+    border: 4px solid gray;
+    border-radius: 50%;
+    margin: 20px auto;
+    position: relative;
+    box-sizing: content-box
+}
+
+.sweet-alert .sa-icon.sa-success {
+    border-color: #5099ef;
+    margin-top: 0;
+    margin-bottom: 0
+}
+
+.sweet-alert .sa-icon.sa-success::before,
+.sweet-alert .sa-icon.sa-success::after {
+    content: '';
+    border-radius: 50%;
+    position: absolute;
+    width: 60px;
+    height: 120px;
+    background: #282828
+}
+
+.sweet-alert .sa-icon.sa-success .sa-line.sa-tip {
+    width: 25px;
+    left: 14px;
+    top: 46px;
+    transform: rotate(45deg)
+}
+
+.sweet-alert .sa-icon.sa-success .sa-line {
+    height: 5px;
+    background-color: #5099ef;
+    display: block;
+    border-radius: 2px;
+    position: absolute;
+    z-index: 2
+}
+
+.animateSuccessTip {
+    animation: animateSuccessTip .75s
+}
+
+.sweet-alert .sa-icon.sa-success .sa-placeholder {
+    width: 80px;
+    height: 80px;
+    border: 4px solid rgba(80, 153, 239, .2);
+    border-radius: 50%;
+    box-sizing: content-box;
+    position: absolute;
+    left: -4px;
+    top: -4px;
+    z-index: 2
+}
+
+.sweet-alert .sa-icon.sa-success .sa-fix {
+    width: 5px;
+    height: 90px;
+    background-color: #282828;
+    position: absolute;
+    left: 28px;
+    top: 8px;
+    z-index: 1;
+    transform: rotate(50deg)
+}
+
+#register {
+    z-index: 2;
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1
+}
+
+.registerCon {
+    padding-top: 100px
+}
+
+#register .well {
+    padding: 0;
+    -webkit-box-shadow: 0 0 5px 1px rgba(5, 11, 14, 0.3);
+    -moz-box-shadow: 0 0 5px 1px rgba(5, 11, 14, 0.3);
+    box-shadow: 0 0 5px 1px rgba(5, 11, 14, 0.3);
+    border: 0;
+    margin-bottom: 1.5rem;
+    float: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background: 0
+}
+
+.well .widgettitle {
+    margin-bottom: 0;
+    margin-top: 25px;
+    padding-left: 12px;
+    font-family: "Microsoft YaHei UI";
+    color: #fff
+}
+
+.well .widgettitle:before,
+.well .widgettitle:after {
+    display: none
+}
+
+.register-left .checkbox a {
+    color: #8b92a2;
+    font-size: 13px;
+    margin-left: 0!important
+}
+
+.register-left .checkbox a:hover {
+    text-decoration: underline!important
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none
+}
+
+.well .form-control {
+    font-size: 14px;
+    padding-top: 0;
+    border: 0;
+    border-bottom: 1px solid #cdd6de;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    color: #2e3031;
+    text-indent: 30px;
+    padding-left: 5px;
+    font-weight: 600
+}
+
+input::input-placeholder {
+    font-weight: 400!important
+}
+
+input::-webkit-input-placeholder {
+    font-weight: 400!important
+}
+
+input:-moz-placeholder {
+    font-weight: 400!important
+}
+
+input::-moz-placeholder {
+    font-weight: 400!important
+}
+
+input:-ms-input-placeholder {
+    font-weight: 400!important
+}
+
+input.form-control::-webkit-input-placeholder {
+    color: #abbac8!important
+}
+
+.mar5 input {
+    background-color: transparent
+}
+
+.mar input {
+    text-align: left
+}
+
+.mar5 {
+    position: relative
+}
+
+#username,
+#password,
+#pass_confirm {
+    padding-left: 15px;
+    text-align: left
+}
+
+#register #username,
+#register #password,
+#register #pass_confirm {
+    padding-left: 5px
+}
+
+.mar5 i {
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    bottom: 10px;
+    width: 18px;
+    height: 18px
+}
+
+.mar5 i img {
+    width: 18px;
+    height: 18px
+}
+
+.well .intl-tel-input.inside input[type="tel"] {
+    text-indent: 10px;
+    padding-left: 96px
+}
+
+.mar .form-control {
+    border: 1px solid #1e1e1e;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background-color: transparent
+}
+
+.mar .form-group .row>div:first-child {
+    padding-right: 0
+}
+
+.mar .form-control {
+    border: 1px solid #1e1e1e;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background-color: transparent
+}
+
+.mar .form-group .row>div:first-child {
+    padding-right: 0
+}
+
+.warmingBox {
+    height: 37px;
+    margin: 10px 0;
+    padding-top: 15px
+}
+
+.warming {
+    border: solid 1px #ff5f5f;
+    text-align: center;
+    padding: 4px 4px 4px 0;
+    box-sizing: border-box;
+    margin-bottom: -15px;
+    font-size: 12px;
+    font-family: 'PingFang-SC-Light';
+    color: #fff;
+    background-color: #ff5f5f;
+    position: relative
+}
+
+.warming .attention {
+    width: 13px;
+    height: 12px;
+    display: inline-block;
+    margin-left: -15px;
+    background: url(../../img/front/attention.png) center center no-repeat
+}
+
+.warming .registerTips span {
+    color: #5099ef!important
+}
+
+.rightTips {
+    background-color: #37cdaf;
+    border: solid 1px #37cdaf
+}
+
+.send-but,
+#regBtn,
+.send-but:hover,
+.send-but:focus {
+    font-weight: 400;
+    transition: none
+}
+
+.well input.send-but {
+    font-size: 13px;
+    color: #fff
+}
+
+.en .well input.send-but {
+    padding: 6px 0
+}
+
+#regBtn {
+    width: 50%;
+    font-size: 18px;
+    font-weight: 400;
+    margin-top: 60px;
+    margin-bottom: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background: -moz-linear-gradient(126.61deg, #3c6af0 0, #509aef 100%)!important;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #3c6af0), color-stop(100%, #509aef))!important;
+    background: -webkit-linear-gradient(126.61deg, #3c6af0 0, #509aef 100%)!important;
+    background: -o-linear-gradient(126.61deg, #3c6af0 0, #509aef 100%)!important;
+    background: -ms-linear-gradient(126.61deg, #3c6af0 0, #509aef 100%)!important;
+    background: linear-gradient(126.61deg, #3c6af0 0, #509aef 100%)!important;
+    background-image: linear-gradient(126.61deg, #3c6af0 0, #509aef 100%)!important;
+    border: 0;
+    border-radius: 5px
+}
+
+.en #regBtn {
+    margin-top: 40px
+}
+
+#regBtn:hover,
+#regBtn:focus {
+    background: -moz-linear-gradient(top, #509aef 0, #3c6af0 100%)!important;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #509aef), color-stop(100%, #3c6af0))!important;
+    background: -webkit-linear-gradient(top, #509aef 0, #3c6af0 100%)!important;
+    background: -o-linear-gradient(top, #509aef 0, #3c6af0 100%)!important;
+    background: -ms-linear-gradient(top, #509aef 0, #3c6af0 100%)!important;
+    background: linear-gradient(to bottom, #509aef 0, #3c6af0 100%)!important;
+    background-image: linear-gradient(top, #509aef 0, #3c6af0 100%)!important;
+    border-color: #1f93dd!important
+}
+
+.bottomdiv {
+    width: 100%;
+    height: 85px;
+    border-top: 1px solid #1e1e1e;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 0 18px;
+    line-height: 85px
+}
+
+.bottomdiv a {
+    float: right;
+    text-decoration: underline!important;
+    font-size: 16px;
+    color: #a0a0a0
+}
+
+.bottomdiv a:hover {
+    text-decoration: underline!important
+}
+
+.logo {
+    float: left;
+    margin-top: 15px
+}
+
+.well #register_form2 {
+    position: relative;
+    min-height: 537px;
+    margin-bottom: 3px
+}
+
+.well #register_form2 {
+    width: 100%
+}
+
+.well #register_form2 h4 {
+    font-size: 20px;
+    font-weight: lighter;
+    color: #fff;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 35px
+}
+
+.well #register_form2 li {
+    width: 33.3%;
+    font-size: 14px;
+    line-height: 18px;
+    margin-bottom: 30px;
+    float: left;
+    text-align: center
+}
+
+.well #register_form2 li:nth-of-type(3n+1) {
+    clear: both
+}
+
+.register-left .checkService {
+    color: #8b92a2;
+    text-decoration: underline
+}
+
+.register-left .checkbox {
+    margin-top: 0;
+    margin-bottom: 0
+}
+
+.register-left .checkbox p {
+    display: inline-block
+}
+
+.en .register-left .checkbox p {
+    padding-left: 38px
+}
+
+.vercodeImg {
+    padding-left: 15px
+}
+
+#verifyImg {
+    width: 100%
+}
+
+.register-wrap {
+    background: #fff
+}
+
+.register-warp-left {
+    height: 630px;
+    background: -moz-linear-gradient(126.61deg, #252e5f 0, #1b234d 100%)!important;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #252e5f), color-stop(100%, #1b234d))!important;
+    background: -webkit-linear-gradient(126.61deg, #252e5f 0, #1b234d 100%)!important;
+    background: -o-linear-gradient(126.61deg, #252e5f 0, #1b234d 100%)!important;
+    background: -ms-linear-gradient(126.61deg, #252e5f 0, #1b234d 100%)!important;
+    background: linear-gradient(126.61deg, #252e5f 0, #1b234d 100%)!important
+}
+
+.register-warp-right {
+    padding-left: 0;
+    padding-top: 10px;
+    padding-right: 10rem;
+    background: transparent;
+    transform: translateX(-2rem)
+}
+
+.register-lt-top {
+    color: #fff;
+    width: 290px;
+    padding-top: 60px;
+    margin-left: 60px;
+    line-height: 64px;
+    font-size: 39px;
+    font-weight: bold
+}
+
+.register-left-title {
+    height: 100%
+}
+
+.Login_animationBody {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    opacity: .9
+}
+
+.Login_animationBody svg {
+    width: auto!important;
+    height: 101%!important;
+    transform: translate(0%, 0%)
+}
+
+.register-Triangle {
+    width: 43%;
+    height: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-right: 0;
+    border-bottom: 0;
+    border-top: 630px #fff solid;
+    border-left: transparent 166px solid
+}
+
+#register .register-warp-left {
+    height: 771px;
+    overflow: hidden
+}
+
+#register .register-Triangle {
+    border-top: 771px #fff solid;
+    border-left: transparent 190px solid
+}
+
+.register-warp-left.success {
+    background: -moz-linear-gradient(126.61deg, #3c6af0 0, #509aef 100%)!important;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #3c6af0), color-stop(100%, #509aef))!important;
+    background: -webkit-linear-gradient(126.61deg, #3c6af0 0, #509aef 100%)!important;
+    background: -o-linear-gradient(126.61deg, #3c6af0 0, #509aef 100%)!important;
+    background: -ms-linear-gradient(126.61deg, #3c6af0 0, #509aef 100%)!important;
+    background: linear-gradient(126.61deg, #4e96ef 0, #3c6af0 100%)!important
+}
+
+.register-phone {
+    font-size: 14px;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: -4px;
+    color: #509aef;
+    background: #fff!important;
+    border: 0
+}
+
+.register-phone:hover,
+.register-phone:active,
+.register-phone:focus {
+    color: rgba(80, 154, 239, .8);
+    -webkit-transition: .5s;
+    -o-transition: .5s;
+    -moz-transition: .5s;
+    transition: .5s
+}
+
+.register-graphic {
+    position: absolute;
+    right: 0;
+    top: -10px
+}
+
+.nopad {
+    padding: 0;
+    margin-bottom: 25px
+}
+
+.register-icon {
+    position: absolute;
+    top: 6px;
+    height: auto!important;
+    left: 0
+}
+
+.register-lt-top-logo {
+    position: absolute;
+    top: 82px;
+    left: 17.5%;
+    z-index: 1
+}
+
+.register-lt-top-logo img {
+    width: 120px
+}
+
+.register-Success {
+    display: none;
+    width: 560px
+}
+
+.register-Success-top {
+    padding-top: 75px;
+    padding-bottom: 100px
+}
+
+.register-Success-top-title {
+    color: #0f1e40
+}
+
+.register-Success-top-title>img {
+    vertical-align: middle;
+    margin-right: 15px
+}
+
+.register-Success-middle-con {
+    color: #3c6bf0;
+    padding-bottom: 30px;
+    font-size: 14px
+}
+
+.register-Success-middle-con:nth-child(1) {
+    font-size: 17px
+}
+
+.register-Success-bottom {
+    padding-top: 165px
+}
+
+.register-Success-bottom>a {
+    font-family: PingFangSC Semibold;
+    font-weight: 500;
+    color: #3c6bf0;
+    margin-right: 110px;
+    font-size: 15px!important;
+    text-decoration: underline;
+    margin-left: 0!important
+}
+
+.register-Support {
+    display: none;
+    text-align: center;
+    margin-left: 35px
+}
+
+.register-Success-bottom>a:hover,
+.register-Success-bottom>a:focus {
+    text-decoration: underline!important
+}
+
+.register-Support-title {
+    font-size: 21px;
+    color: #2e3031;
+    padding-top: 40px
+}
+
+.register-Support-content>li {
+    color: #abbac8;
+    line-height: 32px
+}
+
+.register-Support-prev {
+    cursor: pointer;
+    padding-top: 25px;
+    padding-bottom: 25px
+}
+
+.register-Support-prev>span {
+    color: #8b92a2
+}
+
+.register-Support-prev>img {
+    vertical-align: text-bottom
+}
+
+.register-Support-prev>span:hover {
+    color: #2e3031;
+    -webkit-transition: .5s all;
+    -o-transition: .5s all;
+    -moz-transition: .5s all;
+    transition: .5s all
+}
+
+.register-left {
+    padding-left: 0;
+    text-align: left
+}
+
+.checkbox label,
+.radio label {
+    padding-left: 0
+}
+
+.registerTips>a {
+    text-decoration: underline!important
+}
+
+@media screen and (min-height:1255px) {
+    #register {
+        padding-top: 150px
+    }
+}
+
+@media screen and (min-width:2000px) {
+    #register {
+        padding-top: 200px;
+        padding-bottom: 200px
+    }
+    .registerCon {
+        width: calc(100% - 50%)
+    }
+    .Login_animationBody {
+        height: 100%
+    }
+    /* #register .register-warp-left {
+        height: 740px
+    }
+    #register .register-Triangle {
+        border-top: 740px #fff solid;
+        border-left: transparent 208px solid
+    } */
+}
+
+@media screen and (min-width:1200px) and (max-width:1800px) {
+    .registerCon {
+        width: 970px
+    }
+}
+
+@media screen and (min-width:1280px) and (max-width:1500px) {
+    .register-warp-right {
+        padding-right: 3rem
+    }
+}
+
+@media screen and (max-width:1200px) {
+    .register-Triangle,
+    .Login_animationBody {
+        display: none
+    }
+    .register-lt-top,
+    .register-left-title {
+        padding-top: 18px;
+        padding-bottom: 18px
+    }
+    .register-lt-top-logo {
+        position: static
+    }
+    #register .register-warp-left {
+        height: auto
+    }
+    .register-Support {
+        margin-left: 0
+    }
+    .register-Success {
+        width: auto
+    }
+    .register-Success-bottom {
+        padding-top: 150px;
+        padding-bottom: 30px
+    }
+    .register-Success-bottom>a {
+        margin-right: 70px!important
+    }
+    .code-right p {
+        text-align: center
+    }
+    .QRLoginBox canvas {
+        position: static;
+        margin-top: auto
+    }
+    #register .well {
+        width: 80%
+    }
+    .en .regsuccess {
+        height: 313px
+    }
+    .register-warp-right {
+        transform: translateX(0)
+    }
+    .register-warp-left,
+    .register-warp-right {
+        width: 100%
+    }
+    .register-warp-right {
+        padding: 0 80px 20px 80px
+    }
+}
+
+@media screen and (min-width:1280px)and (max-width:1680px) {}
+
+@media screen and (min-width:1280px)and (max-width:1366px) {
+    .well #register_form2 {
+        position: relative
+    }
+}
+
+@media screen and (max-width:1024px) {
+    body {
+        background-size: auto 100%
+    }
+    .en .register-left .checkbox p {
+        padding-left: 0
+    }
+}
+
+@media screen and (max-width:768px) {
+    .en .register-left .checkbox p {
+        padding-left: 38px
+    }
+}
+
+@media screen and (max-width:764px) {
+    #register .well {
+        width: 90%
+    }
+}
+
+@media screen and (max-width:640px) {
+    .register-left {
+        width: auto
+    }
+    .register-left .checkbox a {
+        margin-right: 5px
+    }
+    .en .register-left .checkbox p {
+        padding-left: 2.5rem
+    }
+}
+
+@media screen and (max-width:600px) {
+    body {
+        padding-top: 0
+    }
+    #register .well {
+        padding: 19px 15px 105px;
+        margin-bottom: 0;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none
+    }
+    .well .widgettitle {
+        margin-top: 0
+    }
+    .send-but {
+        font-size: 15px
+    }
+    #regBtn {
+        width: 45%;
+        font-size: 15px;
+        margin-top: 45px;
+        margin-bottom: 35px
+    }
+}
+
+@media screen and (max-width:640px) {
+    #register .well {
+        border: 0
+    }
+    .warming {
+        line-height: 15px
+    }
+    .well #register_form2 {
+        margin-bottom: 30px
+    }
+    .register-left-title {
+        height: auto
+    }
+    #register .register-warp-left {
+        height: 100px
+    }
+    .register-lt-top-logo {
+        display: block;
+        margin-top: 25px
+    }
+    .register-left-title {
+        padding: 0
+    }
+}
+
+@media screen and (max-width:540px) {
+    .bottomdiv {
+        height: 60px;
+        line-height: 65px
+    }
+    .bottomdiv img {
+        width: 107px
+    }
+    .well #register_form2 {
+        min-height: auto
+    }
+    .warming {
+        line-height: 22px
+    }
+    .warming {
+        line-height: 16px
+    }
+    .en .icon_norepeat {
+        top: 4px
+    }
+    .register-lt-top-logo {
+        margin-top: 18px
+    }
+    .register-lt-top-logo img {
+        width: 115px
+    }
+    #register .register-warp-left {
+        height: 70px
+    }
+}
+
+@media screen and (max-width:600px) {
+    #regBtn {
+        width: 62%
+    }
+    #register .well {
+        padding: 0
+    }
+}
+
+@media screen and (max-width:540px) {
+    .bottomdiv a {
+        line-height: 60px
+    }
+}
+
+@media screen and (max-width:598px) {
+    .register-warp-left {
+        padding-left: 10px
+    }
+    #register .well {
+        width: 100%
+    }
+    .logo {
+        margin-top: 8px
+    }
+    .bottomdiv .back {
+        line-height: 60px
+    }
+    .form-group-strength #strength-check {
+        top: 44px;
+        left: 62%;
+        width: 270px
+    }
+    .registerCon {
+        padding-top: 70px
+    }
+    #register>.registerCon>.row {
+        padding: 15px;
+        padding-bottom: 60px
+    }
+    .register-phone {
+        right: 0
+    }
+    .register-warp-right {
+        padding-right: 30px;
+        padding-left: 20px;
+        padding-bottom: 39px
+    }
+    .register-Success-bottom>a {
+        margin-right: 45px!important
+    }
+    .register-Success-bottom {
+        padding-top: 70px
+    }
+    .register-Success-top {
+        padding-top: 75px;
+        padding-bottom: 60px
+    }
+    .register-lt-top {
+        margin-left: 10px;
+        font-size: 20px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        margin-bottom: 0
+    }
+    .register-Success-top-title>img {
+        width: 55px
+    }
+    .register-Success-middle-con:nth-child(1) {
+        font-size: 14px
+    }
+    .register-Success-middle-con {
+        font-size: 12px
+    }
+    .register-Success-bottom {
+        padding-top: 50px
+    }
+    .register-Success-top {
+        padding-top: 40px;
+        padding-bottom: 50px
+    }
+    .register-Success-top-title>img {
+        vertical-align: middle
+    }
+    .well .intl-tel-input .country-list {
+        width: 275px
+    }
+    .well .intl-tel-input .selected-flag .flag {
+        top: -5%
+    }
+    .register-warp-right>#registration_form1>.warmingBox {
+        margin-top: 20px;
+        margin-bottom: -10px;
+        padding-top: 0
+    }
+    .well .intl-tel-input .flag-dropdown {
+        top: 7px
+    }
+    .register-warp-right>#registration_form1 .nopad {
+        margin-bottom: 10px
+    }
+    .register-icon {
+        width: 14px!important
+    }
+    .register_phone_icon {
+        width: 12px!important
+    }
+}
+
+@media screen and (max-width:414px) {
+    .register-lt-top {
+        font-size: 20px;
+        padding: 0;
+        margin-left: 0
+    }
+    .registerCon {
+        padding-top: 30px
+    }
+    .warmingBox {
+        margin-top: 0;
+        padding-top: 0;
+        margin-bottom: -10px
+    }
+    .nopad {
+        margin-bottom: 10px
+    }
+    #regBtn {
+        margin-top: 45px;
+        margin-bottom: 0
+    }
+    #register {
+        margin-top: 70px
+    }
+    .register-Support-title {
+        padding-top: 15px;
+        font-size: 16px
+    }
+    #register a,
+    span {
+        margin-left: 5px
+    }
+}
+
+@media screen and (max-width:375px) {
+    .form-group-strength #strength-check {
+        left: 71%
+    }
+}
