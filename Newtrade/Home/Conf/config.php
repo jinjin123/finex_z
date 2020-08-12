@@ -10,6 +10,11 @@ return array(
         '__HOME_IMG__' => '/Public/Home/img',
         '__HOME_PLUG__' => '/Public/Home/plugins',
         '__HOME_CHART__' => '/Public/Home/charting_library',
+        '__CDN1__'=>'https://d16madtmbsmyfy.cloudfront.net',
+        '__CDN2__'=>'https://d16madtmbsmyfy.cloudfront.net',
+    // CDN路径最后不要有 '/'
+    
+
     ),
     'DEFAULT_CONTROLLER' => 'Index', // 默认控制器名称
     'DEFAULT_ACTION' => 'index', // 默认操作名称
