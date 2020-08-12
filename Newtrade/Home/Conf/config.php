@@ -4,7 +4,7 @@ return array(
     'LOAD_EXT_CONFIG' => 'sysconfigdb',            //数据库配置
 
     'TMPL_PARSE_STRING' => array(
-        '__HOME__' => '/Public/Home',
+        '__HOME__' => 'https://d16madtmbsmyfy.cloudfront.net/Public/Home',
         '__HOME_CSS__' => '/Public/Home/css',
         '__HOME_JS__' => '/Public/Home/js',
         '__HOME_IMG__' => '/Public/Home/img',
