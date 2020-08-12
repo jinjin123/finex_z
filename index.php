@@ -14,7 +14,12 @@
 header("content-type:text/html;charset=utf-8");/////入口文件 加一个 hesder()头 防止乱码
 // 检测PHP环境
 if(version_compare(PHP_VERSION,'5.3.0','<'))  die('require PHP > 5.3.0 !');
-
+//Access-Control-Allow 三行
+header('Access-Control-Allow-Origin:*');  
+// 响应类型  
+header('Access-Control-Allow-Methods:*');  
+// 响应头设置  
+header('Access-Control-Allow-Headers:x-requested-with,content-type');   
 // 开启调试模式 建议开发阶段开启 部署阶段注释或者设为false
 define('APP_DEBUG',false);
 
