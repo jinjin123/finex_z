@@ -1,0 +1,363 @@
+
+<!doctype html>
+<html lang="zxx">
+<head>
+    <!-- Basic Page Needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Specific Meta
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="" />
+    <meta name="author" content="">
+    <!-- Titles
+    ================================================== -->
+    <title>BTC</title>
+    <!-- Favicons
+    ================================================== -->
+    <link rel="shortcut icon" href="static/images/favicon.ico">
+    <link rel="apple-touch-icon" sizes="72x72" href="static/images/">
+    <link rel="apple-touch-icon" sizes="114x114" href="static/images/">
+    <!-- Custom Font
+    ================================================== -->
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600,700%7COpen+Sans:300,400,600,700&display=swap" rel="stylesheet">
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="static/css/meanmenu.min.css">
+    <link rel="stylesheet" href="static/css/simple-scrollbar.css">
+    <link rel="stylesheet" href="static/css/odometer-theme-default.css">
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="static/css/lightcase.css">
+    <link rel="stylesheet" href="static/css/chartist.css">
+    <link rel="stylesheet" href="static/css/flaticon.css">
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="static/modules/toastr.js/latest/toastr.min.css">
+    <script src="static/js/modernizr.min.js"></script>
+    <!-- All The JS Files
+    ================================================== -->
+    <script src="static/js/jquery.js"></script>
+    <script src="static/js/popper.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+    <script src="static/js/plugins.js"></script>
+    <script src="static/js/meanmenu.min.js"></script>
+    <script src="static/js/imagesloaded.pkgd.min.js"></script>
+    <script src="static/js/jquery.nice-select.min.js"></script>
+    <script src="static/js/theia-sticky-sidebar.min.js"></script>
+    <script src="static/js/ResizeSensor.min.js"></script>
+    <script src="static/js/owl.carousel.min.js"></script>
+    <script src="static/js/lightcase.js"></script>
+    <script src="static/js/simple-scrollbar.min.js"></script>
+    <script src="static/js/scrolla.jquery.min.js"></script>
+    <script src="static/js/odometer.min.js"></script>
+    <script src="static/js/isInViewport.jquery.js"></script>
+    <script src="static/js/circle-progress.min.js"></script>
+    <script src="static/js/chartist.min.js"></script>
+    <script src="static/js/chartistPoint.js"></script>
+    <script src="static/modules/toastr.js/latest/toastr.min.js"></script>
+    <!-- main-js -->
+    <script src="static/js/main.js"></script>
+</head>
+
+<body><div class="preloader">
+    <div class="preloader-inner">
+        <div class="preloader-icon">
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</div>
+
+<div class="site-content">
+    <header class="site-header header-style-one">
+        <div class="site-navigation style-one">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-12">
+                        <div class="navbar navbar-expand-lg navigation-area">
+                            <div class="site-branding">
+                                <a class="site-logo" href="./">
+                                    <img src="static/picture/logo.png" alt="Site Logo" />
+                                </a>
+                            </div>
+                            <div class="mainmenu-area">
+                                <nav class="menu">
+                                    <ul id="nav">
+                                        <li><a class="active" href="./">Home</a></li>
+                                        <li><a href="./?About">About</a></li>
+                                        <li><a href="./?Terms">Terms</a></li>
+                                        <li><a href="?Class&ID=1">News</a></li>
+                                        <li class="dropdown-trigger">
+                                            <a href="#">User</a>
+                                            <ul class="dropdown-content">
+                                                                                                    <li><a href="?User">User Panel</a></li>
+                                                    <li><a href="?User_Chain">My Chain</a></li>
+                                                    <li><a href="?User_Logout">Sign Out</a></li>
+                                                                                                </ul>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mobile-menu-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="mobile-menu">
+                            <a class="mobile-logo" href="./">
+                                <img src="static/picture/logo.png" alt="Site Logo" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div id="sticky-header"></div>
+    <div class="page-title-area bg-black" style="background-image: url('static/images/shape/shape-dot1.png');padding-top:220px;padding-bottom:50px;">
+        <div class="shape-group">
+            <div class="shape"></div>
+            <div class="shape"></div>
+            <div class="shape"></div>
+            <div class="shape"></div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="page-header-content text-center">
+                        <div class="page-header-caption">
+                            <h2 class="page-title">BTC</h2>
+                        </div>
+                        <div class="breadcrumb-area">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"></li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container pd-t-50">
+            <div class="row">
+                <div class="col-6 col-lg-2">Now : <h4 class="price_Close"></h4></div>
+                <div class="col-6 col-lg-2">change : <h4 class="price_Change"></h4></div>
+                <div class="col-6 col-lg-2">open : <h4 class="price_Open text-white"></h4></div>
+                <div class="col-6 col-lg-2">high : <h4 class="price_High text-white"></h4></div>
+                <div class="col-6 col-lg-2">low : <h4 class="price_Low text-white"></h4></div>
+                <div class="col-6 col-lg-2">
+                    <div class="form-group faqs-form-area">
+                        <select id="lineType" class="form-controller">
+                            <option value="1min">1min</option>
+                            <option value="5min">5min</option>
+                            <option value="15min">15min</option>
+                            <option value="30min">30min</option>
+                            <option value="60min">1hour</option>
+                            <option value="4hour">4hour</option>
+                            <option value="1day">1day</option>
+                            <option value="1week">1week</option>
+                            <option value="1mon">1month</option>
+                            <option value="1year">1year</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12" id="chainChart" style="height:600px;"></div>
+            </div>
+            <div class="row">
+                <div class="col-12"></div>
+            </div>
+        </div>
+    </div>
+    <div class="all_progress">
+        <div class="progress">
+            <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%;">
+              800
+            </div>
+          </div>
+          <div class="progress_text">
+              <text class="time">1:00</text>
+              <text>
+                天使轮
+              </text>
+          </div>
+    </div>
+
+    <style>
+        .all_progress{
+            width: 50%;
+            margin: 30px auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .all_progress .progress{
+            width: 80%;
+        }
+    </style>
+    <script>
+        $(function(){
+            let t = 60;
+            setInterval(()=>{
+                if(t<=0){
+                    $('.time').text(`1:00`);
+                    t=60
+                }
+                t--;
+                $('.time').text(`0:${t}`)
+          },1000)
+            
+        })
+    </script>
+
+    <div class="contact-form-block pd-b-120 pd-t-120">
+        <div class="container">
+            <div class="row align-content-center">
+                <div class="col-lg-4">
+                    <table class="table trades">
+                        <tbody></tbody>
+                    </table>
+                </div>
+                                        <div class="col-lg-4">
+                            <div class="contact-form-area">
+                                <h2 class="section-heading" data-animate="hg-fadeInUp">Quick Buy</h2>
+                                <form class="contact-form" data-animate="hg-fadeInUp" method="post" action="" id="BuyChainForm">
+                                    <input type="hidden" name="ChainID" value="18">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="form-group">
+                                                <label for="name">you have 0.00000000 USDT</label>
+                                                <input type="number" step="0.0001" name="Quantity" class="form-controller SellChainQuantity" value="" placeholder="USDT quantity you will trade">
+                                            </div>
+                                        </div><!--./ col-12-->
+                                        <div class="col-12">
+                                            <input type="text" placeholder="" readonly class="BuyChainQuantity">
+                                        </div><!--./ col-12 -->
+                                        <div class="col-12 mrt-15">
+                                            <button type="submit" class="btn btn-block btn-lg btn-success">Buy</button>
+                                        </div><!--./ col-lg-6 -->
+                                    </div><!-- /.row -->
+                                </form><!-- /.contact-form -->
+                            </div>
+                        </div><!-- /.col-lg-6 -->
+                        <div class="col-lg-4">
+                            <div class="contact-form-area">
+                                <h2 class="section-heading" data-animate="hg-fadeInUp">Quick Sell</h2>
+                                <form class="contact-form" data-animate="hg-fadeInUp" method="post" action="" id="SellChainForm">
+                                    <input type="hidden" name="ChainID" value="18">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="form-group">
+                                                <label for="name">you have 0.00000000 BTC</label>
+                                                <input type="number" step="0.0001" name="Quantity" class="form-controller SellChainQuantity" value="" placeholder="BTC quantity you will trade">
+                                            </div>
+                                        </div><!--./ col-12-->
+                                        <div class="col-12">
+                                            <input type="text" placeholder="" readonly class="BuyChainQuantity">
+                                        </div>
+                                        <div class="col-12 mrt-15">
+                                            <button type="submit" class="btn btn-block btn-lg btn-danger">Sell</button>
+                                        </div><!--./ col-lg-6 -->
+                                    </div><!-- /.row -->
+                                </form><!-- /.contact-form -->
+                            </div><!-- /.contact-form-area -->
+                        </div>
+                                            <!-- /.col-lg-6 -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </div>
+    <script src="static/modules/echarts/4.3.0/echarts.min.js"></script>
+    <script src="static/modules/echarts/kline.js"></script>
+
+    <footer class="site-footer bg-primary pd-t-120" style="background-image: url('static/images/shape/cloud-star.png')">
+        <div class="footer-cloud-bg" style="background-image: url('static/images/shape/cloud.png')"></div>
+        <div class="footer-bottom-shape" style="background-image: url('static/images/shape/footer-bottom-shape.png')"></div>
+        <div class="man-coin">
+            <img src="static/images/vactor/man.png" alt="Man Coin">
+        </div>
+        <div class="star-group">
+            <img src="/static/images/star.png" alt="Star">
+            <img src="/static/images/star.png" alt="Star">
+            <img src="/static/images/star.png" alt="Star">
+            <img src="/static/images/star.png" alt="Star">
+            <img src="/static/images/star.png" alt="Star">
+
+        </div>
+        <div class="tree-group">
+            <div class="tree-item-left" data-animate="hg-fadeInLeft">
+                <img src="static/picture/tree1.png" alt="Tree">
+            </div>
+            <div class="tree-item-right" data-animate="hg-fadeInRight">
+                <img src="static/picture/tree2.png" alt="Tree">
+            </div>
+        </div>
+        <div class="footer-widget-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <aside class="widget widget_about">
+                            <div class="widget-content">
+                                <div class="about-loga">
+                                    <img src="static/picture/footer-logo.png" alt="Logo">
+                                </div>
+                                <p>We fully understand and respect the privacy to you, and we will adopt corresponding appropriate safety protection measures to protect your privacy in accordance with the requirements of the applicable laws and regulations.</p>
+                                <div class="call-info">
+                                    <h4 class="title">Contact Us</h4>
+                                    <p>onefinex@gmail.com</p>
+                                </div>
+                            </div>
+                        </aside>
+                    </div>
+                    <div class="col-lg-4">
+                        <aside class="widget widget_links">
+                            <h2 class="widget-title">Useful link</h2>
+                            <div class="widget-content">
+                                <ul>
+                                    <li><a href="?About">About</a></li>
+                                    <li><a href="?Service">Services</a></li>
+                                    <li><a href="?Privacy">Privacy policy</a></li>
+                                    <li><a href="?Terms">Terms & Conditions</a></li>
+                                </ul>
+                            </div>
+                        </aside>
+                    </div>
+                    <div class="col-lg-2">
+                        <aside class="widget widget_links">
+                            <h2 class="widget-title">My Account</h2>
+                            <div class="widget-content">
+                                <ul>
+                                    <li><a href="?User">User Center</a></li>
+                                    <li><a href="?User_Chains">My Chains</a></li>
+                                    <li><a href="?User_Setting">Setting</a></li>
+                                    <li><a href="?User_Logout">Sign Out</a></li>
+                                </ul>
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="copyright-text text-center">
+                            <p>Copyright © OneFinEX 2019-2020 . All rights reserved</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+</body>
+</html>
