@@ -1,99 +1,102 @@
 <!doctype html>
 <html lang="zxx">
 
-<include file="./Public/Home/fe/base/head.html"/>
+<include file="./Public/Home/fe/base/head.html" />
 
 <body>
-<include file="./Public/Home/fe/base/loader.html"/>
+    <include file="./Public/Home/fe/base/loader.html" />
 
-<div class="site-content">
+    <div class="site-content">
 
-    <include file="./Public/Home/fe/base/nav.html"/>
+        <include file="./Public/Home/fe/base/nav.html" />
 
-    <div id="sticky-header"></div>
-    <div class="page-title-area bg-primary" style="background-image: url('__HOME__/fe/static/images/shape-dot1.png')">
-        <div class="shape-group">
-            <div class="shape"></div>
-            <div class="shape"></div>
-            <div class="shape"></div>
-            <div class="shape"></div>
-        </div><!-- /.shape-group -->
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="page-header-content text-center">
-                        <div class="page-header-caption">
-                            <h2 class="page-title">News</h2>
+        <div id="sticky-header"></div>
+        <div class="page-title-area bg-primary" style="background-image: url('__CDN1__/fe/static/images/shape-dot1.png')">
+            <div class="shape-group">
+                <div class="shape"></div>
+                <div class="shape"></div>
+                <div class="shape"></div>
+                <div class="shape"></div>
+            </div>
+            <!-- /.shape-group -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="page-header-content text-center">
+                            <div class="page-header-caption">
+                                <h2 class="page-title">News</h2>
+                            </div>
+                            <!--~~./ page-header-caption ~~-->
+                            <div class="breadcrumb-area">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="./index.html">Home</a></li>
+                                    <li class="breadcrumb-item active">News</li>
+                                </ol>
+                            </div>
+                            <!--~~./ breadcrumb-area ~~-->
                         </div>
-                        <!--~~./ page-header-caption ~~-->
-                        <div class="breadcrumb-area">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="./index.html">Home</a></li>
-                                <li class="breadcrumb-item active">News</li>
-                            </ol>
-                        </div>
-                        <!--~~./ breadcrumb-area ~~-->
+                        <!--~~./ page-header-content ~~-->
                     </div>
-                    <!--~~./ page-header-content ~~-->
                 </div>
             </div>
+            <!--~~./ end container ~~-->
         </div>
-        <!--~~./ end container ~~-->
-    </div>
 
-    <div class="blog-page-block ptb-120">
-        <div class="container">
-            <!-- Content Row -->
-            <div class="row">
-                <div class="col-12">
-                    <!-- Blog Items -->
-                    <div class="blog-latest-items">
-                        <div class="row">
-                            <notempty name="list">
-                                <volist name="list" id="vo">
-                                    <div class="col-lg-4 col-md-6">
-                                        <article class="post post-grid">
-                                            <figure class="post-thumb">
-                                                <a href="{:U('getNewsDetail',array('id'=>$vo['id']))}">
-                                                    <img src="{$url}{$vo.face_img}"
-                                                         alt=""/>
-                                                </a>
-                                            </figure>
-                                            <div class="post-details">
-                                                <h2 class="entry-title"><a href="{:U('getNewsDetail',array('id'=>$vo['id']))}">{$vo.title}</a></h2>
-                                                <div class="entry-content">
-                                                    <p>{$vo.content}</p>
+        <div class="blog-page-block ptb-120">
+            <div class="container">
+                <!-- Content Row -->
+                <div class="row">
+                    <div class="col-12">
+                        <!-- Blog Items -->
+                        <div class="blog-latest-items">
+                            <div class="row">
+                                <notempty name="list">
+                                    <volist name="list" id="vo">
+                                        <div class="col-lg-4 col-md-6">
+                                            <article class="post post-grid">
+                                                <figure class="post-thumb">
+                                                    <a href="{:U('getNewsDetail',array('id'=>$vo['id']))}">
+                                                        <img src="{$url}{$vo.face_img}" alt="" />
+                                                    </a>
+                                                </figure>
+                                                <div class="post-details">
+                                                    <h2 class="entry-title"><a href="{:U('getNewsDetail',array('id'=>$vo['id']))}">{$vo.title}</a></h2>
+                                                    <div class="entry-content">
+                                                        <p>{$vo.content}</p>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <p style="color: grey">Release Time: {$vo.add_time|date="Y-m-d",###}</p>
-                                        </article>
-                                    </div>
-                                </volist>
-                            </notempty>
+                                                <p style="color: grey">Release Time: {$vo.add_time|date="Y-m-d",###}</p>
+                                            </article>
+                                        </div>
+                                    </volist>
+                                </notempty>
+                            </div>
                         </div>
-                    </div>
 
-                    <nav class="paging-navigation paging-center  pd-t-40">
-                        <!--<ul class="nav-links">-->
+                        <nav class="paging-navigation paging-center  pd-t-40">
+                            <!--<ul class="nav-links">-->
                             <!--<li class="active"><a href="./news.html?ID=1">01</a></li>-->
                             <!--<li><a href="./news.html?ID=2" class="page-numbers">02</a></li>-->
                             <!--<li><a href="./news.html?ID=3" class="page-numbers">03</a></li>-->
                             <!--<li class="nav-next">-->
-                                <!--<a href="#"><i class="fa fa-angle-right"></i></a>-->
+                            <!--<a href="#"><i class="fa fa-angle-right"></i></a>-->
                             <!--</li>-->
-                        <!--</ul>-->
-                        {$page}
+                            <!--</ul>-->
+                            {$page}
 
-                    </nav>
-                    <!--~./ end paging navigation ~-->
-                </div><!--  /.col-12 -->
-            </div><!--  /.row -->
-        </div><!--  /.container -->
+                        </nav>
+                        <!--~./ end paging navigation ~-->
+                    </div>
+                    <!--  /.col-12 -->
+                </div>
+                <!--  /.row -->
+            </div>
+            <!--  /.container -->
+        </div>
+
+        <include file="./Public/Home/fe/base/footer.html" />
+
     </div>
-
-    <include file="./Public/Home/fe/base/footer.html"/>
-
-</div>
 </body>
 
 </html>

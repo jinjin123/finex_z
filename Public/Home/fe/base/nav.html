@@ -6,7 +6,7 @@
                     <div class="navbar navbar-expand-lg navigation-area">
                         <div class="site-branding">
                             <a class="site-logo" href="/index">
-                                <img src="__HOME__/fe/static/picture/logo.png" alt="Site Logo"/>
+                                <img src="__CDN1__/fe/static/picture/logo.png" alt="Site Logo" />
                             </a>
                         </div>
                         <div class="mainmenu-area">
@@ -17,7 +17,7 @@
                                     <li><a href="/index/about">About</a></li>
                                     <li><a href="/index/terms">Terms</a></li>
                                     <li><a href="/index/news">News</a></li>
-				    <li><a href="https://www.uxmex.com">Contract</a></li>
+                                    <li><a href="https://www.uxmex.com">Contract</a></li>
                                     <li class="dropdown-trigger">
                                         <a href="/UserCenter/index">User</a>
                                         <ul class="dropdown-content">
@@ -47,7 +47,7 @@
                 <div class="col-12">
                     <div class="mobile-menu">
                         <a class="mobile-logo" href="./index.html">
-                            <img src="__HOME__/fe/static/picture/logo2.png" alt="logo">
+                            <img src="__CDN1__/fe/static/picture/logo2.png" alt="logo">
                         </a>
                     </div>
                 </div>
@@ -65,7 +65,7 @@
         $.ajax({
             url: '/Login/LoginOut',
             type: 'POST',
-            success: function (resp) {
+            success: function(resp) {
                 layer.closeAll();
                 if (resp.status) {
                     layer.msg('sign out success', {
@@ -76,7 +76,7 @@
                 }
                 layer.msg('sign out fail');
             },
-            error: function (error) {
+            error: function(error) {
                 layer.msg('sign out fail');
             }
         });
