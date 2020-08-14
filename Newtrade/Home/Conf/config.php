@@ -4,16 +4,16 @@ return array(
     'LOAD_EXT_CONFIG' => 'sysconfigdb',            //数据库配置
 
     'TMPL_PARSE_STRING' => array(
-        '__HOME__' => 'https://d16madtmbsmyfy.cloudfront.net/Public/Home',
+        '__HOME__' => 'https://d27u2p8o1zgaev.cloudfront.net/Public/Home',
         '__HOME_CSS__' => '/Public/Home/css',
         '__HOME_JS__' => '/Public/Home/js',
         '__HOME_IMG__' => '/Public/Home/img',
         '__HOME_PLUG__' => '/Public/Home/plugins',
         '__HOME_CHART__' => '/Public/Home/charting_library',
-        '__CDN1__'=>'https://d16madtmbsmyfy.cloudfront.net',
-        '__CDN2__'=>'https://d16madtmbsmyfy.cloudfront.net',
+        '__CDN1__'=>'https://d27u2p8o1zgaev.cloudfront.net',
+        '__CDN2__'=>'https://d27u2p8o1zgaev.cloudfront.net',
     // CDN路径最后不要有 '/'
-    
+
 
     ),
     'DEFAULT_CONTROLLER' => 'Index', // 默认控制器名称
