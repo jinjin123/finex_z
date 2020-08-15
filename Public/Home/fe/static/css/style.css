@@ -2468,8 +2468,6 @@ body:not(.buddypress) .article-content table th {
 }
 
 .icon-small .shape-icon {
-  mask-image: url(./images/shape2.png);
-  -webkit-mask-image: url(./images/shape2.png);
   height: 55px;
   width: 65px;
 }
