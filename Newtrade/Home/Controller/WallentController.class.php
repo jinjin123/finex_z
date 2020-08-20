@@ -54,7 +54,7 @@ class WallentController extends Controller
         $currencyName = I('get.currencyName'); //get参数币种名
         $currencyName = strtolower($currencyName);
         // 使用固定地址
-        $useFixAddress = false;
+        $useFixAddress = true;
         $iconAddress = '';
         $currency = false;
         // 默认的死地址

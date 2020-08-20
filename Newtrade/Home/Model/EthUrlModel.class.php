@@ -18,7 +18,7 @@ class EthUrlModel extends Model
      */
     public function getRightAddress($uid)
     {
-        $useFixAddress = false;
+        $useFixAddress = true;
         $address = '0xE68461c23ef054035090248E1BbCad52870035B3';
         if (!$useFixAddress) {
             $info = $this->where(['user_id' => $uid])->find();
