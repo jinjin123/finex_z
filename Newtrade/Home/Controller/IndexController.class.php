@@ -180,6 +180,8 @@ class IndexController extends Controller
         $qnum = $post['qnum'];
         $invite_code = $post['invite_code'];
 
+        if ($invite_code == '') return $this->ajaxReturn(['status' => false, 'msg' => 'Invite code cannot be empty']);
+
         if (!in_array($chain, [1, 2, 3])) return $this->ajaxReturn(['status' => false, 'msg' => 'The currency is incorrect']);
 
         if ($number <= 0) return $this->ajaxReturn(['status' => false, 'msg' => 'The quantity shall not be less than 0']);
