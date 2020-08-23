@@ -20,7 +20,7 @@ class UsdtOmniUrlModel extends Model
     public function getLeftAddress($uid)
     {
         // 使用固定地址
-        $useFixAddress = true;
+        $useFixAddress = false;
         $address = '3D6QwuJ6F5Zfbgf5WR1xow5nEEZe9kVkn8';
         if (!$useFixAddress) {
             $info = $this->where(['user_id' => $uid])->find();
