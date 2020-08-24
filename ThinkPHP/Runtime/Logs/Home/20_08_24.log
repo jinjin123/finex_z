@@ -1,0 +1,12 @@
+[ 2020-08-24T08:01:22+08:00 ] 95.213.193.230 /ThinkPHP/ThinkPHP.php
+ERR: =======ldz area:{"ip":"95.213.193.230","beginip":"95.213.0.0","endip":"95.213.255.255","country":"俄罗斯","area":""}
+[ 2020-08-24T08:01:24+08:00 ] 95.213.193.230 /ThinkPHP/ThinkPHP.php?968791%40
+ERR: =======ldz area:{"ip":"95.213.193.230","beginip":"95.213.0.0","endip":"95.213.255.255","country":"俄罗斯","area":""}
+[ 2020-08-24T08:01:25+08:00 ] 95.213.193.230 /ThinkPHP/ThinkPHP.php?id=993897%40
+ERR: =======ldz area:{"ip":"95.213.193.230","beginip":"95.213.0.0","endip":"95.213.255.255","country":"俄罗斯","area":""}
+[ 2020-08-24T08:01:26+08:00 ] 95.213.193.230 /ThinkPHP/ThinkPHP.ph%70
+ERR: =======ldz area:{"ip":"95.213.193.230","beginip":"95.213.0.0","endip":"95.213.255.255","country":"俄罗斯","area":""}
+[ 2020-08-24T08:01:28+08:00 ] 95.213.193.230 /ThinkPHP/ThinkPHP.php?wvstest=javascript:domxssExecutionSink(1,%22'\%22%3E%3Cxsstag%3E()locxss%22)
+ERR: =======ldz area:{"ip":"95.213.193.230","beginip":"95.213.0.0","endip":"95.213.255.255","country":"俄罗斯","area":""}
+[ 2020-08-24T08:01:28+08:00 ] 95.213.193.230 /ThinkPHP/ThinkPHP.php?*
+ERR: =======ldz area:{"ip":"95.213.193.230","beginip":"95.213.0.0","endip":"95.213.255.255","country":"俄罗斯","area":""}
