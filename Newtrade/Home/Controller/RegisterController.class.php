@@ -115,7 +115,7 @@ class RegisterController extends Controller
 
         if ($rcode != $emailCode) return $this->ajaxReturn(['msg' => 'The email verification code is incorrect']);
 
-        if ($code == '') return $this->ajaxReturn(['msg' => 'Invite code cannot be empty']);
+//        if ($code == '') return $this->ajaxReturn(['msg' => 'Invite code cannot be empty']);
         if ($username == '') return $this->ajaxReturn(['msg' => 'The mailbox cannot be empty']);
         if (!filter_var($username, FILTER_VALIDATE_EMAIL)) return $this->ajaxReturn(['msg' => 'Incorrect email address']);
         if ($pass == '') return $this->ajaxReturn(['msg' => 'The password cannot be empty']);
