@@ -6,6 +6,8 @@
     <link
         href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600,700%7COpen+Sans:300,400,600,700&display=swap"
         rel="stylesheet">
+    <!-- CSS
+    ================================================== -->
 
 
 <body>
@@ -13,9 +15,8 @@
 
     <div class="site-content USDT">
         <include file="./Public/Home/fe/base/nav.html"/>
-
         <div id="sticky-header"></div>
-        <div class="page-title-area bg-primary" style="background-image: url('static/images/shape/shape-dot1.png')">
+        <div class="page-title-area bg-primary" style="background-image: url('__CDN1__/Public/Home/fe/static/images/shape-dot1.png')">
             <div class="shape-group">
                 <div class="shape"></div>
                 <div class="shape"></div>
@@ -41,49 +42,28 @@
                 </div>
             </div>
         </div>
-        <section class="inner-banner gray-bg text-center">
-            <div class="thm-container">
-                <div class="breadcumb">
-                    <a href="./index.html">Home</a>
-                    <span class="sep">-</span>
-                    <a href="./User_Chain.html">Chain</a>
-                    <span class="sep">-</span>
-                    <span class="page-name">Deposit</span>
-                </div>
-                <h3>{$currencyName}</h3>
-            </div>
-        </section>
-        <section class="btc-calculator sec-pad">
-            <div class="thm-container">
-                <div class="sec-title text-center black">
-                    <span>if you want to deposit</span>
-                    <h3>{$currencyName}</h3>
-                    <p>you must copy this wallet address and send USDT to this wallet address.</p>
-                    <div class="row">
-                        <div class="col-12 col-lg-6">
-                            <img style="" src='/Public/Uploads/{$leftAddress}.png'>
-                            <p style="word-wrap:break-word;font-weight:bold;">OMNI：{$leftAddress}
-                            </p>
-                            <div class="exchange-btn-box text-center">
-                                <a href="javascript:toClipboard('{$leftAddress}')"
-                                    class="btn btn-default btn-primary" style="background-color:#181818;color:#FFF;"><i
-                                        class="fa fa-file-text-o"></i> copy to clipboard</a>
-                            </div>
+        <div class="testimonial-block pd-t-120 pd-b-200 bg-gradient">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-12">
+                        <div class="section-title text-center">
+                            <div class="subtitle" data-animate="hg-fadeInUp">if you want to deposit</div>
+                            <h2 class="title-main" data-animate="hg-fadeInUp">{$currencyName}</h2><!-- /.title-main -->
+                            <div class="title-text" data-animate="hg-fadeInUp">you must copy this wallet address and
+                                send {$currencyName} to this wallet address. Current we can only accept ERC20 USDT</div><!-- /.title-text -->
                         </div>
-                        <div class="col-12 col-lg-6">
+                        <div class="text-center">
                             <img style="" src='/Public/Uploads/{$rightAddress}.png'>
-                            <p style="word-wrap:break-word;font-weight:bold;">
+                            <p style="text-align:center;word-wrap:break-word;font-weight:bold;">
                                 ERC20：{$rightAddress}</p>
-                            <div class="exchange-btn-box text-center">
-                                <a href="javascript:toClipboard('{$rightAddress}')"
-                                    class="btn btn-default btn-primary" style="background-color:#181818;color:#FFF;"><i
-                                        class="fa fa-file-text-o"></i> copy to clipboard</a>
-                            </div>
+                            <button onclick="toClipboard('{$rightAddress}')"
+                                class="btn btn-lg btn-warning"><i class="fa fa-clipboard"></i> copy to
+                                clipboard</button>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
         <include file="./Public/Home/fe/base/footer.html"/>
     </div>
 </body>

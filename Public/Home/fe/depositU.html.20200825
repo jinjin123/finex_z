@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="zxx">
+<include file="./Public/Home/fe/base/head.html"/>
+    <!-- Custom Font
+    ================================================== -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600,700%7COpen+Sans:300,400,600,700&display=swap"
+        rel="stylesheet">
+
+
+<body>
+<include file="./Public/Home/fe/base/loader.html"/>
+
+    <div class="site-content USDT">
+        <include file="./Public/Home/fe/base/nav.html"/>
+
+        <div id="sticky-header"></div>
+        <div class="page-title-area bg-primary" style="background-image: url('static/images/shape/shape-dot1.png')">
+            <div class="shape-group">
+                <div class="shape"></div>
+                <div class="shape"></div>
+                <div class="shape"></div>
+                <div class="shape"></div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="page-header-content text-center">
+                            <div class="page-header-caption">
+                                <h2 class="page-title">{$currencyName}</h2>
+                            </div>
+                            <div class="breadcrumb-area">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="{:U('UserCenter/index')}">Home</a></li>
+                                    <li class="breadcrumb-item"><a href="{:U('UserCenter/myChain')}">Chain</a></li>
+                                    <li class="breadcrumb-item active">Withdraw</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="inner-banner gray-bg text-center">
+            <div class="thm-container">
+                <div class="breadcumb">
+                    <a href="./index.html">Home</a>
+                    <span class="sep">-</span>
+                    <a href="./User_Chain.html">Chain</a>
+                    <span class="sep">-</span>
+                    <span class="page-name">Deposit</span>
+                </div>
+                <h3>{$currencyName}</h3>
+            </div>
+        </section>
+        <section class="btc-calculator sec-pad">
+            <div class="thm-container">
+                <div class="sec-title text-center black">
+                    <span>if you want to deposit</span>
+                    <h3>{$currencyName}</h3>
+                    <p>you must copy this wallet address and send USDT to this wallet address.</p>
+                    <div class="row">
+                        <div class="col-12 col-lg-6">
+                            <img style="" src='/Public/Uploads/{$leftAddress}.png'>
+                            <p style="word-wrap:break-word;font-weight:bold;">OMNI：{$leftAddress}
+                            </p>
+                            <div class="exchange-btn-box text-center">
+                                <a href="javascript:toClipboard('{$leftAddress}')"
+                                    class="btn btn-default btn-primary" style="background-color:#181818;color:#FFF;"><i
+                                        class="fa fa-file-text-o"></i> copy to clipboard</a>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6">
+                            <img style="" src='/Public/Uploads/{$rightAddress}.png'>
+                            <p style="word-wrap:break-word;font-weight:bold;">
+                                ERC20：{$rightAddress}</p>
+                            <div class="exchange-btn-box text-center">
+                                <a href="javascript:toClipboard('{$rightAddress}')"
+                                    class="btn btn-default btn-primary" style="background-color:#181818;color:#FFF;"><i
+                                        class="fa fa-file-text-o"></i> copy to clipboard</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <include file="./Public/Home/fe/base/footer.html"/>
+    </div>
+</body>
+
+</html>
