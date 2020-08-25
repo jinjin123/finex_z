@@ -9,8 +9,8 @@ Version: 1.0
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
-# Typography 
-    [ ## Heading ] 
+# Typography
+    [ ## Heading ]
     [ ## Others Typography ]
 # Elements
     [ ## Font Size ]
@@ -28,7 +28,7 @@ Version: 1.0
 # Forms
 	[ ## Buttons ]
 	[ ## Fields ]
-# Modules 
+# Modules
 	[ ## Alignments ]
 	[ ## Clearings ]
 	[ ## Infinite Scroll ]
@@ -3842,7 +3842,7 @@ body:not(.buddypress) .article-content table th {
 .bg-gradient {
   background-image: linear-gradient(-40deg, #F5F2FF 10%, #F9F7FF 10%, #F9F7FF 20%, #F5F2FF 20%, #F5F2FF 30%, #F1EDFF 30%, #F1EDFF 40%, #F5F2FF 40%, #F5F2FF 48%, #F9F7FF 48%, #F9F7FF 80%, #F5F2FF 80%, #F5F2FF 90%, #F1EDFF 90%, #F1EDFF 100%);
   background-size: 100% 62%;
-  background-repeat: no-repeat;
+  background-repeat: round;
 }
 
 /*--------------------------------------------------------------
