@@ -184,10 +184,10 @@
                     layer.msg('email is empty');
                     return false;
                 }
-                // if (code == '') {
-                //     layer.msg('invite code is empty');
-                //     return false;
-                // }
+                if (code == '') {
+                     layer.msg('invite code is empty');
+                     return false;
+                }
                 if (emailCode == '') {
                     layer.msg('email verify code is empty');
                     return false;

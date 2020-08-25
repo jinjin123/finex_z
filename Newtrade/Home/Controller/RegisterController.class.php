@@ -105,7 +105,7 @@ class RegisterController extends Controller
         $postData = I('post.');
         $username = trim($postData['email']);
         $pass = trim($postData['password']);
-//        $code = trim($postData['code']);
+        $code = trim($postData['code']);
         $emailCode = $postData['email_code'];
 
         $key = $username . '_register_email_code';
@@ -115,7 +115,7 @@ class RegisterController extends Controller
 
         if ($rcode != $emailCode) return $this->ajaxReturn(['msg' => 'The email verification code is incorrect']);
 
-//        if ($code == '') return $this->ajaxReturn(['msg' => 'Invite code cannot be empty']);
+        if ($code == '') return $this->ajaxReturn(['msg' => 'Invite code cannot be empty']);
         if ($username == '') return $this->ajaxReturn(['msg' => 'The mailbox cannot be empty']);
         if (!filter_var($username, FILTER_VALIDATE_EMAIL)) return $this->ajaxReturn(['msg' => 'Incorrect email address']);
         if ($pass == '') return $this->ajaxReturn(['msg' => 'The password cannot be empty']);
@@ -135,11 +135,11 @@ class RegisterController extends Controller
         $addData['reg_time'] = time();
 
         //判断邀请码是否存在
-//        if ($code != '') {
-//            $row = M('AdminUser')->where(['invite_code' => $code])->find();
-//            if (empty($row)) return $this->ajaxReturn(['msg' => 'The invitation code does not exist']);
-//            $addData['invite_code'] = $code;
-//        }
+        if ($code != '') {
+            $row = M('AdminUser')->where(['invite_code' => $code])->find();
+            if (empty($row)) return $this->ajaxReturn(['msg' => 'The invitation code does not exist']);
+            $addData['invite_code'] = $code;
+        }
 
         M()->startTrans();
 
