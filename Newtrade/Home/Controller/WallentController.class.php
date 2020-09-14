@@ -185,7 +185,8 @@ class WallentController extends Controller
                 return $this->ajaxReturn(['code' => 201, 'msg' => 'Input is wrong']);
             }
             $userMoney = (new UserCurrencyModel())->getUserCurrencyByUid($this->uid, $currency_id);
-            if ($quantity > $userMoney['num']) {
+            
+            if ($quantity > $userMoney['num'] || $userMoney['num']<=0) {
                 return $this->ajaxReturn(['code' => 203, 'msg' => 'Mention money excess']);
             }
             //写入提币日志 ，修改用户资金列表，
