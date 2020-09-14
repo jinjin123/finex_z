@@ -74,7 +74,7 @@
                                 </div>
                                 <div class="form-btn-group">
                                     <div class="form-login-area">
-                                        <button id="submit" class="btn btn-default btn-primary">Sign In</button>
+                                        <button id="submit" class="btn btn-default btn-primary" >Sign In</button>
                                     </div>
                                     <div class="login-form-register-now">
                                         You have no account ?
@@ -135,7 +135,50 @@
 
             return false;
         });
+        $(document).bind('keyup', function(e) {
+            if (e.keyCode == 13) {
+                var email = $('input[name="email"]').val();
+                var password = $('input[name="password"]').val();
+                var remember = $('input[name="remember"]').prop('checked');
+
+                if (email == '' || password == '') {
+                    layer.msg('email or pasword not empty');
+                    return false;
+                }
+
+                layer.closeAll();
+                layer.load(2, {
+                    shade: [0.3, '#666']
+                });
+
+                $.ajax({
+                    url: 'subLogin',
+                    data: {
+                        email: email,
+                        password: password,
+                        remember: remember
+                    },
+                    dataType: 'JSON',
+                    type: 'POST',
+                    success: function(resp) {
+                        layer.closeAll();
+                        layer.msg(resp.msg);
+                        if (resp.code == 200) {
+                            location.href = '/UserCenter/index';
+                        }
+                        return false;
+                    },
+                    error: function(error) {
+                        layer.closeAll();
+                        layer.msg('Sign in fail, Please Try Again.');
+                    }
+                });
+
+                return false;
+            }
+        });
     });
+
 </script>
 
 </html>
