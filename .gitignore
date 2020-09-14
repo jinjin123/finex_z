@@ -1,2 +1,7 @@
 Newtrade/Runtime/*
 ThinkPHP/Runtime/*
+Upload/Home/realname
+Public/Uploads
+Upload/News
+ThinkPHP/Library/Vendor/phpqrcode/temp
+Upload/Home/realname
