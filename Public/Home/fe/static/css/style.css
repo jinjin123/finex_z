@@ -273,7 +273,8 @@ h4 a:hover {
   }
 }
 
-.section-title .title-main {
+.section-title,
+.fx-home-best-choice .title-main {
   font-weight: 700;
   font-size: 60px;
   position: relative;
@@ -282,6 +283,11 @@ h4 a:hover {
   margin-bottom: 35px;
   padding-bottom: 12px;
   text-transform: capitalize;
+}
+
+.fx-home-best-choice {
+    position: relative;
+    margin-top: -5px;
 }
 
 @media only screen and (max-width: 1199px) {
