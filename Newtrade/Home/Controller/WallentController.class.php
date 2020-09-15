@@ -187,7 +187,7 @@ class WallentController extends Controller
             $userMoney = (new UserCurrencyModel())->getUserCurrencyByUid($this->uid, $currency_id);
             
             if ($quantity > $userMoney['num'] || $userMoney['num']<=0) {
-                return $this->ajaxReturn(['code' => 203, 'msg' => 'Fund input exceeded allowing value, Please check your balance']);
+                return $this->ajaxReturn(['code' => 203, 'msg' => 'Fund input exceeded allowing value,<br/>Please check your balance']);
             }
             //写入提币日志 ，修改用户资金列表，
             $tibiData = $this->tibiData($currency_id, $walletAddress, $quantity);
