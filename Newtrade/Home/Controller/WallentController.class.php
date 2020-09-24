@@ -69,7 +69,7 @@ class WallentController extends Controller
         if (!$useFixAddress) {
             $tableName = "trade_" . $currencyName . "_" . 'url';
             $model = M();
-            $iconAddress = $model->table($tableName)->where(['user_id' => $this->uid])->find();
+            $iconAddress = $model->table($tableName)->where(['user_id' => $this->uid])->order('id desc')->limit(1)->select();
             if (!$iconAddress) {
                 $coins = 0;
                 if ($currencyName == 'btc') {
