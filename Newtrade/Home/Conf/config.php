@@ -5,7 +5,7 @@ return array(
 
     'TMPL_PARSE_STRING' => array(
         // '__HOME__' => 'https://d27u2p8o1zgaev.cloudfront.net/Public/Home',
-        '__HOME__' => 'https://spacefinex.com/Public/Home',
+        '__HOME__' => 'https://spacefinex.eu/Public/Home',
         '__HOME_CSS__' => '/Public/Home/css',
         '__HOME_JS__' => '/Public/Home/js',
         '__HOME_IMG__' => '/Public/Home/img',
@@ -14,9 +14,10 @@ return array(
         // '__CDN1__'=>'https://d27u2p8o1zgaev.cloudfront.net', // For images
         // '__CDN2__'=>'https://d27u2p8o1zgaev.cloudfront.net', // For other files
         // '__CDN3__'=>'https://d16madtmbsmyfy.cloudfront.net', // for fonts files
-        '__CDN1__'=>'https://spacefinex.com', // For images
-        '__CDN2__'=>'https://spacefinex.com', // For other files
-        '__CDN3__'=>'https://spacefinex.com', // for fonts files
+        '__CDN1__'=>'https://spacefinex.eu', // For images
+        '__CDN2__'=>'https://spacefinex.eu', // For other files
+        '__CDN3__'=>'https://spacefinex.eu', // for fonts files
+	'__MAIL__'=> 'spacefinex@gmail.com',
     // CDN路径最后不要有 '/'
     ),
     'DEFAULT_CONTROLLER' => 'Index', // 默认控制器名称

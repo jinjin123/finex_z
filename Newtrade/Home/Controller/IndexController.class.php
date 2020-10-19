@@ -523,10 +523,15 @@ class IndexController extends Controller
             'open_24h' => isset($row['kaipan_price']) ? $row['kaipan_price'] : 0,
             'high_24h' => isset($row['high_24h']) ? $row['high_24h'] : 0,
             'low_24h' => isset($row['low_24h']) ? $row['low_24h'] : 0,
-            'quote_volume_24h' => isset($row['volume_24h']) ? ($row['volume_24h']+2000)*10 : 0,
-            'base_volume_24h' => isset($row['vom_now']) ? ($row['vom_now']+rand(80000,100000)) : 0
+            'quote_volume_24h' =>   isset($row['volume_24h']) ? $this->randomFloat() + ($row['volume_24h']+2000)*10 : 0 ,
+            'base_volume_24h' => isset($row['vom_now']) ?   $this->randomFloat() + ($row['vom_now']+rand(80000,100000)) : 0
         ];
     }
+    private function randomFloat($min = 0, $max = 1) {
+        $num = $min + mt_rand() / mt_getrandmax() * ($max - $min);
+        return sprintf("%.4f",$num);
+    }
+
 
     private function getChains()
     {
